@@ -1,13 +1,7 @@
-<form>
-    <fieldset>
-        <legend>Inscripcion en Linea - Datos Personales</legend>
-        <label>Label</label>
-        <select ng-model="ASPIRANTE.ASPI_TIPODOCUMENTO"  >
-            <option> -- Seleccione el Tipo de Documento</option>
-        </select>
-
-
-
-        <button type="submit" class="btn btn-primary" >Submit</button>
-    </fieldset>
-</form>
+angular.module('EscolmeWeb',[]).config(['$routeProvider', function ($routeProvider,$locationProvider) {
+    $routeProvider.
+        when('/', { templateUrl: 'vistas/index.html', controller: IndexCtrl }).
+        when('/inscripcion', { templateUrl: 'vistas/inscripcion.html', controller: InscripcionCtrl }).
+        when('/inventarios', { templateUrl: 'vistas/inventarios.html',controller:InventariosCtrl}).
+        otherwise({ redirectTo: '/' });
+}]);

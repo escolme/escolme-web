@@ -1,0 +1,17 @@
+<form>
+    <fieldset>
+        <legend>Inscripcion en Linea - Datos Personales</legend>
+        <label>Tipo de Documento</label>
+        <select ng-model="ASPIRANTE.ASPI_TIPODOCUMENTO" required="required" class="input-xlarge" >
+            <option value="0" > -- Seleccione el Tipo de Documento</option>
+        </select>
+        <label>
+            Numero de Documento
+        </label>
+        <input type="text" required="required" maxlength="15" ng-model="ASPIRANTE.ASPI_NUMERODOCUMENTO" class="input-xlarge" >
+        <div>
+            <button type="submit" class="btn btn-primary" >Aceptar</button>
+        </div>
+
+    </fieldset>
+</form>
