@@ -1,111 +1,122 @@
-<form xmlns="http://www.w3.org/1999/html">
-    <fieldset>
-        <legend>Inscripcion en línea</legend>
-        <label>Modalidad</label>
-        <select  required="required" class="input-xlarge" >
-            <option value="0" > -- Seleccione la modalidad</option>
-        </select>
-        <label>Programas</label>
-        <select ng-model="PROGRAMAXFORMULARIO.UNPR_ID" required="required" class="input-xxlarge" >
-            <option value="0" > -- Seleccione los programas de su interés (2)</option>
-        </select>
-        <legend>Datos Personales</legend>
-        <label>Tipo de Documento</label>
-        <select ng-model="ASPIRANTE.ASPI_TIPODOCUMENTO" required="required" class="input-xlarge" >
-            <option value="0" > -- Seleccione el Tipo de Documento</option>
-        </select>
-        <label>
-            Numero de Documento
-        </label>
-        <input type="text" required="required" maxlength="15" ng-model="ASPIRANTE.ASPI_NUMERODOCUMENTO" class="input-xlarge" >
+<div class="navbar" >
+    <div class="navbar-inner">
+        <a class="brand" href="#">
+            <img src="img/icono_escolme.png" class="logo-escolme">
+            INSTITUCION UNIVERSITARIA ESCOLME
+        </a>
+    </div>
+</div>
+<div class="container" style="width: 400px">
+    <form>
+        <fieldset>
+            <legend>Inscripcion en línea</legend>
+            <label>Modalidad</label>
+            <select  required="required" class="input-xlarge" >
+                <option value="0" > -- Seleccione la modalidad</option>
+            </select>
+            <label>Programas</label>
+            <select ng-model="PROGRAMAXFORMULARIO.UNPR_ID" required="required" class="input-xlarge" >
+                <option value="0" > -- Seleccione los programas de su interés (2)</option>
+            </select>
+            <legend>Datos Personales</legend>
+            <label>Tipo de Documento</label>
+            <select ng-model="ASPIRANTE.ASPI_TIPODOCUMENTO" required="required" class="input-xlarge" >
+                <option value="0" > -- Seleccione el Tipo de Documento</option>
+            </select>
+            <label>
+                Numero de Documento
+            </label>
+            <input type="text" required="required" maxlength="15" ng-model="ASPIRANTE.ASPI_NUMERODOCUMENTO" class="input-xlarge" >
 
-        <label>
-            Sexo
-        </label>
-        <select ng-model="ASPI_SEXO" required="required" class="input-small" >
-            <option value="0" > -- Seleccione el sexo</option>
-        </select>
+            <label>
+                Sexo
+            </label>
+            <select ng-model="ASPI_SEXO" required="required" class="input-small" >
+                <option value="0" > -- Seleccione el sexo</option>
+            </select>
 
-        <label>
-            Primer Nombre
-        </label>
-        <input type="text" required="required" maxlength="15" ng-model="ASPIRANTE.ASPI_PRIMERNOMBRE" class="input-xlarge" >
+            <label>
+                Primer Nombre
+            </label>
+            <input type="text" required="required" maxlength="15" ng-model="ASPIRANTE.ASPI_PRIMERNOMBRE" class="input-xlarge" >
 
-        <label>
-            Segundo Nombre
-        </label>
-        <input type="text" maxlength="15" ng-model="ASPIRANTE.ASPI_SEGUNDONOMBRE" class="input-xlarge" >
+            <label>
+                Segundo Nombre
+            </label>
+            <input type="text" maxlength="15" ng-model="ASPIRANTE.ASPI_SEGUNDONOMBRE" class="input-xlarge" >
 
-        <label>
-            Primer Apellido
-        </label>
-        <input type="text" required="required" maxlength="15" ng-model="ASPIRANTE.ASPI_PRIMERAPELLIDO" class="input-xlarge" >
+            <label>
+                Primer Apellido
+            </label>
+            <input type="text" required="required" maxlength="15" ng-model="ASPIRANTE.ASPI_PRIMERAPELLIDO" class="input-xlarge" >
 
-        <label>
-            Segundo Apellido
-        </label>
-        <input type="text" maxlength="15" ng-model="ASPIRANTE.ASPI_SEGUNDOAPELLIDO" class="input-xlarge" >
+            <label>
+                Segundo Apellido
+            </label>
+            <input type="text" maxlength="15" ng-model="ASPIRANTE.ASPI_SEGUNDOAPELLIDO" class="input-xlarge" >
 
-        <label>
-            Estrato
-        </label>
-        <select ng-model="INFORMACIONSOCIOECONOMICA.INSO_ESTRATO" required="required" class="input-small" >
-            <option value="0" > -- Seleccione el estrato</option>
-        </select>
+            <label>
+                Estrato
+            </label>
+            <select ng-model="INFORMACIONSOCIOECONOMICA.INSO_ESTRATO" required="required" class="input-small" >
+                <option value="0" > -- Seleccione el estrato</option>
+            </select>
 
-        <label>
-            ¿Por cuál medio se entero de la institución?
-        </label>
-        <select ng-model="ASPIRANTE.MEDI_IDCONOCEINSTITUCION" required="required" class="input-xlarge" >
-            <option value="0" > -- Seleccione el medio</option>
-        </select>
+            <label>
+                ¿Por cuál medio se entero de la institución?
+            </label>
+            <select ng-model="ASPIRANTE.MEDI_IDCONOCEINSTITUCION" required="required" class="input-xlarge" >
+                <option value="0" > -- Seleccione el medio</option>
+            </select>
 
-        <legend>Datos de ubicación</legend>
-                <label>
-            Teléfono fijo
-        </label>
-        <input type="text" maxlength="15" ng-model="ASPIRANTE.ASPI_TELEFONORESIDENCIA" class="input-medium" >
+            <legend>Datos de ubicación</legend>
+            <label>
+                Teléfono fijo
+            </label>
+            <input type="text" maxlength="15" ng-model="ASPIRANTE.ASPI_TELEFONORESIDENCIA" class="input-medium" >
 
-        <label>
-            Celular
-        </label>
-        <input type="text" maxlength="15" ng-model="ASPIRANTE.ASPI_ASPI_TELEFONOCELULAR" class="input-large" >
+            <label>
+                Celular
+            </label>
+            <input type="text" maxlength="15" ng-model="ASPIRANTE.ASPI_ASPI_TELEFONOCELULAR" class="input-large" >
 
-        <label>
-            Correo Electrónico
-        </label>
-        <input type="text" maxlength="50" ng-model="ASPIRANTE.ASPI_EMAIL" class="input-xlarge" >
+            <label>
+                Correo Electrónico
+            </label>
+            <input type="text" maxlength="50" ng-model="ASPIRANTE.ASPI_EMAIL" class="input-xlarge" >
 
-        <legend>Información académica </legend>
-        <label>Nombre de la Institución de Graduación de Secundaria: </label>
-        <select ng-model="ESTUDIOSSECUNDARIOS.INST_CODIGOSNP" required="required" class="input-xxlarge">
-            <option value="0">-- Seleccione la intitución</option>
-        </select>
+            <legend>Información académica </legend>
+            <label>Nombre de la Institución de Graduación de Secundaria: </label>
+            <select ng-model="ESTUDIOSSECUNDARIOS.INST_CODIGOSNP" required="required" class="input-xlarge">
+                <option value="0">-- Seleccione la intitución</option>
+            </select>
 
-        <label>
-            Fecha de graduación
-        </label>
-        <input type="date" ng-model="ESTUDIOSSECUNDARIOS.ESSE_FECHATERMINACION" class="input-medium" >
+            <label>
+                Fecha de graduación
+            </label>
+            <input type="date" ng-model="ESTUDIOSSECUNDARIOS.ESSE_FECHATERMINACION" class="input-medium" >
 
-        <label>
-            Número pruebas icfes SNP
-        </label>
-        <input type="text" maxlength="30" ng-model="ESTUDIOSSECUNDARIOS.ESSE_SNP" class="input-large" >
+            <label>
+                Número pruebas icfes SNP
+            </label>
+            <input type="text" maxlength="30" ng-model="ESTUDIOSSECUNDARIOS.ESSE_SNP" class="input-large" >
 
-        <label>
-            Fecha presentación icfes
-        </label>
-        <input type="date"  ng-model="ESTUDIOSSECUNDARIOS.ESSE_FECHAPRESENTOPRUEBAS" class="input-medium" >
+            <label>
+                Fecha presentación icfes
+            </label>
+            <input type="date"  ng-model="ESTUDIOSSECUNDARIOS.ESSE_FECHAPRESENTOPRUEBAS" class="input-medium" >
 
-                <label>
-            Puntaje
-        </label>
-        <input type="number" maxlength="10" ng-model="ESTUDIOSSECUNDARIOS.ESSE_PUNTAJEOBTENIDO" class="input-medium" >
+            <label>
+                Puntaje
+            </label>
+            <input type="number" maxlength="10" ng-model="ESTUDIOSSECUNDARIOS.ESSE_PUNTAJEOBTENIDO" class="input-medium" >
 
-        <div>
-            <button type="submit" class="btn btn-primary" >Aceptar</button>
-        </div>
+            <div>
+                <button type="submit" class="btn btn-primary" >Aceptar</button>
+            </div>
 
 
-    </fieldset>
-</form>
+        </fieldset>
+    </form>
+</div>
+
