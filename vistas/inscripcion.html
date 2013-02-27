@@ -14,10 +14,25 @@
             <select  required="required" class="input-xlarge" >
                 <option value="0" > -- Seleccione la modalidad</option>
             </select>
-            <label>Programas</label>
-            <select ng-model="PROGRAMAXFORMULARIO.UNPR_ID" required="required" class="input-xlarge" >
-                <option value="0" > -- Seleccione los programas de su interés (2)</option>
-            </select>
+
+            <table class="table table-striped" ng-model="PROGRAMAXFORMULARIO.UNPR_ID" required="required">
+                    <thead>
+                            <tr>
+                                <th>
+                                    Elija Opción
+                                </th>
+                                <th>
+                                    Seleccione Programa
+                                </th>
+                                <th>
+
+                                </th>
+                            </tr>
+                    </thead>
+            </table>
+            <!--<select ng-model="PROGRAMAXFORMULARIO.UNPR_ID" required="required" class="input-xlarge" >-->
+                <!--<option value="0" > -- Seleccione los programas de su interés (2)</option>-->
+            <!--</select>-->
             <legend>Datos Personales</legend>
             <label>Tipo de Documento</label>
             <select ng-model="ASPIRANTE.ASPI_TIPODOCUMENTO" required="required" class="input-xlarge" >
