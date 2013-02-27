@@ -20,7 +20,7 @@ escolmeWeb.service('sessionService',function(){
 
     function validarSession(){
         if(angular.equals(sessionStorage.getItem("stUsuario"),null)){
-            location.href = "#/";
+            location.href = "#/login";
         }
     }
 
