@@ -14,7 +14,6 @@
             <select  required="required" class="input-xlarge" >
                 <option value="0" > -- Seleccione la modalidad</option>
             </select>
-
             <table class="table table-striped" ng-model="PROGRAMAXFORMULARIO.UNPR_ID" required="required">
                     <thead>
                             <tr>
@@ -69,6 +68,31 @@
                 Segundo Apellido
             </label>
             <input type="text" maxlength="15" ng-model="ASPIRANTE.ASPI_SEGUNDOAPELLIDO" class="input-xlarge" >
+
+            <label>
+                Fecha de Nacimiento
+            </label>
+            <input type="date" ng-model="ASPIRANTE.ASPI_FECHANACIMIENTO" class="input-medium" >
+
+            <label>
+                Lugar de Nacimiento
+            </label>
+            <select ng-model="ASPITANTE.ASPI_PAISNACIMIENTO" required="required" class="input-xlarge" >
+               <option value="0" > -- Seleccione el país</option>
+            </select>
+            <select ng-model="ASPITANTE.ASPI_DPTONACIMIENTO" required="required" class="input-xlarge" >
+               <option value="0" > -- Seleccione el dpto</option>
+            </select>
+            <select ng-model="ASPITANTE.ASPI_MPIONACIMIENTO" required="required" class="input-xlarge" >
+                <option value="0" > -- Seleccione el mpio</option>
+             </select>
+
+            <label>
+                Estado Civil
+            </label>
+            <select ng-model="ASPIRANTE.ESCG_ID" required="required" class="input-medium" >
+                <option value="0" > -- Seleccione el estado civil</option>
+            </select>
 
             <label>
                 Estrato
