@@ -2,12 +2,11 @@
 /**
  * Slim - a micro PHP 5 framework
  *
- * @author      Josh Lockhart <info@slimframework.com>
+ * @author      Josh Lockhart <info@joshlockhart.com>
  * @copyright   2011 Josh Lockhart
  * @link        http://www.slimframework.com
  * @license     http://www.slimframework.com/license
- * @version     2.2.0
- * @package     Slim
+ * @version     1.5.0
  *
  * MIT LICENSE
  *
@@ -30,206 +29,175 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-namespace Slim;
 
 /**
  * Router
  *
- * This class organizes, iterates, and dispatches \Slim\Route objects.
+ * Responsible for registering route paths with associated callables.
+ * When a Slim application is run, the Router finds a matching Route for
+ * the current HTTP request, and if a matching route is found, executes
+ * the Route's associated callable passing it parameters from the Request URI.
  *
  * @package Slim
- * @author  Josh Lockhart
- * @since   1.0.0
+ * @author  Josh Lockhart <info@joshlockhart.com>
+ * @since   Version 1.0
  */
-class Router
-{
-    /**
-     * @var Route The current route (most recently dispatched)
-     */
-    protected $currentRoute;
+class Slim_Router implements IteratorAggregate {
 
     /**
-     * @var array Lookup hash of all route objects
+     * @var Slim_Http_Request
+     */
+    protected $request;
+
+    /**
+     * @var array Lookup hash of routes, keyed by Request method
      */
     protected $routes;
 
     /**
-     * @var array Lookup hash of named route objects, keyed by route name (lazy-loaded)
+     * @var array Lookup hash of named routes, keyed by route name
      */
     protected $namedRoutes;
 
     /**
-     * @var array Array of route objects that match the request URI (lazy-loaded)
+     * @var array Array of routes that match the Request method and URL
      */
     protected $matchedRoutes;
 
     /**
-     * Constructor
+     * @var mixed Callable to be invoked if no matching routes are found
      */
-    public function __construct()
-    {
+    protected $notFound;
+
+    /**
+     * @var mixed Callable to be invoked if application error
+     */
+    protected $error;
+
+    /**
+     * Constructor
+     * @param Slim_Http_Request $request The HTTP request object
+     */
+    public function __construct( Slim_Http_Request $request ) {
+        $this->request = $request;
         $this->routes = array();
     }
 
     /**
-     * Get Current Route object or the first matched one if matching has been performed
-     * @return \Slim\Route|null
+     * Get Iterator
+     * @return ArrayIterator
      */
-    public function getCurrentRoute()
-    {
-        if ($this->currentRoute !== null) {
-            return $this->currentRoute;
-        }
-
-        if (is_array($this->matchedRoutes) && count($this->matchedRoutes) > 0) {
-            return $this->matchedRoutes[0];
-        }
-
-        return null;
+    public function getIterator() {
+        return new ArrayIterator($this->getMatchedRoutes());
     }
 
     /**
-     * Return route objects that match the given HTTP method and URI
-     * @param  string               $httpMethod   The HTTP method to match against
-     * @param  string               $resourceUri  The resource URI to match against
-     * @param  bool                 $reload       Should matching routes be re-parsed?
-     * @return array[\Slim\Route]
+     * Get Request
+     * @return Slim_Http_Request
      */
-    public function getMatchedRoutes($httpMethod, $resourceUri, $reload = false)
-    {
-        if ($reload || is_null($this->matchedRoutes)) {
-            $this->matchedRoutes = array();
-            foreach ($this->routes as $route) {
-                if (!$route->supportsHttpMethod($httpMethod)) {
-                    continue;
-                }
+    public function getRequest() {
+        return $this->request;
+    }
 
-                if ($route->matches($resourceUri)) {
+    /**
+     * Set Request
+     * @param   Slim_Http_Request   $req
+     * @return  void
+     */
+    public function setRequest( Slim_Http_Request $req ) {
+        $this->request = $req;
+    }
+
+    /**
+     * Return routes that match the current request
+     * @return array[Slim_Route]
+     */
+    public function getMatchedRoutes( $reload = false ) {
+        if ( $reload || is_null($this->matchedRoutes) ) {
+            $this->matchedRoutes = array();
+            foreach ( $this->routes as $route ) {
+                if ( $route->matches($this->request->getResourceUri()) ) {
                     $this->matchedRoutes[] = $route;
                 }
             }
         }
-
         return $this->matchedRoutes;
     }
 
     /**
-     * Map a route object to a callback function
-     * @param  string     $pattern      The URL pattern (ie. "/books/:id")
-     * @param  mixed      $callable     Anything that returns TRUE for is_callable()
-     * @return \Slim\Route
+     * Map a route to a callback function
+     * @param   string      $pattern    The URL pattern (ie. "/books/:id")
+     * @param   mixed       $callable   Anything that returns TRUE for is_callable()
+     * @return  Slim_Route
      */
-    public function map($pattern, $callable)
-    {
-        $route = new \Slim\Route($pattern, $callable);
+    public function map( $pattern, $callable ) {
+        $route = new Slim_Route($pattern, $callable);
+        $route->setRouter($this);
         $this->routes[] = $route;
-
         return $route;
     }
 
     /**
+     * Cache named route
+     * @param   string              $name   The route name
+     * @param   Slim_Route          $route  The route object
+     * @throws  RuntimeException            If a named route already exists with the same name
+     * @return  void
+     */
+    public function cacheNamedRoute( $name, Slim_Route $route ) {
+        if ( isset($this->namedRoutes[(string)$name]) ) {
+            throw new RuntimeException('Named route already exists with name: ' . $name);
+        }
+        $this->namedRoutes[$name] = $route;
+    }
+
+    /**
      * Get URL for named route
-     * @param  string               $name   The name of the route
-     * @param  array                Associative array of URL parameter names and replacement values
-     * @throws RuntimeException     If named route not found
-     * @return string               The URL for the given route populated with provided replacement values
+     * @param   string              $name   The name of the route
+     * @param   array                       Associative array of URL parameter names and values
+     * @throws  RuntimeException            If named route not found
+     * @return  string                      The URL for the given route populated with the given parameters
      */
-    public function urlFor($name, $params = array())
-    {
-        if (!$this->hasNamedRoute($name)) {
-            throw new \RuntimeException('Named route not found for name: ' . $name);
+    public function urlFor( $name, $params = array() ) {
+        if ( !isset($this->namedRoutes[(string)$name]) ) {
+            throw new RuntimeException('Named route not found for name: ' . $name);
         }
-        $search = array();
-        foreach (array_keys($params) as $key) {
-            $search[] = '#:' . $key . '\+?(?!\w)#';
+        $pattern = $this->namedRoutes[(string)$name]->getPattern();
+        $search = $replace = array();
+        foreach ( $params as $key => $value ) {
+            $search[] = ':' . $key;
+            $replace[] = $value;
         }
-        $pattern = preg_replace($search, $params, $this->getNamedRoute($name)->getPattern());
-
+        $pattern = str_replace($search, $replace, $pattern);
         //Remove remnants of unpopulated, trailing optional pattern segments
-        return preg_replace('#\(/?:.+\)|\(|\)#', '', $pattern);
+        return preg_replace(array(
+            '@\(\/?:.+\/??\)\??@',
+            '@\?|\(|\)@'
+        ), '', $this->request->getRootUri() . $pattern);
     }
 
     /**
-     * Dispatch route
-     *
-     * This method invokes the route object's callable. If middleware is
-     * registered for the route, each callable middleware is invoked in
-     * the order specified.
-     *
-     * @param  \Slim\Route                  $route  The route object
-     * @return bool                         Was route callable invoked successfully?
+     * Register a 404 Not Found callback
+     * @param   mixed $callable Anything that returns TRUE for is_callable()
+     * @return  mixed
      */
-    public function dispatch(\Slim\Route $route)
-    {
-        $this->currentRoute = $route;
-
-        //Invoke middleware
-        foreach ($route->getMiddleware() as $mw) {
-            call_user_func_array($mw, array($route));
+    public function notFound( $callable = null ) {
+        if ( is_callable($callable) ) {
+            $this->notFound = $callable;
         }
-
-        //Invoke callable
-        call_user_func_array($route->getCallable(), array_values($route->getParams()));
-
-        return true;
+        return $this->notFound;
     }
 
     /**
-     * Add named route
-     * @param  string            $name   The route name
-     * @param  \Slim\Route       $route  The route object
-     * @throws \RuntimeException If a named route already exists with the same name
+     * Register a 500 Error callback
+     * @param   mixed $callable Anything that returns TRUE for is_callable()
+     * @return  mixed
      */
-    public function addNamedRoute($name, \Slim\Route $route)
-    {
-        if ($this->hasNamedRoute($name)) {
-            throw new \RuntimeException('Named route already exists with name: ' . $name);
+    public function error( $callable = null ) {
+        if ( is_callable($callable) ) {
+            $this->error = $callable;
         }
-        $this->namedRoutes[(string) $name] = $route;
+        return $this->error;
     }
 
-    /**
-     * Has named route
-     * @param  string   $name   The route name
-     * @return bool
-     */
-    public function hasNamedRoute($name)
-    {
-        $this->getNamedRoutes();
-
-        return isset($this->namedRoutes[(string) $name]);
-    }
-
-    /**
-     * Get named route
-     * @param  string           $name
-     * @return \Slim\Route|null
-     */
-    public function getNamedRoute($name)
-    {
-        $this->getNamedRoutes();
-        if ($this->hasNamedRoute($name)) {
-            return $this->namedRoutes[(string) $name];
-        } else {
-            return null;
-        }
-    }
-
-    /**
-     * Get named routes
-     * @return \ArrayIterator
-     */
-    public function getNamedRoutes()
-    {
-        if (is_null($this->namedRoutes)) {
-            $this->namedRoutes = array();
-            foreach ($this->routes as $route) {
-                if ($route->getName() !== null) {
-                    $this->addNamedRoute($route->getName(), $route);
-                }
-            }
-        }
-
-        return new \ArrayIterator($this->namedRoutes);
-    }
 }
