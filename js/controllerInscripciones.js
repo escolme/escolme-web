@@ -1,6 +1,6 @@
 function InscripcionCtrl(uiService,sessionService,$scope,$http){
 
-    uiService.mostrarMenuSuperior(false);
+    //uiService.mostrarMenuSuperior(false);
 
     function Limpiar() {
         $scope.inscripcion = {
