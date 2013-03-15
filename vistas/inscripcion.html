@@ -109,6 +109,17 @@
             </select>
 
             <legend>Datos de ubicación</legend>
+
+            <select ng-model="ASPIRANTE.ASPI_PAISRESIDENCIA" required="required" class="input-xlarge" >
+                <option value="0" > -- Seleccione el país</option>
+            </select>
+            <select ng-model="ASPIRANTE.ASPI_DPTORESIDENCIA" required="required" class="input-xlarge" >
+                <option value="0" > -- Seleccione el dpto</option>
+            </select>
+            <select ng-model="ASPIRANTE.ASPI_MPIORESIDENCIA" required="required" class="input-xlarge" >
+                <option value="0" > -- Seleccione el mpio</option>
+            </select>
+
             <label>
                 Teléfono fijo
             </label>
@@ -123,6 +134,8 @@
                 Correo Electrónico
             </label>
             <input type="text" maxlength="50" ng-model="ASPIRANTE.ASPI_EMAIL" class="input-xlarge" >
+
+
 
             <legend>Información académica </legend>
             <label>Nombre de la Institución de Graduación de Secundaria: </label>
