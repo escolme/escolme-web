@@ -1,11 +1,10 @@
 <?php
-//include ("conexion.php");
 require 'Slim/Slim.php';
-require 'academico/modalidad.php';
+require 'modelo/modalidad.php';
 
 $app = new Slim();
 
-$app->get('/academico/modalidad/listar', 'modalidadListar');
+$app->get('/listar', 'modalidadListar');
 
 
 $app->get('/prueba/:name', function ($name) {
@@ -14,5 +13,3 @@ $app->get('/prueba/:name', function ($name) {
 
 
 $app->run();
-
-?>
