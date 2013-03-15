@@ -2,35 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d50b9d5-e529-47ad-b729-dac2d71e8224" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/Slim/Http/Cookie.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/Slim/Http/CookieJar.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/Slim/Http/Uri.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/Slim/Logger.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/Slim/Session/Flash.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/Slim/Session/Handler.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/Slim/Session/Handler/Cookies.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/Slim/Environment.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/Slim/Http/Headers.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/Slim/Http/Util.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/Slim/LogWriter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/Slim/Middleware.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/Slim/Middleware/ContentTypes.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/Slim/Middleware/Flash.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/Slim/Middleware/MethodOverride.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/Slim/Middleware/PrettyExceptions.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/Slim/Middleware/SessionCookie.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/api/Slim/LogWriter.php" afterPath="$PROJECT_DIR$/api/Slim/Exception/RequestSlash.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/Slim/Exception/Pass.php" afterPath="$PROJECT_DIR$/api/Slim/Exception/Pass.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/Slim/Exception/Stop.php" afterPath="$PROJECT_DIR$/api/Slim/Exception/Stop.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/Slim/Http/Request.php" afterPath="$PROJECT_DIR$/api/Slim/Http/Request.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/Slim/Http/Response.php" afterPath="$PROJECT_DIR$/api/Slim/Http/Response.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/Slim/Log.php" afterPath="$PROJECT_DIR$/api/Slim/Log.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/Slim/Route.php" afterPath="$PROJECT_DIR$/api/Slim/Route.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/Slim/Router.php" afterPath="$PROJECT_DIR$/api/Slim/Router.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/Slim/Slim.php" afterPath="$PROJECT_DIR$/api/Slim/Slim.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/Slim/View.php" afterPath="$PROJECT_DIR$/api/Slim/View.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/index.php" afterPath="$PROJECT_DIR$/api/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/estilo.css" afterPath="$PROJECT_DIR$/css/estilo.css" />
     </list>
     <ignored path="escolme-web.iws" />
@@ -63,7 +35,7 @@
       <file leaf-file-name="estilo.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/estilo.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="87" selection-end="87" vertical-scroll-proportion="0.06716418">
+            <state line="2" column="59" selection-start="89" selection-end="89" vertical-scroll-proportion="0.04477612">
               <folding />
             </state>
           </provider>
@@ -246,18 +218,23 @@
       <created>1363099948949</created>
       <updated>1363099948949</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Agrego Campos de SNIES">
+      <created>1363355382244</created>
+      <updated>1363355382244</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="818" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855093" sideWeight="0.49426112" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29411766" sideWeight="0.67144907" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29411766" sideWeight="0.67144907" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855093" sideWeight="0.50071734" order="7" side_tool="true" content_ui="tabs" />
@@ -267,7 +244,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32867134" sideWeight="0.49426112" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -391,7 +367,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/estilo.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="87" selection-end="87" vertical-scroll-proportion="0.06716418">
+        <state line="2" column="59" selection-start="89" selection-end="89" vertical-scroll-proportion="0.04477612">
           <folding />
         </state>
       </provider>

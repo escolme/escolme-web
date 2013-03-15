@@ -1,5 +1,6 @@
 body{
-    background: url("../img/escolme.png") no-repeat bottom left fixed #EEEEEE;
+    background:#EEEEEE;
+    /*url("../img/escolme.png") no-repeat bottom left fixed*/
 }
 
 .logo-escolme{
