@@ -1,7 +1,7 @@
 <?php
 
 //Listar Modalidades de Estudio
-function modalidadListar(){
+function metodologiaListar(){
     try{
         $resultados = array();
         $conexion = new conexionBD();

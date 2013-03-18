@@ -1,16 +1,15 @@
 <?php
 require 'Slim/Slim.php';
 require 'modelo/conexionBD.php';
-require 'modelo/modalidad.php';
+require 'modelo/metodologia.php';
+require 'modelo/programas.php';
 
 $app = new Slim();
 
-$app->get('/modalidad/listar', 'modalidadListar');
+$app->get('/metodologias/listar', 'metodologiaListar');
 
+$app->get('/programas/listar/:METO_ID', 'programasListar');
 
-$app->get('/prueba/:name', function ($name) {
-    echo "Hello, $name";
-});
 
 
 $app->run();

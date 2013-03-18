@@ -1,66 +1,102 @@
 
-<div class="container" style="width: 400px">
-    <form>
+<div class="container" style="width: 600px;">
+    <form class="form-horizontal" >
         <fieldset>
             <legend>Inscripcion en línea</legend>
-            <label>Metodologia</label>
-            <select  required="required" class="input-xlarge" ng-model="inscripcion.METO_ID" ng-options="c.METO_ID as c.METO_DESCRIPCION for c in modalidades" >
-                <option value=""> -- Seleccione la Metodologia</option>
-            </select>
-            <table class="table table-striped" ng-model="PROGRAMAXFORMULARIO.UNPR_ID" required="required">
-                    <thead>
-                            <tr>
-                                <th>
-                                    Elija Opción
-                                </th>
-                                <th>
-                                    Seleccione Programa
-                                </th>
-                                <th>
 
-                                </th>
-                            </tr>
-                    </thead>
-            </table>
-            <!--<select ng-model="PROGRAMAXFORMULARIO.UNPR_ID" required="required" class="input-xlarge" >-->
-                <!--<option value="0" > -- Seleccione los programas de su interés (2)</option>-->
-            <!--</select>-->
+            <div class="control-group">
+                <label class="control-label" for="inputEmail">Metodologia</label>
+                <div class="controls">
+                    <select  required="required" name="inputMetodologia" class="input-xlarge" ng-change="ListarProgramas()" ng-model="inscripcion.METO_ID" ng-options="c.METO_ID as c.METO_DESCRIPCION for c in modalidades" >
+                        <option value=""> -- Seleccione la Metodologia</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" >Programa - Opcion 1</label>
+                <div class="controls">
+                    <select  required="required" class="input-xlarge" ng-model="inscripcion.PROG_ID" ng-options="c.PROG_ID as c.PROG_NOMBRE for c in programas" >
+                        <option value=""> -- Seleccione el Programa</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label  class="control-label" >Programa - Opcion 2</label>
+                <div class="controls">
+                    <select  required="required" class="input-xlarge" ng-model="inscripcion.PROG_ID2" ng-options="c.PROG_ID as c.PROG_NOMBRE for c in programas" >
+                        <option value=""> -- Seleccione el Programa</option>
+                    </select>
+                </div>
+            </div>
+
             <legend>Datos Personales</legend>
-            <label>Tipo de Documento</label>
-            <select ng-model="ASPIRANTE.ASPI_TIPODOCUMENTO" required="required" class="input-xlarge" >
-                <option value="0" > -- Seleccione el Tipo de Documento</option>
-            </select>
-            <label>
-                Numero de Documento
-            </label>
-            <input type="text" required="required" maxlength="15" ng-model="ASPIRANTE.ASPI_NUMERODOCUMENTO" class="input-xlarge" >
 
-            <label>
-                Sexo
-            </label>
-            <select ng-model="ASPI_SEXO" required="required" class="input-small" >
-                <option value="0" > -- Seleccione el sexo</option>
-            </select>
+            <div class="control-group">
+                <label  class="control-label" >Tipo de Documento</label>
+                <div class="controls">
+                    <select ng-model="ASPIRANTE.ASPI_TIPODOCUMENTO" required="required" class="input-xlarge" >
+                        <option value="0" > -- Seleccione el Tipo de Documento</option>
+                    </select>
+                </div>
+            </div>
 
-            <label>
-                Primer Nombre
-            </label>
-            <input type="text" required="required" maxlength="15" ng-model="ASPIRANTE.ASPI_PRIMERNOMBRE" class="input-xlarge" >
+            <div class="control-group">
+                <label class="control-label" >
+                    Numero de Documento
+                </label>
+                <div class="controls">
+                    <input type="text" required="required" maxlength="15" ng-model="ASPIRANTE.ASPI_NUMERODOCUMENTO" class="input-xlarge" >
+                </div>
+            </div>
 
-            <label>
-                Segundo Nombre
-            </label>
-            <input type="text" maxlength="15" ng-model="ASPIRANTE.ASPI_SEGUNDONOMBRE" class="input-xlarge" >
+            <div class="control-group">
+                <label class="control-label" >
+                    Sexo
+                </label>
+                <div class="controls">
+                    <select ng-model="ASPI_SEXO" required="required" class="input-small" >
+                        <option value="0" > -- Seleccione el sexo</option>
+                    </select>
+                </div>
+            </div>
 
-            <label>
-                Primer Apellido
-            </label>
-            <input type="text" required="required" maxlength="15" ng-model="ASPIRANTE.ASPI_PRIMERAPELLIDO" class="input-xlarge" >
+            <div class="control-group">
+                <label class="control-label" >
+                    Primer Nombre
+                </label>
+                <div class="controls">
+                    <input type="text" required="required" maxlength="15" ng-model="ASPIRANTE.ASPI_PRIMERNOMBRE" class="input-xlarge" >
+                </div>
+            </div>
 
-            <label>
-                Segundo Apellido
-            </label>
-            <input type="text" maxlength="15" ng-model="ASPIRANTE.ASPI_SEGUNDOAPELLIDO" class="input-xlarge" >
+            <div class="control-group">
+                <label class="control-label" >
+                    Segundo Nombre
+                </label>
+                <div class="controls">
+                    <input type="text" maxlength="15" ng-model="ASPIRANTE.ASPI_SEGUNDONOMBRE" class="input-xlarge" >
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" >
+                    Primer Apellido
+                </label>
+                <div class="controls">
+                    <input type="text" required="required" maxlength="15" ng-model="ASPIRANTE.ASPI_PRIMERAPELLIDO" class="input-xlarge" >
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" >
+                    Segundo Apellido
+                </label>
+                <div class="controls">
+                    <input type="text" maxlength="15" ng-model="ASPIRANTE.ASPI_SEGUNDOAPELLIDO" class="input-xlarge" >
+                </div>
+            </div>
 
             <label>
                 Fecha de Nacimiento
