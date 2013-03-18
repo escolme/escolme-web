@@ -98,30 +98,52 @@
                 </div>
             </div>
 
-            <label>
-                Fecha de Nacimiento
-            </label>
-            <input type="date" ng-model="ASPIRANTE.ASPI_FECHANACIMIENTO" class="input-medium" >
+            <div class="control-group">
+                <label class="control-label" >
+                    Fecha de Nacimiento
+                </label>
+                <div class="controls">
+                    <input type="date" ng-model="ASPIRANTE.ASPI_FECHANACIMIENTO" class="input-medium" >
+                </div>
+            </div>
 
-            <label>
-                Lugar de Nacimiento
-            </label>
-            <select ng-model="ASPITANTE.ASPI_PAISNACIMIENTO" required="required" class="input-xlarge" >
-               <option value="0" > -- Seleccione el país</option>
-            </select>
-            <select ng-model="ASPITANTE.ASPI_DPTONACIMIENTO" required="required" class="input-xlarge" >
-               <option value="0" > -- Seleccione el dpto</option>
-            </select>
-            <select ng-model="ASPITANTE.ASPI_MPIONACIMIENTO" required="required" class="input-xlarge" >
-                <option value="0" > -- Seleccione el mpio</option>
-             </select>
+            <div class="control-group">
+                <label class="control-label" >
+                    Lugar de Nacimiento
+                </label>
+                <div class="controls">
+                <select ng-model="ASPITANTE.ASPI_PAISNACIMIENTO" required="required" class="input-xlarge" >
+                   <option value="0" > -- Seleccione el país</option>
+                </select>
+                </div>
+            </div>
 
-            <label>
-                Estado Civil
-            </label>
-            <select ng-model="ASPIRANTE.ESCG_ID" required="required" class="input-medium" >
-                <option value="0" > -- Seleccione el estado civil</option>
-            </select>
+            <div class="control-group">
+                <div class="controls">
+                    <select ng-model="ASPITANTE.ASPI_DPTONACIMIENTO" required="required" class="input-xlarge" >
+                       <option value="0" > -- Seleccione el dpto</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <div class="controls">
+                    <select ng-model="ASPITANTE.ASPI_MPIONACIMIENTO" required="required" class="input-xlarge" >
+                        <option value="0" > -- Seleccione el mpio</option>
+                     </select>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" >
+                    Estado Civil
+                </label>
+                <div class="controls">
+                    <select ng-model="ASPIRANTE.ESCG_ID" required="required" class="input-medium" >
+                        <option value="0" > -- Seleccione el estado civil</option>
+                    </select>
+                </div>
+            </div>
 
             <label>
                 Estrato
