@@ -42,10 +42,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="modalidad.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="modalidad.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/api/modelo/modalidad.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="0" selection-start="1877" selection-end="1877" vertical-scroll-proportion="-12.0">
+            <state line="24" column="0" selection-start="1692" selection-end="1692" vertical-scroll-proportion="0.5687204">
               <folding>
                 <element signature="e#6#145#0" expanded="true" />
               </folding>
@@ -71,10 +71,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="136" selection-end="136" vertical-scroll-proportion="0.18575852">
+            <state line="8" column="0" selection-start="136" selection-end="136" vertical-scroll-proportion="-5.0">
               <folding />
             </state>
           </provider>
@@ -108,8 +108,8 @@
         <option value="$PROJECT_DIR$/api/conexion.php" />
         <option value="$PROJECT_DIR$/api/.htaccess" />
         <option value="$PROJECT_DIR$/api/academico/modalidad.php" />
-        <option value="$PROJECT_DIR$/api/modelo/modalidad.php" />
         <option value="$PROJECT_DIR$/api/index.php" />
+        <option value="$PROJECT_DIR$/api/modelo/modalidad.php" />
       </list>
     </option>
   </component>
@@ -451,19 +451,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/modelo/modalidad.php">
+    <entry file="file://$PROJECT_DIR$/api/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="1877" selection-end="1877" vertical-scroll-proportion="-12.0">
-          <folding>
-            <element signature="e#6#145#0" expanded="true" />
-          </folding>
+        <state line="8" column="0" selection-start="136" selection-end="136" vertical-scroll-proportion="-5.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/index.php">
+    <entry file="file://$PROJECT_DIR$/api/modelo/modalidad.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="136" selection-end="136" vertical-scroll-proportion="0.18575852">
-          <folding />
+        <state line="24" column="0" selection-start="1692" selection-end="1692" vertical-scroll-proportion="0.5687204">
+          <folding>
+            <element signature="e#6#145#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
