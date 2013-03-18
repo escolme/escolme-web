@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d50b9d5-e529-47ad-b729-dac2d71e8224" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/api/academico/modalidad.php" afterPath="$PROJECT_DIR$/api/modelo/modalidad.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/conexion.php" afterPath="$PROJECT_DIR$/api/conexion.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/index.php" afterPath="$PROJECT_DIR$/api/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/modelo/modalidad.php" afterPath="$PROJECT_DIR$/api/modelo/modalidad.php" />
     </list>
     <ignored path="escolme-web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,16 +27,7 @@
       <file leaf-file-name="inscripcion.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vistas/inscripcion.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="35" selection-start="1452" selection-end="1452" vertical-scroll-proportion="-0.625">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="217" selection-end="217" vertical-scroll-proportion="-9.375">
+            <state line="27" column="35" selection-start="1175" selection-end="1175" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -52,10 +42,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="modalidad.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="modalidad.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/modelo/modalidad.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="26" selection-start="406" selection-end="406" vertical-scroll-proportion="0.30805686">
+            <state line="28" column="0" selection-start="1877" selection-end="1877" vertical-scroll-proportion="-12.0">
               <folding>
                 <element signature="e#6#145#0" expanded="true" />
               </folding>
@@ -75,7 +65,16 @@
       <file leaf-file-name="conexion.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/conexion.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="6" selection-end="167" vertical-scroll-proportion="-0.625">
+            <state line="1" column="0" selection-start="6" selection-end="167" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/api/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="0" selection-start="136" selection-end="136" vertical-scroll-proportion="0.18575852">
               <folding />
             </state>
           </provider>
@@ -109,8 +108,8 @@
         <option value="$PROJECT_DIR$/api/conexion.php" />
         <option value="$PROJECT_DIR$/api/.htaccess" />
         <option value="$PROJECT_DIR$/api/academico/modalidad.php" />
-        <option value="$PROJECT_DIR$/api/index.php" />
         <option value="$PROJECT_DIR$/api/modelo/modalidad.php" />
+        <option value="$PROJECT_DIR$/api/index.php" />
       </list>
     </option>
   </component>
@@ -207,8 +206,8 @@
     <property name="options.lastSelected" value="project.propVCSSupport.VCSs.Git" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../GitHub.app/Contents/Resources/git/bin/git" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -295,13 +294,11 @@
     <frame x="0" y="22" width="1440" height="818" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855093" sideWeight="0.49426112" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2984218" sideWeight="0.6700143" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30272597" sideWeight="0.6700143" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855093" sideWeight="0.50071734" order="7" side_tool="true" content_ui="tabs" />
@@ -310,6 +307,8 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855093" sideWeight="0.49426112" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -433,14 +432,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vistas/inscripcion.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="35" selection-start="1452" selection-end="1452" vertical-scroll-proportion="-0.625">
+        <state line="27" column="35" selection-start="1175" selection-end="1175" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/conexion.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="6" selection-end="167" vertical-scroll-proportion="-0.625">
+        <state line="1" column="0" selection-start="6" selection-end="167" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -452,19 +451,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="217" selection-end="217" vertical-scroll-proportion="-9.375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/modelo/modalidad.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="26" selection-start="406" selection-end="406" vertical-scroll-proportion="0.30805686">
+        <state line="28" column="0" selection-start="1877" selection-end="1877" vertical-scroll-proportion="-12.0">
           <folding>
             <element signature="e#6#145#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="136" selection-end="136" vertical-scroll-proportion="0.18575852">
+          <folding />
         </state>
       </provider>
     </entry>
