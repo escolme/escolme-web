@@ -1,12 +1,24 @@
-function InscripcionCtrl(uiService,sessionService,$scope,$http){
+function InscripcionCtrl(sessionService,$scope,$http){
 
-    //uiService.mostrarMenuSuperior(false);
-
-    function Limpiar() {
+    $scope.Limpiar = function(){
         $scope.inscripcion = {
-            id_usuario:0,login:'',sexo:'M',nombre:'',idDependencia:'',email:'',telefono:'',jefe:'',usuarioactivo:'S',
-            passwordnew:'',id_perfil_grupo:0,id_empresa:sessionStorage.getItem("stIdEmpresa"),es_cad:false
+            METO_ID:null
         };
+        $scope.ListarModalidades();
     }
+
+    $scope.ListarModalidades = function(){
+        $http.get('api/modalidad/listar').then(function(response){
+            $scope.modalidades = response.data.datos;
+        });
+    }
+
+    $scope.ListarProgramas = function(){
+        $http.get('api/programas/listar').then(function(response){
+            $scope.programas = response.data.datos;
+        });
+    }
+
+    $scope.Limpiar();
 
 }

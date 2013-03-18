@@ -3,9 +3,9 @@
     <form>
         <fieldset>
             <legend>Inscripcion en línea</legend>
-            <label>Modalidad</label>
-            <select  required="required" class="input-xlarge" >
-                <option value="0" > -- Seleccione la modalidad</option>
+            <label>Metodologia</label>
+            <select  required="required" class="input-xlarge" ng-model="inscripcion.METO_ID" ng-options="c.METO_ID as c.METO_DESCRIPCION for c in modalidades" >
+                <option value=""> -- Seleccione la Metodologia</option>
             </select>
             <table class="table table-striped" ng-model="PROGRAMAXFORMULARIO.UNPR_ID" required="required">
                     <thead>
