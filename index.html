@@ -9,41 +9,42 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" >
     <link href="css/bootstrap-responsive.min.css" rel="stylesheet" >
     <link href="css/estilo.css" rel="stylesheet" >
-    <style>
-        body {
-            padding-top: 170px; /* 60px to make the container go all the way to the bottom of the topbar */
-        }
-    </style>
 </head>
-<body>
+<body data-spy="scroll" data-twttr-rendered="true" cz-shortcut-listen="true">
 
-    <div class="navbar navbar-inverse navbar-fixed-top" id="divMenuSuperior">
-        <div class="navbar-inner">
-            <div class="container" style="width:983px;">
-                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="brand" href="#">
-                    <!--<img src="img/icono_escolme.png" class="logo-escolme">-->
-                    INSTITUCION UNIVERSITARIA ESCOLME
-                </a>
-                <div class="nav-collapse collapse">
-                    <ul class="nav">
-                        <li class="active"><a href="#/inscripcion">Inscripciones</a></li>
-                        <li><a href="http://www.escolme.edu.co" target="_blank">Portal Escolme</a></li>
-                        <li><a href="#">Campus Academico</a></li>
-                        <li><a href="#">Campus Administrativo</a></li>
-                    </ul>
-                </div><!--/.nav-collapse -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="#/">
+                <img src="img/icono_escolme.png" alt="Escolme" >
+                INSTITUCION UNIVERSITARIA ESCOLME</a>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li class="">
+                        <a href="#/inscripcion">Inscripciones</a>
+                    </li>
+                    <li class="">
+                        <a href="#">Portal Escolme</a>
+                    </li>
+                    <li class="">
+                        <a href="#">Campus Academico</a>
+                    </li>
+                    <li class="">
+                        <a href="#">Campus Administrativo</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
+</div>
 
 
-
-    <div  ng-view class="container-fluid" id="divVistas" ></div>
+    <div  ng-view class="container" id="divVistas" ></div>
 
 
     <script src="http://code.jquery.com/jquery.js"></script>

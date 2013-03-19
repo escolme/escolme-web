@@ -12,7 +12,11 @@ body{
     /* W3C Markup, IE10 Release Preview */
     background-image: radial-gradient(circle farthest-corner at center, #fefefe 0%, #eee 100%);
 
-    background: url(../img/body-top.png) center top no-repeat #F2F2F2;
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 20px;
+    position: relative;
+    padding-top: 40px;
 }
 
 #divVistas{
