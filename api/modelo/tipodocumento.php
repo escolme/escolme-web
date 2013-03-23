@@ -18,7 +18,8 @@ function tipodocumentoListar(){
             array_push($resultados, $fila);
         }
 
-        echo '{"datos": ' . json_encode($resultados) . '}';
+        echo utf8_encode('{"datos": ' . json_encode($resultados) . '}');
+        //echo '{"datos": "contraseña"}';
 
         OCILogoff($conn);
 
