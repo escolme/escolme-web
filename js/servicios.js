@@ -24,6 +24,8 @@ escolmeWeb.service('sessionService',function(){
         }
     }
 
+
+
     // Exponer funciones del servicio
     return {
         validar: function()   { return validarSession();  }
