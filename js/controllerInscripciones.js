@@ -3,7 +3,7 @@ function InscripcionCtrl(sessionService,$scope,$http){
 
     $scope.Limpiar = function(){
         $scope.inscripcion = {
-            METO_ID:null,PROG_ID:null,PROG_ID2:null
+            METO_ID:null,PROG_ID:null,PROG_ID2:null,TIDG_ID:null;
         };
         $scope.ListarModalidades();
     }
@@ -25,6 +25,18 @@ function InscripcionCtrl(sessionService,$scope,$http){
         }
 
     }
+
+    $scope.ListarTipoDocumento = function(){
+        var tidg_id = $scope.inscripcion.TIDG_ID;
+        if(tidg_id!=null){
+            $http.get('api/tipodocumento/listar/').then(function(response){
+                $scope.tipodocumento= response.data.datos;
+            });
+        }else{
+            $scope.tipodocumento = [];
+        }
+    }
+
 
     $scope.Limpiar();
 

@@ -41,7 +41,7 @@
             <div class="control-group">
                 <label  class="control-label" >Tipo de Documento</label>
                 <div class="controls">
-                    <select ng-model="ASPIRANTE.ASPI_TIPODOCUMENTO" required="required" class="input-xlarge" >
+                    <select ng-model="inscripcion.TIDG_ID" ng-options="c.TIDG as c.TIDG_DESCRIPCION for c in tipodocumento"required="required" class="input-xlarge" >
                         <option value="0" > -- Seleccione el Tipo de Documento</option>
                     </select>
                 </div>

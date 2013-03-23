@@ -10,4 +10,6 @@ $app->get('/metodologias/listar', 'metodologiaListar');
 
 $app->get('/programas/listar/:METO_ID', 'programasListar');
 
+$app->get('/tipodocumento/listar', 'tipodocumentoListar');
+
 $app->run();
