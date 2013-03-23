@@ -20,7 +20,6 @@ function metodologiaListar(){
 
         echo '{"datos": ' . json_encode($resultados) . '}';
 
-        OCICommit($conn);
         OCILogoff($conn);
 
     }

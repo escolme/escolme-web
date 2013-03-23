@@ -1,6 +1,5 @@
 function InscripcionCtrl(sessionService,$scope,$http){
 
-    $scope.modalidades = [];
 
     $scope.Limpiar = function(){
         $scope.inscripcion = {
@@ -17,10 +16,14 @@ function InscripcionCtrl(sessionService,$scope,$http){
 
     $scope.ListarProgramas = function(){
         var meto_id = $scope.inscripcion.METO_ID;
-        $http.get('api/programas/listar/' + meto_id).then(function(response){
-            console.dir(response.data);
-            $scope.programas = response.data.datos;
-        });
+        if(meto_id!=null){
+            $http.get('api/programas/listar/' + meto_id).then(function(response){
+                $scope.programas = response.data.datos;
+            });            
+        }else{
+            $scope.programas = [];
+        }
+
     }
 
     $scope.Limpiar();
