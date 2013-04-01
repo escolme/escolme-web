@@ -10,6 +10,7 @@ require 'modelo/ciudad.php';
 require 'modelo/estadocivil.php';
 require 'modelo/estrato.php';
 require 'modelo/medio.php';
+require 'modelo/institucion.php';
 
 
 $app = new Slim();
@@ -32,5 +33,7 @@ $app->get('/estadocivil/listar', 'estadocivilListar');
 $app->get('/estrato/listar', 'estratoListar');
 
 $app->get('/medio/listar', 'medioListar');
+
+$app->get('/institucion/listar', 'institucionListar');
 
 $app->run();

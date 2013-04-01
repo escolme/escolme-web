@@ -3,14 +3,16 @@ function InscripcionCtrl(sessionService,$scope,$http){
 
     $scope.Limpiar = function(){
         $scope.inscripcion = {
-            METO_ID:null,PROG_ID:null,PROG_ID2:null,TIDG_ID:null,PAGE_ID:null, DEGE_ID:null, CIGE_ID:null,ESCG_ID:null,ESTR_ID:null,OMED_ID:null
+            METO_ID:null,PROG_ID:null,PROG_ID2:null,TIDG_ID:null,PAGE_ID:null, DEGE_ID:null, CIGE_ID:null,ESCG_ID:null,ESTR_ID:null,OMED_ID:null,PAGE_ID2:null, DEGE_ID2:null, CIGE_ID2:null, INST_CODIGOSNP:null
         };
         $scope.ListarModalidades();
         $scope.ListarTipoDocumento();
         $scope.ListarPais();
+        $scope.ListarPais2();
         $scope.ListarEstadoCivil();
         $scope.ListarEstrato();
         $scope.ListarMedio();
+        $scope.ListarInstitucion();
     }
 
     $scope.ListarModalidades = function(){
@@ -42,6 +44,12 @@ function InscripcionCtrl(sessionService,$scope,$http){
         });
     }
 
+    $scope.ListarPais2 = function(){
+        $http.get('api/pais/listar').then(function(response){
+            $scope.pais2= response.data.datos;
+        });
+    }
+
     $scope.ListarDepartamento = function(){
         var page_id = $scope.inscripcion.PAGE_ID;
         if(page_id!=null){
@@ -53,6 +61,17 @@ function InscripcionCtrl(sessionService,$scope,$http){
         }
     }
 
+    $scope.ListarDepartamento2 = function(){
+        var page_id = $scope.inscripcion.PAGE_ID2;
+        if(page_id!=null){
+            $http.get('api/departamento/listar/' + page_id).then(function(response){
+                $scope.departamento2= response.data.datos;
+            });
+        }else{
+            $scope.departamento2 = [];
+        }
+    }
+
     $scope.ListarCiudad = function(){
         var dege_id = $scope.inscripcion.DEGE_ID;
         if(dege_id!=null){
@@ -61,6 +80,17 @@ function InscripcionCtrl(sessionService,$scope,$http){
             });
         }else{
             $scope.ciudad = [];
+        }
+    }
+
+    $scope.ListarCiudad2 = function(){
+        var dege_id = $scope.inscripcion.DEGE_ID2;
+        if(dege_id!=null){
+            $http.get('api/ciudad/listar/' + dege_id).then(function(response){
+                $scope.ciudad2= response.data.datos;
+            });
+        }else{
+            $scope.ciudad2 = [];
         }
     }
 
@@ -79,6 +109,12 @@ function InscripcionCtrl(sessionService,$scope,$http){
     $scope.ListarMedio = function(){
         $http.get('api/medio/listar').then(function(response){
             $scope.medio= response.data.datos;
+        });
+    }
+
+    $scope.ListarInstitucion = function(){
+        $http.get('api/institucion/listar').then(function(response){
+            $scope.institucion= response.data.datos;
         });
     }
 
