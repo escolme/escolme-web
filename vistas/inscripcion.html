@@ -41,7 +41,7 @@
             <div class="control-group">
                 <label  class="control-label" >Tipo de Documento</label>
                 <div class="controls">
-                    <select ng-model="inscripcion.TIDG_ID" ng-options="c.TIDG as c.TIDG_DESCRIPCION for c in tipodocumento"required="required" class="input-xlarge" >
+                    <select ng-model="inscripcion.TIDG_ID" ng-options="c.TIDG_ID as c.TIDG_DESCRIPCION for c in tipodocumento"required="required" class="input-xlarge" >
                         <option value="" > -- Seleccione el Tipo de Documento</option>
                     </select>
                 </div>
@@ -61,8 +61,10 @@
                     Sexo
                 </label>
                 <div class="controls">
-                    <select ng-model="ASPI_SEXO" required="required" class="input-small" >
-                        <option value="0" > -- Seleccione el sexo</option>
+                    <select ng-model="ASPI_SEXO" required="required" class="input-large" >
+                        <option value="" > -- Seleccione el sexo</option>
+                        <option value="1" >Masculino</option>
+                        <option value="2" >Femenino</option>
                     </select>
                 </div>
             </div>
@@ -117,24 +119,24 @@
                     Lugar de Nacimiento
                 </label>
                 <div class="controls">
-                <select ng-model="ASPITANTE.ASPI_PAISNACIMIENTO" required="required" class="input-xlarge" >
-                   <option value="0" > -- Seleccione el país</option>
+                <select ng-model="inscripcion.PAGE_ID" ng-change="ListarDepartamento()" ng-options="c.PAGE_ID as c.PAGE_NOMBRE for c in pais" required="required" class="input-xlarge" >
+                   <option value="" > -- Seleccione el país</option>
                 </select>
                 </div>
             </div>
 
             <div class="control-group">
                 <div class="controls">
-                    <select ng-model="ASPITANTE.ASPI_DPTONACIMIENTO" required="required" class="input-xlarge" >
-                       <option value="0" > -- Seleccione el dpto</option>
+                    <select ng-model="inscripcion.DEGE_ID" ng-change="ListarCiudad()"ng-options="c.DEGE_ID as c.DEGE_NOMBRE for c in departamento" required="required" class="input-xlarge" >
+                       <option value="" > -- Seleccione el dpto</option>
                     </select>
                 </div>
             </div>
 
             <div class="control-group">
                 <div class="controls">
-                    <select ng-model="ASPITANTE.ASPI_MPIONACIMIENTO" required="required" class="input-xlarge" >
-                        <option value="0" > -- Seleccione el mpio</option>
+                    <select ng-model="inscripcion.CIGE_ID" ng-options="c.CIGE_ID as c.CIGE_NOMBRE for c in ciudad" required="required" class="input-xlarge" >
+                        <option value="" > -- Seleccione el mpio</option>
                      </select>
                 </div>
             </div>
@@ -144,8 +146,8 @@
                     Estado Civil
                 </label>
                 <div class="controls">
-                    <select ng-model="ASPIRANTE.ESCG_ID" required="required" class="input-medium" >
-                        <option value="0" > -- Seleccione el estado civil</option>
+                    <select ng-model="inscripcion.ESCG_ID" ng-options="c.ESCG_ID as c.ESCG_DESCRIPCION for c in estadocivil" required="required" class="input-large" >
+                        <option value="" > -- Seleccione el estado civil</option>
                     </select>
                 </div>
             </div>
@@ -155,8 +157,8 @@
                     Estrato
                 </label>
                 <div class="controls">
-                    <select ng-model="INFORMACIONSOCIOECONOMICA.INSO_ESTRATO" required="required" class="input-small" >
-                        <option value="0" > -- Seleccione el estrato</option>
+                    <select ng-model="inscripcion.ESTR_ID" ng-options="c.ESTR_ID as c.ESTR_DESCRIPCION for c in estrato" required="required" class="input-large" >
+                        <option value="" > -- Seleccione el estrato</option>
                     </select>
                 </div>
             </div>
@@ -166,8 +168,8 @@
                     ¿Por cuál medio se entero de la institución?
                 </label>
                 <div class="controls">
-                    <select ng-model="ASPIRANTE.MEDI_IDCONOCEINSTITUCION" required="required" class="input-xlarge" >
-                        <option value="0" > -- Seleccione el medio</option>
+                    <select ng-model="inscripcion.OMED_ID" ng-options="c.OMED_ID as c.OMED_DESCRIPCION for c in medio"required="required" class="input-xlarge" >
+                        <option value="" > -- Seleccione el medio</option>
                     </select>
                 </div>
             </div>
