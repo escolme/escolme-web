@@ -236,9 +236,12 @@
             <div class="control-group">
                 <label class="control-label">Nombre de la Institución de Graduación de Secundaria: </label>
                 <div class="controls">
-                    <select ng-model="inscripcion.INST_CODIGOSNP" ng-options="c.INST_CODIGOSNP as c.INST_NOMBREINSTITUCION for c in institucion"required="required" class="input-xlarge">
+                    <input type="text" maxlength="250" placeholder="Ingrese datos y presione Enter para buscar"  ui-keydown="{'enter alt-space':'ListarInstitucion($event)'}" ng-model='filtros.institucion' class="input-xlarge" required="required" >
+
+
+<!--                     <select ng-model="inscripcion.INST_CODIGOSNP" ng-options="c.INST_CODIGOSNP as c.INST_NOMBREINSTITUCION for c in institucion"required="required" class="input-xlarge">
                         <option value="">-- Seleccione la intitución</option>
-                    </select>
+                    </select> -->
                 </div>
             </div>
 
@@ -286,4 +289,31 @@
         </fieldset>
     </form>
 </div>
+
+</div>
+
+
+
+
+
+<div id="ventanaListarInstituciones" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:900px;margin:0 0 0 -400px;">
+    <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Instituciones Educativas</h3>
+    </div>
+    <div class="modal-body">
+        <table class="table table-striped" >
+            <tr>
+                <th>INSTITUCION</th>
+                <th>JORNADA</th>
+            </tr>
+            <tr ng-repeat="c in instituciones"> 
+                <td><a ng-click="RetornarInstitucion(c)" href="" >{{c.INST_NOMBREINSTITUCION}}</a></td>
+                <td><a href="#" >{{c.INST_JORNADA}}</a></td>
+            </tr>
+        </table>     
+    </div>
+    <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+    </div>
 </div>

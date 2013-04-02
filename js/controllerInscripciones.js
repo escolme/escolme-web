@@ -1,10 +1,10 @@
 function InscripcionCtrl(sessionService,$scope,$http){
 
-
     $scope.Limpiar = function(){
         $scope.inscripcion = {
             METO_ID:null,PROG_ID:null,PROG_ID2:null,TIDG_ID:null,PAGE_ID:null, DEGE_ID:null, CIGE_ID:null,ESCG_ID:null,ESTR_ID:null,OMED_ID:null,PAGE_ID2:null, DEGE_ID2:null, CIGE_ID2:null, INST_CODIGOSNP:null
         };
+        $scope.filtros = { institucion:''};
         $scope.ListarModalidades();
         $scope.ListarTipoDocumento();
         $scope.ListarPais();
@@ -12,7 +12,7 @@ function InscripcionCtrl(sessionService,$scope,$http){
         $scope.ListarEstadoCivil();
         $scope.ListarEstrato();
         $scope.ListarMedio();
-        $scope.ListarInstitucion();
+        
     }
 
     $scope.ListarModalidades = function(){
@@ -112,10 +112,21 @@ function InscripcionCtrl(sessionService,$scope,$http){
         });
     }
 
-    $scope.ListarInstitucion = function(){
-        $http.get('api/institucion/listar').then(function(response){
-            $scope.institucion= response.data.datos;
+    $scope.ListarInstitucion = function($event){
+        $http.get('api/institucion/listarporfiltro/' + $scope.filtros.institucion).then(function(response){
+            $scope.instituciones= response.data.datos;
+            $('#ventanaListarInstituciones').modal('show');
         });
+       
+        $event.preventDefault();
+
+    }
+
+    $scope.RetornarInstitucion = function(inst){
+         $scope.filtros.institucion=inst.INST_NOMBREINSTITUCION;
+         $scope.inscripcion.INST_CODIGOSNP=inst.INST_CODIGOSNP;
+         $('#ventanaListarInstituciones').modal('toggle');
+
     }
 
     $scope.Limpiar();

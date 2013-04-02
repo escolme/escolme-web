@@ -36,4 +36,6 @@ $app->get('/medio/listar', 'medioListar');
 
 $app->get('/institucion/listar', 'institucionListar');
 
+$app->get('/institucion/listarporfiltro/:filtro', 'institucionListarPorFiltro');
+
 $app->run();
