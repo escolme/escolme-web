@@ -14,7 +14,7 @@ function institucionListar(){
             $fila = array(
                 "INST_CODIGOSNP" => ociresult($query, "INST_CODIGOSNP"),
                 "INST_NOMBREINSTITUCION" => ociresult($query, "INST_NOMBREINSTITUCION"),
-                "INSTITUCION.INST_JORNADA" => ociresult($query, "INST_JORNADA")
+                "INST_JORNADA" => ociresult($query, "INST_JORNADA")
             );
             array_push($resultados, $fila);
         }
