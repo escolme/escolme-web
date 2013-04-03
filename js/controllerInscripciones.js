@@ -136,6 +136,8 @@ function InscripcionCtrl(sessionService,$scope,$http){
         });
     }
 
+
+
     $scope.Limpiar();
 
 }

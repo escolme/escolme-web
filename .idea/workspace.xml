@@ -2,90 +2,61 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d50b9d5-e529-47ad-b729-dac2d71e8224" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery-ui-i18n.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-af.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-ar-DZ.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-ar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-az.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-bg.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-bs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-cs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-cy-GB.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-da.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-de.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-el.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-en-AU.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-en-GB.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-en-NZ.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-eo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-es.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-et.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-eu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-fa.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-fi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-fo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-fr-CH.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-fr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-gl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-he.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-hi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-hr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-hu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-hy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-id.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-is.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-it.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-ja.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-ka.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-kk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-km.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-ko.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-lb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-lt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-lv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-mk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-ml.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-ms.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-nl-BE.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-nl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-no.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-pl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-pt-BR.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-pt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-rm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-ro.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-ru.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-sk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-sl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-sq.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-sr-SR.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-sr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-sv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-ta.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-th.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-tj.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-tr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-uk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-vi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-zh-CN.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-zh-HK.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/i18n/jquery.ui.datepicker-zh-TW.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vistas/inventarios/inventarios.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vistas/inventarios/pedidos.html" />
-      <change type="DELETED" beforePath="C:\wamp\www\escolme\escolme-web\vistas\inventarios.html" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/about.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/blog_post.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/body_bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/chart1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/chart1_small.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/chart2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/chart2_small.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/contact_icons.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/content_bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/escolme-logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/escolme.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/escolme.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/feature1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/feature2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/feature3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/features_icons.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/footer_bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/fuentes/headerpgsica2 copy.ai" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/fuentes/headerpgsica2 copy.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/fuentes/headerpgsica2.ai" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/fuentes/headerpgsica2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/headerpgsica2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/headersica2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/i_face.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/icons.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/logotipoconeslogan.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/nav_bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/pic1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/pic_blog.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/slide1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/slide2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/slide3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/social_icons.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/thumb_gallery.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/thumb_more.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/animate.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/blog.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/external-pages.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/reset.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/signin.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/signup.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/theme.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/general.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/theme.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bootstrap-responsive.css" afterPath="$PROJECT_DIR$/css/bootstrap-responsive.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bootstrap.css" afterPath="$PROJECT_DIR$/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/estilo.css" afterPath="$PROJECT_DIR$/css/estilo.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/angular-ui-ieshiv.js" afterPath="$PROJECT_DIR$/js/angular-ui-ieshiv.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/angular-ui-ieshiv.min.js" afterPath="$PROJECT_DIR$/js/angular-ui-ieshiv.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/angular-ui.js" afterPath="$PROJECT_DIR$/js/angular-ui.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/angular-ui.min.js" afterPath="$PROJECT_DIR$/js/angular-ui.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllerInventarios.js" afterPath="$PROJECT_DIR$/js/controllerInventarios.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery-1.8.3.min.js" afterPath="$PROJECT_DIR$/js/jquery-1.8.3.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery-ui-1.9.2.custom.min.js" afterPath="$PROJECT_DIR$/js/jquery-ui-1.9.2.custom.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/bootstrap.js" afterPath="$PROJECT_DIR$/js/bootstrap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/js/bootstrap.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllerInscripciones.js" afterPath="$PROJECT_DIR$/js/controllerInscripciones.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vistas/inscripcion.html" afterPath="$PROJECT_DIR$/vistas/inscripcion.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vistas/inventarios/inventarios.html" afterPath="$PROJECT_DIR$/vistas/inventarios/inventarios.html" />
     </list>
     <ignored path="escolme-web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -105,66 +76,19 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="inscripcion.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/vistas/inscripcion.html">
+      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="250" column="169" selection-start="11225" selection-end="11231" vertical-scroll-proportion="6.7353406">
-              <folding>
-                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-              </folding>
+            <state line="12" column="53" selection-start="716" selection-end="716" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vistas/index.html">
+      <file leaf-file-name="general.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/general.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="horario.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/modelo/horario.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="25" selection-start="356" selection-end="356" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tipodocumento.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/modelo/tipodocumento.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="39" selection-start="1108" selection-end="1123" vertical-scroll-proportion="-17.576923">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="46" selection-start="683" selection-end="683" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="institucion.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/modelo/institucion.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="13" selection-start="1464" selection-end="1464" vertical-scroll-proportion="-5.9615383">
               <folding />
             </state>
           </provider>
@@ -173,16 +97,7 @@
       <file leaf-file-name="controllerInscripciones.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/controllerInscripciones.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="127" column="7" selection-start="4072" selection-end="4128" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="53" selection-start="716" selection-end="716" vertical-scroll-proportion="0.0">
+            <state line="139" column="4" selection-start="4369" selection-end="4369" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -193,6 +108,67 @@
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap.min.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/bootstrap.min.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="angular.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/angular.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1364048834279" expanded="true" signature="488648:488663" placeholder="{...}" />
+                <marker date="1364048834279" expanded="true" signature="488672:488688" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="39" column="39" selection-start="1108" selection-end="1123" vertical-scroll-proportion="-17.653847">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="46" selection-start="939" selection-end="939" vertical-scroll-proportion="11.692307">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vistas/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inscripcion.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vistas/inscripcion.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="29" selection-start="1223" selection-end="1223" vertical-scroll-proportion="0.3771791">
+              <folding>
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -278,6 +254,62 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="escolme-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="escolme-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="escolme-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vistas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="escolme-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="escolme-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="recursos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="escolme-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="escolme-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="escolme-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="escolme-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -386,14 +418,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="7" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36370158" sideWeight="0.6769231" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30774748" sideWeight="0.6769231" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855093" sideWeight="0.50071734" order="7" side_tool="true" content_ui="tabs" />
@@ -466,53 +498,42 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vistas/login.html">
+    <entry file="file://$PROJECT_DIR$/css/theme.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllerInventarios.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/modelo/programas.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="1461" selection-start="1641" selection-end="1654" vertical-scroll-proportion="-5.230769" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/modelo/departamento.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/servicios.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/modelo/horario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="25" selection-start="356" selection-end="356" vertical-scroll-proportion="0.0">
+        <state line="22" column="48" selection-start="586" selection-end="586" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/modelo/tipodocumento.php">
+    <entry file="file://$PROJECT_DIR$/css/signup.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vistas/index.html">
+    <entry file="file://$PROJECT_DIR$/vistas/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller.js">
+    <entry file="file://$PROJECT_DIR$/vistas/inventarios/inventarios.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vistas/inventarios/pedidos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/servicios.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
@@ -526,42 +547,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/jquery-1.8.3.min.js">
+    <entry file="file://$PROJECT_DIR$/js/general.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="46" selection-start="683" selection-end="683" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/modelo/institucion.php">
+    <entry file="file://$PROJECT_DIR$/js/bootstrap.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="13" selection-start="1464" selection-end="1464" vertical-scroll-proportion="-5.9615383">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/angular.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1364048834279" expanded="true" signature="488648:488663" placeholder="{...}" />
+            <marker date="1364048834279" expanded="true" signature="488672:488688" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="39" selection-start="1108" selection-end="1123" vertical-scroll-proportion="-17.576923">
+        <state line="39" column="39" selection-start="1108" selection-end="1123" vertical-scroll-proportion="-17.653847">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vistas/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="46" selection-start="939" selection-end="939" vertical-scroll-proportion="11.692307">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controllerInscripciones.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="7" selection-start="4072" selection-end="4128" vertical-scroll-proportion="0.0">
+        <state line="139" column="4" selection-start="4369" selection-end="4369" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vistas/inscripcion.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="250" column="169" selection-start="11225" selection-end="11231" vertical-scroll-proportion="6.7353406">
+        <state line="25" column="29" selection-start="1223" selection-end="1223" vertical-scroll-proportion="0.3771791">
           <folding>
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
           </folding>
