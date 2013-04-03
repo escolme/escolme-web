@@ -158,6 +158,7 @@ input[type="color"]:focus,
     opacity: 0.96;
 }
 .navbar-inner {
+	height: 80px !important;
 	border-bottom:none;
 	background: #DDDCE2 url(../img/content_bg.jpg) repeat left top;
     filter: none;

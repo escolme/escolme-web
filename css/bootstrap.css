@@ -3360,7 +3360,7 @@ input[type="submit"].btn.btn-mini {
   *z-index: 2;
 }
 .navbar-inner {
-  min-height: 182px;
+  height: 80px;
   padding-left: 20px;
   padding-right: 20px;
   background-color: #F5F6F7;
