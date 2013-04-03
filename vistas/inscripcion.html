@@ -36,12 +36,21 @@
                 </div>
             </div>
 
+            <div class="control-group">
+                <label  class="control-label" >Horario</label>
+                <div class="controls">
+                    <select  required="required" class="input-large" ng-model="inscripcion.JORN_ID" ng-options="c.JORN_ID as c.JORN_DESCRIPCION for c in horario" >
+                        <option value=""> -- Seleccione el Horario</option>
+                    </select>
+                </div>
+            </div>
+
             <legend>Datos Personales</legend>
 
             <div class="control-group">
                 <label  class="control-label" >Tipo de Documento</label>
                 <div class="controls">
-                    <select ng-model="inscripcion.TIDG_ID" ng-options="c.TIDG as c.TIDG_DESCRIPCION for c in tipodocumento"required="required" class="input-xlarge" >
+                    <select ng-model="inscripcion.TIDG_ID" ng-options="c.TIDG_ID as c.TIDG_DESCRIPCION for c in tipodocumento"required="required" class="input-xlarge" >
                         <option value="" > -- Seleccione el Tipo de Documento</option>
                     </select>
                 </div>
@@ -61,8 +70,10 @@
                     Sexo
                 </label>
                 <div class="controls">
-                    <select ng-model="ASPI_SEXO" required="required" class="input-small" >
-                        <option value="0" > -- Seleccione el sexo</option>
+                    <select ng-model="ASPI_SEXO" required="required" class="input-large" >
+                        <option value="" > -- Seleccione el sexo</option>
+                        <option value="1" >Masculino</option>
+                        <option value="2" >Femenino</option>
                     </select>
                 </div>
             </div>
@@ -108,7 +119,10 @@
                     Fecha de Nacimiento
                 </label>
                 <div class="controls">
-                    <input type="date" ng-model="ASPIRANTE.ASPI_FECHANACIMIENTO" class="input-medium" >
+                    <!-- <input type="date" ng-model="ASPIRANTE.ASPI_FECHANACIMIENTO" class="input-medium" > -->
+                    <input ng-model="ASPIRANTE.ASPI_FECHANACIMIENTO" ui-date type="text">
+
+
                 </div>
             </div>
 
@@ -117,24 +131,24 @@
                     Lugar de Nacimiento
                 </label>
                 <div class="controls">
-                <select ng-model="ASPITANTE.ASPI_PAISNACIMIENTO" required="required" class="input-xlarge" >
-                   <option value="0" > -- Seleccione el país</option>
+                <select ng-model="inscripcion.PAGE_ID" ng-change="ListarDepartamento()" ng-options="c.PAGE_ID as c.PAGE_NOMBRE for c in pais" required="required" class="input-xlarge" >
+                   <option value="" > -- Seleccione el país</option>
                 </select>
                 </div>
             </div>
 
             <div class="control-group">
                 <div class="controls">
-                    <select ng-model="ASPITANTE.ASPI_DPTONACIMIENTO" required="required" class="input-xlarge" >
-                       <option value="0" > -- Seleccione el dpto</option>
+                    <select ng-model="inscripcion.DEGE_ID" ng-change="ListarCiudad()"ng-options="c.DEGE_ID as c.DEGE_NOMBRE for c in departamento" required="required" class="input-xlarge" >
+                       <option value="" > -- Seleccione el dpto</option>
                     </select>
                 </div>
             </div>
 
             <div class="control-group">
                 <div class="controls">
-                    <select ng-model="ASPITANTE.ASPI_MPIONACIMIENTO" required="required" class="input-xlarge" >
-                        <option value="0" > -- Seleccione el mpio</option>
+                    <select ng-model="inscripcion.CIGE_ID" ng-options="c.CIGE_ID as c.CIGE_NOMBRE for c in ciudad" required="required" class="input-xlarge" >
+                        <option value="" > -- Seleccione el mpio</option>
                      </select>
                 </div>
             </div>
@@ -144,8 +158,8 @@
                     Estado Civil
                 </label>
                 <div class="controls">
-                    <select ng-model="ASPIRANTE.ESCG_ID" required="required" class="input-medium" >
-                        <option value="0" > -- Seleccione el estado civil</option>
+                    <select ng-model="inscripcion.ESCG_ID" ng-options="c.ESCG_ID as c.ESCG_DESCRIPCION for c in estadocivil" required="required" class="input-large" >
+                        <option value="" > -- Seleccione el estado civil</option>
                     </select>
                 </div>
             </div>
@@ -155,8 +169,8 @@
                     Estrato
                 </label>
                 <div class="controls">
-                    <select ng-model="INFORMACIONSOCIOECONOMICA.INSO_ESTRATO" required="required" class="input-small" >
-                        <option value="0" > -- Seleccione el estrato</option>
+                    <select ng-model="inscripcion.ESTR_ID" ng-options="c.ESTR_ID as c.ESTR_DESCRIPCION for c in estrato" required="required" class="input-large" >
+                        <option value="" > -- Seleccione el estrato</option>
                     </select>
                 </div>
             </div>
@@ -166,8 +180,8 @@
                     ¿Por cuál medio se entero de la institución?
                 </label>
                 <div class="controls">
-                    <select ng-model="ASPIRANTE.MEDI_IDCONOCEINSTITUCION" required="required" class="input-xlarge" >
-                        <option value="0" > -- Seleccione el medio</option>
+                    <select ng-model="inscripcion.OMED_ID" ng-options="c.OMED_ID as c.OMED_DESCRIPCION for c in medio"required="required" class="input-xlarge" >
+                        <option value="" > -- Seleccione el medio</option>
                     </select>
                 </div>
             </div>
@@ -177,8 +191,8 @@
             <div class="control-group">
                 <label class="control-label">Pais</label>
                 <div class="controls">
-                    <select ng-model="ASPIRANTE.ASPI_PAISRESIDENCIA" required="required" class="input-xlarge" >
-                        <option value="0" > -- Seleccione el país</option>
+                    <select ng-model="inscripcion.PAGE_ID2" ng-change="ListarDepartamento2()" ng-options="c.PAGE_ID as c.PAGE_NOMBRE for c in pais2" required="required" class="input-xlarge" >
+                        <option value="" > -- Seleccione el país</option>
                     </select>
                 </div>
             </div>
@@ -186,8 +200,8 @@
             <div class="control-group">
                 <label class="control-label">Departamento</label>
                 <div class="controls">
-                    <select ng-model="ASPIRANTE.ASPI_DPTORESIDENCIA" required="required" class="input-xlarge" >
-                        <option value="0" > -- Seleccione el dpto</option>
+                    <select ng-model="inscripcion.DEGE_ID2" ng-change="ListarCiudad2()"ng-options="c.DEGE_ID as c.DEGE_NOMBRE for c in departamento2"  required="required" class="input-xlarge" >
+                        <option value="" > -- Seleccione el dpto</option>
                     </select>
                 </div>
             </div>
@@ -195,8 +209,8 @@
             <div class="control-group">
                 <label class="control-label">Ciudad</label>
                 <div class="controls">
-                    <select ng-model="ASPIRANTE.ASPI_MPIORESIDENCIA" required="required" class="input-xlarge" >
-                        <option value="0" > -- Seleccione el mpio</option>
+                    <select ng-model="inscripcion.CIGE_ID2" ng-options="c.CIGE_ID as c.CIGE_NOMBRE for c in ciudad2" required="required" class="input-xlarge" >
+                        <option value="" > -- Seleccione el mpio</option>
                     </select>
                 </div>
             </div>
@@ -234,9 +248,12 @@
             <div class="control-group">
                 <label class="control-label">Nombre de la Institución de Graduación de Secundaria: </label>
                 <div class="controls">
-                    <select ng-model="ESTUDIOSSECUNDARIOS.INST_CODIGOSNP" required="required" class="input-xlarge">
-                        <option value="0">-- Seleccione la intitución</option>
-                    </select>
+                    <input type="text" maxlength="250" placeholder="Ingrese datos y presione Enter para buscar"  ui-keydown="{'enter alt-space':'ListarInstitucion($event)'}" ng-model='filtros.institucion' class="input-xlarge" required="required" >
+
+
+<!--                     <select ng-model="inscripcion.INST_CODIGOSNP" ng-options="c.INST_CODIGOSNP as c.INST_NOMBREINSTITUCION for c in institucion"required="required" class="input-xlarge">
+                        <option value="">-- Seleccione la intitución</option>
+                    </select> -->
                 </div>
             </div>
 
@@ -281,9 +298,30 @@
                     <button type="submit" class="btn btn-primary" >Aceptar</button>
                 </div>
             </div>
-
-
         </fieldset>
     </form>
 </div>
+
+</div>
+
+<div id="ventanaListarInstituciones" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:900px;margin:0 0 0 -400px;">
+    <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Instituciones Educativas</h3>
+    </div>
+    <div class="modal-body">
+        <table class="table table-striped" >
+            <tr>
+                <th>INSTITUCION</th>
+                <th>JORNADA</th>
+            </tr>
+            <tr ng-repeat="c in instituciones"> 
+                <td><a ng-click="RetornarInstitucion(c)" href="" >{{c.INST_NOMBREINSTITUCION}}</a></td>
+                <td><a href="#" >{{c.INST_JORNADA}}</a></td>
+            </tr>
+        </table>     
+    </div>
+    <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+    </div>
 </div>
