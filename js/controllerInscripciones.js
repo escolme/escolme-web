@@ -114,10 +114,10 @@ function InscripcionCtrl(sessionService,$scope,$http){
     }
 
     $scope.ListarInstitucion = function($event){
-        $http.get('api/institucion/listarporfiltro/' + $scope.filtros.institucion).then(function(response){
-            $scope.instituciones= response.data.datos;
-            $('#ventanaListarInstituciones').modal('show');
-        });
+            $http.get('api/institucion/listarporfiltro/' + $scope.filtros.institucion).then(function(response){
+                $scope.instituciones= response.data.datos;
+                $('#ventanaListarInstituciones').modal('show');
+            });
        
         $event.preventDefault();
 

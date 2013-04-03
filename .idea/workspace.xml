@@ -2,32 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d50b9d5-e529-47ad-b729-dac2d71e8224" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/images/ui-bg_flat_0_aaaaaa_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/images/ui-bg_glass_55_fbf9ee_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/images/ui-bg_glass_65_ffffff_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/images/ui-bg_glass_75_dadada_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/images/ui-bg_glass_75_e6e6e6_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/images/ui-bg_glass_75_ffffff_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/images/ui-bg_highlight-soft_75_cccccc_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/images/ui-bg_inset-soft_95_fef1ec_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/images/ui-icons_222222_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/images/ui-icons_2e83ff_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/images/ui-icons_454545_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/images/ui-icons_888888_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/images/ui-icons_cd0a0a_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/images/ui-icons_f6cf3b_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/modelo/horario.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/jquery-ui-1.10.0.custom.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/jquery-ui-1.9.2.custom.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/jquery.ui.1.10.0.ie.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/jquery.ui.1.9.2.ie.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/jquery-1.8.3.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/jquery-ui-1.9.2.custom.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/index.php" afterPath="$PROJECT_DIR$/api/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllerInscripciones.js" afterPath="$PROJECT_DIR$/js/controllerInscripciones.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vistas/inscripcion.html" afterPath="$PROJECT_DIR$/vistas/inscripcion.html" />
     </list>
     <ignored path="escolme-web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -97,16 +72,16 @@
       <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="34" selection-start="1213" selection-end="1213" vertical-scroll-proportion="-27.461538">
+            <state line="39" column="77" selection-start="1135" selection-end="1161" vertical-scroll-proportion="-17.576923">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="46" selection-start="556" selection-end="556" vertical-scroll-proportion="0.29037267">
+            <state line="11" column="46" selection-start="556" selection-end="556" vertical-scroll-proportion="14.461538">
               <folding />
             </state>
           </provider>
@@ -115,16 +90,16 @@
       <file leaf-file-name="institucion.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/modelo/institucion.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="67" selection-start="2436" selection-end="2436" vertical-scroll-proportion="-15.692307">
+            <state line="31" column="43" selection-start="1363" selection-end="1370" vertical-scroll-proportion="-5.3076925">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controllerInscripciones.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="controllerInscripciones.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controllerInscripciones.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="119" column="26" selection-start="3885" selection-end="3885" vertical-scroll-proportion="0.0">
+            <state line="6" column="40" selection-start="394" selection-end="394" vertical-scroll-proportion="0.15525115">
               <folding />
             </state>
           </provider>
@@ -165,10 +140,10 @@
         <option value="$PROJECT_DIR$/api/modelo/medio.php" />
         <option value="$PROJECT_DIR$/api/modelo/institucion.php" />
         <option value="$PROJECT_DIR$/api/modelo/horario.php" />
-        <option value="$PROJECT_DIR$/js/controllerInscripciones.js" />
         <option value="$PROJECT_DIR$/api/index.php" />
         <option value="$PROJECT_DIR$/vistas/inscripcion.html" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/controllerInscripciones.js" />
       </list>
     </option>
   </component>
@@ -293,7 +268,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Slim" />
+              <option name="myItemId" value="modelo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -402,7 +377,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -536,23 +511,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllerInscripciones.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="26" selection-start="3885" selection-end="3885" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="53" selection-start="198" selection-end="198" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/modelo/institucion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="67" selection-start="2436" selection-end="2436" vertical-scroll-proportion="-15.692307">
           <folding />
         </state>
       </provider>
@@ -573,16 +534,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/index.php">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="34" selection-start="1213" selection-end="1213" vertical-scroll-proportion="-27.461538">
+        <state line="11" column="46" selection-start="556" selection-end="556" vertical-scroll-proportion="14.461538">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/api/modelo/institucion.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="46" selection-start="556" selection-end="556" vertical-scroll-proportion="0.29037267">
+        <state line="31" column="43" selection-start="1363" selection-end="1370" vertical-scroll-proportion="-5.3076925">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="77" selection-start="1135" selection-end="1161" vertical-scroll-proportion="-17.576923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllerInscripciones.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="40" selection-start="394" selection-end="394" vertical-scroll-proportion="0.15525115">
           <folding />
         </state>
       </provider>
