@@ -6,3 +6,9 @@ var escolmeWeb = angular.module('escolmeWeb',['ui']).config(['$routeProvider', f
         when('/inscripcion', { templateUrl: 'vistas/inscripcion.html', controller: InscripcionCtrl }).
         otherwise({ redirectTo: '/' });
 }]);
+
+escolmeWeb.value('ui.config', {
+	date: {
+		changeMonth: true,changeYear: true
+	}
+});
