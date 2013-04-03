@@ -9,6 +9,6 @@ var escolmeWeb = angular.module('escolmeWeb',['ui']).config(['$routeProvider', f
 
 escolmeWeb.value('ui.config', {
 	date: {
-		changeMonth: true,changeYear: true
+		changeMonth: true,changeYear: true,regional:'es',dateFormat:'yy-mm-dd'
 	}
 });
