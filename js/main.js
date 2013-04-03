@@ -4,11 +4,13 @@ var escolmeWeb = angular.module('escolmeWeb',['ui']).config(['$routeProvider', f
     $routeProvider.
         when('/', { templateUrl: 'vistas/inscripcion.html', controller: InscripcionCtrl }).
         when('/inscripcion', { templateUrl: 'vistas/inscripcion.html', controller: InscripcionCtrl }).
+        when('/inventarios/admin', { templateUrl: 'vistas/inventarios/inventarios.html', controller: InventariosCtrl }).
+        when('/inventarios/pedidos', { templateUrl: 'vistas/inventarios/pedidos.html', controller: PedidosCtrl }).
         otherwise({ redirectTo: '/' });
 }]);
 
 escolmeWeb.value('ui.config', {
 	date: {
-		changeMonth: true,changeYear: true
+		changeMonth: true,changeYear: true,regional:'es',dateFormat:'yy-mm-dd'
 	}
 });
