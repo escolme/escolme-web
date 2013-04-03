@@ -36,6 +36,15 @@
                 </div>
             </div>
 
+            <div class="control-group">
+                <label  class="control-label" >Horario</label>
+                <div class="controls">
+                    <select  required="required" class="input-large" ng-model="inscripcion.JORN_ID" ng-options="c.JORN_ID as c.JORN_DESCRIPCION for c in horario" >
+                        <option value=""> -- Seleccione el Horario</option>
+                    </select>
+                </div>
+            </div>
+
             <legend>Datos Personales</legend>
 
             <div class="control-group">
@@ -110,7 +119,10 @@
                     Fecha de Nacimiento
                 </label>
                 <div class="controls">
-                    <input type="date" ng-model="ASPIRANTE.ASPI_FECHANACIMIENTO" class="input-medium" >
+                    <!-- <input type="date" ng-model="ASPIRANTE.ASPI_FECHANACIMIENTO" class="input-medium" > -->
+                    <input ng-model="ASPIRANTE.ASPI_FECHANACIMIENTO" ui-date type="text">
+
+
                 </div>
             </div>
 
@@ -291,10 +303,6 @@
 </div>
 
 </div>
-
-
-
-
 
 <div id="ventanaListarInstituciones" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:900px;margin:0 0 0 -400px;">
     <div class="modal-header">

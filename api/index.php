@@ -11,6 +11,7 @@ require 'modelo/estadocivil.php';
 require 'modelo/estrato.php';
 require 'modelo/medio.php';
 require 'modelo/institucion.php';
+require 'modelo/horario.php';
 
 
 $app = new Slim();
@@ -37,5 +38,7 @@ $app->get('/medio/listar', 'medioListar');
 $app->get('/institucion/listar', 'institucionListar');
 
 $app->get('/institucion/listarporfiltro/:filtro', 'institucionListarPorFiltro');
+
+$app->get('/horario/listar', 'horarioListar');
 
 $app->run();

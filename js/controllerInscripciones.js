@@ -2,7 +2,7 @@ function InscripcionCtrl(sessionService,$scope,$http){
 
     $scope.Limpiar = function(){
         $scope.inscripcion = {
-            METO_ID:null,PROG_ID:null,PROG_ID2:null,TIDG_ID:null,PAGE_ID:null, DEGE_ID:null, CIGE_ID:null,ESCG_ID:null,ESTR_ID:null,OMED_ID:null,PAGE_ID2:null, DEGE_ID2:null, CIGE_ID2:null, INST_CODIGOSNP:null
+            METO_ID:null,PROG_ID:null,PROG_ID2:null,TIDG_ID:null,PAGE_ID:null, DEGE_ID:null, CIGE_ID:null,ESCG_ID:null,ESTR_ID:null,OMED_ID:null,PAGE_ID2:null, DEGE_ID2:null, CIGE_ID2:null, INST_CODIGOSNP:null,JORN_ID:null
         };
         $scope.filtros = { institucion:''};
         $scope.ListarModalidades();
@@ -12,6 +12,7 @@ function InscripcionCtrl(sessionService,$scope,$http){
         $scope.ListarEstadoCivil();
         $scope.ListarEstrato();
         $scope.ListarMedio();
+        $scope.ListarHorario();
         
     }
 
@@ -127,6 +128,12 @@ function InscripcionCtrl(sessionService,$scope,$http){
          $scope.inscripcion.INST_CODIGOSNP=inst.INST_CODIGOSNP;
          $('#ventanaListarInstituciones').modal('toggle');
 
+    }
+
+    $scope.ListarHorario = function(){
+        $http.get('api/horario/listar').then(function(response){
+            $scope.horario= response.data.datos;
+        });
     }
 
     $scope.Limpiar();
