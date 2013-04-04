@@ -136,6 +136,12 @@ function InscripcionCtrl(sessionService,$scope,$http){
         });
     }
 
+    $scope.InformacionAdicional = function($event){
+    $scope.infoadional= response.data.datos;
+    $('#ventanaInformacionAdicional').modal('show');
+    $event.preventDefault();
+
+    }
 
 
     $scope.Limpiar();
