@@ -12,11 +12,13 @@ body{
     /* W3C Markup, IE10 Release Preview */
     background-image: radial-gradient(circle farthest-corner at center, #fefefe 0%, #eee 100%);
 
-    margin: 0;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    line-height: 20px;
+    -webkit-font-smoothing: antialiased;
+    font-size: 14px !important;
+    font-family: 'Lato', sans-serif !important;
     position: relative;
     padding-top: 40px;
+    margin: 0;
+    display: block;
 }
 
 #divVistas{

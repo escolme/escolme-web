@@ -23,7 +23,7 @@
       <file leaf-file-name="inscripcion.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vistas/inscripcion.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="268" column="39" selection-start="12045" selection-end="12045" vertical-scroll-proportion="-18.307692">
+            <state line="274" column="39" selection-start="12263" selection-end="12263" vertical-scroll-proportion="-18.307692">
               <folding />
             </state>
           </provider>
@@ -86,7 +86,7 @@
       <file leaf-file-name="conexionBD.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/api/modeloInventarios/conexionBD.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="45" selection-start="146" selection-end="146" vertical-scroll-proportion="0.19921875">
+            <state line="5" column="53" selection-start="68" selection-end="68" vertical-scroll-proportion="0.16601562">
               <folding />
             </state>
           </provider>
@@ -460,7 +460,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vistas/inscripcion.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="268" column="39" selection-start="12045" selection-end="12045" vertical-scroll-proportion="-18.307692">
+        <state line="274" column="39" selection-start="12263" selection-end="12263" vertical-scroll-proportion="-18.307692">
           <folding />
         </state>
       </provider>
@@ -523,7 +523,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/modeloInventarios/conexionBD.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="45" selection-start="146" selection-end="146" vertical-scroll-proportion="0.19921875">
+        <state line="5" column="53" selection-start="68" selection-end="68" vertical-scroll-proportion="0.16601562">
           <folding />
         </state>
       </provider>
