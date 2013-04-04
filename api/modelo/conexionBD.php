@@ -19,4 +19,8 @@ class conexionBD {
             return null;
         }
     }
+
+    function conectarInventarios(){
+        return null;
+    }
 }

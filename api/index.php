@@ -13,8 +13,10 @@ require 'modelo/medio.php';
 require 'modelo/institucion.php';
 require 'modelo/horario.php';
 
+require 'modeloInventarios/productos.php';
 
 $app = new Slim();
+
 $app->contentType('application/json;charset=utf-8');
 
 $app->get('/metodologias/listar', 'metodologiaListar');
