@@ -3,7 +3,7 @@ html {
 }
 body {
 	position: relative;
-	padding-top: 182px;
+	padding-top: 45px;
 	
 	-webkit-font-smoothing: antialiased;
 	font-size: 14px;
@@ -144,9 +144,9 @@ input[type="color"]:focus,
 -------------------------------------------------- */
 #contenedor-navbar{
 
-	background: #F5F6F7 url(../img/headerpgsica2.png) no-repeat center top;
+	background: #F5F6F7 url(../img/headersica1.png) no-repeat center top;
 	background-size:100% 100%;
-	min-height: 182px;
+	min-height: 45px;
 	-webkit-box-shadow: 5px 0 3px 0 rgba(0, 0, 0, 0.065) , -55px 0 3px  0 rgba(0, 0, 0, 0.065);
 	-moz-box-shadow: 5px 0 3px 0 rgba(0, 0, 0, 0.065) , -5px 0 3px  0 rgba(0, 0, 0, 0.065);
 	box-shadow: 5px 0 3px 0 rgba(0, 0, 0, 0.065) , -5px 0 3px  0 rgba(0, 0, 0, 0.065);
@@ -158,7 +158,7 @@ input[type="color"]:focus,
     opacity: 0.96;
 }
 .navbar-inner {
-	height: 80px !important;
+	height: 45px !important;
 	border-bottom:none;
 	background: #DDDCE2 url(../img/content_bg.jpg) repeat left top;
     filter: none;
@@ -170,7 +170,7 @@ input[type="color"]:focus,
 	text-shadow: none;
 }
 .navbar .nav.pull-right {
-	top: 10px;
+	top: 4px;
 	/*margin-right: 40px;*/
 }
 .navbar .nav > li > a {
