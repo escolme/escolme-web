@@ -26,7 +26,7 @@
             <div class="control-group">
                 <label class="control-label" >Programa - Opción 1</label>
                 <div class="controls">
-                    <select  required="required" class="input-xlarge" ng-model="inscripcion.PROG_ID" ng-options="c.PROG_ID as c.PROG_NOMBRE for c in programas" >
+                    <select  required="required" class="input-xlarge" ng-model="inscripcion.PROG_ID" ng-options="c.PROG_ID as c.PROG_NOMBRE for c in programas">
                         <option value=""> -- Seleccione el Programa</option>
                     </select>
                 </div>
@@ -267,7 +267,8 @@
                     Fecha de graduación
                 </label>
                 <div class="controls">
-                    <input type="date" ng-model="ESTUDIOSSECUNDARIOS.ESSE_FECHATERMINACION" class="input-medium" >
+                    <!--<input type="date" ng-model="ESTUDIOSSECUNDARIOS.ESSE_FECHATERMINACION" class="input-medium" >-->
+                    <input ng-model="ESTUDIOSSECUNDARIOS.ESSE_FECHATERMINACION" ui-date type="text">
                 </div>
             </div>
 
@@ -285,7 +286,8 @@
                     Fecha presentación icfes
                 </label>
                 <div class="controls">
-                    <input type="date"  ng-model="ESTUDIOSSECUNDARIOS.ESSE_FECHAPRESENTOPRUEBAS" class="input-medium" >
+                    <!--<input type="date"  ng-model="ESTUDIOSSECUNDARIOS.ESSE_FECHAPRESENTOPRUEBAS" class="input-medium" > -->
+                    <input ng-model="ESTUDIOSSECUNDARIOS.ESSE_FECHAPRESENTOPRUEBAS" ui-date type="text">
                 </div>
             </div>
 
@@ -308,11 +310,11 @@
 </div>
 
 </div>
-
+ <!-- ventana de instituciones-->
 <div id="ventanaListarInstituciones" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:900px;margin:0 0 0 -400px;">
     <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Instituciones Educativas</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Instituciones Educativas</h3>
     </div>
     <div class="modal-body">
         <table class="table table-striped" >
@@ -320,13 +322,14 @@
                 <th>INSTITUCION</th>
                 <th>JORNADA</th>
             </tr>
-            <tr ng-repeat="c in instituciones"> 
+            <tr ng-repeat="c in instituciones">
                 <td><a ng-click="RetornarInstitucion(c)" href="" >{{c.INST_NOMBREINSTITUCION}}</a></td>
                 <td><a href="#" >{{c.INST_JORNADA}}</a></td>
             </tr>
-        </table>     
+        </table>
     </div>
     <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
     </div>
 </div>
+
