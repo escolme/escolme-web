@@ -17,30 +17,27 @@ require 'modeloInventarios/productos.php';
 
 $app = new Slim();
 
+/*
+RUTAS DE ACADEMUSOT
+*/
 $app->contentType('application/json;charset=utf-8');
-
 $app->get('/metodologias/listar', 'metodologiaListar');
-
 $app->get('/programas/listar/:METO_ID', 'programasListar');
-
 $app->get('/tipodocumento/listar', 'tipodocumentoListar');
-
 $app->get('/pais/listar', 'paisListar');
-
 $app->get('/departamento/listar/:PAGE_ID', 'departamentoListar');
-
 $app->get('/ciudad/listar/:DEGE_ID', 'ciudadListar');
-
 $app->get('/estadocivil/listar', 'estadocivilListar');
-
 $app->get('/estrato/listar', 'estratoListar');
-
 $app->get('/medio/listar', 'medioListar');
-
 $app->get('/institucion/listar', 'institucionListar');
-
 $app->get('/institucion/listarporfiltro/:filtro', 'institucionListarPorFiltro');
-
 $app->get('/horario/listar', 'horarioListar');
+
+
+/*
+RUTAS DE INVENTARIOS
+*/
+$app->get('/inventarios/productos/listar', 'productosListar');
 
 $app->run();

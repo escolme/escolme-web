@@ -22,13 +22,13 @@ class conexionBD {
 
     function conectarInventarios(){
         try{
-            $enlace =  mysql_connect('10.10.1.47', 'root', 'Esc$2009');
-            mysql_select_db('inventarios', $enlace) or die('Could not select database.');
-            if (!$enlace) {
-                echo 'No pudo conectarse: ' . mysql_error();
+            $conexion = mysqli_connect("10.10.1.47","root","Esc$2009","inventario");
+            if (mysqli_connect_errno())
+            {
+                echo "Conexion es invalida: " . mysqli_connect_error();
                 die();
             }
-            return $enlace;
+            return $conexion;
         }
         catch(Exception $e){
             return null;
