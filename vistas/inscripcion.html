@@ -26,20 +26,20 @@
             <div class="control-group">
                 <label class="control-label" >Programa - Opción 1</label>
                 <div class="controls">
-                    <select  required="required" class="input-xlarge" ng-model="inscripcion.PROG_ID" ng-options="c.PROG_ID as c.PROG_NOMBRE for c in programas">
+                    <select  required="required" ng-change="VerPensum(); ValidarPrograma()" class="input-xlarge" ng-model="inscripcion.PROG_ID" ng-options="c.PROG_ID as c.PROG_NOMBRE for c in programas">
                         <option value=""> -- Seleccione el Programa</option>
                     </select>
-                    <a href="">Info Adicional</a>
+                    <a href="" ng-click="InformacionAdicional()">Info Adicional</a>
                 </div>
             </div>
 
             <div class="control-group">
                 <label  class="control-label" >Programa - Opción 2</label>
                 <div class="controls">
-                    <select  required="required" class="input-xlarge" ng-model="inscripcion.PROG_ID2" ng-options="c.PROG_ID as c.PROG_NOMBRE for c in programas" >
+                    <select  required="required" ng-change="VerPensum2(); ValidarPrograma()" class="input-xlarge" ng-model="inscripcion.PROG_ID2" ng-options="c.PROG_ID as c.PROG_NOMBRE for c in programas" >
                         <option value=""> -- Seleccione el Programa</option>
                     </select>
-                    <a href="">Info Adicional</a>
+                    <a href="" ng-click="InformacionAdicional()">Info Adicional</a>
                 </div>
             </div>
 
@@ -341,12 +341,10 @@
         <h3 id="myModalLabel">Información Adicional</h3>
     </div>
     <div class="modal-body">
-        <table class="table table-striped" >
-
-        </table>
+    <iframe name="iFrame1" id="frmPensum"  width="900" height="1156" src="" scrolling="no" frameborder="0"></iframe>
     </div>
-    <div class="modal-footer">
-        <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-    </div>
-</div>
+     <div class="modal-footer">
+         <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+     </div>
+ </div>
 
