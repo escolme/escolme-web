@@ -21,6 +21,17 @@ class conexionBD {
     }
 
     function conectarInventarios(){
-        return null;
+        try{
+            $enlace =  mysql_connect('10.10.1.47', 'root', 'Esc$2009');
+            mysql_select_db('inventarios', $enlace) or die('Could not select database.');
+            if (!$enlace) {
+                echo 'No pudo conectarse: ' . mysql_error();
+                die();
+            }
+            return $enlace;
+        }
+        catch(Exception $e){
+            return null;
+        }
     }
 }
