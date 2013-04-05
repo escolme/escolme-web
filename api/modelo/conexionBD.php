@@ -25,7 +25,7 @@ class conexionBD {
             $conexion = mysqli_connect("10.10.1.47","root","Esc$2009","inventario");
             if (mysqli_connect_errno())
             {
-                echo "Conexion es invalida: " . mysqli_connect_error();
+                echo "Conexión es invalida: " . mysqli_connect_error();
                 die();
             }
             return $conexion;
