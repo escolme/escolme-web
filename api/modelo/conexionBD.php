@@ -19,4 +19,19 @@ class conexionBD {
             return null;
         }
     }
+
+    function conectarInventarios(){
+        try{
+            $conexion = mysqli_connect("10.10.1.47","root","Esc$2009","inventario");
+            if (mysqli_connect_errno())
+            {
+                echo "Conexion es invalida: " . mysqli_connect_error();
+                die();
+            }
+            return $conexion;
+        }
+        catch(Exception $e){
+            return null;
+        }
+    }
 }

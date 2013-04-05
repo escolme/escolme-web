@@ -140,24 +140,24 @@ function InscripcionCtrl(sessionService,$scope,$http){
         $('#ventanaInformacionAdicional').modal('show');
     }
 
+    $scope.InformacionAdicional2 = function(){
+        $('#ventanaInformacionAdicional2').modal('show');
+    }
+
     $scope.VerPensum =function(){
-        $('#frmPensum').attr('src','recursos/pensum/' + $scope.inscripcion.PROG_ID + '.pdf');
+         $('#frmPensum').attr('src','recursos/pensum/' + $scope.inscripcion.PROG_ID + '.pdf');
     }
 
     $scope.VerPensum2 =function(){
-        $('#frmPensum').attr('src','recursos/pensum/' + $scope.inscripcion.PROG_ID2 + '.pdf');
+        $('#frmPensum2').attr('src','recursos/pensum/' + $scope.inscripcion.PROG_ID2 + '.pdf');
     }
 
     $scope.ValidarPrograma =function(){
-        if ($scope.inscripcion.PROG_ID == $scope.inscripcion.PROG_ID2){
+        if (($scope.inscripcion.PROG_ID) ==($scope.inscripcion.PROG_ID2)){
             alert('[ERROR] No puede elegir el mismo programa');
             $scope.inscripcion.PROG_ID2=null ;
         }
-
-
     }
-
-
     $scope.Limpiar();
 
 }

@@ -39,7 +39,7 @@
                     <select  required="required" ng-change="VerPensum2(); ValidarPrograma()" class="input-xlarge" ng-model="inscripcion.PROG_ID2" ng-options="c.PROG_ID as c.PROG_NOMBRE for c in programas" >
                         <option value=""> -- Seleccione el Programa</option>
                     </select>
-                    <a href="" ng-click="InformacionAdicional()">Info Adicional</a>
+                    <a href="" ng-click="InformacionAdicional2()">Info Adicional</a>
                 </div>
             </div>
 
@@ -334,7 +334,7 @@
         <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
     </div>
 </div>
-<!-- ventana de Información Adicional-->
+<!-- ventana de Información Adicional 1-->
 <div id="ventanaInformacionAdicional" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:900px;margin:0 0 0 -400px;">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -347,4 +347,17 @@
          <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
      </div>
  </div>
+<!-- ventana de Información Adicional 2-->
+<div id="ventanaInformacionAdicional2" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:900px;margin:0 0 0 -400px;">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Información Adicional</h3>
+    </div>
+    <div class="modal-body">
+        <iframe name="iFrame1" id="frmPensum2"  width="900" height="1156" src="" scrolling="no" frameborder="0"></iframe>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+    </div>
+</div>
 
