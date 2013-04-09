@@ -10,6 +10,15 @@ function InventariosCtrl($scope,$http){
         });
 	}
 
+
 	$scope.Listar();
+
+
+
+
+
+}
+
+function RegistroCtrl($scope,$http){
 
 }

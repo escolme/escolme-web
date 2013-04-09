@@ -20,6 +20,19 @@ body {
 	/*background: #F5F6F7;*/
 }
 
+.breadcrumb{
+    margin: 15px;
+    color: #333 !important;
+    background-color: rgb(255, 219, 70);
+    border-color: rgb(255, 219, 70);
+}
+
+.breadcrumb > li > a{
+
+    color: #333 !important;
+
+}
+
 .logo-escolme{
     width: 20px;
     height: 20px;
