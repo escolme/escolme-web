@@ -34,6 +34,15 @@
             </div>
 
             <div class="control-group">
+                <label  class="control-label" >Horario Opcion 1</label>
+                <div class="controls">
+                    <select  required="required" class="input-large" ng-model="inscripcion.JORN_ID" ng-options="c.JORN_ID as c.JORN_DESCRIPCION for c in horario" >
+                        <option value=""> -- Seleccione el Horario</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="control-group">
                 <label  class="control-label" >Programa - Opción 2</label>
                 <div class="controls">
                     <select  required="required" ng-change="VerPensum2(); ValidarPrograma()" class="input-xlarge" ng-model="inscripcion.PROG_ID2" ng-options="c.PROG_ID as c.PROG_NOMBRE for c in programas" >
@@ -44,9 +53,9 @@
             </div>
 
             <div class="control-group">
-                <label  class="control-label" >Horario</label>
+                <label  class="control-label" >Horario Opcion 2</label>
                 <div class="controls">
-                    <select  required="required" class="input-large" ng-model="inscripcion.JORN_ID" ng-options="c.JORN_ID as c.JORN_DESCRIPCION for c in horario" >
+                    <select  required="required" class="input-large" ng-model="inscripcion.JORN_ID2" ng-options="c.JORN_ID as c.JORN_DESCRIPCION for c in horario2" >
                         <option value=""> -- Seleccione el Horario</option>
                     </select>
                 </div>
@@ -304,7 +313,7 @@
 
             <div class="control-group">
                 <div class="controls">
-                    <button type="submit" class="btn btn-primary" >Aceptar</button>
+                    <button type="submit" class="btn btn-primary">Aceptar</button>
                 </div>
             </div>
         </fieldset>
@@ -334,6 +343,7 @@
         <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
     </div>
 </div>
+
 <!-- ventana de Información Adicional 1-->
 <div id="ventanaInformacionAdicional" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:900px;margin:0 0 0 -400px;">
     <div class="modal-header">
@@ -347,6 +357,7 @@
          <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
      </div>
  </div>
+
 <!-- ventana de Información Adicional 2-->
 <div id="ventanaInformacionAdicional2" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:900px;margin:0 0 0 -400px;">
     <div class="modal-header">
@@ -357,7 +368,7 @@
         <iframe name="iFrame1" id="frmPensum2"  width="900" height="1156" src="" scrolling="no" frameborder="0"></iframe>
     </div>
     <div class="modal-footer">
-        <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+        <button class="btn" data-dismiss="modal" aria-hidden="true" >Cerrar</button>
     </div>
 </div>
 

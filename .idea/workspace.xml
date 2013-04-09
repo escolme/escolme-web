@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d50b9d5-e529-47ad-b729-dac2d71e8224" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/modeloInventarios/productos.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/modelo/aspirantenew.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/index.php" afterPath="$PROJECT_DIR$/api/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/modelo/conexionBD.php" afterPath="$PROJECT_DIR$/api/modelo/conexionBD.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/modelo/programas.php" afterPath="$PROJECT_DIR$/api/modelo/programas.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllerInscripciones.js" afterPath="$PROJECT_DIR$/js/controllerInscripciones.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllerInventarios.js" afterPath="$PROJECT_DIR$/js/controllerInventarios.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vistas/inscripcion.html" afterPath="$PROJECT_DIR$/vistas/inscripcion.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vistas/inventarios/inventarios.html" afterPath="$PROJECT_DIR$/vistas/inventarios/inventarios.html" />
     </list>
     <ignored path="escolme-web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,156 +29,63 @@
       <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/index.php">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state line="38" column="39" selection-start="1296" selection-end="1296" vertical-scroll-proportion="0.0">
-=======
-            <state line="9" column="47" selection-start="340" selection-end="340" vertical-scroll-proportion="0.0">
->>>>>>> e439c8a38884b898d56cbb6bb133bfc8712e4d49
+            <state line="4" column="0" selection-start="148" selection-end="179" vertical-scroll-proportion="-2.6153846">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< HEAD
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
+      <file leaf-file-name="aspirantenew.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/modelo/aspirantenew.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="46" selection-start="940" selection-end="940" vertical-scroll-proportion="0.0">
-=======
-      <file leaf-file-name="departamento.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/modelo/departamento.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="34" selection-start="124" selection-end="134" vertical-scroll-proportion="0.0">
->>>>>>> e439c8a38884b898d56cbb6bb133bfc8712e4d49
+            <state line="82" column="61" selection-start="4071" selection-end="4071" vertical-scroll-proportion="-20.26923">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< HEAD
-      <file leaf-file-name="general.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/general.js">
+      <file leaf-file-name="programas.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/modelo/programas.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-=======
-      <file leaf-file-name="conexionBD.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/modelo/conexionBD.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="36" selection-start="877" selection-end="877" vertical-scroll-proportion="-12.0">
->>>>>>> e439c8a38884b898d56cbb6bb133bfc8712e4d49
+            <state line="3" column="25" selection-start="65" selection-end="73" vertical-scroll-proportion="-1.9615384">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< HEAD
-      <file leaf-file-name="theme.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/theme.js">
-=======
-      <file leaf-file-name="estrato.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/modelo/estrato.php">
->>>>>>> e439c8a38884b898d56cbb6bb133bfc8712e4d49
+      <file leaf-file-name="tipodocumento.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/modelo/tipodocumento.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="3" column="0" selection-start="31" selection-end="984" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< HEAD
-      <file leaf-file-name="angular-ui.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/angular-ui.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-=======
-      <file leaf-file-name="productos.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/api/modeloInventarios/productos.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="39" selection-start="864" selection-end="864" vertical-scroll-proportion="0.8300781">
->>>>>>> e439c8a38884b898d56cbb6bb133bfc8712e4d49
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-      <file leaf-file-name="login.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vistas/login.html">
-=======
-      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/main.js">
->>>>>>> e439c8a38884b898d56cbb6bb133bfc8712e4d49
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-      <file leaf-file-name="inscripcion.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="inscripcion.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vistas/inscripcion.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="23" selection-start="1401" selection-end="1401" vertical-scroll-proportion="0.4310618">
+            <state line="57" column="162" selection-start="2878" selection-end="2878" vertical-scroll-proportion="-21.576923">
               <folding>
                 <element signature="n#style#0;n#legend#0;n#fieldset#0;n#form#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#4;n#!!top" expanded="true" />
               </folding>
-=======
-      <file leaf-file-name="inventarios.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vistas/inventarios/inventarios.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="0" selection-start="742" selection-end="742" vertical-scroll-proportion="-14.384615">
-              <folding />
->>>>>>> e439c8a38884b898d56cbb6bb133bfc8712e4d49
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< HEAD
-      <file leaf-file-name="institucion.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/modelo/institucion.php">
+      <file leaf-file-name="horario.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/modelo/horario.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-=======
-      <file leaf-file-name="servicios.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/servicios.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="91" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0">
->>>>>>> e439c8a38884b898d56cbb6bb133bfc8712e4d49
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< HEAD
-      <file leaf-file-name="productos.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/modeloInventarios/productos.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="864" vertical-scroll-proportion="-0.0">
-=======
-      <file leaf-file-name="pedidos.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vistas/inventarios/pedidos.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
->>>>>>> e439c8a38884b898d56cbb6bb133bfc8712e4d49
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-      <file leaf-file-name="controllerInscripciones.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="controllerInscripciones.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controllerInscripciones.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="138" column="31" selection-start="4379" selection-end="4399" vertical-scroll-proportion="0.0">
-=======
-      <file leaf-file-name="institucion.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/modelo/institucion.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="44" selection-start="807" selection-end="807" vertical-scroll-proportion="0.0">
->>>>>>> e439c8a38884b898d56cbb6bb133bfc8712e4d49
+            <state line="15" column="29" selection-start="705" selection-end="705" vertical-scroll-proportion="0.37666175">
               <folding />
             </state>
           </provider>
@@ -201,9 +105,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-<<<<<<< HEAD
-        <option value="$PROJECT_DIR$/api/modelo/tipodocumento.php" />
-        <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/api/modelo/pais.php" />
         <option value="$PROJECT_DIR$/api/modelo/departamentophp" />
         <option value="$PROJECT_DIR$/api/modelo/departamento.php" />
@@ -216,16 +117,10 @@
         <option value="$PROJECT_DIR$/api/modelo/horario.php" />
         <option value="$PROJECT_DIR$/api/index.php" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/js/controllerInscripciones.js" />
+        <option value="$PROJECT_DIR$/api/modelo/programas.php" />
         <option value="$PROJECT_DIR$/vistas/inscripcion.html" />
-=======
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/api/index.php" />
-        <option value="$PROJECT_DIR$/api/modeloInventarios/conexionBD.php" />
-        <option value="$PROJECT_DIR$/api/modeloInventarios/productos.php" />
-        <option value="$PROJECT_DIR$/api/modelo/conexionBD.php" />
-        <option value="$PROJECT_DIR$/vistas/inventarios/inventarios.html" />
->>>>>>> e439c8a38884b898d56cbb6bb133bfc8712e4d49
+        <option value="$PROJECT_DIR$/js/controllerInscripciones.js" />
+        <option value="$PROJECT_DIR$/api/modelo/aspirantenew.php" />
       </list>
     </option>
   </component>
@@ -262,7 +157,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -305,20 +199,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="recursos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="escolme-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="escolme-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -333,39 +213,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="escolme-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="escolme-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="escolme-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="escolme-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modeloInventarios" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -389,6 +237,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -397,15 +246,15 @@
     <property name="options.lastSelected" value="project.propVCSSupport.VCSs.Git" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../GitHub.app/Contents/Resources/git/bin/git" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\escolme\escolme-web\api\modelo" />
       <recent name="C:\wamp\www\escolme\escolme-web\recursos\pensum" />
       <recent name="C:\wamp\www\escolme\escolme-web\js" />
       <recent name="C:\wamp\www\escolme\escolme-web\css" />
-      <recent name="C:\wamp\www\escolme\escolme-web\api\modelo" />
       <recent name="$PROJECT_DIR$/img" />
     </key>
   </component>
@@ -492,20 +341,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-<<<<<<< HEAD
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32783356" sideWeight="0.6769231" order="0" side_tool="false" content_ui="combo" />
-=======
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25757575" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
->>>>>>> e439c8a38884b898d56cbb6bb133bfc8712e4d49
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3328551" sideWeight="0.6727273" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855093" sideWeight="0.50071734" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272727" sideWeight="0.50071734" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32307693" sideWeight="0.4913917" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -575,76 +420,11 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/js/angular.js">
-=======
-    <entry file="file://$PROJECT_DIR$/vistas/index.html">
->>>>>>> e439c8a38884b898d56cbb6bb133bfc8712e4d49
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/js/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-=======
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="25" selection-start="1882" selection-end="1882" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
->>>>>>> e439c8a38884b898d56cbb6bb133bfc8712e4d49
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllerInscripciones.js">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="53" selection-start="716" selection-end="716" vertical-scroll-proportion="0.0">
-=======
-        <state line="6" column="38" selection-start="381" selection-end="392" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vistas/inscripcion.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="274" column="39" selection-start="12263" selection-end="12263" vertical-scroll-proportion="0.0">
->>>>>>> e439c8a38884b898d56cbb6bb133bfc8712e4d49
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/js/servicios.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-=======
-    <entry file="file://$PROJECT_DIR$/api/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="9" selection-start="17" selection-end="17" vertical-scroll-proportion="0.0">
->>>>>>> e439c8a38884b898d56cbb6bb133bfc8712e4d49
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/vistas/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-=======
-    <entry file="file://$PROJECT_DIR$/api/modelo/metodologia.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="54" selection-start="1552" selection-end="1552" vertical-scroll-proportion="0.0">
->>>>>>> e439c8a38884b898d56cbb6bb133bfc8712e4d49
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/api/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -652,125 +432,87 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="46" selection-start="940" selection-end="940" vertical-scroll-proportion="0.0">
-=======
-    <entry file="file://$PROJECT_DIR$/api/modelo/departamento.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="34" selection-start="124" selection-end="134" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="23" column="46" selection-start="940" selection-end="940" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="47" selection-start="340" selection-end="340" vertical-scroll-proportion="0.0">
->>>>>>> e439c8a38884b898d56cbb6bb133bfc8712e4d49
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/js/general.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-=======
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/api/modelo/institucion.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="44" selection-start="807" selection-end="807" vertical-scroll-proportion="0.0">
->>>>>>> e439c8a38884b898d56cbb6bb133bfc8712e4d49
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/js/theme.js">
-=======
-    <entry file="file://$PROJECT_DIR$/api/modelo/estrato.php">
->>>>>>> e439c8a38884b898d56cbb6bb133bfc8712e4d49
+    <entry file="file://$PROJECT_DIR$/api/modeloInventarios/productos.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="864" vertical-scroll-proportion="-0.0" />
       </provider>
     </entry>
-<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/api/modelo/ciudad.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="14" selection-start="71" selection-end="77" vertical-scroll-proportion="-3.2692308" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/angular-ui.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-=======
-    <entry file="file://$PROJECT_DIR$/api/modelo/conexionBD.php">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/theme.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="36" selection-start="877" selection-end="877" vertical-scroll-proportion="-12.0">
->>>>>>> e439c8a38884b898d56cbb6bb133bfc8712e4d49
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/modelo/tipodocumento.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="31" selection-end="984" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/api/modelo/programas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="25" selection-start="65" selection-end="73" vertical-scroll-proportion="-1.9615384">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/modelo/horario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/api/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="39" selection-start="1296" selection-end="1296" vertical-scroll-proportion="0.0">
-=======
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
->>>>>>> e439c8a38884b898d56cbb6bb133bfc8712e4d49
+        <state line="4" column="0" selection-start="148" selection-end="179" vertical-scroll-proportion="-2.6153846">
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/js/controllerInscripciones.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="31" selection-start="4379" selection-end="4399" vertical-scroll-proportion="0.0">
-=======
-    <entry file="file://$PROJECT_DIR$/js/servicios.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="91" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0">
->>>>>>> e439c8a38884b898d56cbb6bb133bfc8712e4d49
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/api/modelo/institucion.php">
-=======
-    <entry file="file://$PROJECT_DIR$/vistas/inventarios/pedidos.html">
->>>>>>> e439c8a38884b898d56cbb6bb133bfc8712e4d49
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/api/modeloInventarios/productos.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="864" vertical-scroll-proportion="-0.0">
-=======
-    <entry file="file://$PROJECT_DIR$/vistas/inventarios/inventarios.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="742" selection-end="742" vertical-scroll-proportion="-14.384615">
->>>>>>> e439c8a38884b898d56cbb6bb133bfc8712e4d49
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/vistas/inscripcion.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="23" selection-start="1401" selection-end="1401" vertical-scroll-proportion="0.4310618">
+        <state line="57" column="162" selection-start="2878" selection-end="2878" vertical-scroll-proportion="-21.576923">
           <folding>
             <element signature="n#style#0;n#legend#0;n#fieldset#0;n#form#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#4;n#!!top" expanded="true" />
           </folding>
-=======
-    <entry file="file://$PROJECT_DIR$/api/modeloInventarios/productos.php">
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/modelo/aspirantenew.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="39" selection-start="864" selection-end="864" vertical-scroll-proportion="0.8300781">
+        <state line="82" column="61" selection-start="4071" selection-end="4071" vertical-scroll-proportion="-20.26923">
           <folding />
->>>>>>> e439c8a38884b898d56cbb6bb133bfc8712e4d49
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllerInscripciones.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="29" selection-start="705" selection-end="705" vertical-scroll-proportion="0.37666175">
+          <folding />
         </state>
       </provider>
     </entry>
