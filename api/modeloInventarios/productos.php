@@ -8,6 +8,7 @@
  */
 
 function productosListar(){
+
 	$resultados = array();
 	try{
 		$conexion = new conexionBD();
@@ -33,7 +34,7 @@ function productosListar(){
         echo utf8_encode('{"error: ":' . $e->getMessage() . '}');
     }
 }
-
+/*
 function insertarproductos()
 {
     try {
@@ -55,9 +56,9 @@ function insertarproductos()
          $conexion = new conexionBD();
          $conectar = $conexion->conectarInventarios();
          $result = mysqli_query($conectar "UPDATE tabla SET columna= valor
-WHERE columna='valor' AND columna='valor'");
+                    WHERE columna='valor' AND columna='valor'");
 
-
+     }
             catch(Exception $e){
              mysqli_close($conectar);
              echo utf8_encode('{"error: ":' . $e->getMessage() . '}');
@@ -70,11 +71,11 @@ WHERE columna='valor' AND columna='valor'");
       try {
           $conexion = new conexionBD();
           $conectar = $conexion->conectarInventarios();
-          $result= mysqli_query($con,"DELETE FROM tabla WHERE columna='valor'");
-
+          $result= mysqli_query($conectar,"DELETE FROM tabla WHERE columna='valor'");
+      }
           catch(Exception $e){
           mysqli_close($conectar);
           echo utf8_encode('{"error: ":' . $e->getMessage() . '}');
   }
-}
+}*/
 
