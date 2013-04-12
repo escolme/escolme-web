@@ -34,6 +34,7 @@ function productosListar(){
         echo utf8_encode('{"error: ":' . $e->getMessage() . '}');
     }
 }
+
   /*
 function insertarproductos()
 {
@@ -50,7 +51,7 @@ function insertarproductos()
 
 }
 
-/*
+
 function modificarproductos()
 {
   try {
