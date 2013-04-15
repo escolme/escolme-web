@@ -145,19 +145,35 @@ function InscripcionCtrl(sessionService,$scope,$http){
     }
 
     $scope.VerPensum =function(){
+        if(angular.equals($scope.inscripcion.PROG_ID,undefined))
+            $('#aInfoAdicional1').hide('blind');
+        else
+            $('#aInfoAdicional1').show();    
          $('#frmPensum').attr('src','recursos/pensum/' + $scope.inscripcion.PROG_ID + '.pdf');
     }
 
     $scope.VerPensum2 =function(){
+        if(angular.equals($scope.inscripcion.PROG_ID2,undefined))
+            $('#aInfoAdicional2').hide('blind');
+        else
+            $('#aInfoAdicional2').show();    
         $('#frmPensum2').attr('src','recursos/pensum/' + $scope.inscripcion.PROG_ID2 + '.pdf');
     }
 
     $scope.ValidarPrograma =function(){
-        if (($scope.inscripcion.PROG_ID) ==($scope.inscripcion.PROG_ID2)){
+        if ($scope.inscripcion.PROG_ID === $scope.inscripcion.PROG_ID2 && !angular.equals($scope.inscripcion.PROG_ID,'')){
             alert('[ERROR] No puede elegir el mismo programa');
             $scope.inscripcion.PROG_ID2=null ;
         }
     }
+
+    $scope.ValidarPrograma2 =function(){
+        if ($scope.inscripcion.PROG_ID === $scope.inscripcion.PROG_ID2 && !angular.equals($scope.inscripcion.PROG_ID2,'')){
+            alert('[ERROR] No puede elegir el mismo programa');
+            $scope.inscripcion.PROG_ID2=null ;
+        }
+    }
+
     $scope.Limpiar();
 
 }
