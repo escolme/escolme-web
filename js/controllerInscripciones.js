@@ -174,18 +174,13 @@ function InscripcionCtrl(sessionService,$scope,$http){
         }
     }
 
-<<<<<<< HEAD
+
     $scope.ValidarPrograma2 =function(){
         if ($scope.inscripcion.PROG_ID === $scope.inscripcion.PROG_ID2 && !angular.equals($scope.inscripcion.PROG_ID2,'')){
             alert('[ERROR] No puede elegir el mismo programa');
             $scope.inscripcion.PROG_ID2=null ;
         }
     }
-=======
- //   $scope.InsertarAspirante = function(){
-
-   // }
->>>>>>> 7172bb7fac96ccb678a33507ddb8b7560fc24cf9
 
     $scope.Limpiar();
 
