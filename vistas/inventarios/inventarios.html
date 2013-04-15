@@ -1,14 +1,25 @@
 <h5>Bienvenido al sistema de inventarios Escolme</h5>
 
-<ul class="nav nav-tabs">
-    <li class="active">
-        <a href="#">Inventario</a>
-    </li>
-</ul>
+    <ul class="nav nav-tabs">
+        <li class="active">
+        <a href="#/inventarios/admin">Inventario</a>
+        </li>
+        <li class="active">
+            <a href="#/inventarios/pedidos">Pedidos</a>
+        </li>
+    </ul>
+
+    <div class="btn-group">
+         <a class="btn" href="#/inventarios/registro">Insertar</a>
+         <a class="btn">Borrar</a>
+         <a class="btn">Modificar</a>
+    </div>
+
+
 
 
 <div class="container">
-    <table class="table table-bordered"  border="2">
+        <table class="table table-bordered"  border="2">
         <tr bgcolor="#ffffff">
             <td width="3%"><center><B>Código</B> </td>
             <td width="10%"><center><B>Nombre</B></td>
@@ -19,8 +30,9 @@
         <tr ng-repeat="c in productos">
             <td>{{c.id_producto}}</td>
             <td>{{c.nom_producto}}</td>
-
+            <td>{{c.categoria_producto}}</td>
+            <td>{{c.cant_stock}}</td>
+            <td>{{c.fecha_mod}}</td>
         </tr>
-    </table>
-
-</div>
+        </table>
+    </div>

@@ -8,6 +8,7 @@
  */
 
 function productosListar(){
+
 	$resultados = array();
 	try{
 		$conexion = new conexionBD();
@@ -34,19 +35,49 @@ function productosListar(){
     }
 }
 
-function incertarproductos()
+  /*
+function insertarproductos()
 {
-    try {
-        $conexion = new conexionBD();
-        $conectar = $conexion->conectarInventarios();
-        $result = mysqli_query($conectar,"INSERT INTO tbl_productos(codigo,nombre,tipo,unidad de uso,stock,usuario asociado,cantidad pedida,precio,imagen producto,fecha de modicación,) VALUES (".$id_producto.",'".$nom_producto."',".$categoria_producto.",".$unidad_uso.",".$cant_stock.",".$usu_asociado.",".$precio_producto.",".$img_producto.",".$fecha_mod.");";);
-        }
+ try {
+     $conexion = new conexionBD();
+     $conectar = $conexion->conectarInventarios();
+     $result = mysqli_query($conectar,"INSERT INTO tbl_productos(codigo,nombre,tipo,unidad de uso,stock,usuario asociado,cantidad pedida,precio,imagen producto,fecha de modicación,) VALUES (".$id_producto.",'".$nom_producto."','".$categoria_producto."',".$unidad_uso.",".$cant_stock.",'".$usu_asociado."',".$cantidad_pedida.",".$precio_producto.",".$img_producto.",".$fecha_mod.");";);
+     }
 
-           catch(Exception $e){
-            mysqli_close($conectar);
-            echo utf8_encode('{"error: ":' . $e->getMessage() . '}');
-    }
+        catch(Exception $e){
+         mysqli_close($conectar);
+         echo utf8_encode('{"error: ":' . $e->getMessage() . '}');
+ }
 
 }
 
+
+function modificarproductos()
+{
+  try {
+      $conexion = new conexionBD();
+      $conectar = $conexion->conectarInventarios();
+      $result = mysqli_query($conectar "UPDATE tabla SET columna= valor
+                 WHERE columna='valor' AND columna='valor'");
+
+  }
+         catch(Exception $e){
+          mysqli_close($conectar);
+          echo utf8_encode('{"error: ":' . $e->getMessage() . '}');
+  }
+}
+
+
+function borrarproductos()
+{
+   try {
+       $conexion = new conexionBD();
+       $conectar = $conexion->conectarInventarios();
+       $result= mysqli_query($conectar,"DELETE FROM tabla WHERE columna='valor'");
+   }
+       catch(Exception $e){
+       mysqli_close($conectar);
+       echo utf8_encode('{"error: ":' . $e->getMessage() . '}');
+}
+}*/
 
