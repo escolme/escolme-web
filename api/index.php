@@ -12,7 +12,7 @@ require 'modelo/estrato.php';
 require 'modelo/medio.php';
 require 'modelo/institucion.php';
 require 'modelo/horario.php';
-//require 'modelo/aspirantenew.php';
+require 'modelo/aspirantenew.php';
 //require 'modelo/formularioinscripcionnew.php';
 //require 'modelo/programaxformulario.php';
 //require 'modelo/estudiossecundarios.php';
@@ -38,7 +38,7 @@ $app->get('/institucion/listar', 'institucionListar');
 $app->get('/institucion/listarporfiltro/:filtro', 'institucionListarPorFiltro');
 $app->get('/horario/listar', 'horarioListar');
 
-//$app->post('/insertar/aspirantenew','InsertarAspirante');
+$app->post('/insertar/aspirantenew','InsertarAspirante');
 //$app->post('/insertar/formularioinscripcionnew','InsertarFormulario');
 //$app->post('/insertar/programaxformularionew','InsertarPrograma');
 //$app->post('/insertar/estudiossecundariosnew','InsertarEstudiosSecundarios');
