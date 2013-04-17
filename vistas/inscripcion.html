@@ -10,7 +10,7 @@
 </div>
 <div class="row-fluid" >
 <div class="span6 offset3">
-    <form class="form-horizontal" >
+    <form class="form-horizontal" ng-submit="Guardar()" >
         <fieldset>
             <legend style=" padding-top: 10px;">Inscripción en línea</legend>
 
@@ -29,7 +29,7 @@
                     <select  required="required" ng-change="VerPensum(); ValidarPrograma()" class="input-xlarge" ng-model="inscripcion.PROG_ID" ng-options="c.PROG_ID as c.PROG_NOMBRE for c in programas">
                         <option value=""> -- Seleccione el Programa</option>
                     </select>
-                    <a href="" ng-click="InformacionAdicional()">Info Adicional</a>
+                    <a id="aInfoAdicional1" href="" style="display:none;" ng-click="InformacionAdicional()">Info Adicional</a>
                 </div>
             </div>
 
@@ -45,10 +45,10 @@
             <div class="control-group">
                 <label  class="control-label" >Programa - Opción 2</label>
                 <div class="controls">
-                    <select  required="required" ng-change="VerPensum2(); ValidarPrograma()" class="input-xlarge" ng-model="inscripcion.PROG_ID2" ng-options="c.PROG_ID as c.PROG_NOMBRE for c in programas" >
+                    <select  required="required" ng-change="VerPensum2(); ValidarPrograma2()" class="input-xlarge" ng-model="inscripcion.PROG_ID2" ng-options="c.PROG_ID as c.PROG_NOMBRE for c in programas" >
                         <option value=""> -- Seleccione el Programa</option>
                     </select>
-                    <a href="" ng-click="InformacionAdicional2()">Info Adicional</a>
+                    <a href="" style="display:none;" id="aInfoAdicional2" ng-click="InformacionAdicional2()">Info Adicional</a>
                 </div>
             </div>
 

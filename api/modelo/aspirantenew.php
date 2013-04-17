@@ -51,7 +51,11 @@ function BuscarExisteInscripcion(){ //faltaria el parametro que recibe
 
 //Insertar en Tabla ASPIRANTENEW
 function InsertarAspirante(){
-    try{
+
+    $request = Slim::getInstance()->request();
+    $inscripcion = json_decode($request->getBody());
+    echo utf8_encode('{"datos": ' . json_encode($inscripcion) . '}');
+/*    try{
         $conexion = new conexionBD();
         $conn = $conexion->conectar();
         $sql = "INSERT INTO ACADEMICO.ASPIRANTENEW (ASPI_PRIMERAPELLIDO, ASPI_SEGUNDOAPELLIDO, ASPI_PRIMERNOMBRE, ASPI_SEGUNDONOMBRE, ASPI_TIPODOCUMENTO, ASPI_NUMERODOCUMENTO, ASPI_SEXO, ASPI_PAISRESIDENCIA, ASPI_DPTORESIDENCIA, ASPI_MPIORESIDENCIA, ASPI_TELEFONORESIDENCIA, ASPI_TELEFONOCELULAR, ASPI_EMAIL, ASPI_FECHANACIMIENTO, ASPI_PAISNACIMIENTO, ASPI_DPTONACIMIENTO, ASPI_MPIONACIMIENTO, ASPI_FECHACAMBIO, ESCG_ID, ASPI_REGISTRADOPOR, MEDI_IDCONOCEINSTITUCION, JORN_ID) VALUES(:dato1, :dato2, :dato3, :dato4, :dato5, :dato6, :dato7, :dato8, :dato9, :dato10, :dato11, :dato12, :dato13, :dato14, :dato15, :dato16, :dato17, :dato18, :dato19, :dato20, :dato21, :dato22, :dato23)";
@@ -86,5 +90,5 @@ function InsertarAspirante(){
     catch(Exception $e){
         OCILogoff($conn);
         echo '{"error: ":' . $e->getMessage() . '}';
-    }
+    }*/
 }

@@ -2,7 +2,11 @@ function InscripcionCtrl(sessionService,$scope,$http){
 
     $scope.Limpiar = function(){
         $scope.inscripcion = {
-            METO_ID:null,PROG_ID:null,PROG_ID2:null,TIDG_ID:null,PAGE_ID:null, DEGE_ID:null, CIGE_ID:null,ESCG_ID:null,ESTR_ID:null,OMED_ID:null,PAGE_ID2:null, DEGE_ID2:null, CIGE_ID2:null, INST_CODIGOSNP:null,JORN_ID:null, JORN_ID2:null
+            METO_ID:null,
+            PROG_ID:null,PROG_ID2:null,
+            TIDG_ID:null,PAGE_ID:null, DEGE_ID:null, CIGE_ID:null,
+            ESCG_ID:null,ESTR_ID:null,OMED_ID:null,PAGE_ID2:null, DEGE_ID2:null,
+            CIGE_ID2:null, INST_CODIGOSNP:null,JORN_ID:null, JORN_ID2:null
         };
         $scope.filtros = { institucion:''};
         $scope.ListarModalidades();
@@ -15,6 +19,23 @@ function InscripcionCtrl(sessionService,$scope,$http){
         $scope.ListarHorario();
         $scope.ListarHorario2();
         
+    }
+
+    $scope.Guardar = function(){
+        var json_inscripcion = JSON.stringify($scope.inscripcion);
+        $.ajax({
+            type: 'POST',
+            contentType: 'application/json',
+            url: 'api/insertar/aspirantenew',
+            dataType: "json",
+            data: json_inscripcion,
+            success: function(data, textStatus, jqXHR){
+                console.dir(data);
+            },
+            error: function(jqXHR, textStatus, errorThrown){
+                alert('error: ' + textStatus);
+            }
+        }) 
     }
 
     $scope.ListarModalidades = function(){
@@ -152,23 +173,35 @@ function InscripcionCtrl(sessionService,$scope,$http){
     }
 
     $scope.VerPensum =function(){
+        if(angular.equals($scope.inscripcion.PROG_ID,undefined))
+            $('#aInfoAdicional1').hide('blind');
+        else
+            $('#aInfoAdicional1').show();    
          $('#frmPensum').attr('src','recursos/pensum/' + $scope.inscripcion.PROG_ID + '.pdf');
     }
 
     $scope.VerPensum2 =function(){
+        if(angular.equals($scope.inscripcion.PROG_ID2,undefined))
+            $('#aInfoAdicional2').hide('blind');
+        else
+            $('#aInfoAdicional2').show();    
         $('#frmPensum2').attr('src','recursos/pensum/' + $scope.inscripcion.PROG_ID2 + '.pdf');
     }
 
     $scope.ValidarPrograma =function(){
-        if (($scope.inscripcion.PROG_ID) ==($scope.inscripcion.PROG_ID2)){
+        if ($scope.inscripcion.PROG_ID === $scope.inscripcion.PROG_ID2 && !angular.equals($scope.inscripcion.PROG_ID,'')){
             alert('[ERROR] No puede elegir el mismo programa');
             $scope.inscripcion.PROG_ID2=null ;
         }
     }
 
- //   $scope.InsertarAspirante = function(){
 
-   // }
+    $scope.ValidarPrograma2 =function(){
+        if ($scope.inscripcion.PROG_ID === $scope.inscripcion.PROG_ID2 && !angular.equals($scope.inscripcion.PROG_ID2,'')){
+            alert('[ERROR] No puede elegir el mismo programa');
+            $scope.inscripcion.PROG_ID2=null ;
+        }
+    }
 
     $scope.Limpiar();
 
