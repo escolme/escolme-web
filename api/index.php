@@ -12,13 +12,17 @@ require 'modelo/estrato.php';
 require 'modelo/medio.php';
 require 'modelo/institucion.php';
 require 'modelo/horario.php';
+//require 'modelo/aspirantenew.php';
+//require 'modelo/formularioinscripcionnew.php';
+//require 'modelo/programaxformulario.php';
+//require 'modelo/estudiossecundarios.php';
+//require 'modelo/caracterizacion.php';
 
-require 'modeloInventarios/productos.php';
+//require 'modeloInventarios/productos.php';
 
 $app = new Slim();
-
 /*
-RUTAS DE ACADEMUSOT
+RUTAS DE ACADEMUSOFT
 */
 $app->contentType('application/json;charset=utf-8');
 $app->get('/metodologias/listar', 'metodologiaListar');
@@ -34,10 +38,13 @@ $app->get('/institucion/listar', 'institucionListar');
 $app->get('/institucion/listarporfiltro/:filtro', 'institucionListarPorFiltro');
 $app->get('/horario/listar', 'horarioListar');
 
-
+//$app->post('/insertar/aspirantenew','InsertarAspirante');
+//$app->post('/insertar/formularioinscripcionnew','InsertarFormulario');
+//$app->post('/insertar/programaxformularionew','InsertarPrograma');
+//$app->post('/insertar/estudiossecundariosnew','InsertarEstudiosSecundarios');
+//$app->post('/insertar/caracterizacionnew','InsertarCaracterizacion');
 /*
 RUTAS DE INVENTARIOS
 */
 $app->get('/inventarios/productos/listar', 'productosListar');
-
 $app->run();

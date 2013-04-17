@@ -1,7 +1,5 @@
 <?php
 //Buscar existe aspirante
-
-
 function BuscarExisteAspirante(){ //faltaria el parametro que recibe
     try{
         $resultados = array();
@@ -26,7 +24,7 @@ function BuscarExisteAspirante(){ //faltaria el parametro que recibe
         echo '{"error: ":' . $e->getMessage() . '}';
     }
 }
-
+//Buscar existe inscripcion
 function BuscarExisteInscripcion(){ //faltaria el parametro que recibe
     try{
         $resultados = array();
@@ -52,7 +50,7 @@ function BuscarExisteInscripcion(){ //faltaria el parametro que recibe
 }
 
 //Insertar en Tabla ASPIRANTENEW
-function InsertarAspiranteNuevo($inscripcion){
+function InsertarAspirante(){
     try{
         $conexion = new conexionBD();
         $conn = $conexion->conectar();
@@ -80,7 +78,7 @@ function InsertarAspiranteNuevo($inscripcion){
         OCIBindByName($query, ":dato20",'');
         OCIBindByName($query, ":dato21",'inscripcion.OMED_ID');
         OCIBindByName($query, ":dato22",'inscripcion.JORN_ID');
-        OCIBindByName($query, ":dato22",'inscripcion.JORN_ID2');
+        OCIBindByName($query, ":dato23",'inscripcion.JORN_ID2');
         OCIExecute($query, OCI_DEFAULT);
         OCICommit($conn);
         OCILogoff($conn);

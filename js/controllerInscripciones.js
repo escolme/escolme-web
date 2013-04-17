@@ -165,6 +165,11 @@ function InscripcionCtrl(sessionService,$scope,$http){
             $scope.inscripcion.PROG_ID2=null ;
         }
     }
+
+ //   $scope.InsertarAspirante = function(){
+
+   // }
+
     $scope.Limpiar();
 
 }
