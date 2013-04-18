@@ -37,6 +37,7 @@ $app->get('/medio/listar', 'medioListar');
 $app->get('/institucion/listar', 'institucionListar');
 $app->get('/institucion/listarporfiltro/:filtro', 'institucionListarPorFiltro');
 $app->get('/horario/listar', 'horarioListar');
+$app->get('/programas/adicional/:PROG_ID', 'programasAdicional');
 
 $app->post('/insertar/aspirantenew','InsertarAspirante');
 //$app->post('/insertar/formularioinscripcionnew','InsertarFormulario');
