@@ -48,4 +48,5 @@ $app->post('/insertar/aspirantenew','InsertarAspirante');
 RUTAS DE INVENTARIOS
 */
 $app->get('/inventarios/productos/listar', 'productosListar');
+$app->get('/inventarios/productos/listar', 'categoriaListar');
 $app->run();
