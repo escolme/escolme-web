@@ -10,8 +10,9 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
             ASPI_NUMERODOCUMENTO:null,ASPI_SEXO:null,ASPI_PRIMERNOMBRE:null,
             ASPI_SEGUNDONOMBRE:null,ASPI_PRIMERAPELLIDO:null, ASPI_SEGUNDOAPELLIDO:null,
             ASPI_FECHANACIMIENTO:null,ASPI_FECHANACIMIENTO_S:'',ASPI_TELEFONORESIDENCIA:null,ASPI_TELEFONOCELULAR:null,
-            ASPI_EMAIL:null, ESSE_FECHATERMINACION:null, ESSE_SNP:null,ESSE_FECHAPRESENTOPRUEBAS:null,
-            ESSE_PUNTAJEOBTENIDO:null, NIED_ID:null,CIRC_ID:null,SEPE_ID:null,UNPR_ID:null,COIN_ID:null
+            ASPI_EMAIL:null, ESSE_FECHATERMINACION:null,ESSE_FECHATERMINACION_S:'', ESSE_SNP:null,ESSE_FECHAPRESENTOPRUEBAS:null,
+            ESSE_FECHAPRESENTOPRUEBAS_S:'',ESSE_PUNTAJEOBTENIDO:null, NIED_ID:null,NIED_ID2:null,CIRC_ID:null,CIRC_ID2:null,SEPE_ID:null,
+            SEPE_ID2:null,UNPR_ID:null,UNPR_ID2:null,COIN_ID:null,COIN_ID2:null,ASPI_ID:null,FOIN_ID:null
         };
         $scope.filtros = { institucion:''};
         $scope.ListarModalidades();
@@ -29,8 +30,8 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
     $scope.Guardar = function(){
 
         $scope.inscripcion.ASPI_FECHANACIMIENTO_S = comunService.fechaFormato('dd/mm/yyyy', $scope.inscripcion.ASPI_FECHANACIMIENTO);
-
-
+        $scope.inscripcion.ESSE_FECHATERMINACION_S = comunService.fechaFormato('dd/mm/yyyy', $scope.inscripcion.ESSE_FECHATERMINACION);
+        $scope.inscripcion.ESSE_FECHAPRESENTOPRUEBAS_S = comunService.fechaFormato('dd/mm/yyyy', $scope.inscripcion.ESSE_FECHAPRESENTOPRUEBAS);
         var json_inscripcion = JSON.stringify($scope.inscripcion);
         $.ajax({
             type: 'POST',
@@ -38,13 +39,135 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
             url: 'api/insertar/aspirantenew',
             dataType: "json",
             data: json_inscripcion,
+            async:false,
+            success: function(data, textStatus, jqXHR){
+                console.dir(data);
+                $scope.BuscarAspiId();
+            },
+            error: function(jqXHR, textStatus, errorThrown){
+                alert('error: ' + textStatus);
+            }
+        }) 
+    }
+
+    $scope.BuscarAspiId = function(){
+        var documento = $scope.inscripcion.ASPI_NUMERODOCUMENTO;
+        if(documento!=null){
+            $http.get('api/buscar/aspiid/' + documento).then(function(response){
+                $scope.aspiid = response.data.datos[0];
+                $scope.inscripcion.ASPI_ID=$scope.aspiid.ASPI_ID;
+                $scope.GuardarFormulario();
+                $scope.GuardarCaracterizacion();
+                $scope.GuardarEstudiosSecundarios();
+                $scope.GuardarInfoSocio();
+            });
+        }else{
+            $scope.aspiid = [];
+        }
+    }
+
+    $scope.GuardarFormulario = function(){
+        var json_inscripcion = JSON.stringify($scope.inscripcion);
+        $.ajax({
+            type: 'POST',
+            contentType: 'application/json',
+            url: 'api/insertar/formularioinscripcionnew',
+            dataType: "json",
+            data: json_inscripcion,
+            async:false,
+            success: function(data, textStatus, jqXHR){
+                console.dir(data);
+                $scope.BuscarFoinid()
+            },
+            error: function(jqXHR, textStatus, errorThrown){
+                alert('error: ' + textStatus);
+            }
+        })
+    }
+
+    $scope.BuscarFoinid = function(){
+        var aspiid = $scope.inscripcion.ASPI_ID;
+        if(aspiid!=null){
+            $http.get('api/buscar/formulario/' + aspiid).then(function(response){
+                $scope.foinid = response.data.datos[0];
+                $scope.inscripcion.FOIN_ID=$scope.foinid.FOIN_ID;
+                $scope.GuardarPrograma();
+            });
+        }else{
+            $scope.aspiid2 = [];
+        }
+    }
+
+    $scope.GuardarPrograma = function(){
+        var json_inscripcion = JSON.stringify($scope.inscripcion);
+        $.ajax({
+            type: 'POST',
+            contentType: 'application/json',
+            url: 'api/insertar/programaxformulario',
+            dataType: "json",
+            data: json_inscripcion,
+            async:false,
             success: function(data, textStatus, jqXHR){
                 console.dir(data);
             },
             error: function(jqXHR, textStatus, errorThrown){
                 alert('error: ' + textStatus);
             }
-        }) 
+        })
+    }
+
+    $scope.GuardarCaracterizacion = function(){
+        var json_inscripcion = JSON.stringify($scope.inscripcion);
+        $.ajax({
+            type: 'POST',
+            contentType: 'application/json',
+            url: 'api/insertar/caracterizacionnew',
+            dataType: "json",
+            data: json_inscripcion,
+            async:false,
+            success: function(data, textStatus, jqXHR){
+                console.dir(data);
+            },
+            error: function(jqXHR, textStatus, errorThrown){
+                alert('error: ' + textStatus);
+            }
+        })
+    }
+
+    $scope.GuardarEstudiosSecundarios = function(){
+        var json_inscripcion = JSON.stringify($scope.inscripcion);
+        $.ajax({
+            type: 'POST',
+            contentType: 'application/json',
+            url: 'api/insertar/estudiossecundariosnew',
+            dataType: "json",
+            data: json_inscripcion,
+            async:false,
+            success: function(data, textStatus, jqXHR){
+                console.dir(data);
+            },
+            error: function(jqXHR, textStatus, errorThrown){
+                alert('error: ' + textStatus);
+            }
+        })
+    }
+
+    $scope.GuardarInfoSocio = function(){
+        var json_inscripcion = JSON.stringify($scope.inscripcion);
+        $.ajax({
+            type: 'POST',
+            contentType: 'application/json',
+            url: 'api/insertar/socioeconomica',
+            dataType: "json",
+            data: json_inscripcion,
+            async:false,
+            success: function(data, textStatus, jqXHR){
+                console.dir(data);
+            },
+            error: function(jqXHR, textStatus, errorThrown){
+                alert('error: ' + textStatus);
+            }
+        })
     }
 
     $scope.ListarModalidades = function(){
@@ -63,15 +186,28 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
                 $scope.inscripcion.COIN_ID=$scope.adicional.COIN_ID;
                 $scope.inscripcion.CIRC_ID=$scope.adicional.CIRC_ID;
                 $scope.inscripcion.NIED_ID=$scope.adicional.NIED_ID;
-                console.dir($scope.inscripcion.PROG_ID);
-                //console.dir($scope.inscripcion.SEPE_ID);
-                //console.dir($scope.inscripcion.UNPR_ID);
-                //console.dir($scope.inscripcion.COIN_ID);
-                //console.dir($scope.inscripcion.CIRC_ID);
-                //console.dir($scope.inscripcion.NIED_ID);
+                $scope.CamposAdicionales2();
             });
         }else{
             $scope.adicional = [];
+        }
+
+    }
+
+    $scope.CamposAdicionales2 = function(){
+        var prog2 = $scope.inscripcion.PROG_ID2;
+        if(prog2!=null){
+            $http.get('api/programas/adicional/' + prog2).then(function(response){
+                $scope.adicional2 = response.data.datos[0];
+                $scope.inscripcion.SEPE_ID2=$scope.adicional2.SEPE_ID;
+                $scope.inscripcion.UNPR_ID2=$scope.adicional2.UNPR_ID;
+                $scope.inscripcion.COIN_ID2=$scope.adicional2.COIN_ID;
+                $scope.inscripcion.CIRC_ID2=$scope.adicional2.CIRC_ID;
+                $scope.inscripcion.NIED_ID2=$scope.adicional2.NIED_ID;
+                $scope.Guardar();
+            });
+        }else{
+            $scope.adicional2 = [];
         }
     }
 
