@@ -13,12 +13,21 @@ require 'modelo/medio.php';
 require 'modelo/institucion.php';
 require 'modelo/horario.php';
 require 'modelo/aspirantenew.php';
+<<<<<<< HEAD
+//require 'modelo/formularioinscripcionnew.php';
+//require 'modelo/programaxformulario.php';
+//require 'modelo/estudiossecundarios.php';
+//require 'modelo/caracterizacion.php';
+require 'modeloinventarios/productos.php';
+require 'modeloinventarios/categoria_productos.php';
+=======
 require 'modelo/formularioinscripcionnew.php';
 require 'modelo/programaxformulario.php';
 require 'modelo/estudiossecundarios.php';
 require 'modelo/caracterizacion.php';
 require 'modelo/informacionsocioeconomica.php';
 
+>>>>>>> acd37c65b752346df772ca63a7b4a4302c0bd4ff
 //require 'modeloInventarios/productos.php';
 
 $app = new Slim();
@@ -52,5 +61,6 @@ $app->post('/insertar/socioeconomica','InsertarInformacionSocioeconomica');
 RUTAS DE INVENTARIOS
 */
 $app->get('/inventarios/productos/listar', 'productosListar');
-$app->get('/inventarios/productos/listar', 'categoriaListar');
+$app->get('/pedidos/categoria/listar', 'categoriaListar');
+$app->get('/pedidos/proxcate/listar/:id_categoria_producto', 'productosCategoria');
 $app->run();
