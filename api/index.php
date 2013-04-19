@@ -17,7 +17,8 @@ require 'modelo/aspirantenew.php';
 //require 'modelo/programaxformulario.php';
 //require 'modelo/estudiossecundarios.php';
 //require 'modelo/caracterizacion.php';
-
+require 'modeloinventarios/productos.php';
+require 'modeloinventarios/categoria_productos.php';
 //require 'modeloInventarios/productos.php';
 
 $app = new Slim();
@@ -48,5 +49,6 @@ $app->post('/insertar/aspirantenew','InsertarAspirante');
 RUTAS DE INVENTARIOS
 */
 $app->get('/inventarios/productos/listar', 'productosListar');
-$app->get('/inventarios/productos/listar', 'categoriaListar');
+$app->get('/pedidos/categoria/listar', 'categoriaListar');
+$app->get('/pedidos/proxcate/listar/:id_categoria_producto', 'productosCategoria');
 $app->run();
