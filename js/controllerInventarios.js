@@ -1,5 +1,6 @@
 function PedidosCtrl($scope,$http){
 
+
 }
 
 function InventariosCtrl($scope,$http){

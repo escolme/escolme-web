@@ -52,4 +52,5 @@ $app->post('/insertar/socioeconomica','InsertarInformacionSocioeconomica');
 RUTAS DE INVENTARIOS
 */
 $app->get('/inventarios/productos/listar', 'productosListar');
+$app->get('/inventarios/productos/listar', 'categoriaListar');
 $app->run();
