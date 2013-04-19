@@ -13,12 +13,21 @@ require 'modelo/medio.php';
 require 'modelo/institucion.php';
 require 'modelo/horario.php';
 require 'modelo/aspirantenew.php';
+<<<<<<< HEAD
 //require 'modelo/formularioinscripcionnew.php';
 //require 'modelo/programaxformulario.php';
 //require 'modelo/estudiossecundarios.php';
 //require 'modelo/caracterizacion.php';
 require 'modeloinventarios/productos.php';
 require 'modeloinventarios/categoria_productos.php';
+=======
+require 'modelo/formularioinscripcionnew.php';
+require 'modelo/programaxformulario.php';
+require 'modelo/estudiossecundarios.php';
+require 'modelo/caracterizacion.php';
+require 'modelo/informacionsocioeconomica.php';
+
+>>>>>>> acd37c65b752346df772ca63a7b4a4302c0bd4ff
 //require 'modeloInventarios/productos.php';
 
 $app = new Slim();
@@ -39,12 +48,15 @@ $app->get('/institucion/listar', 'institucionListar');
 $app->get('/institucion/listarporfiltro/:filtro', 'institucionListarPorFiltro');
 $app->get('/horario/listar', 'horarioListar');
 $app->get('/programas/adicional/:PROG_ID', 'programasAdicional');
+$app->get('/buscar/aspiid/:ASPI_NUMERODOCUMENTO', 'BuscarExisteAspirante');
+$app->get('/buscar/formulario/:ASPI_ID', 'BuscarExisteFormulario');
 
 $app->post('/insertar/aspirantenew','InsertarAspirante');
-//$app->post('/insertar/formularioinscripcionnew','InsertarFormulario');
-//$app->post('/insertar/programaxformularionew','InsertarPrograma');
-//$app->post('/insertar/estudiossecundariosnew','InsertarEstudiosSecundarios');
-//$app->post('/insertar/caracterizacionnew','InsertarCaracterizacion');
+$app->post('/insertar/formularioinscripcionnew','InsertarFormulario');
+$app->post('/insertar/programaxformulario','InsertarPrograma');
+$app->post('/insertar/estudiossecundariosnew','InsertarEstudiosSecundarios');
+$app->post('/insertar/caracterizacionnew','InsertarCaracterizacion');
+$app->post('/insertar/socioeconomica','InsertarInformacionSocioeconomica');
 /*
 RUTAS DE INVENTARIOS
 */
