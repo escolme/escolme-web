@@ -315,6 +315,7 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
     }
 
     $scope.FinalizarInscripcion = function(){
+         $scope.Limpiar();
          $('#ventanaFinalizaInscripcion').modal('show');
     }
 

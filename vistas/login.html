@@ -1,0 +1,38 @@
+<div class="container" style="width: 400px !important;">
+    <div class="well login" style="margin-top: 80px;margin-bottom: 100px;" >
+        <form class="form-horizontal ng-pristine ng-invalid ng-invalid-required" id="formulario_ingreso" name="formulario_ingreso">
+            <div style="text-align: center;">
+                <img src="img/logo_escolme_medio.png">
+            </div>
+            <fieldset>
+                <legend>Ingreso al Campus Administrativo</legend>
+                <div class="alert alert-error" id="errores" style="display: none; ">
+                    <div id="errores_msn"></div>
+                </div>
+                <div class="control-group error" id="div_tUsuario" ng-class="{error: formulario_ingreso.tUsuario.$invalid}">
+                    <label class="control-label" for="tUsuario">Usuario</label>
+                    <div class="controls">
+                        <input type="text" ng-model="form_autenticar.usuario" class="input-medium ng-pristine ng-invalid ng-invalid-required" id="tUsuario" name="tUsuario" title="Usuario" required="required">
+                        <span ng-show="formulario_ingreso.tUsuario.$error.required" class="help-inline" style="">*</span>
+                        <!--            <span ng-show="formulario_ingreso.tUsuario.$error.email" class="help-inline">Ingrese un email valido</span>-->
+                    </div>
+                </div>
+                <div class="control-group error" id="div_tContrasena" ng-class="{error: formulario_ingreso.tContrasena.$invalid}">
+                    <label class="control-label" for="tContrasena">Contraseña</label>
+                    <div class="controls">
+                        <input type="password" ng-model="form_autenticar.password" class="input-medium ng-pristine ng-invalid ng-invalid-required" name="tContrasena" id="tContrasena" title="Contraseña" required="required">
+                        <span ng-show="formulario_ingreso.tContrasena.$error.required" class="help-inline" style="">*</span>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" ng-click="Autenticar(form_autenticar)" data-loading-text="Validando..." ng-disabled="formulario_ingreso.$invalid || isUnchanged(form_autenticar)" id="bAutenticar" class="btn btn-primary" disabled="disabled">
+                        <i class="icon-user icon-white"></i>
+                        Ingresar</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+
+
