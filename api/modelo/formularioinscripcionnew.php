@@ -22,6 +22,7 @@ function InsertarFormulario(){
         echo '{"error: ":' . $e->getMessage() . '}';
     }
 }
+
 function BuscarExisteFormulario($ASPI_ID){
         try{
         $resultados = array();

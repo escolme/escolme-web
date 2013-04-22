@@ -109,6 +109,8 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
             async:false,
             success: function(data, textStatus, jqXHR){
                 console.dir(data);
+                $scope.FinalizarInscripcion();
+
             },
             error: function(jqXHR, textStatus, errorThrown){
                 alert('error: ' + textStatus);
@@ -310,6 +312,11 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
        
         $event.preventDefault();
 
+    }
+
+    $scope.FinalizarInscripcion = function(){
+         $scope.Limpiar();
+         $('#ventanaFinalizaInscripcion').modal('show');
     }
 
     $scope.RetornarInstitucion = function(inst){
