@@ -20,7 +20,7 @@ require 'modelo/caracterizacion.php';
 require 'modelo/informacionsocioeconomica.php';
 
 require 'modeloinventarios/productos.php';
-//require 'modeloinventarios/categoria_productos.php';
+require 'modeloinventarios/categoria_productos.php';
 
 $app = new Slim();
 /*
@@ -53,6 +53,6 @@ $app->post('/insertar/socioeconomica','InsertarInformacionSocioeconomica');
 RUTAS DE INVENTARIOS
 */
 $app->get('/inventarios/productos/listar', 'productosListar');
-//$app->get('/pedidos/categoria/listar', 'categoriaListar');
+$app->get('/pedidos/categoria/listar', 'categoriaListar');
 $app->get('/pedidos/proxcate/listar/:id_categoria_producto', 'productosCategoria');
 $app->run();
