@@ -40,6 +40,7 @@
 
     function productosCategoria($id_categoria_producto){
         $resultados = array();
+       // echo ($id_categoria_producto);
         // FROM table1   LEFT JOIN table2 ON table1.id=table2.id
         try
         {
@@ -47,6 +48,7 @@
             $conectar = $conexion->conectarInventarios();
             $result = mysqli_query($conectar,"SELECT id_producto,nom_producto FROM tbl_productos WHERE id_categoria_producto=$id_categoria_producto");
             //  $result_type= MYSQLI_BOTH;
+             //echo ($result);
             while($row = mysqli_fetch_array($result))
             {
                 $fila = array(

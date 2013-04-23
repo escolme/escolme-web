@@ -4,9 +4,9 @@
     <list default="true" id="b3bc38fb-b8b4-4e0c-96ae-8b0a25606078" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/index.php" afterPath="$PROJECT_DIR$/api/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/modelo/aspirantenew.php" afterPath="$PROJECT_DIR$/api/modelo/aspirantenew.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllerInscripciones.js" afterPath="$PROJECT_DIR$/js/controllerInscripciones.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vistas/inscripcion.html" afterPath="$PROJECT_DIR$/vistas/inscripcion.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/modeloInventarios/productos.php" afterPath="$PROJECT_DIR$/api/modeloInventarios/productos.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllerInventarios.js" afterPath="$PROJECT_DIR$/js/controllerInventarios.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vistas/inventarios/pedidos.html" afterPath="$PROJECT_DIR$/vistas/inventarios/pedidos.html" />
     </list>
     <ignored path="escolme-web.iws" />
     <ignored path=".idea/workspace.xml" />

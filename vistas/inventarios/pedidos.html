@@ -9,18 +9,18 @@
     </li>
 </ul>
 
-<h5> escoja los productos que necesite</h5>
+<h5>escoja los productos que necesite</h5>
 
-        <div class="container-fluid">
-            <div class="row-fluid">
-             <div class="span3">
-                 <select>
-                     <option value="">--- Seleccione la categoria</option>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                 <div class="span3">
+                     <select  required="required" name="inputcategoria" class="input-xlarge"  ng-change="productosCategoria()" ng-model="pedido.id_categoria_producto" ng-options="c.id_categoria_producto as c.categoria for c in categoria" >
+                         <option value=""> -- Seleccione tipo de producto</option>
+                     </select>
 
-                 </select>
 
-
-              </div>
+                <select required="required" name="inputproductos" class="input-xlarge"  ng-model="pedido.id_producto" ng-options="c.id_producto as c.nom_producto for c in proxcate" >
+                    <option value=""> -- seleccione el producto</option>
              <div class="span9">
 
             </div>
