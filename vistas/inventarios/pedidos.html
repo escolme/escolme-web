@@ -1,1 +1,33 @@
-<h1>Bienvenido a pedidos</h1>
+<h5>Bienvenido al sistema de Inventarios Escolme </h5>
+
+<ul class="nav nav-tabs">
+    <li class="active">
+        <a href="#/inventarios/admin">Inventario</a>
+    </li>
+    <li class="active">
+        <a href="#/inventarios/pedidos">Pedidos</a>
+    </li>
+</ul>
+
+<h5>escoja los productos que necesite</h5>
+
+            <div class="container-fluid">
+                <div class="row-fluid">
+                 <div class="span3">
+                     <select  required="required" name="inputcategoria" class="input-xlarge"  ng-change="productosCategoria()" ng-model="pedido.id_categoria_producto" ng-options="c.id_categoria_producto as c.categoria for c in categoria" >
+                         <option value=""> -- Seleccione tipo de producto</option>
+                     </select>
+
+
+                <select required="required" name="inputproductos" class="input-xlarge"  ng-model="pedido.id_producto" ng-options="c.id_producto as c.nom_producto for c in proxcate" >
+                    <option value=""> -- seleccione el producto</option>
+             <div class="span9">
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+

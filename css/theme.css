@@ -16,8 +16,41 @@ body {
 	-moz-box-shadow: 5px 0 3px 0 rgba(0, 0, 0, 0.065) , -5px 0 3px  0 rgba(0, 0, 0, 0.065);
 	box-shadow: 5px 0 3px 0 rgba(0, 0, 0, 0.065) , -5px 0 3px  0 rgba(0, 0, 0, 0.065);
 }
+
+.login {
+    background-image: -ms-radial-gradient(center, circle farthest-corner, #FFFFFF 0%, #E8E8E8 100%);
+    background-image: -moz-radial-gradient(center, circle farthest-corner, #FFFFFF 0%, #E8E8E8 100%);
+    background-image: -o-radial-gradient(center, circle farthest-corner, #FFFFFF 0%, #E8E8E8 100%);
+    background-image: -webkit-gradient(radial, center center, 0, center center, 497, color-stop(0, #FFFFFF), color-stop(1, #E8E8E8));
+    background-image: -webkit-radial-gradient(center, circle farthest-corner, #FFFFFF 0%, #E8E8E8 100%);
+    background-image: radial-gradient(circle farthest-corner at center, #FFFFFF 0%, #E8E8E8 100%);
+}
+
+.form-actions {
+    background-color: transparent !important;
+    border-top: 1px solid #e5e5e5;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;;
+}
+
 #divVistas{
 	/*background: #F5F6F7;*/
+}
+
+.breadcrumb{
+    margin: 15px;
+    color: #333 !important;
+    background-color: rgb(255, 219, 70);
+    border-color: rgb(255, 219, 70);
+}
+
+.breadcrumb > li > a{
+
+    color: #333 !important;
+
 }
 
 .logo-escolme{

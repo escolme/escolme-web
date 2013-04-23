@@ -15,6 +15,28 @@ escolmeWeb.service('uiService',function(){
 
 });
 
+escolmeWeb.service('comunService',function(){
+
+    function fechaFormato(formato,fecha){
+        var month = fecha.getMonth() + 1;
+        month = month < 10 ? "0"+month:month;
+        var day = fecha.getDate() < 10 ? "0"+fecha.getDate():fecha.getDate();
+        var year = fecha.getFullYear();
+        switch (formato){
+            case "dd/mm/yyyy":
+                return  day + "/" + month + "/" + year;
+            case "dd-mm-yyyy":
+                return  day + "-" + month + "-" + year;
+        }
+    }
+
+    // Exponer funciones del servicio
+    return {
+        fechaFormato: function(formato,fecha)   { return fechaFormato(formato,fecha);  }
+    };
+
+});
+
 //SERVICIOS DE SESION
 escolmeWeb.service('sessionService',function(){
 
