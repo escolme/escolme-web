@@ -77,7 +77,7 @@
                     Numero de Documento
                 </label>
                 <div class="controls">
-                    <input type="text" required="required" maxlength="15" ng-model="inscripcion.ASPI_NUMERODOCUMENTO" class="input-xlarge" >
+                    <input type="text" required="required" maxlength="15" ng-blur="ValidacionExiste()" ng-model="inscripcion.ASPI_NUMERODOCUMENTO" class="input-xlarge" >
                 </div>
             </div>
 
@@ -254,7 +254,7 @@
                     Correo Electrónico
                 </label>
                 <div class="controls">
-                    <input type="text" maxlength="50" ng-model="inscripcion.ASPI_EMAIL" class="input-xlarge" >
+                    <input type="text" maxlength="50" required="required" ng-model="inscripcion.ASPI_EMAIL" class="input-xlarge" >
                 </div>
             </div>
 
