@@ -9,23 +9,44 @@
     </li>
 </ul>
 
-<h5>escoja los productos que necesite</h5>
+           <div class="container-fluid">
+             <div class="row-fluid">
+                <div class="span3">
+                    <form ng-submit="AgregarProducto()">
+                        <legend>Agregar Productos:</legend>
+                        <label for="">Tipo de Producto:</label>
+                        <select  required="required" name="inputcategoria" class="input-xlarge"  ng-change="productosCategoria()" ng-model="pedido.id_categoria_producto" ng-options="c.id_categoria_producto as c.categoria for c in categoria" >
+                            <option value=""> -- Seleccione tipo de producto</option>
+                        </select>
+                        <label for="">Producto:</label>
+                        <select required="required" name="inputproductos" class="input-xlarge"  ng-model="pedido.id_producto" ng-options="c.id_producto as c.nom_producto for c in proxcate" >
+                            <option value=""> -- seleccione el producto</option>
+                        </select>
+                        <label for="tCantidad">Cantidad:</label>
+                        <input type="number" name="tCantidad" ng-model="pedido.cantidad" min="1" class="input-medium" required="required" >
+                        <button type="submit" class="btn" >Agregar Producto</button>
 
-            <div class="container-fluid">
-                <div class="row-fluid">
-                 <div class="span3">
-                     <select  required="required" name="inputcategoria" class="input-xlarge"  ng-change="productosCategoria()" ng-model="pedido.id_categoria_producto" ng-options="c.id_categoria_producto as c.categoria for c in categoria" >
-                         <option value=""> -- Seleccione tipo de producto</option>
-                     </select>
 
 
-                <select required="required" name="inputproductos" class="input-xlarge"  ng-model="pedido.id_producto" ng-options="c.id_producto as c.nom_producto for c in proxcate" >
-                    <option value=""> -- seleccione el producto</option>
-             <div class="span9">
+                    </form>
 
-            </div>
-        </div>
-    </div>
+                </div>
+                 <div class="span9">
+                    <table class="table table-bordered" border="2">
+                        <tr>
+                            <td><center><B>Producto</B></td>
+                            <td><center><B>Cantidad</B></td>
+                        </tr>
+                        <tr ng-repeat="c in pedidoFinal">
+                            <td>{{c.nom_producto}}</td>
+                            <td>{{c.cantidad}}</td>
+                        </tr>
+                    </table>
+
+                 </div>
+              </div>
+           </div>
+
 
 
 

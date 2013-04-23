@@ -52,6 +52,7 @@ $app->post('/insertar/socioeconomica','InsertarInformacionSocioeconomica');
 /*
 RUTAS DE INVENTARIOS
 */
+$app->get('/productos/cargarporid/:id_producto', 'productosCargarPorId');
 $app->get('/inventarios/productos/listar', 'productosListar');
 $app->get('/pedidos/categoria/listar', 'categoriaListar');
 $app->get('/pedidos/proxcate/listar/:id_categoria_producto', 'productosCategoria');
