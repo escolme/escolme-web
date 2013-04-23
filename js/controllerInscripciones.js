@@ -50,6 +50,8 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
         }) 
     }
 
+
+
     $scope.BuscarAspiId = function(){
         var documento = $scope.inscripcion.ASPI_NUMERODOCUMENTO;
         if(documento!=null){
@@ -83,6 +85,36 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
                 alert('error: ' + textStatus);
             }
         })
+    }
+
+    $scope.ValidacionExiste = function(){
+        var documento = $scope.inscripcion.ASPI_NUMERODOCUMENTO;
+        if (documento!= null){
+            $http.get('api/buscar/inscripcion/' + documento).then(function(response){
+            $scope.existe = response.data.datos[0];
+                if($scope.existe.ASPI_NUMERODOCUMENTO !=null){
+                   alert("El usuario ya tiene una inscripcion activa para este periodo, no se guardara ninguna información");
+                }
+                else{
+                    $http.get('api/buscar/aspiid/' + documento).then(function(response){
+                    $scope.existe2 = response.data.datos[0];
+                        if ($scope.existe2.ASPI_NUMERODOCUMENTO !=null){
+                            alert("El usuario se ha inscrito previamente más no para este periodo, se actualizarán los datos y se guardaran los programas escogidos");
+                        }
+                        else{
+                            alert("El aspirante no existe");
+                        }
+
+                    });
+                }
+
+
+            });
+        }
+        else{
+            alert("Por favor ingrese el documento");
+        }
+
     }
 
     $scope.BuscarFoinid = function(){

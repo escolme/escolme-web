@@ -19,7 +19,7 @@ require 'modelo/estudiossecundarios.php';
 require 'modelo/caracterizacion.php';
 require 'modelo/informacionsocioeconomica.php';
 
-require 'modeloinventarios/productos.php';
+//require 'modeloinventarios/productos.php';
 //require 'modeloinventarios/categoria_productos.php';
 
 $app = new Slim();
@@ -42,6 +42,7 @@ $app->get('/horario/listar', 'horarioListar');
 $app->get('/programas/adicional/:PROG_ID', 'programasAdicional');
 $app->get('/buscar/aspiid/:ASPI_NUMERODOCUMENTO', 'BuscarExisteAspirante');
 $app->get('/buscar/formulario/:ASPI_ID', 'BuscarExisteFormulario');
+$app->get('/buscar/inscripcion/:ASPI_ID', 'BuscarExisteInscripcion');
 
 $app->post('/insertar/aspirantenew','InsertarAspirante');
 $app->post('/insertar/formularioinscripcionnew','InsertarFormulario');
@@ -52,7 +53,7 @@ $app->post('/insertar/socioeconomica','InsertarInformacionSocioeconomica');
 /*
 RUTAS DE INVENTARIOS
 */
-$app->get('/inventarios/productos/listar', 'productosListar');
+//$app->get('/inventarios/productos/listar', 'productosListar');
 //$app->get('/pedidos/categoria/listar', 'categoriaListar');
-$app->get('/pedidos/proxcate/listar/:id_categoria_producto', 'productosCategoria');
+//$app->get('/pedidos/proxcate/listar/:id_categoria_producto', 'productosCategoria');
 $app->run();
