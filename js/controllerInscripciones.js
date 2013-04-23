@@ -91,9 +91,10 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
         var documento = $scope.inscripcion.ASPI_NUMERODOCUMENTO;
         if (documento!= null){
             $http.get('api/buscar/inscripcion/' + documento).then(function(response){
-            $scope.existe = response.data.datos[0];
+                $scope.existe = response.data.datos[0];
                 if($scope.existe.ASPI_NUMERODOCUMENTO !=null){
                    alert("El usuario ya tiene una inscripcion activa para este periodo, no se guardara ninguna información");
+                   $scope.inscripcion.ASPI_NUMERODOCUMENTO = null;
                 }
                 else{
                     $http.get('api/buscar/aspiid/' + documento).then(function(response){

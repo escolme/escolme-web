@@ -17,7 +17,8 @@ escolmeWeb.value('ui.config', {
 		changeMonth: true,changeYear: true,regional:'es',dateFormat:'dd/mm/yy'
 	}
 });
-
+s
+//Directiva para agregar la funcionalidad onBlur a un input
 escolmeWeb.directive('ngBlur', function() {
   return function( scope, elem, attrs ) {
     elem.bind('blur', function() {
