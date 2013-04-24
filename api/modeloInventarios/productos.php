@@ -66,6 +66,34 @@
         }
     }
 
+        function productosQuitarPorId($id_producto){
+            $resultados = array();
+
+            try
+            {
+                $conexion = new conexionBD();
+                $conectar = $conexion->conectarInventarios();
+                $result = mysqli_query($conectar,"SELECT id_producto,nom_producto FROM tbl_productos WHERE id_producto=$id_producto");
+
+                while($row = mysqli_fetch_array($result))
+                {
+                    $fila = array(
+                        "id_producto" => $row['id_producto'],
+                        "nom_producto" => $row['nom_producto'],
+
+                    );
+                    array_push($resultados, $fila);
+                }
+
+                echo utf8_encode('{"datos": ' . json_encode($resultados) . '}');
+                mysqli_close($conectar);
+            }
+            catch(Exception $e){
+                mysqli_close($conectar);
+                echo utf8_encode('{"error: ":' . $e->getMessage() . '}');
+            }
+        }
+
     function productosCategoria($id_categoria_producto){
         $resultados = array();
         try
@@ -93,6 +121,15 @@
             echo utf8_encode('{"error: ":' . $e->getMessage() . '}');
         }
     }
+
+
+
+
+
+
+
+
+
   /*
 function insertarproductos()
 {

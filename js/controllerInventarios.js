@@ -52,6 +52,28 @@ function PedidosCtrl($scope,$http){
     }
 
 
+    $scope.QuitarProducto = function(){
+        $http.get('api/productos/quitarporid/'+ $scope.pedido.id_producto).then(function(response){
+            producto = response.data.datos[0];
+            var existe = false;
+            angular.forEach($scope.pedidoFinal, function(c) {
+                if(c.id_producto == $scope.pedido.id_producto){
+                    existe = true;
+                    c.cantidad = c.cantidad - $scope.pedido.cantidad;
+                }
+            });
+
+            if(!existe){
+                var item = {
+                    id_producto : $scope.pedido.id_producto,
+                    nom_producto : producto.nom_producto,
+                    cantidad : $scope.pedido.cantidad
+                }
+
+                $scope.pedidoFinal.push(item);
+            }
+        });
+    }
 
     $scope.limpiar();
 }
@@ -81,6 +103,14 @@ function PedidosCtrl($scope,$http){
 
     }
 
-function RegistroCtrl($scope,$http){
+    function RegistroCtrl($scope,$http){
+       $scope.limpiar3 = function(){
+          $scope.insertarproductos = {
+            id_producto:null,
+            nom_producto:null
 
-}
+          }
+       }
+
+
+    }
