@@ -79,11 +79,6 @@ function PedidosCtrl($scope,$http){
 }
 
 
-
-
-
-
-
     function InventariosCtrl($scope,$http){
         $scope.limpiar2 = function(){
         $scope.ListarProductos = function(){
@@ -94,23 +89,38 @@ function PedidosCtrl($scope,$http){
             $scope.ListarProductos();
         }
         $scope.limpiar2();
-
-
-
-
-
-
-
     }
 
     function RegistroCtrl($scope,$http){
        $scope.limpiar3 = function(){
-          $scope.insertarproductos = {
-            id_producto:null,
-            nom_producto:null
+           $scope.insertarproductos = {
+               id_producto:null,
+               nom_producto:null, id_categoria_producto:null, categoria:null,
+               id_usuario:null, nombre:null, apellido:null, cant_stock:null,
+               cantidad_pedida:null, precio_producto:null
+           }
 
-          }
        }
+
+
+        $scope.Guardar = function(){
+            var json_inscripcion = JSON.stringify($scope.insertarproductos);
+            $.ajax({
+                type: 'POST',
+                contentType: 'application/json',
+                url: 'api/registro/productos',
+                dataType: "json",
+                data: json_inscripcion,
+                async:false,
+                success: function(data, textStatus, jqXHR){
+                    console.dir(data);
+
+                },
+                error: function(jqXHR, textStatus, errorThrown){
+                    alert('error: ' + textStatus);
+                }
+            })
+        }
 
 
     }

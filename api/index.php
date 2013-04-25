@@ -62,4 +62,6 @@ $app->get('/productos/cargarporid/:id_producto', 'productosCargarPorId');
 $app->get('/inventarios/productos/listar', 'productosListar');
 $app->get('/pedidos/categoria/listar', 'categoriaListar');
 $app->get('/pedidos/proxcate/listar/:id_categoria_producto', 'productosCategoria');
+//$app->get('/registro/proxcate/listar/:id_categoria_producto', 'productosCategoria');
+//$app->get('/registro/categoria2/listar', 'categoriaListar');
 $app->run();
