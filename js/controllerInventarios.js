@@ -51,6 +51,15 @@ function PedidosCtrl($scope,$http){
         });
     }
 
+    $scope.EliminarItem = function(item){
+        var temp =  $scope.pedidoFinal;
+        $scope.pedidoFinal = [];
+        angular.forEach(temp, function(c) {
+            if(c.id_producto != item.id_producto){
+                $scope.pedidoFinal.push(c);
+            }
+        });
+    }
 
     $scope.QuitarProducto = function(){
         $http.get('api/productos/quitarporid/'+ $scope.pedido.id_producto).then(function(response){

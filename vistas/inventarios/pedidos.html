@@ -39,10 +39,14 @@
 
                             <td><center><B>Producto</B></td>
                             <td><center><B>Cantidad</B></td>
+                            <td style="width: 30px;"></td>
                         </tr>
                         <tr ng-repeat="c in pedidoFinal">
-                            <td>{{c.nom_producto}}<i  class="icon-trash" ></i></td>
+                            <td>{{c.nom_producto}}</td>
                             <td>{{c.cantidad}}</td>
+                            <td>
+                                <button ng-click="EliminarItem(c)" class="btn btn-mini"><i class="icon-trash"></i></button>
+                            </td>
                         </tr>
                     </table>
 
