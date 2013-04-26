@@ -41,8 +41,15 @@ escolmeWeb.service('comunService',function(){
 escolmeWeb.service('sessionService',function(){
 
     function validarSession(){
-        if(angular.equals(sessionStorage.getItem("stUsuario"),null)){
+        if(angular.equals(sessionStorage.getItem("usua_usuario"),null)){
+            $("#divContenidos").css("width","100%");
             location.href = "#/login";
+        }
+        else{
+            $('#divBarraUsuario').show();
+            $("#divContenidos").css("width"," 74.35897435897436%");
+            $('#divMenu').show();
+            $('#linkUsuario').html('<i class="icon-user"></i> ' + sessionStorage.getItem("usua_nombre") + ' <span class="caret"></span>');
         }
     }
 

@@ -17,8 +17,17 @@
             <div class="control-group">
                 <label class="control-label" for="inputEmail">Metodologia</label>
                 <div class="controls">
-                    <select  required="required" name="inputMetodologia" class="input-xlarge" ng-change="ListarProgramas()" ng-model="inscripcion.METO_ID" ng-options="c.METO_ID as c.METO_DESCRIPCION for c in modalidades" >
+                    <select  required="required" name="inputMetodologia" class="input-xlarge" ng-change="ListarNivelEducativo()" ng-model="inscripcion.METO_ID" ng-options="c.METO_ID as c.METO_DESCRIPCION for c in modalidades" >
                         <option value=""> -- Seleccione la Metodologia</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="inputEmail">Nivel Educativo</label>
+                <div class="controls">
+                    <select  required="required" name="inputNivelEducativo" class="input-xlarge" ng-change="ListarProgramas()" ng-model="inscripcion.NIED_ID" ng-options="c.NIED_ID as c.NIED_DESCRIPCION for c in niveleducativo" >
+                        <option value=""> -- Seleccione el Nivel Educativo</option>
                     </select>
                 </div>
             </div>

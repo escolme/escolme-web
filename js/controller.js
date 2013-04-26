@@ -1,5 +1,13 @@
 function IndexCtrl($scope){
-
+    if(!angular.equals(sessionStorage.getItem("usua_usuario"),null)){
+        $('#divBarraUsuario').show();
+        $('#divMenu').show();
+        $('#linkUsuario').html('<i class="icon-user"></i> ' + sessionStorage.getItem("usua_nombre") + ' <span class="caret"></span>');
+        $("#divContenidos").css("width","74.35897435897436%");
+    }
+    else{
+        $("#divContenidos").css("width","100%");
+    }
 }
 
 function LoginCtrl(comunService, sessionService,$scope,$http,$location){
@@ -13,15 +21,16 @@ function LoginCtrl(comunService, sessionService,$scope,$http,$location){
         $scope.maestro = angular.copy(form_autenticar);
         $.ajax({
             type: 'GET',
-            url: url_servicios + '/UsuariosVO/AutenticarUsuario/' + $scope.maestro.usuario + "/" + $scope.maestro.password,
+            url: 'api/usuario/buscar/' + $scope.maestro.usuario + "/" + $scope.maestro.password,
             dataType: "json",
             success: function(data){
+                usuario = data.datos[0];
                 if(data != null){
-                    sessionStorage.setItem("usua_usuario",data.usua_usuario);
-                    sessionStorage.setItem("usua_id",data.usua_id);
-                    sessionStorage.setItem("pege_id",data.pege_id);
-                    sessionStorage.setItem("usua_nombre",data.usua_nombre);
-                    sessionStorage.setItem("usua_documento",data.usua_documento);
+                    sessionStorage.setItem("usua_usuario",usuario.usua_usuario);
+                    sessionStorage.setItem("usua_id",usuario.usua_id);
+                    sessionStorage.setItem("pege_id",usuario.pege_id);
+                    sessionStorage.setItem("usua_nombre",usuario.usua_nombre);
+                    sessionStorage.setItem("usua_documento",usuario.usua_documento);
                     location.href = "#/principal";
                 }
                 else{

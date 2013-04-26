@@ -1,20 +1,18 @@
 <?php
-
-//Insertar en Tabla CARACTERIZACION
-function InsertarCaracterizacion(){
+//ACTUALIZAR TABLA CIRCUNSCRIPCION
+function ActualizarCircunscripcion($CIRC_ID, $ASPI_ID){
     $request = Slim::getInstance()->request();
     $inscripcion = json_decode($request->getBody());
-    $fecha=date("d-m-Y");
     try{
         $conexion = new conexionBD();
         $conn = $conexion->conectar();
-        $sql = "INSERT INTO ACADEMICO.CARACTERIZACION (ASPI_ID, CARA_REGISTRADOPOR, CARA_FECHACAMBIO) VALUES(".$inscripcion->ASPI_ID.",'".$inscripcion->ASPI_NUMERODOCUMENTO."','".$fecha."')";
-        //echo utf8_encode('{"datos4": ' . json_encode($sql) . '}');
+        $sql = "UPDATE ACADEMICO.ASPIRANTE SET CIRC_ID=".$CIRC_ID." WHERE ASPI_ID=".$ASPI_ID;
+        //echo utf8_encode('{"datos2-": ' . json_encode($sql) . '}');
         $query =OCIParse($conn, $sql);
         OCIExecute($query, OCI_DEFAULT);
         OCICommit($conn);
         OCILogoff($conn);
-        echo '{"mensaje: ":"ExitoCaracte"}';
+        echo '{"mensaje: ":"ExitoFormula"}';
     }
     catch(Exception $e){
         OCILogoff($conn);

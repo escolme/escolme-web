@@ -1,5 +1,15 @@
 function InscripcionCtrl(comunService, sessionService,$scope,$http){
 
+
+    if(!angular.equals(sessionStorage.getItem("usua_usuario"),null)){
+        $('#divBarraUsuario').show();
+        $('#linkUsuario').html('<i class="icon-user"></i> ' + sessionStorage.getItem("usua_nombre") + ' <span class="caret"></span>');
+        $("#divContenidos").css("width"," 74.35897435897436%");
+    }
+    else{
+        $("#divContenidos").css("width","100%");
+    }
+
     $scope.Limpiar = function(){
         $scope.inscripcion = {
             METO_ID:null,
@@ -11,8 +21,8 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
             ASPI_SEGUNDONOMBRE:null,ASPI_PRIMERAPELLIDO:null, ASPI_SEGUNDOAPELLIDO:null,
             ASPI_FECHANACIMIENTO:null,ASPI_FECHANACIMIENTO_S:'',ASPI_TELEFONORESIDENCIA:null,ASPI_TELEFONOCELULAR:null,
             ASPI_EMAIL:null, ESSE_FECHATERMINACION:null,ESSE_FECHATERMINACION_S:'', ESSE_SNP:null,ESSE_FECHAPRESENTOPRUEBAS:null,
-            ESSE_FECHAPRESENTOPRUEBAS_S:'',ESSE_PUNTAJEOBTENIDO:null, NIED_ID:null,NIED_ID2:null,CIRC_ID:null,CIRC_ID2:null,SEPE_ID:null,
-            SEPE_ID2:null,UNPR_ID:null,UNPR_ID2:null,COIN_ID:null,COIN_ID2:null,ASPI_ID:null,FOIN_ID:null
+            ESSE_FECHAPRESENTOPRUEBAS_S:'',ESSE_PUNTAJEOBTENIDO:null, NIED_ID:null,CIRC_ID:null,CIRC_ID2:null,SEPE_ID:null,
+            SEPE_ID2:null,UNPR_ID:null,UNPR_ID2:null,COIN_ID:null,COIN_ID2:null,ASPI_ID:null,FOIN_ID:null, validacionguardado:null
         };
         $scope.filtros = { institucion:''};
         $scope.ListarModalidades();
@@ -24,7 +34,35 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
         $scope.ListarMedio();
         $scope.ListarHorario();
         $scope.ListarHorario2();
-        
+    }
+
+    $scope.ValidacionExiste = function(){
+        var documento = $scope.inscripcion.ASPI_NUMERODOCUMENTO;
+        var nied_id= $scope.inscripcion.NIED_ID;
+        if (documento!= null && nied_id!=null){
+            $http.get('api/buscar/inscripcion/' + documento).then(function(response){
+                $scope.existe = response.data.datos[0];
+                if($scope.existe!= null){
+                    $scope.inscripcion.validacionguardado=1;
+                    alert("El usuario ya tiene una inscripcion activa para este periodo, no se guardara ninguna información" + $scope.inscripcion.validacionguardado);
+                    $scope.inscripcion.ASPI_NUMERODOCUMENTO = null;
+
+                }
+                else{
+                    $http.get('api/buscar/aspiid/'+documento+'/'+nied_id).then(function(response){
+                        $scope.existe2 = response.data.datos[0];
+                        if($scope.existe2!= null){
+                            $scope.inscripcion.validacionguardado=2;
+                            alert("El usuario se ha inscrito previamente más no para este periodo, se actualizarán los datos y se guardaran los programas escogidos. Por favor termine de diligenciar los datos" + $scope.inscripcion.validacionguardado);
+
+                        }
+                        else{
+                            $scope.inscripcion.validacionguardado=3;
+                        }
+                    });
+                }
+            });
+        }
     }
 
     $scope.Guardar = function(){
@@ -33,39 +71,68 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
         $scope.inscripcion.ESSE_FECHATERMINACION_S = comunService.fechaFormato('dd/mm/yyyy', $scope.inscripcion.ESSE_FECHATERMINACION);
         $scope.inscripcion.ESSE_FECHAPRESENTOPRUEBAS_S = comunService.fechaFormato('dd/mm/yyyy', $scope.inscripcion.ESSE_FECHAPRESENTOPRUEBAS);
         var json_inscripcion = JSON.stringify($scope.inscripcion);
-        $.ajax({
-            type: 'POST',
-            contentType: 'application/json',
-            url: 'api/insertar/aspirantenew',
-            dataType: "json",
-            data: json_inscripcion,
-            async:false,
-            success: function(data, textStatus, jqXHR){
-                console.dir(data);
+
+        switch ($scope.inscripcion.validacionguardado) {
+            case 1:
+                alert("El usuario ya tiene una inscripcion activa para este periodo, no se guardara ninguna información");
+                $scope.Limpiar();
+                break;
+            case 2:
                 $scope.BuscarAspiId();
-            },
-            error: function(jqXHR, textStatus, errorThrown){
-                alert('error: ' + textStatus);
-            }
-        }) 
+                break;
+            case 3:
+                $.ajax({
+                    type: 'POST',
+                    contentType: 'application/json',
+                    url: 'api/insertar/aspirantenew',
+                    dataType: "json",
+                    data: json_inscripcion,
+                    async:false,
+                    success: function(data, textStatus, jqXHR){
+                        console.dir(data);
+                        $scope.BuscarAspiId();
+                    },
+                    error: function(jqXHR, textStatus, errorThrown){
+                        alert('error: ' + textStatus);
+                    }
+                })
+                break;
+        }
+
+
     }
-
-
 
     $scope.BuscarAspiId = function(){
         var documento = $scope.inscripcion.ASPI_NUMERODOCUMENTO;
+        var nied_id= $scope.inscripcion.NIED_ID;
         if(documento!=null){
-            $http.get('api/buscar/aspiid/' + documento).then(function(response){
+            $http.get('api/buscar/aspiid/'+documento+'/'+nied_id).then(function(response){
                 $scope.aspiid = response.data.datos[0];
                 $scope.inscripcion.ASPI_ID=$scope.aspiid.ASPI_ID;
-                $scope.GuardarFormulario();
-                $scope.GuardarCaracterizacion();
-                $scope.GuardarEstudiosSecundarios();
-                $scope.GuardarInfoSocio();
+                if($scope.inscripcion.validacionguardado == 2){
+                    $scope.GuardarFormulario();
+                    $scope.ActualizarCircunscripcion();
+                }
+                if($scope.inscripcion.validacionguardado == 3){
+                    $scope.GuardarFormulario();
+                    $scope.GuardarCaracterizacion();
+                    $scope.GuardarEstudiosSecundarios();
+                    $scope.GuardarInfoSocio();
+                }
             });
         }else{
             $scope.aspiid = [];
         }
+    }
+
+    $scope.ActualizarCircunscripcion = function(){
+        var circ_id = $scope.inscripcion.CIRC_ID;
+        var aspi_id= $scope.inscripcion.ASPI_ID;
+        if (circ_id!= null && aspi_id!= null){
+            $http.get('api/actualizar/circunscripcion/'+circ_id+'/'+aspi_id).then(function(response){
+            });
+        }
+
     }
 
     $scope.GuardarFormulario = function(){
@@ -87,36 +154,7 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
         })
     }
 
-    $scope.ValidacionExiste = function(){
-        var documento = $scope.inscripcion.ASPI_NUMERODOCUMENTO;
-        if (documento!= null){
-            $http.get('api/buscar/inscripcion/' + documento).then(function(response){
-                $scope.existe = response.data.datos[0];
-                if($scope.existe.ASPI_NUMERODOCUMENTO !=null){
-                   alert("El usuario ya tiene una inscripcion activa para este periodo, no se guardara ninguna información");
-                   $scope.inscripcion.ASPI_NUMERODOCUMENTO = null;
-                }
-                else{
-                    $http.get('api/buscar/aspiid/' + documento).then(function(response){
-                    $scope.existe2 = response.data.datos[0];
-                        if ($scope.existe2.ASPI_NUMERODOCUMENTO !=null){
-                            alert("El usuario se ha inscrito previamente más no para este periodo, se actualizarán los datos y se guardaran los programas escogidos");
-                        }
-                        else{
-                            alert("El aspirante no existe");
-                        }
 
-                    });
-                }
-
-
-            });
-        }
-        else{
-            alert("Por favor ingrese el documento");
-        }
-
-    }
 
     $scope.BuscarFoinid = function(){
         var aspiid = $scope.inscripcion.ASPI_ID;
@@ -211,6 +249,16 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
         });
     }
 
+    $scope.ListarNivelEducativo = function(){
+        $scope.inscripcion.NIED_ID=null;
+        $scope.inscripcion.PROG_ID=null;
+        $scope.inscripcion.PROG_ID2=null;
+        var meto_id= $scope.inscripcion.METO_ID;
+        $http.get('api/niveleducativo/listar/'+meto_id).then(function(response){
+            $scope.niveleducativo = response.data.datos;
+        });
+    }
+
     $scope.CamposAdicionales = function(){
         var prog = $scope.inscripcion.PROG_ID;
         if(prog!=null){
@@ -220,7 +268,6 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
                 $scope.inscripcion.UNPR_ID=$scope.adicional.UNPR_ID;
                 $scope.inscripcion.COIN_ID=$scope.adicional.COIN_ID;
                 $scope.inscripcion.CIRC_ID=$scope.adicional.CIRC_ID;
-                $scope.inscripcion.NIED_ID=$scope.adicional.NIED_ID;
                 $scope.CamposAdicionales2();
             });
         }else{
@@ -238,7 +285,6 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
                 $scope.inscripcion.UNPR_ID2=$scope.adicional2.UNPR_ID;
                 $scope.inscripcion.COIN_ID2=$scope.adicional2.COIN_ID;
                 $scope.inscripcion.CIRC_ID2=$scope.adicional2.CIRC_ID;
-                $scope.inscripcion.NIED_ID2=$scope.adicional2.NIED_ID;
                 $scope.Guardar();
             });
         }else{
@@ -248,8 +294,9 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
 
     $scope.ListarProgramas = function(){
         var meto_id = $scope.inscripcion.METO_ID;
-        if(meto_id!=null){
-            $http.get('api/programas/listar/' + meto_id).then(function(response){
+        var nied_id = $scope.inscripcion.NIED_ID;
+        if(meto_id!=null && nied_id!=null){
+            $http.get('api/programas/listar/' + meto_id+'/'+nied_id).then(function(response){
                 $scope.programas = response.data.datos;
             });            
         }else{
