@@ -99,9 +99,12 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
                 break;
         }
 
+<<<<<<< HEAD
 
     }
 
+=======
+>>>>>>> 8afb64ab4b43efdf36192482497eec1acd572b3b
     $scope.BuscarAspiId = function(){
         var documento = $scope.inscripcion.ASPI_NUMERODOCUMENTO;
         var nied_id= $scope.inscripcion.NIED_ID;
