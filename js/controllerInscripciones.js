@@ -50,8 +50,6 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
         }) 
     }
 
-
-
     $scope.BuscarAspiId = function(){
         var documento = $scope.inscripcion.ASPI_NUMERODOCUMENTO;
         if(documento!=null){
