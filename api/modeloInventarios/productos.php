@@ -14,7 +14,7 @@
                     $fila = array(
                         "id_producto" => $row['id_producto'],
                         "nom_producto" => $row['nom_producto'],
-                        "categoria"=>$row ['categoria'],
+                        "categoria"=> $row ['categoria'],
                         "cant_stock" => $row['cant_stock'],
                         "fecha_mod" => $row['fecha_mod'],
                     );
@@ -28,7 +28,7 @@
               //  mysqli_close($conectar);
                 echo utf8_encode('{"error: ":' . $e->getMessage() . '}');
             }
-        }
+    }
 
     function productosCargarPorId($id_producto){
         $resultados = array();
