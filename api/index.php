@@ -18,11 +18,23 @@ require 'modelo/programaxformulario.php';
 require 'modelo/estudiossecundarios.php';
 require 'modelo/caracterizacion.php';
 require 'modelo/informacionsocioeconomica.php';
+require 'modelo/niveleducativo.php';
+require 'modelo/circusncripcion.php';
+require 'modelo/usuario.php';
 
+
+//require 'modeloinventarios/productos.php';
+//require 'modeloinventarios/categoria_productos.php';
+
+<<<<<<< HEAD
+//require 'modeloinventarios/productos.php';
+//require 'modeloinventarios/categoria_productos.php';
+=======
 
 require 'modeloinventarios/productos.php';
 require 'modeloinventarios/categoria_productos.php';
 
+>>>>>>> 8afb64ab4b43efdf36192482497eec1acd572b3b
 
 
 $app = new Slim();
@@ -31,7 +43,7 @@ RUTAS DE ACADEMUSOFT
 */
 $app->contentType('application/json;charset=utf-8');
 $app->get('/metodologias/listar', 'metodologiaListar');
-$app->get('/programas/listar/:METO_ID', 'programasListar');
+$app->get('/programas/listar/:METO_ID/:NIED_ID', 'programasListar');
 $app->get('/tipodocumento/listar', 'tipodocumentoListar');
 $app->get('/pais/listar', 'paisListar');
 $app->get('/departamento/listar/:PAGE_ID', 'departamentoListar');
@@ -42,10 +54,13 @@ $app->get('/medio/listar', 'medioListar');
 $app->get('/institucion/listar', 'institucionListar');
 $app->get('/institucion/listarporfiltro/:filtro', 'institucionListarPorFiltro');
 $app->get('/horario/listar', 'horarioListar');
+$app->get('/niveleducativo/listar/:METO_ID', 'niveleducativoListar');
 $app->get('/programas/adicional/:PROG_ID', 'programasAdicional');
-$app->get('/buscar/aspiid/:ASPI_NUMERODOCUMENTO', 'BuscarExisteAspirante');
+$app->get('/buscar/aspiid/:ASPI_NUMERODOCUMENTO/:NIED_ID', 'BuscarExisteAspirante');
 $app->get('/buscar/formulario/:ASPI_ID', 'BuscarExisteFormulario');
-$app->get('/buscar/inscripcion/:ASPI_ID', 'BuscarExisteInscripcion');
+$app->get('/buscar/inscripcion/:ASPI_NUMERODOCUMENTO', 'BuscarExisteInscripcion');
+$app->get('/actualizar/circunscripcion/:CIRC_ID/:ASPI_ID', 'ActualizarCircunscripcion');
+$app->get('/usuario/buscar/:usua_usuario/:usua_contrasena', 'BuscarUsuario');
 
 $app->post('/insertar/aspirantenew','InsertarAspirante');
 $app->post('/insertar/formularioinscripcionnew','InsertarFormulario');
@@ -57,6 +72,17 @@ $app->post('/insertar/socioeconomica','InsertarInformacionSocioeconomica');
 /*
 RUTAS DE INVENTARIOS
 */
+<<<<<<< HEAD
+
+//$app->get('/inventarios/productos/listar', 'productosListar');
+//$app->get('/pedidos/categoria/listar', 'categoriaListar');
+//$app->get('/pedidos/proxcate/listar/:id_categoria_producto', 'productosCategoria');
+
+//$app->get('/inventarios/productos/listar', 'productosListar');
+//$app->get('/pedidos/categoria/listar', 'categoriaListar');
+//$app->get('/pedidos/proxcate/listar/:id_categoria_producto', 'productosCategoria');
+
+=======
 $app->get('/productos/quitarporid/:id_producto', 'productosQuitarPorId');
 $app->get('/productos/cargarporid/:id_producto', 'productosCargarPorId');
 $app->get('/inventarios/productos/listar', 'productosListar');
@@ -64,4 +90,5 @@ $app->get('/pedidos/categoria/listar', 'categoriaListar');
 $app->get('/pedidos/proxcate/listar/:id_categoria_producto', 'productosCategoria');
 //$app->get('/registro/proxcate/listar/:id_categoria_producto', 'productosCategoria');
 //$app->get('/registro/categoria2/listar', 'categoriaListar');
+>>>>>>> 8afb64ab4b43efdf36192482497eec1acd572b3b
 $app->run();

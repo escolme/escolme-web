@@ -13,11 +13,11 @@ function InsertarEstudiosSecundarios(){
         ESSE_FECHAPRESENTOPRUEBAS, ESSE_FECHACAMBIO, ESSE_REGISTRADOPOR)
         VALUES(".$inscripcion->ASPI_ID.",'".$inscripcion->INST_CODIGOSNP."','".$inscripcion->ESSE_FECHATERMINACION_S."','".$inscripcion->ESSE_SNP."',".$inscripcion->ESSE_PUNTAJEOBTENIDO.",'".$inscripcion->ESSE_FECHAPRESENTOPRUEBAS_S."','".$fecha."','".$inscripcion->ASPI_NUMERODOCUMENTO."')";
         //echo utf8_encode('{"datos5": ' . json_encode($sql) . '}');
-        //$query =OCIParse($conn, $sql);
-        //OCIExecute($query, OCI_DEFAULT);
-        //OCICommit($conn);
+        $query =OCIParse($conn, $sql);
+        OCIExecute($query, OCI_DEFAULT);
+        OCICommit($conn);
         OCILogoff($conn);
-        echo '{"mensaje: ":"Exito"}';
+        echo '{"mensaje: ":"ExitoEstuSecun"}';
     }
     catch(Exception $e){
         OCILogoff($conn);

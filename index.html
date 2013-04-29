@@ -40,17 +40,54 @@
                     <li><a href="#">Portal Escolme</a></li>
                     <li><a href="#">Campus Academico</a></li>
                     <li><a href="#/principal">Campus Administrativo</a></li>
+                    <li>
+                        <div id="divBarraUsuario" style="display: none; padding-right: 20px;">
+                            <div class="btn-group pull-right">
+                                <a id="linkUsuario" class="btn dropdown-toggle" data-toggle="dropdown" href="#"></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#/" onclick="Salir()">Salida Segura</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
+
             </div>
         </div>
       </div>
     </div>
     <!-- ends navbar -->
 
+    <div class="container" style="background-color: #ffffff;">
+        <div class="row-fluid">
+            <div class="span3" style="padding:15px;display: none;" id="divMenu">
+                <div class="well" >
+                    <ul class="nav nav-list">
 
-    <div  ng-view class="container" id="divVistas" style="background-color: #ffffff;" ></div>
+                        <li class="nav-header">Inscripciones</li>
+                        <li><a href="#/inscripciones/inscripcion">Gestionar Preinscritos</a></li>
 
+                        <li class="nav-header">Inventarios</li>
+                        <li><a href="#">Gestion Inventarios</a></li>
+                        <li><a href="#/inventarios/pedidos">Realizar Pedido</a></li>
+                        <li><a href="#">Gestion de Pedidos</a></li>
 
+                        <li class="nav-header">Cartera</li>
+                        <li><a href="#">Estado Estudiante</a></li>
+                        <li><a href="#">Movimientos</a></li>
+                        <li><a href="#">Configuracion</a></li>
+
+                        <li class="divider"></li>
+
+                        <li><a href="#">Salir</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="span9" id="divContenidos" style="margin-left: 0px; padding: 10px;">
+                <div  ng-view class="container-fluid" id="divVistas"  ></div>
+            </div>
+        </div>
+    </div>
 
 </div>
 
