@@ -23,8 +23,12 @@
       <file leaf-file-name="productos.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/modeloInventarios/productos.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="44" selection-start="845" selection-end="845" vertical-scroll-proportion="47.076923">
-              <folding />
+            <state line="4" column="47" selection-start="70" selection-end="70" vertical-scroll-proportion="-2.5">
+              <folding>
+                <element signature="e#1385#2291#0" expanded="false" />
+                <element signature="e#2301#3295#0" expanded="false" />
+                <element signature="e#3301#4307#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -50,7 +54,7 @@
       <file leaf-file-name="ciudad.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/modelo/ciudad.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
@@ -65,10 +69,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="17" selection-start="3189" selection-end="3189" vertical-scroll-proportion="0.80078125">
+            <state line="2" column="26" selection-start="97" selection-end="107" vertical-scroll-proportion="30.076923">
               <folding />
             </state>
           </provider>
@@ -92,10 +96,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="conexionBD.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="conexionBD.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/api/modelo/conexionBD.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="13" selection-start="40" selection-end="48" vertical-scroll-proportion="0.0">
+            <state line="3" column="11" selection-start="26" selection-end="26" vertical-scroll-proportion="0.10220441">
               <folding />
             </state>
           </provider>
@@ -129,9 +133,9 @@
         <option value="$PROJECT_DIR$/vistas/inventarios/registro.html" />
         <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/js/controllerInscripciones.js" />
+        <option value="$PROJECT_DIR$/api/index.php" />
         <option value="$PROJECT_DIR$/api/modelo/conexionBD.php" />
         <option value="$PROJECT_DIR$/api/modeloInventarios/productos.php" />
-        <option value="$PROJECT_DIR$/api/index.php" />
       </list>
     </option>
   </component>
@@ -498,23 +502,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/modelo/ciudad.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/modelo/usuario.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/modelo/conexionBD.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="13" selection-start="40" selection-end="48" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -526,20 +516,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/modeloInventarios/categoria_productos.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="18" selection-start="272" selection-end="272" vertical-scroll-proportion="-3.9615386">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/modeloInventarios/productos.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="44" selection-start="845" selection-end="845" vertical-scroll-proportion="47.076923">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/controllerInventarios.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="102" column="3" selection-start="3082" selection-end="3082" vertical-scroll-proportion="0.0">
@@ -547,9 +523,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/api/modeloInventarios/categoria_productos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="18" selection-start="272" selection-end="272" vertical-scroll-proportion="-3.9615386">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/modelo/ciudad.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/api/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="17" selection-start="3189" selection-end="3189" vertical-scroll-proportion="0.80078125">
+        <state line="2" column="26" selection-start="97" selection-end="107" vertical-scroll-proportion="30.076923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/modeloInventarios/productos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="47" selection-start="70" selection-end="70" vertical-scroll-proportion="-2.5">
+          <folding>
+            <element signature="e#1385#2291#0" expanded="false" />
+            <element signature="e#2301#3295#0" expanded="false" />
+            <element signature="e#3301#4307#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/modelo/conexionBD.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="11" selection-start="26" selection-end="26" vertical-scroll-proportion="0.10220441">
           <folding />
         </state>
       </provider>

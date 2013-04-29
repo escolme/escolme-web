@@ -1,19 +1,13 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: samuel1189
- * Date: 4/04/13
- * Time: 10:27 AM
- * To change this template use File | Settings | File Templates.
- */
 
     function productosListar(){
 
         $resultados = array();
+        $conexion = new conexionBD();
        // FROM table1   LEFT JOIN table2 ON table1.id=table2.id
             try
               {
-                $conexion = new conexionBD();
+
                 $conectar = $conexion->conectarInventarios();
                 $result = mysqli_query($conectar,"SELECT id_producto,nom_producto,cant_stock,fecha_mod,categoria FROM tbl_productos JOIN  tbl_categoria_productos  ON  tbl_productos.id_categoria_producto= tbl_categoria_productos.id_categoria_producto");
               //  $result_type= MYSQLI_BOTH;
@@ -33,9 +27,10 @@
                 mysqli_close($conectar);
             }
             catch(Exception $e){
-                mysqli_close($conectar);
+               // mysqli_close($conectar);
                 echo utf8_encode('{"error: ":' . $e->getMessage() . '}');
             }
+
     }
 
     function productosCargarPorId($id_producto){
