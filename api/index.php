@@ -24,21 +24,7 @@ require 'modelo/usuario.php';
 
 
 require 'modeloInventarios/productos.php';
-require 'modeloInventarios/categoria_productos.php';
-
-<<<<<<< HEAD
-
-//require 'modeloinventarios/productos.php';
-//require 'modeloinventarios/categoria_productos.php';
-
-
-require 'modeloinventarios/productos.php';
-//require 'modeloinventarios/categoria_productos.php';
-
-
-=======
-
->>>>>>> 5407641a2907ca11acaf31d0acf6cad0950a08a1
+//require 'modeloInventarios/categoria_productos.php';
 
 
 $app = new Slim();
@@ -73,7 +59,7 @@ $app->post('/insertar/estudiossecundariosnew','InsertarEstudiosSecundarios');
 $app->post('/insertar/caracterizacionnew','InsertarCaracterizacion');
 $app->post('/insertar/socioeconomica','InsertarInformacionSocioeconomica');
 
-<<<<<<< HEAD
+
 /*
 RUTAS DE INVENTARIOS
 */
@@ -82,12 +68,11 @@ RUTAS DE INVENTARIOS
 $app->get('/inventarios/productos/listar', 'productosListar');
 //$app->get('/pedidos/categoria/listar', 'categoriaListar');
 //$app->get('/pedidos/proxcate/listar/:id_categoria_producto', 'productosCategoria');
-=======
->>>>>>> 5407641a2907ca11acaf31d0acf6cad0950a08a1
+
 
 //RUTAS DE INVENTARIOS
 
-<<<<<<< HEAD
+
 
 //$app->get('/productos/quitarporid/:id_producto', 'productosQuitarPorId');
 //$app->get('/productos/cargarporid/:id_producto', 'productosCargarPorId');
@@ -97,7 +82,7 @@ $app->get('/inventarios/productos/listar', 'productosListar');
 //$app->get('/registro/proxcate/listar/:id_categoria_producto', 'productosCategoria');
 //$app->get('/registro/categoria2/listar', 'categoriaListar');
 
-=======
+
 $app->get('/inventarios/productos/listar', 'productosListar');
 $app->get('/pedidos/categoria/listar', 'categoriaListar');
 $app->get('/pedidos/proxcate/listar/:id_categoria_producto', 'productosCategoria');
@@ -105,5 +90,5 @@ $app->get('/productos/quitarporid/:id_producto', 'productosQuitarPorId');
 $app->get('/productos/cargarporid/:id_producto', 'productosCargarPorId');
 $app->get('/registro/proxcate/listar/:id_categoria_producto', 'productosCategoria');
 $app->get('/registro/categoria2/listar', 'categoriaListar');
->>>>>>> 5407641a2907ca11acaf31d0acf6cad0950a08a1
+
 $app->run();

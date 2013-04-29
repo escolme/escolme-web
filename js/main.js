@@ -19,10 +19,7 @@ escolmeWeb.value('ui.config', {
 	}
 });
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 5407641a2907ca11acaf31d0acf6cad0950a08a1
 //Directiva para agregar la funcionalidad onBlur a un input
 escolmeWeb.directive('ngBlur', function() {
   return function( scope, elem, attrs ) {
