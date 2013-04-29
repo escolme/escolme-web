@@ -9,6 +9,7 @@ var escolmeWeb = angular.module('escolmeWeb',['ui']).config(['$routeProvider', f
         when('/inventarios/admin', { templateUrl: 'vistas/inventarios/inventarios.html', controller: InventariosCtrl }).
         when('/inventarios/pedidos', { templateUrl: 'vistas/inventarios/pedidos.html', controller: PedidosCtrl }).
         when('/inventarios/registro', { templateUrl: 'vistas/inventarios/registro.html', controller: RegistroCtrl}).
+        when('/gestionar/inscripcion', { templateUrl: 'vistas/gestionarinscripcion.html', controller: GestionarInsCtrl}).
         otherwise({ redirectTo: '/' });
 }]);
 
@@ -17,10 +18,7 @@ escolmeWeb.value('ui.config', {
 		changeMonth: true,changeYear: true,regional:'es',dateFormat:'dd/mm/yy'
 	}
 });
-<<<<<<< HEAD
-=======
 
->>>>>>> 8afb64ab4b43efdf36192482497eec1acd572b3b
 //Directiva para agregar la funcionalidad onBlur a un input
 escolmeWeb.directive('ngBlur', function() {
   return function( scope, elem, attrs ) {

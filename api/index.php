@@ -26,15 +26,15 @@ require 'modelo/usuario.php';
 //require 'modeloinventarios/productos.php';
 //require 'modeloinventarios/categoria_productos.php';
 
-<<<<<<< HEAD
+
 //require 'modeloinventarios/productos.php';
 //require 'modeloinventarios/categoria_productos.php';
-=======
+
 
 require 'modeloinventarios/productos.php';
-require 'modeloinventarios/categoria_productos.php';
+//require 'modeloinventarios/categoria_productos.php';
 
->>>>>>> 8afb64ab4b43efdf36192482497eec1acd572b3b
+
 
 
 $app = new Slim();
@@ -72,23 +72,23 @@ $app->post('/insertar/socioeconomica','InsertarInformacionSocioeconomica');
 /*
 RUTAS DE INVENTARIOS
 */
-<<<<<<< HEAD
 
-//$app->get('/inventarios/productos/listar', 'productosListar');
-//$app->get('/pedidos/categoria/listar', 'categoriaListar');
-//$app->get('/pedidos/proxcate/listar/:id_categoria_producto', 'productosCategoria');
 
-//$app->get('/inventarios/productos/listar', 'productosListar');
-//$app->get('/pedidos/categoria/listar', 'categoriaListar');
-//$app->get('/pedidos/proxcate/listar/:id_categoria_producto', 'productosCategoria');
-
-=======
-$app->get('/productos/quitarporid/:id_producto', 'productosQuitarPorId');
-$app->get('/productos/cargarporid/:id_producto', 'productosCargarPorId');
 $app->get('/inventarios/productos/listar', 'productosListar');
-$app->get('/pedidos/categoria/listar', 'categoriaListar');
-$app->get('/pedidos/proxcate/listar/:id_categoria_producto', 'productosCategoria');
+//$app->get('/pedidos/categoria/listar', 'categoriaListar');
+//$app->get('/pedidos/proxcate/listar/:id_categoria_producto', 'productosCategoria');
+
+//$app->get('/inventarios/productos/listar', 'productosListar');
+//$app->get('/pedidos/categoria/listar', 'categoriaListar');
+//$app->get('/pedidos/proxcate/listar/:id_categoria_producto', 'productosCategoria');
+
+
+//$app->get('/productos/quitarporid/:id_producto', 'productosQuitarPorId');
+//$app->get('/productos/cargarporid/:id_producto', 'productosCargarPorId');
+//$app->get('/inventarios/productos/listar', 'productosListar');
+//$app->get('/pedidos/categoria/listar', 'categoriaListar');
+//$app->get('/pedidos/proxcate/listar/:id_categoria_producto', 'productosCategoria');
 //$app->get('/registro/proxcate/listar/:id_categoria_producto', 'productosCategoria');
 //$app->get('/registro/categoria2/listar', 'categoriaListar');
->>>>>>> 8afb64ab4b43efdf36192482497eec1acd572b3b
+
 $app->run();

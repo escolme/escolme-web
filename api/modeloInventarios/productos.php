@@ -1,12 +1,4 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: samuel1189
- * Date: 4/04/13
- * Time: 10:27 AM
- * To change this template use File | Settings | File Templates.
- */
-
     function productosListar(){
 
         $resultados = array();
@@ -33,7 +25,7 @@
                 mysqli_close($conectar);
             }
             catch(Exception $e){
-                mysqli_close($conectar);
+              //  mysqli_close($conectar);
                 echo utf8_encode('{"error: ":' . $e->getMessage() . '}');
             }
         }

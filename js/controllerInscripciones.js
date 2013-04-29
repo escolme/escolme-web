@@ -99,12 +99,9 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
                 break;
         }
 
-<<<<<<< HEAD
+
 
     }
-
-=======
->>>>>>> 8afb64ab4b43efdf36192482497eec1acd572b3b
     $scope.BuscarAspiId = function(){
         var documento = $scope.inscripcion.ASPI_NUMERODOCUMENTO;
         var nied_id= $scope.inscripcion.NIED_ID;
@@ -326,6 +323,8 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
     }
 
     $scope.ListarDepartamento = function(){
+        $scope.inscripcion.DEGE_ID=null;
+        $scope.inscripcion.CIGE_ID=null;
         var page_id = $scope.inscripcion.PAGE_ID;
         if(page_id!=null){
         $http.get('api/departamento/listar/' + page_id).then(function(response){

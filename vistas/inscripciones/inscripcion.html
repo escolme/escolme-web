@@ -9,106 +9,116 @@
     </div>
 </div>
 <div class="row-fluid" >
-<div class="span6 offset3">
-    <form class="form-horizontal" ng-submit="CamposAdicionales()" >
+<div class="span7 offset3">
+    <form class="form-horizontal" id="form_inscripcion" name="form_inscripcion" ng-submit="CamposAdicionales()">
         <fieldset>
             <legend style=" padding-top: 10px;">Inscripción en línea</legend>
 
-            <div class="control-group">
+            <div class="control-group error" ng-class="{error: form_inscripcion.tMetodologia.$invalid}">
                 <label class="control-label" for="inputEmail">Metodologia</label>
                 <div class="controls">
-                    <select  required="required" name="inputMetodologia" class="input-xlarge" ng-change="ListarNivelEducativo()" ng-model="inscripcion.METO_ID" ng-options="c.METO_ID as c.METO_DESCRIPCION for c in modalidades" >
+                    <select  required="required" name="tMetodologia" id="tMetodologia" class="input-xlarge ng-pristine ng-invalid-required ng-invalid" ng-change="ListarNivelEducativo()" ng-model="inscripcion.METO_ID" ng-options="c.METO_ID as c.METO_DESCRIPCION for c in modalidades" >
                         <option value=""> -- Seleccione la Metodologia</option>
                     </select>
+                    <span ng-show="form_inscripcion.tMetodologia.$error.required" class="help-inline" style="">*</span>
                 </div>
             </div>
 
-            <div class="control-group">
+            <div class="control-group error" ng-class="{error: form_inscripcion.tNivel.$invalid}">
                 <label class="control-label" for="inputEmail">Nivel Educativo</label>
                 <div class="controls">
-                    <select  required="required" name="inputNivelEducativo" class="input-xlarge" ng-change="ListarProgramas()" ng-model="inscripcion.NIED_ID" ng-options="c.NIED_ID as c.NIED_DESCRIPCION for c in niveleducativo" >
+                    <select  name="tNivel" id="tNivel" required="required" class="input-xlarge ng-pristine ng-invalid-required ng-invalid" ng-change="ListarProgramas()" ng-model="inscripcion.NIED_ID" ng-options="c.NIED_ID as c.NIED_DESCRIPCION for c in niveleducativo" >
                         <option value=""> -- Seleccione el Nivel Educativo</option>
                     </select>
+                    <span ng-show="form_inscripcion.tNivel.$error.required" class="help-inline" style="">*</span>
                 </div>
             </div>
 
-            <div class="control-group">
+            <div class="control-group error" ng-class="{error: form_inscripcion.tPrograma1.$invalid}">
                 <label class="control-label" >Programa - Opción 1</label>
                 <div class="controls">
-                    <select  required="required" ng-change="VerPensum(); ValidarPrograma()" class="input-xlarge" ng-model="inscripcion.PROG_ID" ng-options="c.PROG_ID as c.PROG_NOMBRE for c in programas">
+                    <select  name="tPrograma1" id="tPrograma1"required="required" ng-change="VerPensum(); ValidarPrograma()" class="input-xlarge ng-pristine ng-invalid-required ng-invalid" ng-model="inscripcion.PROG_ID" ng-options="c.PROG_ID as c.PROG_NOMBRE for c in programas">
                         <option value=""> -- Seleccione el Programa</option>
                     </select>
+                    <span ng-show="form_inscripcion.tPrograma1.$error.required" class="help-inline" style="">*</span>
                     <a id="aInfoAdicional1" href="" style="display:none;" ng-click="InformacionAdicional()">Info Adicional</a>
                 </div>
             </div>
 
-            <div class="control-group">
+            <div class="control-group error" ng-class="{error: form_inscripcion.tHorario1.$invalid}">
                 <label  class="control-label" >Horario Opcion 1</label>
                 <div class="controls">
-                    <select  required="required" class="input-large" ng-model="inscripcion.JORN_ID" ng-options="c.JORN_ID as c.JORN_DESCRIPCION for c in horario" >
+                    <select  name="tHorario1" id="tHorario1" required="required" class="input-large ng-pristine ng-invalid-required ng-invalid" ng-model="inscripcion.JORN_ID" ng-options="c.JORN_ID as c.JORN_DESCRIPCION for c in horario" >
                         <option value=""> -- Seleccione el Horario</option>
                     </select>
+                    <span ng-show="form_inscripcion.tHorario1.$error.required" class="help-inline" style="">*</span>
                 </div>
             </div>
 
-            <div class="control-group">
+            <div class="control-group error" ng-class="{error: form_inscripcion.tPrograma2.$invalid}">
                 <label  class="control-label" >Programa - Opción 2</label>
                 <div class="controls">
-                    <select  required="required" ng-change="VerPensum2(); ValidarPrograma2()" class="input-xlarge" ng-model="inscripcion.PROG_ID2" ng-options="c.PROG_ID as c.PROG_NOMBRE for c in programas" >
+                    <select name="tPrograma2" id="tPrograma2" required="required" ng-change="VerPensum2(); ValidarPrograma2()" class="input-xlarge ng-pristine ng-invalid-required ng-invalid" ng-model="inscripcion.PROG_ID2" ng-options="c.PROG_ID as c.PROG_NOMBRE for c in programas" >
                         <option value=""> -- Seleccione el Programa</option>
                     </select>
+                    <span ng-show="form_inscripcion.tPrograma2.$error.required" class="help-inline" style="">*</span>
                     <a href="" style="display:none;" id="aInfoAdicional2" ng-click="InformacionAdicional2()">Info Adicional</a>
                 </div>
             </div>
 
-            <div class="control-group">
+            <div class="control-group error" ng-class="{error: form_inscripcion.tHorario2.$invalid}">
                 <label  class="control-label" >Horario Opcion 2</label>
                 <div class="controls">
-                    <select  required="required" class="input-large" ng-model="inscripcion.JORN_ID2" ng-options="c.JORN_ID as c.JORN_DESCRIPCION for c in horario2" >
+                    <select name="tHorario2" id="tHorario2" required="required" class="input-large ng-pristine ng-invalid-required ng-invalid" ng-model="inscripcion.JORN_ID2" ng-options="c.JORN_ID as c.JORN_DESCRIPCION for c in horario2" >
                         <option value=""> -- Seleccione el Horario</option>
                     </select>
+                    <span ng-show="form_inscripcion.tHorario2.$error.required" class="help-inline" style="">*</span>
                 </div>
             </div>
 
             <legend>Datos Personales</legend>
 
-            <div class="control-group">
+            <div class="control-group error" ng-class="{error: form_inscripcion.tTipodocu.$invalid}">
                 <label  class="control-label" >Tipo de Documento</label>
                 <div class="controls">
-                    <select ng-model="inscripcion.TIDG_ID" ng-options="c.TIDG_ID as c.TIDG_DESCRIPCION for c in tipodocumento"required="required" class="input-xlarge" >
+                    <select name="tTipodocu" id="tTipodocu"ng-model="inscripcion.TIDG_ID" ng-options="c.TIDG_ID as c.TIDG_DESCRIPCION for c in tipodocumento"required="required" class="input-xlarge ng-pristine ng-invalid-required ng-invalid" >
                         <option value="" > -- Seleccione el Tipo de Documento</option>
                     </select>
+                    <span ng-show="form_inscripcion.tTipodocu.$error.required" class="help-inline" style="">*</span>
                 </div>
             </div>
 
-            <div class="control-group">
+            <div class="control-group error" ng-class="{error: form_inscripcion.tDocumento.$invalid}">
                 <label class="control-label" >
-                    Numero de Documento
+                    Número de Documento
                 </label>
                 <div class="controls">
-                    <input type="text" required="required" maxlength="15" ng-blur="ValidacionExiste()" ng-model="inscripcion.ASPI_NUMERODOCUMENTO" class="input-xlarge" >
+                    <input type="text" id="tDocumento" name="tDocumento" required="required" maxlength="15" ng-blur="ValidacionExiste()" ng-model="inscripcion.ASPI_NUMERODOCUMENTO" class="input-xlarge ng-pristine ng-invalid-required ng-invalid"  >
+                    <span ng-show="form_inscripcion.tDocumento.$error.required" class="help-inline" style="">*</span>
                 </div>
             </div>
 
-            <div class="control-group">
+            <div class="control-group error" ng-class="{error: form_inscripcion.tSexo.$invalid}">
                 <label class="control-label" >
                     Sexo
                 </label>
                 <div class="controls">
-                    <select ng-model="inscripcion.ASPI_SEXO" required="required" class="input-large" >
+                    <select id="tSexo" name="tSexo" ng-model="inscripcion.ASPI_SEXO" required="required" class="input-large ng-pristine ng-invalid-required ng-invalid" >
                         <option value="" > -- Seleccione el sexo</option>
                         <option value="1" >Masculino</option>
                         <option value="2" >Femenino</option>
                     </select>
+                    <span ng-show="form_inscripcion.tSexo.$error.required" class="help-inline" style="">*</span>
                 </div>
             </div>
 
-            <div class="control-group">
+            <div class="control-group error" ng-class="{error: form_inscripcion.tNombre1.$invalid}">
                 <label class="control-label" >
                     Primer Nombre
                 </label>
                 <div class="controls">
-                    <input type="text" required="required" maxlength="15" ng-model="inscripcion.ASPI_PRIMERNOMBRE" class="input-xlarge" >
+                    <input type="text" id="tNombre1" name="tNombre1" required="required" maxlength="15" ng-model="inscripcion.ASPI_PRIMERNOMBRE" class="input-xlarge ng-pristine ng-invalid-required ng-invalid" >
+                    <span ng-show="form_inscripcion.tNombre1.$error.required" class="help-inline" style="">*</span>
                 </div>
             </div>
 
@@ -121,12 +131,13 @@
                 </div>
             </div>
 
-            <div class="control-group">
+            <div class="control-group error" ng-class="{error: form_inscripcion.tApellido1.$invalid}">
                 <label class="control-label" >
                     Primer Apellido
                 </label>
                 <div class="controls">
-                    <input type="text" required="required" maxlength="15" ng-model="inscripcion.ASPI_PRIMERAPELLIDO" class="input-xlarge" >
+                    <input type="text" id="tApellido1" name="tApellido1" required="required" maxlength="15" ng-model="inscripcion.ASPI_PRIMERAPELLIDO" class="input-xlarge ng-pristine ng-invalid-required ng-invalid" >
+                    <span ng-show="form_inscripcion.tApellido1.$error.required" class="help-inline" style="">*</span>
                 </div>
             </div>
 
@@ -139,75 +150,81 @@
                 </div>
             </div>
 
-            <div class="control-group">
+            <div class="control-group error" ng-class="{error: form_inscripcion.tFechanaci.$invalid}">
                 <label class="control-label" >
                     Fecha de Nacimiento
                 </label>
                 <div class="controls">
                     <!-- <input type="date" ng-model="ASPIRANTE.ASPI_FECHANACIMIENTO" class="input-medium" > -->
-                    <input ng-model="inscripcion.ASPI_FECHANACIMIENTO" ui-date type="text">
-
+                    <input required="required" id="tFechanaci" name="tFechanaci" ng-model="inscripcion.ASPI_FECHANACIMIENTO" ui-date type="text" class="ng-pristine ng-invalid-required ng-invalid">
+                    <span ng-show="form_inscripcion.tFechanaci.$error.required" class="help-inline" style="">*</span>
 
                 </div>
             </div>
 
-            <div class="control-group">
+            <div class="control-group error" ng-class="{error: form_inscripcion.tPaisnaci.$invalid}">
                 <label class="control-label" >
                     Lugar de Nacimiento
                 </label>
                 <div class="controls">
-                <select ng-model="inscripcion.PAGE_ID" ng-change="ListarDepartamento()" ng-options="c.PAGE_ID as c.PAGE_NOMBRE for c in pais" required="required" class="input-xlarge" >
+                <select id="tPaisnaci" name="tPaisnaci" ng-model="inscripcion.PAGE_ID" ng-change="ListarDepartamento()" ng-options="c.PAGE_ID as c.PAGE_NOMBRE for c in pais" required="required" class="input-xlarge ng-pristine ng-invalid-required ng-invalid" >
                    <option value="" > -- Seleccione el país</option>
                 </select>
+                <span ng-show="form_inscripcion.tPaisnaci.$error.required" class="help-inline" style="">*</span>
                 </div>
             </div>
 
-            <div class="control-group">
+            <div class="control-group error" ng-class="{error: form_inscripcion.tDptonaci.$invalid}">
                 <div class="controls">
-                    <select ng-model="inscripcion.DEGE_ID" ng-change="ListarCiudad()"ng-options="c.DEGE_ID as c.DEGE_NOMBRE for c in departamento" required="required" class="input-xlarge" >
+                    <select id="tDptonaci" name="tDptonaci" ng-model="inscripcion.DEGE_ID" ng-change="ListarCiudad()"ng-options="c.DEGE_ID as c.DEGE_NOMBRE for c in departamento" required="required" class="input-xlarge ng-pristine ng-invalid-required ng-invalid" >
                        <option value="" > -- Seleccione el dpto</option>
                     </select>
+                    <span ng-show="form_inscripcion.tDptonaci.$error.required" class="help-inline" style="">*</span>
                 </div>
             </div>
 
-            <div class="control-group">
+            <div class="control-group error" ng-class="{error: form_inscripcion.tCiunaci.$invalid}">
                 <div class="controls">
-                    <select ng-model="inscripcion.CIGE_ID" ng-options="c.CIGE_ID as c.CIGE_NOMBRE for c in ciudad" required="required" class="input-xlarge" >
+                    <select id="tCiunaci" name="tCiunaci" ng-model="inscripcion.CIGE_ID" ng-options="c.CIGE_ID as c.CIGE_NOMBRE for c in ciudad" required="required" class="input-xlarge ng-pristine ng-invalid-required ng-invalid" >
                         <option value="" > -- Seleccione el mpio</option>
                      </select>
+                    <span ng-show="form_inscripcion.tCiunaci.$error.required" class="help-inline" style="">*</span>
                 </div>
             </div>
 
-            <div class="control-group">
+            <div class="control-group error" ng-class="{error: form_inscripcion.tCivil.$invalid}">
                 <label class="control-label" >
                     Estado Civil
                 </label>
                 <div class="controls">
-                    <select ng-model="inscripcion.ESCG_ID" ng-options="c.ESCG_ID as c.ESCG_DESCRIPCION for c in estadocivil" required="required" class="input-large" >
+                    <select id="tCivil" name="tCivil" ng-model="inscripcion.ESCG_ID" ng-options="c.ESCG_ID as c.ESCG_DESCRIPCION for c in estadocivil" required="required" class="input-large ng-pristine ng-invalid-required ng-invalid" >
                         <option value="" > -- Seleccione el estado civil</option>
                     </select>
+                    <span ng-show="form_inscripcion.tCivil.$error.required" class="help-inline" style="">*</span>
                 </div>
             </div>
 
-            <div class="control-group">
+            <div class="control-group error" ng-class="{error: form_inscripcion.tEstrato.$invalid}">
                 <label class="control-label">
                     Estrato
                 </label>
                 <div class="controls">
-                    <select ng-model="inscripcion.ESTR_ID" ng-options="c.ESTR_ID as c.ESTR_DESCRIPCION for c in estrato" required="required" class="input-large" >
+                    <select id="tEstrato" name="tEstrato" ng-model="inscripcion.ESTR_ID" ng-options="c.ESTR_ID as c.ESTR_DESCRIPCION for c in estrato" required="required" class="input-large ng-pristine ng-invalid-required ng-invalid" >
                         <option value="" > -- Seleccione el estrato</option>
                     </select>
+                    <span ng-show="form_inscripcion.tEstrato.$error.required" class="help-inline" style="">*</span>
                 </div>
             </div>
 
-            <div class="control-group">
+            <div class="control-group error" ng-class="{error: form_inscripcion.tEntero.$invalid}">
                 <label class="control-label">
                     ¿Por cuál medio se entero de la institución?
                 </label>
                 <div class="controls">
-                    <select ng-model="inscripcion.OMED_ID" ng-options="c.OMED_ID as c.OMED_DESCRIPCION for c in medio"required="required" class="input-xlarge" >
+                    <select id="tEntero" name="tEntero" ng-model="inscripcion.OMED_ID" ng-options="c.OMED_ID as c.OMED_DESCRIPCION for c in medio"required="required" class="input-xlarge ng-pristine ng-invalid-required ng-invalid" >
                         <option value="" > -- Seleccione el medio</option>
                     </select>
+                    <span ng-show="form_inscripcion.tEntero.$error.required" class="help-inline" style="">*</span>
                 </div>
             </div>
 
@@ -316,7 +333,7 @@
 
             <div class="control-group">
                 <div class="controls">
-                    <button type="submit" class="btn btn-primary">Aceptar</button>
+                    <button type="submit" class="btn btn-primary" ng-disabled="form_inscripcion.$invalid || isUnchanged(inscripcion)">Aceptar</button>
                 </div>
             </div>
         </fieldset>
