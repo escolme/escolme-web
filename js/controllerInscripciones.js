@@ -98,9 +98,6 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
                 })
                 break;
         }
-
-
-
     }
 
 
@@ -325,6 +322,8 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
     }
 
     $scope.ListarDepartamento = function(){
+        $scope.inscripcion.DEGE_ID=null;
+        $scope.inscripcion.CIGE_ID=null;
         var page_id = $scope.inscripcion.PAGE_ID;
         if(page_id!=null){
         $http.get('api/departamento/listar/' + page_id).then(function(response){

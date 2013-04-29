@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> e4a7bf175ad6961e77efa1d0517f748a8b458564
     function productosListar(){
 
         $resultados = array();
@@ -27,7 +30,11 @@
                 mysqli_close($conectar);
             }
             catch(Exception $e){
+<<<<<<< HEAD
                // mysqli_close($conectar);
+=======
+              //  mysqli_close($conectar);
+>>>>>>> e4a7bf175ad6961e77efa1d0517f748a8b458564
                 echo utf8_encode('{"error: ":' . $e->getMessage() . '}');
             }
 
