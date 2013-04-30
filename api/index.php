@@ -65,7 +65,7 @@ RUTAS DE INVENTARIOS
 */
 
 
-$app->get('/inventarios/productos/listar', 'productosListar');
+//$app->get('/inventarios/productos/listar', 'productosListar');
 //$app->get('/pedidos/categoria/listar', 'categoriaListar');
 //$app->get('/pedidos/proxcate/listar/:id_categoria_producto', 'productosCategoria');
 
