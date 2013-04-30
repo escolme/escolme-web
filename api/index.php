@@ -24,7 +24,7 @@ require 'modelo/usuario.php';
 
 
 require 'modeloInventarios/productos.php';
-//require 'modeloInventarios/categoria_productos.php';
+require 'modeloInventarios/categoria_productos.php';
 
 
 $app = new Slim();
@@ -90,5 +90,4 @@ $app->get('/productos/quitarporid/:id_producto', 'productosQuitarPorId');
 $app->get('/productos/cargarporid/:id_producto', 'productosCargarPorId');
 $app->get('/registro/proxcate/listar/:id_categoria_producto', 'productosCategoria');
 $app->get('/registro/categoria2/listar', 'categoriaListar');
-
 $app->run();

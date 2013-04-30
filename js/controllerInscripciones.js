@@ -1,6 +1,7 @@
 function InscripcionCtrl(comunService, sessionService,$scope,$http){
 
 
+
     if(!angular.equals(sessionStorage.getItem("usua_usuario"),null)){
         $('#divBarraUsuario').show();
         $('#linkUsuario').html('<i class="icon-user"></i> ' + sessionStorage.getItem("usua_nombre") + ' <span class="caret"></span>');

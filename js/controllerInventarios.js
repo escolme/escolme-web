@@ -1,5 +1,16 @@
 
-function PedidosCtrl($scope,$http){
+function PedidosCtrl($scope,$http,sessionService,comunService){
+
+    sessionService.validar();
+
+    if(!angular.equals(sessionStorage.getItem("usua_usuario"),null)){
+        $('#divBarraUsuario').show();
+        $('#linkUsuario').html('<i class="icon-user"></i> ' + sessionStorage.getItem("usua_nombre") + ' <span class="caret"></span>');
+        $("#divContenidos").css("width"," 74.35897435897436%");
+    }
+    else{
+        $("#divContenidos").css("width","100%");
+    }
 
     $scope.limpiar = function(){
        $scope.pedido={
@@ -89,6 +100,16 @@ function PedidosCtrl($scope,$http){
 
 
     function InventariosCtrl($scope,$http){
+
+        if(!angular.equals(sessionStorage.getItem("usua_usuario"),null)){
+            $('#divBarraUsuario').show();
+            $('#linkUsuario').html('<i class="icon-user"></i> ' + sessionStorage.getItem("usua_nombre") + ' <span class="caret"></span>');
+            $("#divContenidos").css("width"," 74.35897435897436%");
+        }
+        else{
+            $("#divContenidos").css("width","100%");
+        }
+
         $scope.limpiar2 = function(){
         $scope.ListarProductos = function(){
             $http.get('api/inventarios/productos/listar').then(function(response){
@@ -101,6 +122,16 @@ function PedidosCtrl($scope,$http){
     }
 
     function RegistroCtrl($scope,$http){
+
+        if(!angular.equals(sessionStorage.getItem("usua_usuario"),null)){
+            $('#divBarraUsuario').show();
+            $('#linkUsuario').html('<i class="icon-user"></i> ' + sessionStorage.getItem("usua_nombre") + ' <span class="caret"></span>');
+            $("#divContenidos").css("width"," 74.35897435897436%");
+        }
+        else{
+            $("#divContenidos").css("width","100%");
+        }
+
        $scope.limpiar3 = function(){
            $scope.insertarproductos = {
                id_producto:null,
