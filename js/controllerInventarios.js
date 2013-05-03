@@ -1,7 +1,7 @@
 
 function PedidosCtrl($scope,$http,sessionService,comunService){
 
-    sessionService.validar();
+    //sessionService.validar();
 
     if(!angular.equals(sessionStorage.getItem("usua_usuario"),null)){
         $('#divBarraUsuario').show();
