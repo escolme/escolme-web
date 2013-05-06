@@ -47,58 +47,58 @@
 
         <div class="row-fuid">
             <div class="span6 offset3">
-                <form class="form-horizontal">
+                <form class="form-horizontal" id="form_insetarproductos" name="insetarproductos"  ng-submit="Guardar()">
                     <fieldset>
                         <legend>Insertar</legend>
                         <div class="control-group">
                             <label class="control-label" for="inputCodigo">Código</label>
                             <div class="controls">
-                                <input required="required" type="text" name="inputCodigo" placeholder="codigo producto...">
+                                <input required="required" type="text" name="inputCodigo" placeholder="codigo producto..." ng-model="insertarproductos.id_producto">
                          </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" for="inputNombre">Nombre</label>
                             <div class="controls">
-                                <input required="required" type="text" name="inputNombre" placeholder="nombre producto...">
+                                <input required="required" type="text" name="inputNombre" placeholder="nombre producto..." ng-model="insertarproductos.nom_producto">
                             </div>
                         </div>
-                        <div class="control-group">
-                            <label class="control-label" for="inputUsuario">Responsable</label>
-                            <div class="controls">
-                                <input type="text" name="inputUsuario" placeholder="responsable producto...">
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label" >
-                               Tipo producto
-                            </label>
-                            <div class="controls">
-                                <select  required="required" name="inputcategoria2" class="input-xlarge"  ng-change="categoriaListar()" ng-model="pedido.id_categoria_producto" ng-options="c.id_categoria_producto as c.categoria for c in categoria2" >
-                                    <option value=""> -- Seleccione tipo de producto</option>
-                                </select>
-                            </div>
-                        </div>
+                        <!--<div class="control-group">-->
+                            <!--<label class="control-label" for="inputUsuario">Responsable</label>-->
+                            <!--<div class="controls">-->
+                                <!--<input type="text" name="inputUsuario" placeholder="responsable producto...">-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="control-group">-->
+                            <!--<label class="control-label" >-->
+                               <!--Tipo producto-->
+                            <!--</label>-->
+                            <!--<div class="controls">-->
+                                <!--<select  required="required" name="inputcategoria2" class="input-xlarge"  ng-change="categoriaListar()" ng-model="pedido.id_categoria_producto" ng-options="c.id_categoria_producto as c.categoria for c in categoria2" >-->
+                                    <!--<option value=""> -- Seleccione tipo de producto</option>-->
+                                <!--</select>-->
+                            <!--</div>-->
+                        <!--</div>-->
+
+                        <!--<div class="control-group">-->
+                            <!--<label  class="control-label" for="inputPrecio">Precio</label>-->
+                            <!--<div class="controls">-->
+                                <!--<div class="input-prepend input-append">-->
+                                    <!--<span class="add-on">$</span>-->
+                                    <!--<input required="required" class="span2" id="precioInput" type="text">-->
+                                    <!--<span class="add-on">.00</span>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                         <!--<div class="control-group">-->
+                            <!--<label class="control-label" for="inputStock">Cantidad en Stock</label>-->
+                            <!--<div class="controls">-->
+                                <!--<input required="required" class="input-mini" type="text" placeholder="...">-->
+                            <!--</div>-->
+                        <!--</div>-->
 
                         <div class="control-group">
-                            <label  class="control-label" for="inputPrecio">Precio</label>
                             <div class="controls">
-                                <div class="input-prepend input-append">
-                                    <span class="add-on">$</span>
-                                    <input required="required" class="span2" id="precioInput" type="text">
-                                    <span class="add-on">.00</span>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="control-group">
-                            <label class="control-label" for="inputStock">Cantidad en Stock</label>
-                            <div class="controls">
-                                <input required="required" class="input-mini" type="text" placeholder="...">
-                            </div>
-                        </div>
-
-                        <div class="control-group">
-                            <div class="controls">
-                                <button type="submit" class="btn btn-primary">Guardar</button>
+                                <button type="submit" class="btn btn-primary" ng-disabled="form_insertarproductos.$invalid || isUnchanged(insertarproductos)">Guardar</button>
                                 <button type="button" class="btn">Cancelar</button>
                             </div>
                         </div>

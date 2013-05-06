@@ -128,13 +128,16 @@ function insertarproductos()
 {
     $request = Slim::getInstance()->request();
     $insertarproductos = json_decode($request->getBody());
+    $sql= "INSERT INTO tbl_productos(id_producto,nom_producto) VALUES (".$insertarproductos->id_producto.",'".$insertarproductos->nom_producto."')";
+    //echo   utf8_encode('{"datos": ' .json_encode($insertarproductos) . '}');
+    //echo($sql);
  try {
      $conexion = new conexionBD();
      $conectar = $conexion->conectarInventarios();
 
-     $sql= "INSERT INTO tbl_productos(id_producto,nom_producto,usu_asociado,categoria_producto,cant_stock,precio_producto) VALUES (".$insertarproductos->id_producto.",'".$insertarproductos->nom_producto."','".$insertarproductos->usu_asociado."',".$insertarproductos->categoria_producto.",".$insertarproductos->cant_stock.",".$insertarproductos->precio_producto.")";
+     //$sql= "INSERT INTO tbl_productos(id_producto,nom_producto,usu_asociado,categoria_producto,cant_stock,precio_producto) VALUES (".$insertarproductos->id_producto.",'".$insertarproductos->nom_producto."','".$insertarproductos->usu_asociado."',".$insertarproductos->categoria_producto.",".$insertarproductos->cant_stock.",".$insertarproductos->precio_producto.")";
 
-     //$result = mysqli_query($conectar,$sql);
+     $result = mysqli_query($conectar,$sql);
      echo utf8_encode('{"datos": ' .json_encode($sql) . '}');
      }
 

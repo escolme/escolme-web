@@ -144,13 +144,13 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
 
 
         $scope.Guardar = function(){
-            var json_insetar = JSON.stringify($scope.insertarproductos);
+            var json_insertarproductos = JSON.stringify($scope.insertarproductos);
             $.ajax({
                 type: 'POST',
                 contentType: 'application/json',
                 url: 'api/registro/productos',
                 dataType: "json",
-                data: json_inscripcion,
+                data: json_insertarproductos,
                 async:false,
                 success: function(data, textStatus, jqXHR){
                     console.dir(data);
