@@ -144,7 +144,7 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
 
 
         $scope.Guardar = function(){
-            var json_inscripcion = JSON.stringify($scope.insertarproductos);
+            var json_insetar = JSON.stringify($scope.insertarproductos);
             $.ajax({
                 type: 'POST',
                 contentType: 'application/json',

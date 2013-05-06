@@ -90,4 +90,5 @@ $app->get('/productos/quitarporid/:id_producto', 'productosQuitarPorId');
 $app->get('/productos/cargarporid/:id_producto', 'productosCargarPorId');
 $app->get('/registro/proxcate/listar/:id_categoria_producto', 'productosCategoria');
 $app->get('/registro/categoria2/listar', 'categoriaListar');
+$app->post('/registro/productos', 'insertarproductos');
 $app->run();

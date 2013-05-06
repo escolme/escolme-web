@@ -124,18 +124,18 @@
 
 
 
-
-
-
-
-
-  /*
 function insertarproductos()
 {
+    $request = Slim::getInstance()->request();
+    $insertarproductos = json_decode($request->getBody());
  try {
      $conexion = new conexionBD();
      $conectar = $conexion->conectarInventarios();
-     $result = mysqli_query($conectar,"INSERT INTO tbl_productos(codigo,nombre,tipo,unidad de uso,stock,usuario asociado,cantidad pedida,precio,imagen producto,fecha de modicación,) VALUES (".$id_producto.",'".$nom_producto."','".$categoria_producto."',".$unidad_uso.",".$cant_stock.",'".$usu_asociado."',".$cantidad_pedida.",".$precio_producto.",".$img_producto.",".$fecha_mod.");";);
+
+     $sql= "INSERT INTO tbl_productos(id_producto,nom_producto,usu_asociado,categoria_producto,cant_stock,precio_producto) VALUES (".$insertarproductos->id_producto.",'".$insertarproductos->nom_producto."','".$insertarproductos->usu_asociado."',".$insertarproductos->categoria_producto.",".$insertarproductos->cant_stock.",".$insertarproductos->precio_producto.")";
+
+     //$result = mysqli_query($conectar,$sql);
+     echo utf8_encode('{"datos": ' .json_encode($sql) . '}');
      }
 
         catch(Exception $e){
@@ -145,7 +145,7 @@ function insertarproductos()
 
 }
 
-
+/*
 function modificarproductos()
 {
   try {
