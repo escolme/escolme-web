@@ -128,7 +128,7 @@ function insertarproductos()
 {
     $request = Slim::getInstance()->request();
     $insertarproductos = json_decode($request->getBody());
-    $sql= "INSERT INTO tbl_productos(id_producto,nom_producto) VALUES (".$insertarproductos->id_producto.",'".$insertarproductos->nom_producto."')";
+    $sql= "INSERT INTO tbl_productos(id_producto,nom_producto,cant_stock,precio_producto,cantidad_pedida) VALUES (".$insertarproductos->id_producto.",'".$insertarproductos->nom_producto."',".$insertarproductos->cant_stock.",".$insertarproductos->precio_producto.",".$insertarproductos->cantidad_pedida.")";
     //echo   utf8_encode('{"datos": ' .json_encode($insertarproductos) . '}');
     //echo($sql);
  try {
