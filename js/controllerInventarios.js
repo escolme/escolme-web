@@ -139,8 +139,24 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
                id_usuario:null, nombre:null, apellido:null, cant_stock:null,
                cantidad_pedida:null, precio_producto:null
            }
-
+           $scope.categoriaListar2();
        }
+
+        $scope.categoriaListar2= function(){
+            $http.get('api/registro/categoria2/listar').then(function(response)
+            {
+                $scope.categoria2 = response.data.datos;
+            });
+        }
+
+
+        $scope.productosCategoria2= function(){
+
+                $http.get('api/registro/proxcate2/listar').then(function(response){
+                    $scope.proxcate2 = response.data.datos;
+                });
+
+        }
 
 
         $scope.Guardar = function(){
@@ -162,5 +178,5 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
             })
         }
 
-
+     $scope.limpiar3();
     }

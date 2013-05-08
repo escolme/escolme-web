@@ -121,6 +121,34 @@
         }
     }
 
+function productosCategoria2($id_categoria_producto){
+    $resultados = array();
+    try
+    {
+        $conexion = new conexionBD();
+        $conectar = $conexion->conectarInventarios();
+        $result = mysqli_query($conectar,"SELECT id_producto,nom_producto FROM tbl_productos WHERE id_categoria_producto=$id_categoria_producto");
+        //  $result_type= MYSQLI_BOTH;
+        //echo ($result);
+        while($row = mysqli_fetch_array($result))
+        {
+            $fila = array(
+                "id_producto" => $row['id_producto'],
+                "nom_producto" => $row['nom_producto'],
+
+            );
+            array_push($resultados, $fila);
+        }
+
+        echo utf8_encode('{"datos": ' . json_encode($resultados) . '}');
+        mysqli_close($conectar);
+    }
+    catch(Exception $e){
+        mysqli_close($conectar);
+        echo utf8_encode('{"error: ":' . $e->getMessage() . '}');
+    }
+}
+
 
 
 
@@ -128,7 +156,7 @@ function insertarproductos()
 {
     $request = Slim::getInstance()->request();
     $insertarproductos = json_decode($request->getBody());
-    $sql= "INSERT INTO tbl_productos(id_producto,nom_producto,cant_stock,precio_producto,cantidad_pedida) VALUES (".$insertarproductos->id_producto.",'".$insertarproductos->nom_producto."',".$insertarproductos->cant_stock.",".$insertarproductos->precio_producto.",".$insertarproductos->cantidad_pedida.")";
+    $sql= "INSERT INTO tbl_productos(id_producto,nom_producto,cant_stock,precio_producto,cantidad_pedida,categoria_producto) VALUES (".$insertarproductos->id_producto.",'".$insertarproductos->nom_producto."',".$insertarproductos->cant_stock.",".$insertarproductos->precio_producto.",".$insertarproductos->cantidad_pedida.",".$insertarproductos->categoria_producto.")";
     //echo   utf8_encode('{"datos": ' .json_encode($insertarproductos) . '}');
     //echo($sql);
  try {

@@ -68,16 +68,16 @@
                                 <!--<input type="text" name="inputUsuario" placeholder="responsable producto...">-->
                             <!--</div>-->
                         <!--</div>-->
-                        <!--<div class="control-group">-->
-                            <!--<label class="control-label" >-->
-                               <!--Tipo producto-->
-                            <!--</label>-->
-                            <!--<div class="controls">-->
-                                <!--<select  required="required" name="inputcategoria2" class="input-xlarge"  ng-change="categoriaListar()" ng-model="pedido.id_categoria_producto" ng-options="c.id_categoria_producto as c.categoria for c in categoria2" >-->
-                                    <!--<option value=""> -- Seleccione tipo de producto</option>-->
-                                <!--</select>-->
-                            <!--</div>-->
-                        <!--</div>-->
+
+                        <div class="control-group">
+                        <label class="control-label" for="inputCategoriaProducto">Categoria Producto</label>
+                            <div class="controls">
+                          <select  required="required" name="inputcategoria2" class="input-xlarge"  ng-change="productosCategoria2()" ng-model="insertarproductos.id_categoria_producto" ng-options="c.id_categoria_producto as c.categoria for c in categoria2" >
+                            <option value=""> -- Seleccione tipo de producto</option>
+                          </select>
+                            </div>
+                        </div>
+
                         <div class="control-group">
                             <label class="control-label" for="inputStock">Cantidad pedida</label>
                             <div class="controls">
