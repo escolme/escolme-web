@@ -4,6 +4,8 @@
 
         $resultados = array();
         $conexion = new conexionBD();
+
+
        // FROM table1   LEFT JOIN table2 ON table1.id=table2.id
             try
               {
@@ -156,13 +158,13 @@ function insertarproductos()
 {
     $request = Slim::getInstance()->request();
     $insertarproductos = json_decode($request->getBody());
-    $sql= "INSERT INTO tbl_productos(id_producto,nom_producto,cant_stock,precio_producto,cantidad_pedida,categoria_producto) VALUES (".$insertarproductos->id_producto.",'".$insertarproductos->nom_producto."',".$insertarproductos->cant_stock.",".$insertarproductos->precio_producto.",".$insertarproductos->cantidad_pedida.",".$insertarproductos->categoria_producto.")";
+    $fecha=date("Y-m-d");
     //echo   utf8_encode('{"datos": ' .json_encode($insertarproductos) . '}');
     //echo($sql);
  try {
      $conexion = new conexionBD();
      $conectar = $conexion->conectarInventarios();
-
+     $sql= "INSERT INTO tbl_productos(nom_producto,cant_stock,precio_producto,cantidad_pedida,id_categoria_producto,fecha_mod) VALUES ('".$insertarproductos->nom_producto."',".$insertarproductos->cant_stock.",".$insertarproductos->precio_producto.",".$insertarproductos->cantidad_pedida.",".$insertarproductos->id_categoria_producto.",'".$fecha."')";
      //$sql= "INSERT INTO tbl_productos(id_producto,nom_producto,usu_asociado,categoria_producto,cant_stock,precio_producto) VALUES (".$insertarproductos->id_producto.",'".$insertarproductos->nom_producto."','".$insertarproductos->usu_asociado."',".$insertarproductos->categoria_producto.",".$insertarproductos->cant_stock.",".$insertarproductos->precio_producto.")";
 
      $result = mysqli_query($conectar,$sql);

@@ -88,8 +88,8 @@ $app->get('/pedidos/categoria/listar', 'categoriaListar');
 $app->get('/pedidos/proxcate/listar/:id_categoria_producto', 'productosCategoria');
 $app->get('/productos/quitarporid/:id_producto', 'productosQuitarPorId');
 $app->get('/productos/cargarporid/:id_producto', 'productosCargarPorId');
-$app->get('/registro/categoria2/listar/:id_categoria_producto', 'productosCategoria2');
-$app->get('/registro/proxcate2/listar', 'categoriaListar2');
+$app->get('/registro/proxcate2/listar/:id_categoria_producto', 'productosCategoria2');
+$app->get('/registro/categoria2/listar', 'categoriaListar2');
 
 
 $app->post('/registro/productos', 'insertarproductos');

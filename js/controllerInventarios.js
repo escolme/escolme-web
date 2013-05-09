@@ -95,6 +95,10 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
         });
     }
 
+    $scope.abrirventanaPedido= function(){
+        $('#pedidoFinal').modal('show');
+    }
+
     $scope.limpiar();
 }
 

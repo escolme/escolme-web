@@ -50,12 +50,12 @@
                 <form class="form-horizontal" id="form_insetarproductos" name="insetarproductos"  ng-submit="Guardar()">
                     <fieldset>
                         <legend>Insertar</legend>
-                        <div class="control-group">
-                            <label class="control-label" for="inputCodigo">Código</label>
-                            <div class="controls">
-                                <input required="required" type="text" name="inputCodigo" placeholder="codigo producto..." ng-model="insertarproductos.id_producto">
-                         </div>
-                        </div>
+                        <!--<div class="control-group">-->
+                            <!--<label class="control-label" for="inputCodigo">Código</label>-->
+                            <!--<div class="controls">-->
+                                <!--<input required="required" type="text" name="inputCodigo" placeholder="codigo producto..." ng-model="insertarproductos.id_producto">-->
+                         <!--</div>-->
+                        <!--</div>-->
                         <div class="control-group">
                             <label class="control-label" for="inputNombre">Nombre</label>
                             <div class="controls">
@@ -72,7 +72,7 @@
                         <div class="control-group">
                         <label class="control-label" for="inputCategoriaProducto">Categoria Producto</label>
                             <div class="controls">
-                          <select  required="required" name="inputcategoria2" class="input-xlarge"  ng-change="productosCategoria2()" ng-model="insertarproductos.id_categoria_producto" ng-options="c.id_categoria_producto as c.categoria for c in categoria2" >
+                          <select  required="required" name="inputcategoria2" class="input-xlarge"  ng-change="" ng-model="insertarproductos.id_categoria_producto" ng-options="c.id_categoria_producto as c.categoria for c in categoria2" >
                             <option value=""> -- Seleccione tipo de producto</option>
                           </select>
                             </div>
