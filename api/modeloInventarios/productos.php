@@ -197,10 +197,15 @@ function modificarproductos()
 
 function borrarproductos()
 {
+    $request = Slim::getInstance()->request();
+    $insertarproductos = json_decode($request->getBody());
+    $fecha=date("Y-m-d");
    try {
        $conexion = new conexionBD();
        $conectar = $conexion->conectarInventarios();
-       $result= mysqli_query($conectar,"DELETE FROM tabla WHERE columna='valor'");
+       $sql="DELETE FROM tbl_productos WHERE id_producto=".$insertarproductos->id_producto.", nom_producto='".$insertarproductos->nom_producto."', cant_stock=".$insertarproductos->cant_stock.",
+        ".$insertarproductos->precio_producto.",".$insertarproductos->cantidad_pedida.",".$insertarproductos->id_categoria_producto.",'".$fecha."'"
+       $result= mysqli_query($conectar,"DELETE FROM tbl_productos WHERE columna='valor'");
    }
        catch(Exception $e){
        mysqli_close($conectar);

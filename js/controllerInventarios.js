@@ -99,6 +99,12 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
         $('#pedidoFinal').modal('show');
     }
 
+    $scope.confimacionPedido= function(){
+        $('#pedidoFinal').modal('hide');
+        $('#confirmacion').modal('show');
+
+    }
+
     $scope.limpiar();
 }
 
