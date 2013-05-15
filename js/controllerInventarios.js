@@ -1,5 +1,16 @@
 
-function PedidosCtrl($scope,$http){
+function PedidosCtrl($scope,$http,sessionService,comunService){
+
+    //sessionService.validar();
+
+    if(!angular.equals(sessionStorage.getItem("usua_usuario"),null)){
+        $('#divBarraUsuario').show();
+        $('#linkUsuario').html('<i class="icon-user"></i> ' + sessionStorage.getItem("usua_nombre") + ' <span class="caret"></span>');
+        $("#divContenidos").css("width"," 74.35897435897436%");
+    }
+    else{
+        $("#divContenidos").css("width","100%");
+    }
 
     $scope.limpiar = function(){
        $scope.pedido={
@@ -84,11 +95,27 @@ function PedidosCtrl($scope,$http){
         });
     }
 
+    $scope.abrirventanaPedido= function(){
+        $('#pedidoFinal').modal('show');
+    }
+
+
+
     $scope.limpiar();
 }
 
 
     function InventariosCtrl($scope,$http){
+
+        if(!angular.equals(sessionStorage.getItem("usua_usuario"),null)){
+            $('#divBarraUsuario').show();
+            $('#linkUsuario').html('<i class="icon-user"></i> ' + sessionStorage.getItem("usua_nombre") + ' <span class="caret"></span>');
+            $("#divContenidos").css("width"," 74.35897435897436%");
+        }
+        else{
+            $("#divContenidos").css("width","100%");
+        }
+
         $scope.limpiar2 = function(){
         $scope.ListarProductos = function(){
             $http.get('api/inventarios/productos/listar').then(function(response){
@@ -97,10 +124,29 @@ function PedidosCtrl($scope,$http){
         }
             $scope.ListarProductos();
         }
+
+        $scope.ordenarInventario = function(){
+            $scope.inventario= []
+
+
+
+        }
+
+
         $scope.limpiar2();
     }
 
     function RegistroCtrl($scope,$http){
+
+        if(!angular.equals(sessionStorage.getItem("usua_usuario"),null)){
+            $('#divBarraUsuario').show();
+            $('#linkUsuario').html('<i class="icon-user"></i> ' + sessionStorage.getItem("usua_nombre") + ' <span class="caret"></span>');
+            $("#divContenidos").css("width"," 74.35897435897436%");
+        }
+        else{
+            $("#divContenidos").css("width","100%");
+        }
+
        $scope.limpiar3 = function(){
            $scope.insertarproductos = {
                id_producto:null,
@@ -108,18 +154,34 @@ function PedidosCtrl($scope,$http){
                id_usuario:null, nombre:null, apellido:null, cant_stock:null,
                cantidad_pedida:null, precio_producto:null
            }
-
+           $scope.categoriaListar2();
        }
+
+        $scope.categoriaListar2= function(){
+            $http.get('api/registro/categoria2/listar').then(function(response)
+            {
+                $scope.categoria2 = response.data.datos;
+            });
+        }
+
+
+        $scope.productosCategoria2= function(){
+
+                $http.get('api/registro/proxcate2/listar').then(function(response){
+                    $scope.proxcate2 = response.data.datos;
+                });
+
+        }
 
 
         $scope.Guardar = function(){
-            var json_inscripcion = JSON.stringify($scope.insertarproductos);
+            var json_insertarproductos = JSON.stringify($scope.insertarproductos);
             $.ajax({
                 type: 'POST',
                 contentType: 'application/json',
                 url: 'api/registro/productos',
                 dataType: "json",
-                data: json_inscripcion,
+                data: json_insertarproductos,
                 async:false,
                 success: function(data, textStatus, jqXHR){
                     console.dir(data);
@@ -131,5 +193,18 @@ function PedidosCtrl($scope,$http){
             })
         }
 
-
+     $scope.limpiar3();
     }
+
+
+function ModificarCtrl($scope,$http){
+
+    if(!angular.equals(sessionStorage.getItem("usua_usuario"),null)){
+        $('#divBarraUsuario').show();
+        $('#linkUsuario').html('<i class="icon-user"></i> ' + sessionStorage.getItem("usua_nombre") + ' <span class="caret"></span>');
+        $("#divContenidos").css("width"," 74.35897435897436%");
+    }
+    else{
+        $("#divContenidos").css("width","100%");
+    }
+}

@@ -25,7 +25,7 @@ require 'modelo/preinscritos.php';
 require 'modelo/requisitos.php';
 
 require 'modeloInventarios/productos.php';
-//require 'modeloInventarios/categoria_productos.php';
+require 'modeloInventarios/categoria_productos.php';
 
 
 $app = new Slim();
@@ -70,7 +70,7 @@ RUTAS DE INVENTARIOS
 */
 
 
-$app->get('/inventarios/productos/listar', 'productosListar');
+//$app->get('/inventarios/productos/listar', 'productosListar');
 //$app->get('/pedidos/categoria/listar', 'categoriaListar');
 //$app->get('/pedidos/proxcate/listar/:id_categoria_producto', 'productosCategoria');
 
@@ -93,7 +93,11 @@ $app->get('/pedidos/categoria/listar', 'categoriaListar');
 $app->get('/pedidos/proxcate/listar/:id_categoria_producto', 'productosCategoria');
 $app->get('/productos/quitarporid/:id_producto', 'productosQuitarPorId');
 $app->get('/productos/cargarporid/:id_producto', 'productosCargarPorId');
-$app->get('/registro/proxcate/listar/:id_categoria_producto', 'productosCategoria');
-$app->get('/registro/categoria2/listar', 'categoriaListar');
+$app->get('/registro/proxcate2/listar/:id_categoria_producto', 'productosCategoria2');
+$app->get('/registro/categoria2/listar', 'categoriaListar2');
+
+
+$app->post('/registro/productos', 'insertarproductos');
+
 
 $app->run();

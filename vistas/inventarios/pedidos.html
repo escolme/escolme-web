@@ -49,14 +49,38 @@
                             </td>
                         </tr>
                     </table>
-                     <button position="right" type="submit" class="btn btn-primary">Generar pepido</button>
+                     <button position="right" type="submit" class="btn btn-primary" ng-click="abrirventanaPedido()"><i class=" icon-shopping-cart"></i>Generar pepido</button>
                      <button  position="right" type="button" class="btn">Cancelar</button>
                  </div>
               </div>
            </div>
 
 
+    <div id="pedidoFinal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Pedido Final</h3>
+        </div>
+        <div class="modal-body">
+            <table class="table table-bordered" border="2">
+                <tr>
 
+                    <td><center><B>Producto</B></td>
+                    <td><center><B>Cantidad</B></td>
+
+                </tr>
+                <tr ng-repeat="c in pedidoFinal">
+                    <td>{{c.nom_producto}}</td>
+                    <td>{{c.cantidad}}</td>
+                </tr>
+            </table>
+            <iframe name="iFrame1" id="frmPedido"  width="900" height="1156" src="" scrolling="no" frameborder="0"></iframe>
+        </div>
+        <div class="modal-footer">
+            <button position="right" type="submit" class="btn btn-primary" >Aceptar</button>
+            <button class="btn" data-dismiss="modal" aria-hidden="true" >Cerrar</button>
+        </div>
+    </div>
 
 
 
