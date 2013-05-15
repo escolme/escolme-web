@@ -100,7 +100,22 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
     }
 
     $scope.GuardarPedido = function(){
+        var json_pedido = JSON.stringify($scope.pedidoFinal);
+        $.ajax({
+            type: 'POST',
+            contentType: 'application/json',
+            url: 'api/pedido/guardar',
+            dataType: "json",
+            data: json_pedido,
+            async:false,
+            success: function(data, textStatus, jqXHR){
+                console.dir(data);
 
+            },
+            error: function(jqXHR, textStatus, errorThrown){
+                alert('error: ' + textStatus);
+            }
+        })
     }
 
 
