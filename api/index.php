@@ -21,7 +21,8 @@ require 'modelo/informacionsocioeconomica.php';
 require 'modelo/niveleducativo.php';
 require 'modelo/circusncripcion.php';
 require 'modelo/usuario.php';
-
+require 'modelo/preinscritos.php';
+require 'modelo/requisitos.php';
 
 require 'modeloInventarios/productos.php';
 //require 'modeloInventarios/categoria_productos.php';
@@ -51,6 +52,8 @@ $app->get('/buscar/formulario/:ASPI_ID', 'BuscarExisteFormulario');
 $app->get('/buscar/inscripcion/:ASPI_NUMERODOCUMENTO', 'BuscarExisteInscripcion');
 $app->get('/actualizar/circunscripcion/:CIRC_ID/:ASPI_ID', 'ActualizarCircunscripcion');
 $app->get('/usuario/buscar/:usua_usuario/:usua_contrasena', 'BuscarUsuario');
+$app->get('/preinscritos/listar', 'ListarPreinscritos');
+$app->get('/requisitos/listar/:CLASIFICACION', 'ListarRequisitos');
 
 $app->post('/insertar/aspirantenew','InsertarAspirante');
 $app->post('/insertar/formularioinscripcionnew','InsertarFormulario');
@@ -58,7 +61,9 @@ $app->post('/insertar/programaxformulario','InsertarPrograma');
 $app->post('/insertar/estudiossecundariosnew','InsertarEstudiosSecundarios');
 $app->post('/insertar/caracterizacionnew','InsertarCaracterizacion');
 $app->post('/insertar/socioeconomica','InsertarInformacionSocioeconomica');
-
+$app->post('/insertar/requisitoaspirante','InsertarRequisitoAspirante');
+$app->post('/insertar/requisitoentregados','InsertarRequisitosEntregados');
+$app->post('/actualizar/formularioestado/:FOIN_ID','ActualizarEstadoFormulario');
 
 /*
 RUTAS DE INVENTARIOS

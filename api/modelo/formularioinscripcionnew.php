@@ -47,3 +47,21 @@ function BuscarExisteFormulario($ASPI_ID){
         echo '{"error: ":' . $e->getMessage() . '}';
     }
 }
+
+function ActualizarEstadoFormulario($FOIN_ID){
+    try{
+        $conexion = new conexionBD();
+        $conn = $conexion->conectar();
+        $sql = "UPDATE ACADEMICO.FORMULARIOINSCRIPCION SET FOIN_ESTADOADMISION='INSCRITO' WHERE ACADEMICO.FORMULARIOINSCRIPCION.FOIN_ID=".$FOIN_ID;
+        //echo utf8_encode('{"update": ' . json_encode($sql) . '}');
+        //$query =OCIParse($conn, $sql);
+        //OCIExecute($query, OCI_DEFAULT);
+        //OCICommit($conn);
+        OCILogoff($conn);
+        echo '{"mensaje: ":"ExitoUpdate"}';
+    }
+    catch(Exception $e){
+        OCILogoff($conn);
+        echo '{"error: ":' . $e->getMessage() . '}';
+    }
+}

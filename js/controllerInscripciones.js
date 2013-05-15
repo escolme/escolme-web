@@ -1,13 +1,147 @@
+/*---------------------------------------------------*/
+/* Controlador de la pagina /#/inscripciones/informeprogramaestado */
+/*---------------------------------------------------*/
+
+function InfoProEstInsCtrl (comunService, sessionService,$scope,$http){
+    sessionService.validar();
+
+}
+
+
+
+/*---------------------------------------------------*/
+/* Controlador de la pagina /#/gestionar/inscripcion */
+/*---------------------------------------------------*/
+function GestionarInsCtrl (comunService, sessionService,$scope,$http){
+    sessionService.validar();
+    $scope.LimpiarGes = function(){
+        $scope.ListarPreinscritos();
+    }
+    $scope.ListarPreinscritos = function(){
+        $http.get('api/preinscritos/listar').then(function(response){
+            $scope.preincritos= response.data.datos;
+            //console.dir(response.data.datos);
+        });
+
+    }
+    $scope.AbrirGestionarPreinscripcion = function(dato){
+        $('#ventanaChequeo').modal('show');
+        $scope.clasificacion = {
+            NOMBRE:dato.NOMBRE,
+            ASPI_NUMERODOCUMENTO : dato.ASPI_NUMERODOCUMENTO ,
+            ASPI_ID:dato.ASPI_ID,
+            FOIN_ID:dato.FOIN_ID ,
+            REQU_CLASIFICACION : '' ,
+            USUA_ID:null ,
+            REAS_OBSERVACIONES : '' ,
+            REQU_ID:null ,
+            REEN_ENTREGADO: null,
+            REEN_ID:null
+        };
+        $scope.requisitos = [];
+    }
+    $scope.ListarRequisitos = function(){
+        var requ=$scope.clasificacion.REQU_CLASIFICACION;
+        if(requ!=null){
+            $http.get('api/requisitos/listar/'+ requ).then(function(response){
+                $scope.requisitos= response.data.datos;
+            });
+        }
+        else{
+            $scope.requisitos = [];
+        }
+    }
+
+ /*   $scope.GuardarRequisitos = function(clasificacion){
+        var json_clasificacion = JSON.stringify(clasificacion);
+        //console.dir(json_clasificacion);
+         $.ajax({
+             type: 'POST',
+             contentType: 'application/json',
+             url: 'api/insertar/requisitoentregados',
+             dataType: "json",
+             data: json_clasificacion,
+             async:false,
+             success: function(data, textStatus, jqXHR){
+                console.dir(data);
+                //$scope.GuardarRequisitosTodos();
+             },
+             error: function(jqXHR, textStatus, errorThrown){
+                alert('error: ' + textStatus);
+             }
+         });
+    }*/
+
+    $scope.GuardarRequisito = function(){
+        $scope.clasificacion.USUA_ID=sessionStorage.getItem("usua_id");
+        $http.post('api/actualizar/formularioestado/'+$scope.clasificacion.FOIN_ID).then(function(response){
+            console.dir(response);
+        });
+        var json_clasificacion = JSON.stringify($scope.clasificacion);
+        $.ajax({
+            type: 'POST',
+            contentType: 'application/json',
+            url: 'api/insertar/requisitoaspirante',
+            dataType: "json",
+            data: json_clasificacion,
+            success: function(data, textStatus, jqXHR){
+                console.dir(data);
+                $scope.GuardarRequisitoTodos()
+
+            },
+            error: function(jqXHR, textStatus, errorThrown){
+                alert('error: ' + textStatus);
+            }
+        })
+    }
+    $scope.GuardarRequisitoTodos = function(){
+
+        //////////////////////
+
+        angular.forEach($scope.requisitos, function(c) {
+            if(c.REQU_ENTREGADO == true){
+                $scope.clasificacion.REQU_ID= c.REQU_ID;
+                $scope.clasificacion.REEN_ENTREGADO=1;
+                $scope.clasificacion.REEN_ID= c.REQU_ID + $scope.clasificacion.FOIN_ID;
+                //console.dir( $scope.clasificacion.REEN_ID);
+                //console.dir($scope.clasificacion.REQU_ID+" "+$scope.clasificacion.REEN_ENTREGADO);
+
+            }
+            if (c.REQU_ENTREGADO == false){
+                $scope.clasificacion.REQU_ID= c.REQU_ID;
+                $scope.clasificacion.REEN_ENTREGADO=0;
+                $scope.clasificacion.REEN_ID= c.REQU_ID + $scope.clasificacion.FOIN_ID;
+               // console.dir( $scope.clasificacion.REEN_ID);
+               // console.dir($scope.clasificacion.REQU_ID+" "+$scope.clasificacion.REEN_ENTREGADO);
+            }
+            json_clasificacion = JSON.stringify($scope.clasificacion);
+            $.ajax({
+                type: 'POST',
+                contentType: 'application/json',
+                url: 'api/insertar/requisitoentregados',
+                dataType: "json",
+                data: json_clasificacion,
+                async:false,
+                success: function(data, textStatus, jqXHR){
+                    console.dir(data);
+                },
+                error: function(jqXHR, textStatus, errorThrown){
+                    alert('error: ' + textStatus);
+                }
+            })
+        });
+    }
+    $scope.LimpiarGes();
+}
+/*---------------------------------------------------*/
+/* Controlador de la pagina /#/inscripciones/inscripcion */
+/*---------------------------------------------------*/
 function InscripcionCtrl(comunService, sessionService,$scope,$http){
 
 
     if(!angular.equals(sessionStorage.getItem("usua_usuario"),null)){
         $('#divBarraUsuario').show();
         $('#linkUsuario').html('<i class="icon-user"></i> ' + sessionStorage.getItem("usua_nombre") + ' <span class="caret"></span>');
-        $("#divContenidos").css("width"," 74.35897435897436%");
-    }
-    else{
-        $("#divContenidos").css("width","100%");
     }
 
     $scope.Limpiar = function(){
@@ -243,6 +377,9 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
     }
 
     $scope.ListarModalidades = function(){
+        $scope.inscripcion.NIED_ID=null;
+        $scope.inscripcion.PROG_ID=null;
+        $scope.inscripcion.PROG_ID2=null;
         $http.get('api/metodologias/listar').then(function(response){
             $scope.modalidades = response.data.datos;
         });
@@ -335,6 +472,8 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
     }
 
     $scope.ListarDepartamento2 = function(){
+        $scope.inscripcion.DEGE_ID2=null;
+        $scope.inscripcion.CIGE_ID2=null;
         var page_id = $scope.inscripcion.PAGE_ID2;
         if(page_id!=null){
             $http.get('api/departamento/listar/' + page_id).then(function(response){
@@ -426,7 +565,6 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
     $scope.InformacionAdicional2 = function(){
         $('#ventanaInformacionAdicional2').modal('show');
     }
-
     $scope.VerPensum =function(){
         if(angular.equals($scope.inscripcion.PROG_ID,undefined))
             $('#aInfoAdicional1').hide('blind');
@@ -434,7 +572,6 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
             $('#aInfoAdicional1').show();    
          $('#frmPensum').attr('src','recursos/pensum/' + $scope.inscripcion.PROG_ID + '.pdf');
     }
-
     $scope.VerPensum2 =function(){
         if(angular.equals($scope.inscripcion.PROG_ID2,undefined))
             $('#aInfoAdicional2').hide('blind');
@@ -442,15 +579,12 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
             $('#aInfoAdicional2').show();    
         $('#frmPensum2').attr('src','recursos/pensum/' + $scope.inscripcion.PROG_ID2 + '.pdf');
     }
-
     $scope.ValidarPrograma =function(){
         if ($scope.inscripcion.PROG_ID === $scope.inscripcion.PROG_ID2 && !angular.equals($scope.inscripcion.PROG_ID,'')){
             alert('[ERROR] No puede elegir el mismo programa');
             $scope.inscripcion.PROG_ID2=null ;
         }
     }
-
-
     $scope.ValidarPrograma2 =function(){
         if ($scope.inscripcion.PROG_ID === $scope.inscripcion.PROG_ID2 && !angular.equals($scope.inscripcion.PROG_ID2,'')){
             alert('[ERROR] No puede elegir el mismo programa');
@@ -458,6 +592,12 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
         }
     }
 
-    $scope.Limpiar();
+    $scope.PasarMayuscula =function(){
+        if($scope.inscripcion.ASPI_PRIMERNOMBRE != null){
+            $scope.inscripcion.ASPI_PRIMERNOMBRE = $scope.inscripcion.ASPI_PRIMERNOMBRE.toUpperCase();
+            console.dir($scope.inscripcion.ASPI_PRIMERNOMBRE);
+        }
 
+    }
+    $scope.Limpiar();
 }

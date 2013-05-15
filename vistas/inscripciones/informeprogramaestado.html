@@ -1,0 +1,18 @@
+<table class="table table-hover" style="font-size: 12px">
+    <thead>
+    <tr>
+        <th>PROGRAMA</th>
+        <th>PRE-INSCRITOS</th>
+        <th>INSCRITOS</th>
+        <th>ADMITIDOS</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="c in preincritos">
+        <td>{{c.NOMBRE}}</td>
+        <td>{{c.ASPI_NUMERODOCUMENTO}}</td>
+        <td>{{c.METO_DESCRIPCION}}</td>
+        <td>{{c.PROG_NOMBRE}}</td>
+    </tr>
+    </tbody>
+</table>

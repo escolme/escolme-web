@@ -1,0 +1,88 @@
+<style type="text/css">
+    .REQU_ENTREGADO-true {
+        background-color: #dff0d8;
+    }
+    .REQU_ENTREGADO-false {
+        background-color: #f2dede;
+    }
+</style>
+
+<table class="table table-hover" style="font-size: 12px">
+    <thead>
+    <tr>
+        <th>Nombre Completo</th>
+        <th>Identificación</th>
+        <th>Metodología</th>
+        <th>Programa 1</th>
+        <th>Jornada</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="c in preincritos">
+        <td>{{c.NOMBRE}}</td>
+        <td>{{c.ASPI_NUMERODOCUMENTO}}</td>
+        <td>{{c.METO_DESCRIPCION}}</td>
+        <td>{{c.PROG_NOMBRE}}</td>
+        <td>{{c.JORN_DESCRIPCION}}</td>
+        <td><button ng-click="AbrirGestionarPreinscripcion(c)" class="btn btn-mini"><i class="icon-check"></i></button></td>
+    </tr>
+    </tbody>
+</table>
+
+<!-- ventana de Final Inscripcion-->
+<div id="ventanaChequeo" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+    <div class="modal-header" style="text-align: center">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 id="myModalLabel">Gestionar Preinscripción</h4>
+    </div>
+
+    <div class="modal-body">
+        <div class="hero"style="text-align: center;font-size: 9">
+
+            <h4>{{clasificacion.NOMBRE}} - {{clasificacion.ASPI_NUMERODOCUMENTO}}</h4>
+
+            <div class="control-group">
+                <label class="control-label" >
+                    Clasificación del Preinscrito
+                </label>
+                <div class="controls">
+                    <select id="tCategoria" name="tCategoria" ng-model="clasificacion.REQU_CLASIFICACION" ng-change="ListarRequisitos()" required="required" class="input-large" >
+                        <option value="" > -- Seleccione la Clasificación</option>
+                        <option value="1" >NUEVO</option>
+                        <option value="2" >TECNICO</option>
+                        <option value="3" >EGRESADO</option>
+                    </select>
+                </div>
+
+                <table class="table" style="font-size: 12px">
+                    <thead>
+                    <tr>
+                        <th>Requisito</th>
+                        <th>Entregado</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="REQU_ENTREGADO-{{c.REQU_ENTREGADO}}" ng-repeat="c in requisitos">
+                        <td>{{c.REQU_DESCRIPCION}}</td>
+                        <td> <input type="checkbox" ng-model="c.REQU_ENTREGADO" ></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div>
+                <label class="control-label" >
+                    Observaciones
+                </label>
+                <textarea rows="4" ng-model="clasificacion.REAS_OBSERVACIONES"></textarea>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="modal-footer">
+        <!--<button class="btn" ng-click="GuardarRequisitos()" >Guardar</button>-->
+        <button class="btn" data-dismiss="modal" ng-click="GuardarRequisito(); ListarPreinscritos()">Guardar y Procesar</button>
+        <button class="btn" data-dismiss="modal" aria-hidden="true" >Cerrar</button>
+    </div>
+</div>
