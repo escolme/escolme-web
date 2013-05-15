@@ -9,25 +9,28 @@
         </li>
     </ul>
 
-    <div class="btn-group">
-         <a class="btn" href="#/inventarios/registro">Insertar</a>
-         <a class="btn" href="#/inventarios/modificar">Modificar</a>
+
+    <div class="container-fluid">
+        <div class="btn-group">
+            <a class="btn" href="#/inventarios/registro">Insertar</a>
+            <a class="btn" href="#/inventarios/modificar">Modificar</a>
+        </div>
     </div>
-
-
-
-
-    <div class="container">
+    <div class="container-fluid" style="margin-top: 15px;;">
         <!--<div ng-controller="ordenarInventario()">-->
             <table id="inventario" class="table table-bordered"  border="2">
             <tr bgcolor="#ffffff">
-                <td width="3%"><center><B>Código</B> </td>
-                <td width="10%"><center><B>Nombre</B></td>
+                <td width="3%"><center><b>
+                    <a href="" ng-click="predicate = 'id_producto';reverse=!reverse" >Código</a>
+                </b>
+                </center>
+                </td>
+                <td width="10%"><center><B><a href="" ng-click="predicate = 'id_producto';reverse=!reverse" >Nombre</a></B></center></td>
                 <td width="7%"><center><B>Tipo</B></td>
                 <td width="3%"><center><B>stock</B></td>
                 <td width="12%"><center><B>Última modificación</B></td>
             </tr>
-            <tr ng-repeat="c in productos">
+            <tr ng-repeat="c in productos | orderBy:predicate:reverse">
                 <td>{{c.id_producto}}</td>
                 <td>{{c.nom_producto}}</td>
                 <td>{{c.categoria}}</td>

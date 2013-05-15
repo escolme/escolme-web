@@ -99,6 +99,9 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
         $('#pedidoFinal').modal('show');
     }
 
+    $scope.GuardarPedido = function(){
+
+    }
 
 
     $scope.limpiar();
