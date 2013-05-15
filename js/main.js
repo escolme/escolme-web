@@ -4,13 +4,19 @@ var escolmeWeb = angular.module('escolmeWeb',['ui']).config(['$routeProvider', f
     $routeProvider.
         when('/', { templateUrl: 'vistas/index.html', controller: IndexCtrl }).
         when('/principal', { templateUrl: 'vistas/principal.html', controller: PrincipalCtrl }).
+        when('/admin', { templateUrl: 'vistas/index_admin.html', controller: IndexAdminCtrl }).
         when('/inscripciones/inscripcion', { templateUrl: 'vistas/inscripciones/inscripcion.html', controller: InscripcionCtrl }).
+        when('/inscripciones/gestion', { templateUrl: 'vistas/inscripciones/gestionarinscripcion.html', controller: GestionarInsCtrl}).
+        when('/inscripciones/informeprogramaestado', { templateUrl: 'vistas/inscripciones/informeprogramaestado.html', controller: InfoProEstInsCtrl}).
         when('/login', { templateUrl: 'vistas/login.html', controller: LoginCtrl }).
         when('/inventarios/admin', { templateUrl: 'vistas/inventarios/inventarios.html', controller: InventariosCtrl }).
         when('/inventarios/pedidos', { templateUrl: 'vistas/inventarios/pedidos.html', controller: PedidosCtrl }).
         when('/inventarios/registro', { templateUrl: 'vistas/inventarios/registro.html', controller: RegistroCtrl}).
+<<<<<<< HEAD
+=======
         when('/inventarios/modificar', { templateUrl: 'vistas/inventarios/modificar.html', controller: ModificarCtrl}).
         when('/gestionar/inscripcion', { templateUrl: 'vistas/gestionarinscripcion.html', controller: GestionarInsCtrl}).
+>>>>>>> 0ef79decc8687ea7280c07e3fa43261fc34c6f6b
         otherwise({ redirectTo: '/' });
 }]);
 

@@ -3,11 +3,12 @@ function IndexCtrl($scope){
         $('#divBarraUsuario').show();
         $('#divMenu').show();
         $('#linkUsuario').html('<i class="icon-user"></i> ' + sessionStorage.getItem("usua_nombre") + ' <span class="caret"></span>');
-        $("#divContenidos").css("width","74.35897435897436%");
+
     }
-    else{
-        $("#divContenidos").css("width","100%");
-    }
+}
+
+function IndexAdminCtrl($scope,sessionService){
+    sessionService.validar();
 }
 
 function LoginCtrl(comunService, sessionService,$scope,$http,$location){
@@ -25,7 +26,7 @@ function LoginCtrl(comunService, sessionService,$scope,$http,$location){
             dataType: "json",
             success: function(data){
                 usuario = data.datos[0];
-                if(data != null){
+                if(usuario != null){
                     sessionStorage.setItem("usua_usuario",usuario.usua_usuario);
                     sessionStorage.setItem("usua_id",usuario.usua_id);
                     sessionStorage.setItem("pege_id",usuario.pege_id);
@@ -43,15 +44,10 @@ function LoginCtrl(comunService, sessionService,$scope,$http,$location){
 }
 
 function PrincipalCtrl(comunService, sessionService,$scope,$http){
-
     sessionService.validar();
 
 }
 
-function GestionarInsCtrl (comunService, sessionService,$scope,$http){
-    sessionService.validar();
-
-}
 
 
 

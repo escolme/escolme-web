@@ -37,9 +37,9 @@
             </a>
             <div class="nav-collapse collapse">
                 <ul class="nav pull-right">
-                    <li><a href="http://www.escolme.edu.co/">Portal Escolme</a></li>
+                    <li><a href="http://www.escolme.edu.co/" target="_blank">Portal Escolme</a></li>
                     <li><a href="#">Campus Academico</a></li>
-                    <li><a href="#/login">Campus Administrativo</a></li>
+                    <li><a href="#/admin">Campus Administrativo</a></li>
                     <li>
                         <div id="divBarraUsuario" style="display: none; padding-right: 20px;">
                             <div class="btn-group pull-right">
@@ -58,32 +58,47 @@
     </div>
     <!-- ends navbar -->
 
+
+
+
     <div class="container" style="background-color: #ffffff;">
-        <div class="row-fluid">
-            <div class="span3" style="padding:15px;display: none;" id="divMenu">
-                <div class="well" >
-                    <ul class="nav nav-list">
-
-                        <li class="nav-header">Inscripciones</li>
-                        <li><a href="#/gestionar/inscripcion">Gestionar Preinscritos</a></li>
-
-                        <li class="nav-header">Inventarios</li>
-                        <li><a href="#">Gestion Inventarios</a></li>
-                        <li><a href="#/inventarios/pedidos">Realizar Pedido</a></li>
-                        <li><a href="#">Gestion de Pedidos</a></li>
-
-                        <li class="nav-header">Cartera</li>
-                        <li><a href="#">Estado Estudiante</a></li>
-                        <li><a href="#">Movimientos</a></li>
-                        <li><a href="#">Configuracion</a></li>
-
+        <div class="row-fluid" id="divMenu" style="display: none;">
+            <div class="navbar">
+                <div class="navbar-inner" id="nabvar-menu">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Inscripciones <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#/inscripciones/gestion">Gestionar Preinscritos</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Inventarios <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Gestión Inventarios</a></li>
+                                <li><a href="#/inventarios/pedidos">Realizar Pedido</a></li>
+                                <li><a href="#">Gestión de Pedidos</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cartera <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Estado Estudiante</a></li>
+                                <li><a href="#">Movimientos</a></li>
+                                <li><a href="#">Configuracion</a></li>
+                            </ul>
+                        </li>
                         <li class="divider"></li>
-
-                        <li><a href="#">Salir</a></li>
+                        <li><a href="#/" onclick="Salir()">Salir</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="span9" id="divContenidos" style="margin-left: 0px; padding: 10px;">
+        </div>
+
+
+
+        <div class="row-fluid">
+            <div class="span12" id="divContenidos" style="margin-left: 0px; padding: 10px;">
                 <div  ng-view class="container-fluid" id="divVistas"  ></div>
             </div>
         </div>
