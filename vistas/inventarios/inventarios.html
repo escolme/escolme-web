@@ -11,27 +11,29 @@
 
     <div class="btn-group">
          <a class="btn" href="#/inventarios/registro">Insertar</a>
-         <a class="btn">Modificar</a>
+         <a class="btn" href="#/inventarios/modificar">Modificar</a>
     </div>
 
 
 
 
-<div class="container">
-        <table class="table table-bordered"  border="2">
-        <tr bgcolor="#ffffff">
-            <td width="3%"><center><B>Código</B> </td>
-            <td width="10%"><center><B>Nombre</B></td>
-            <td width="7%"><center><B>Tipo</B></td>
-            <td width="3%"><center><B>stock</B></td>
-            <td width="12%"><center><B>Última modificación</B></td>
-        </tr>
-        <tr ng-repeat="c in productos">
-            <td>{{c.id_producto}}</td>
-            <td>{{c.nom_producto}}</td>
-            <td>{{c.categoria}}</td>
-            <td>{{c.cant_stock}}</td>
-            <td>{{c.fecha_mod}}</td>
-        </tr>
-        </table>
-    </div>
+    <div class="container">
+        <!--<div ng-controller="ordenarInventario()">-->
+            <table id="inventario" class="table table-bordered"  border="2">
+            <tr bgcolor="#ffffff">
+                <td width="3%"><center><B>Código</B> </td>
+                <td width="10%"><center><B>Nombre</B></td>
+                <td width="7%"><center><B>Tipo</B></td>
+                <td width="3%"><center><B>stock</B></td>
+                <td width="12%"><center><B>Última modificación</B></td>
+            </tr>
+            <tr ng-repeat="c in productos">
+                <td>{{c.id_producto}}</td>
+                <td>{{c.nom_producto}}</td>
+                <td>{{c.categoria}}</td>
+                <td>{{c.cant_stock}}</td>
+                <td>{{c.fecha_mod}}</td>
+            </tr>
+            </table>
+        </div>
+   <!-- </div>

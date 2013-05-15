@@ -99,11 +99,7 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
         $('#pedidoFinal').modal('show');
     }
 
-    $scope.confimacionPedido= function(){
-        $('#pedidoFinal').modal('hide');
-        $('#confirmacion').modal('show');
 
-    }
 
     $scope.limpiar();
 }
@@ -128,6 +124,15 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
         }
             $scope.ListarProductos();
         }
+
+        $scope.ordenarInventario = function(){
+            $scope.inventario= []
+
+
+
+        }
+
+
         $scope.limpiar2();
     }
 
@@ -190,3 +195,16 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
 
      $scope.limpiar3();
     }
+
+
+function ModificarCtrl($scope,$http){
+
+    if(!angular.equals(sessionStorage.getItem("usua_usuario"),null)){
+        $('#divBarraUsuario').show();
+        $('#linkUsuario').html('<i class="icon-user"></i> ' + sessionStorage.getItem("usua_nombre") + ' <span class="caret"></span>');
+        $("#divContenidos").css("width"," 74.35897435897436%");
+    }
+    else{
+        $("#divContenidos").css("width","100%");
+    }
+}
