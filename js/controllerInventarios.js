@@ -100,7 +100,12 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
     }
 
     $scope.GuardarPedido = function(){
-        var json_pedido = JSON.stringify($scope.pedidoFinal);
+        $http.get('api/pedido/maximo').then(function(response){
+            $scope.maximo = response.data.datos;
+            var max= $scope.maximo + 1;
+            console.dir(max);
+        });
+      /*  var json_pedido = JSON.stringify($scope.pedidoFinal);
         $.ajax({
             type: 'POST',
             contentType: 'application/json',
@@ -115,7 +120,7 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
             error: function(jqXHR, textStatus, errorThrown){
                 alert('error: ' + textStatus);
             }
-        })
+        })*/
     }
 
 

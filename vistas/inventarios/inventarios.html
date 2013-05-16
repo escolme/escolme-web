@@ -17,26 +17,39 @@
         </div>
     </div>
     <div class="container-fluid" style="margin-top: 15px;;">
-        <!--<div ng-controller="ordenarInventario()">-->
-            <table id="inventario" class="table table-striped" border="1">
+            <table id="inventario" class="table table-striped" >
             <tr bgcolor="#ffffff">
                 <td width="3%"><center><b>
                     <a href="" ng-click="predicate = 'id_producto';reverse=!reverse" >Código</a>
                 </b>
                 </center>
                 </td>
-                <td width="10%"><center><B><a href="" ng-click="predicate = 'id_producto';reverse=!reverse" >Nombre</a></B></center></td>
-                <td width="7%"><center><B>Tipo</B></td>
-                <td width="3%"><center><B>stock</B></td>
-                <td width="12%"><center><B>Última modificación</B></td>
+                <td width="10%"><center><b>
+                    <a href="" ng-click="predicate = 'nom_producto';reverse=!reverse" >Nombre</a>
+                </b>
+                </center>
+                </td>
+                <td width="7%"><center><b>
+                    <a href="" ng-click="predicate = 'categoria';reverse=!reverse" >Tipo</a>
+                </b>
+                </center>
+                </td>
+                <td width="3%"><center><b>
+                    <a href="" ng-click="predicate = 'cant_stock';reverse=!reverse">Stock</a>
+                </b>
+                </center>
+                </td>
+                <td width="12%"><center><b>
+                    <a href="" ng-click="predicate = 'fecha_mod';reverse=!reverse" >Última modificación</a></b>
+                </center></td>
             </tr>
             <tr ng-repeat="c in productos | orderBy:predicate:reverse">
-                <td>{{c.id_producto}}</td>
-                <td>{{c.nom_producto}}</td>
-                <td>{{c.categoria}}</td>
-                <td>{{c.cant_stock}}</td>
-                <td>{{c.fecha_mod}}</td>
+                <td><center>{{c.id_producto}}</center></td>
+                <td><center>{{c.nom_producto}}</center></td>
+                <td><center>{{c.categoria}}</center></td>
+                <td><center>{{c.cant_stock}}</center></td>
+                <td><center>{{c.fecha_mod}}</center></td>
             </tr>
             </table>
         </div>
-   <!-- </div>
+

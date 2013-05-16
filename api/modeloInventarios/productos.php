@@ -185,33 +185,25 @@ function insertarpedidousuario()
     $request = Slim::getInstance()->request();
     $pedido = json_decode($request->getBody());
     $fecha=date("Y-m-d");
-
     try {
         $conexion = new conexionBD();
         $conectar = $conexion->conectarInventarios();
         $sql= "INSERT INTO tbl_pedido_usuario(id_usuario) VALUES (1)";
-
-
         $result = mysqli_query($conectar,$sql);
         echo utf8_encode('{"datos": ' .json_encode($sql) . '}');
     }
-
     catch(Exception $e){
         mysqli_close($conectar);
         echo utf8_encode('{"error: ":' . $e->getMessage() . '}');
     }
-
 }
 
 function idmaximo(){
-
-
     try
     {
         $conexion = new conexionBD();
         $conectar = $conexion->conectarInventarios();
         $result = mysqli_fetch_array(mysqli_query($conectar,"SELECT max(id_pedido_usuario) as maximo FROM tbl_pedidos_usuarios"));
-
         $valor = $result['maximo'];
 
        /*while($row = mysqli_fetch_array($result))
