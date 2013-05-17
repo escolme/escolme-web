@@ -180,15 +180,16 @@ function insertarproductos()
 
 
 
-function insertarpedidousuario()
+function insertarpedido()
 {
     $request = Slim::getInstance()->request();
     $pedido = json_decode($request->getBody());
     $fecha=date("Y-m-d");
+    //echo utf8_encode('{"datos": ' .json_encode($pedido) . '}');
     try {
         $conexion = new conexionBD();
         $conectar = $conexion->conectarInventarios();
-        $sql= "INSERT INTO tbl_pedido_usuario(id_usuario) VALUES (1)";
+        $sql= "INSERT INTO tbl_pedidos_usuarios(id_pedido_usuario,id_usuario) VALUES (".$pedido->maximo.",".$pedido->id_usuario.")";
         $result = mysqli_query($conectar,$sql);
         echo utf8_encode('{"datos": ' .json_encode($sql) . '}');
     }
@@ -198,6 +199,7 @@ function insertarpedidousuario()
     }
 }
 
+
 function idmaximo(){
     try
     {
@@ -205,7 +207,6 @@ function idmaximo(){
         $conectar = $conexion->conectarInventarios();
         $result = mysqli_fetch_array(mysqli_query($conectar,"SELECT max(id_pedido_usuario) as maximo FROM tbl_pedidos_usuarios"));
         $valor = $result['maximo'];
-
        /*while($row = mysqli_fetch_array($result))
         {
             $fila = array(
@@ -226,6 +227,9 @@ function idmaximo(){
         echo utf8_encode('{"error: ":' . $e->getMessage() . '}');
     }
 }
+
+
+
 
 
 

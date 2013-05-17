@@ -95,33 +95,41 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
         });
     }
 
+
+
     $scope.abrirventanaPedido= function(){
         $('#pedidoFinal').modal('show');
     }
+
 
     $scope.GuardarPedido = function(){
         $http.get('api/pedido/maximo').then(function(response){
             $scope.maximo = response.data.datos;
             var num = parseInt($scope.maximo) +1;
-        });
+            var pedido = {
+                id_usuario : sessionStorage.getItem("usua_id"),
+                maximo : num,
+                pedido: $scope.pedidoFinal
 
-
-      /*  var json_pedido = JSON.stringify($scope.pedidoFinal);
-        $.ajax({
-            type: 'POST',
-            contentType: 'application/json',
-            url: 'api/pedido/guardar',
-            dataType: "json",
-            data: json_pedido,
-            async:false,
-            success: function(data, textStatus, jqXHR){
-                console.dir(data);
-
-            },
-            error: function(jqXHR, textStatus, errorThrown){
-                alert('error: ' + textStatus);
             }
-        })*/
+            var json_pedido = JSON.stringify(pedido);
+            $.ajax({
+                type: 'POST',
+                contentType: 'application/json',
+                url: 'api/pedido/guardar',
+                dataType: "json",
+                data: json_pedido,
+                async:false,
+                success: function(data, textStatus, jqXHR){
+                console.dir(data);
+                },
+                error: function(jqXHR, textStatus, errorThrown){
+                    alert('error: ' + textStatus);
+                }
+            })
+            //console.dir(json_pedido);
+        });
+      // var json_pedido = JSON.stringify($scope.pedidoFinal);
     }
 
 
