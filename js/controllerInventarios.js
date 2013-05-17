@@ -102,9 +102,10 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
     $scope.GuardarPedido = function(){
         $http.get('api/pedido/maximo').then(function(response){
             $scope.maximo = response.data.datos;
-            var max= $scope.maximo + 1;
-            console.dir(max);
+            var num = parseInt($scope.maximo) +1;
         });
+
+
       /*  var json_pedido = JSON.stringify($scope.pedidoFinal);
         $.ajax({
             type: 'POST',
