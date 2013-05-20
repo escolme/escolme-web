@@ -190,6 +190,28 @@ function insertarpedido()
         $conexion = new conexionBD();
         $conectar = $conexion->conectarInventarios();
         $sql= "INSERT INTO tbl_pedidos_usuarios(id_pedido_usuario,id_usuario) VALUES (".$pedido->maximo.",".$pedido->id_usuario.")";
+
+        $result = mysqli_query($conectar,$sql);
+
+        echo utf8_encode('{"datos": ' .json_encode($sql) . '}');
+
+    }
+    catch(Exception $e){
+        mysqli_close($conectar);
+        echo utf8_encode('{"error: ":' . $e->getMessage() . '}');
+    }
+}
+
+function insertarpedido2()
+{
+    $request = Slim::getInstance()->request();
+    $pedido= json_decode($request->getBody());
+    $fecha=date("Y-m-d");
+    //echo utf8_encode('{"datos": ' .json_encode($pedido) . '}');
+    try {
+        $conexion = new conexionBD();
+        $conectar = $conexion->conectarInventarios();
+        $sql= "INSERT INTO tbl_pedido_producto(id_pedido_usuario,id_producto) VALUES (".$pedido->maximo.",".$pedido->id_producto.",".$pedido->cantidad_pedida.")";
         $result = mysqli_query($conectar,$sql);
         echo utf8_encode('{"datos": ' .json_encode($sql) . '}');
     }

@@ -122,6 +122,7 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
                 async:false,
                 success: function(data, textStatus, jqXHR){
                 console.dir(data);
+                $scope.GuardarProducto()
                 },
                 error: function(jqXHR, textStatus, errorThrown){
                     alert('error: ' + textStatus);
@@ -132,9 +133,35 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
       // var json_pedido = JSON.stringify($scope.pedidoFinal);
     }
 
+    $scope.GuardarProducto = function(){
+        var pedido ={
+            pedido:$scope.pedidoFinal
+        }
+
+        var json_pedido = JSON.stringify(pedido);
+            $.ajax({
+                type: 'POST',
+                contentType: 'application/json',
+                url: 'api/pedido/guardarproducto',
+                dataType: "json",
+                data: json_pedido,
+                async:false,
+                success: function(data, textStatus, jqXHR){
+
+                    console.dir(data);
+                },
+                error: function(jqXHR, textStatus, errorThrown){
+                    alert('error: ' + textStatus);
+                }
+            })
+    }
+
 
     $scope.limpiar();
 }
+
+
+
 
 
     function InventariosCtrl($scope,$http){

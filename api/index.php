@@ -100,5 +100,6 @@ $app->get('/pedido/maximo/', 'idmaximo');
 
 $app->post('/registro/productos', 'insertarproductos');
 $app->post( '/pedido/guardar', 'insertarpedido');
+$app->post( '/pedido/guardarproducto', 'insertarpedido2');
 
 $app->run();
