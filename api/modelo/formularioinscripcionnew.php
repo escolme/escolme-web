@@ -8,8 +8,7 @@ function InsertarFormulario(){
     try{
         $conexion = new conexionBD();
         $conn = $conexion->conectar();
-        $sql = "INSERT INTO ACADEMICO.FORMULARIOINSCRIPCION (ASPI_ID, FOIN_PROGRAMAADMITIDO, FOIN_MEDIOINSCRIPCION,FOIN_FECHAHORAVERIFICACION, FOIN_REGISTRADOPOR, FOIN_FECHACAMBIO, TIIN_ID,FOIN_ESTADOADMISION ,SEPE_ID)
-        VALUES(".$inscripcion->ASPI_ID.",'0','ON LINE','".$fecha."','".$inscripcion->ASPI_NUMERODOCUMENTO."','".$fecha."',1,'PREINSCRITO',".$inscripcion->SEPE_ID.")";
+        $sql = "INSERT INTO ACADEMICO.FORMULARIOINSCRIPCION (ASPI_ID, FOIN_PROGRAMAADMITIDO, FOIN_MEDIOINSCRIPCION,FOIN_FECHAHORAVERIFICACION, FOIN_REGISTRADOPOR, FOIN_FECHACAMBIO, TIIN_ID,FOIN_ESTADOADMISION ,SEPE_ID)VALUES(".$inscripcion->ASPI_ID.",'0','ON LINE','".$fecha."','".$inscripcion->ASPI_NUMERODOCUMENTO."','".$fecha."',1,'PREINSCRITO',".$inscripcion->SEPE_ID.")";
         //echo utf8_encode('{"datos2-": ' . json_encode($sql) . '}');
         $query =OCIParse($conn, $sql);
         OCIExecute($query, OCI_DEFAULT);
@@ -54,11 +53,29 @@ function ActualizarEstadoFormulario($FOIN_ID){
         $conn = $conexion->conectar();
         $sql = "UPDATE ACADEMICO.FORMULARIOINSCRIPCION SET FOIN_ESTADOADMISION='INSCRITO' WHERE ACADEMICO.FORMULARIOINSCRIPCION.FOIN_ID=".$FOIN_ID;
         //echo utf8_encode('{"update": ' . json_encode($sql) . '}');
-        //$query =OCIParse($conn, $sql);
-        //OCIExecute($query, OCI_DEFAULT);
-        //OCICommit($conn);
+        $query =OCIParse($conn, $sql);
+        OCIExecute($query, OCI_DEFAULT);
+        OCICommit($conn);
         OCILogoff($conn);
         echo '{"mensaje: ":"ExitoUpdate"}';
+    }
+    catch(Exception $e){
+        OCILogoff($conn);
+        echo '{"error: ":' . $e->getMessage() . '}';
+    }
+}
+
+function ActualizarFormularioEntrevista($LLAMADO, $FOIN_ID2){
+    try{
+        $conexion = new conexionBD();
+        $conn = $conexion->conectar();
+        $sql = "UPDATE ACADEMICO.FORMULARIOINSCRIPCION SET LLAM_ID=".$LLAMADO.", FOIN_ESTADOADMISION='ADMITIDO' WHERE FOIN_ID=".$FOIN_ID2;
+        //echo utf8_encode('{"datos": ' . json_encode($sql) . '}');
+        $query =OCIParse($conn, $sql);
+        OCIExecute($query, OCI_DEFAULT);
+        OCICommit($conn);
+        OCILogoff($conn);
+        echo '{"mensaje: ":"ExitoFormEntrevista"}';
     }
     catch(Exception $e){
         OCILogoff($conn);

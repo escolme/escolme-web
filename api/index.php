@@ -23,6 +23,8 @@ require 'modelo/circusncripcion.php';
 require 'modelo/usuario.php';
 require 'modelo/preinscritos.php';
 require 'modelo/requisitos.php';
+require 'modelo/inscritos.php';
+require 'modelo/correo.php';
 
 require 'modeloInventarios/productos.php';
 require 'modeloInventarios/categoria_productos.php';
@@ -54,6 +56,8 @@ $app->get('/actualizar/circunscripcion/:CIRC_ID/:ASPI_ID', 'ActualizarCircunscri
 $app->get('/usuario/buscar/:usua_usuario/:usua_contrasena', 'BuscarUsuario');
 $app->get('/preinscritos/listar', 'ListarPreinscritos');
 $app->get('/requisitos/listar/:CLASIFICACION', 'ListarRequisitos');
+$app->get('/inscritos/listar', 'ListarInscritos');
+$app->get('/formulario/buscarllamado/:PROG_ID', 'BuscarLlamado');
 
 $app->post('/insertar/aspirantenew','InsertarAspirante');
 $app->post('/insertar/formularioinscripcionnew','InsertarFormulario');
@@ -64,7 +68,9 @@ $app->post('/insertar/socioeconomica','InsertarInformacionSocioeconomica');
 $app->post('/insertar/requisitoaspirante','InsertarRequisitoAspirante');
 $app->post('/insertar/requisitoentregados','InsertarRequisitosEntregados');
 $app->post('/actualizar/formularioestado/:FOIN_ID','ActualizarEstadoFormulario');
-
+$app->post('/insertar/entrevistanew','InsertarEntrevista');
+$app->post('/actualizar/formularioxentrevista/:LLAM_ID/:FOIN_ID','ActualizarFormularioEntrevista');
+$app->post('/correo/enviar','EnviarCorreo');
 /*
 RUTAS DE INVENTARIOS
 */

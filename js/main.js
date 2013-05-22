@@ -13,11 +13,8 @@ var escolmeWeb = angular.module('escolmeWeb',['ui']).config(['$routeProvider', f
         when('/inventarios/pedidos', { templateUrl: 'vistas/inventarios/pedidos.html', controller: PedidosCtrl }).
         when('/inventarios/registro', { templateUrl: 'vistas/inventarios/registro.html', controller: RegistroCtrl}).
         when('/inventarios/modificar', { templateUrl: 'vistas/inventarios/modificar.html', controller: ModificarCtrl}).
-        when('/gestionar/inscripcion', { templateUrl: 'vistas/gestionarinscripcion.html', controller: GestionarInsCtrl}).
-<<<<<<< HEAD
-=======
-
->>>>>>> 498d5376f1ea8bdb8e1034f5a7c0e4e2536af801
+        when('/liquidacion/nuevos', { templateUrl: 'vistas/liquidacionnuevos/liquidacion.html', controller: LiquidacionNuevosCtrl}).
+        when('/entrevista/gestion', { templateUrl: 'vistas/entrevista/gestionarentrevista.html', controller: EntrevistaCtrl}).
         otherwise({ redirectTo: '/' });
 }]);
 

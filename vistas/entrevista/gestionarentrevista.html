@@ -1,0 +1,164 @@
+<table class="table table-hover" style="font-size: 12px">
+    <thead>
+    <tr>
+        <th>Nombre Completo</th>
+        <th>Identificación</th>
+        <th>Metodología</th>
+        <th>Programa 1</th>
+        <th>Jornada</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="c in inscritosentrevista">
+        <td>{{c.NOMBRE}}</td>
+        <td>{{c.ASPI_NUMERODOCUMENTO}}</td>
+        <td>{{c.METO_DESCRIPCION}}</td>
+        <td>{{c.PROG_NOMBRE}}</td>
+        <td>{{c.JORN_DESCRIPCION}}</td>
+        <td><button ng-click="AbrirGestionarEntrevista(c)" class="btn btn-mini"><i class="icon-file"></i></button></td>
+    </tr>
+    </tbody>
+</table>
+
+
+<div id="ventanaEntrevista" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width: 800px;left: 40%">
+    <div class="modal-header" style="text-align: center">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 id="myModalLabel">Gestionar Entrevista</h4>
+    </div>
+
+    <div class="modal-body">
+        <div style="font-size: 9">
+
+                <div class="span8 offset2">
+                    <form class="form-horizontal" id="form_entrevista" name="form_entrevista">
+                        <fieldset>
+                                <!--<div class="control-group">-->
+                                    <h5>IDENTIFICACIÓN DEL ESTUDIANTE</h5>
+                                <!--</div>-->
+
+                                <div class="control-group">
+                                    <label class="control-label" >Nombre Completo:</label>
+                                    <div class="controls">
+                                        <label>{{entrevista.NOMBRE}}</label>
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <label class="control-label" >Documento Identidad:</label>
+                                    <div class="controls">
+                                        <label>{{entrevista.ASPI_NUMERODOCUMENTO}}</label>
+                                    </div>
+                                </div>
+
+                                <!--<div class="control-group">-->
+                                    <h5>PROGRAMA Y PERIODO</h5>
+                                <!--</div>-->
+
+                                <div class="control-group">
+                                    <label class="control-label" >Programa:</label>
+                                    <div class="controls">
+                                        <label>{{entrevista.PROGRAMA}}</label>
+                                    </div>
+                                </div>
+
+                                <table>
+                                    <tr>
+                                        <td width="45%" style="text-align: right">
+                                            <div>
+                                                <label>Periodo:</label>
+                                            </div>
+                                        </td>
+                                        <td width="19%" style="text-align: center">
+                                            <div >
+                                                <label>{{entrevista.PERIODO}}</label>
+                                            </div>
+                                        </td>
+                                        <td width="21%" style="text-align: center">
+                                            <div>
+                                                <label>Fecha:</label>
+
+                                            </div>
+                                        </td>
+                                        <td >
+                                            <div>
+                                                <input required="required" id="tFechaEntre" name="tFechaEntre" ng-model="entrevista.FECHAENTREVISTA" ui-date type="text">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <h5>CUESTIONARIO</h5>
+
+                            <div class="control-group">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <label>1. ¿Por qué quiere estudiar en esta institución?</label>
+                                        </td>
+                                        <td>
+                                            <textarea ng-model="entrevista.PREGUNTA1" class="input-xlarge"rows="2" ></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label >2. ¿Cómo se entero de Escolme?</label>
+                                        </td>
+                                        <td>
+                                            <textarea ng-model="entrevista.PREGUNTA2" class="input-xlarge"rows="2" ></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label >3. ¿Por qué eligio estudiar este programa?</label>
+                                        </td>
+                                        <td>
+                                            <textarea ng-model="entrevista.PREGUNTA3" class="input-xlarge"rows="2" ></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label >4. ¿Cuáles son sus cualidades y valores?</label>
+                                        </td>
+                                        <td>
+                                            <textarea ng-model="entrevista.PREGUNTA4" class="input-xlarge"rows="2" ></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label >5. ¿Qué espera usted de esta institución?</label>
+                                        </td>
+                                        <td>
+                                            <textarea ng-model="entrevista.PREGUNTA5" class="input-xlarge"rows="2" ></textarea>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="control-group ">
+                                <label class="control-label" >
+                                    Homologaciones
+                                </label>
+                                <div class="controls">
+                                    <select id="tHomologacion" name="tHomologacion" ng-model="entrevista.HOMOLOGACION"  required="required" class="input-large" >
+                                        <option value="" > -- Seleccione la opción</option>
+                                        <option value="1" >SI</option>
+                                        <option value="0" >NO</option>
+                                    </select>
+                                    <span ng-show="form_inscripcion.tPaisnaci.$error.required" class="help-inline" style="">*</span>
+                                </div>
+                            </div>
+                                <h5>OBSERVACIONES ENTREVISTADOR</h5>
+                                <div>
+                                    <textarea ng-model="entrevista.OBSERVACIONES" class="input-xxlarge"rows="4" ></textarea>
+                                </div>
+                        </fieldset>
+                    </form>
+                </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" ng-click="BuscarLlamado()">Guardar y Procesar</button>
+        <button class="btn" data-dismiss="modal" aria-hidden="true" >Cerrar</button>
+    </div>
+</div>
