@@ -189,7 +189,7 @@ function insertarpedido()
     try {
         $conexion = new conexionBD();
         $conectar = $conexion->conectarInventarios();
-        $sql= "INSERT INTO tbl_pedidos_usuarios(id_pedido_usuario,id_usuario) VALUES (".$pedido->maximo.",".$pedido->id_usuario.")";
+        $sql= "INSERT INTO tbl_pedidos_usuarios(id_pedido_usuario,id_usuario,fecha) VALUES (".$pedido->maximo.",".$pedido->id_usuario.",'".$fecha."')";
 
         $result = mysqli_query($conectar,$sql);
 
@@ -205,17 +205,22 @@ function insertarpedido()
 function insertarpedido2()
 {
     $request = Slim::getInstance()->request();
-    $pedido= json_decode($request->getBody());
-    $fecha=date("Y-m-d");
-    //echo utf8_encode('{"datos": ' .json_encode($pedido) . '}');
-    try {
+    $pedido= json_decode($request->getBody());//
+
+   // echo utf8_encode('{"datos": ' .json_encode($pedido->pedido2[0]) . '}');
+
+
+  try {
         $conexion = new conexionBD();
         $conectar = $conexion->conectarInventarios();
-        $sql= "INSERT INTO tbl_pedido_producto(id_pedido_usuario,id_producto) VALUES (".$pedido->maximo.",".$pedido->id_producto.",".$pedido->cantidad_pedida.")";
-        $result = mysqli_query($conectar,$sql);
+
+        for($i = 0;$i<count($pedido->pedido2);$i++){
+            $sql= "INSERT INTO tbl_pedido_producto(id_pedido_usuario,id_producto,cantidad_pedida) VALUES (".$pedido->maximo.",'".$pedido->pedido2[$i]->id_producto."',".$pedido->pedido2[$i]->cantidad.")";
+            $result = mysqli_query($conectar,$sql);
+        }
         echo utf8_encode('{"datos": ' .json_encode($sql) . '}');
     }
-    catch(Exception $e){
+   catch(Exception $e){
         mysqli_close($conectar);
         echo utf8_encode('{"error: ":' . $e->getMessage() . '}');
     }

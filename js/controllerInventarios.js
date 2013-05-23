@@ -1,7 +1,7 @@
 
 function PedidosCtrl($scope,$http,sessionService,comunService){
 
-    //sessionService.validar();
+  //  sessionService.validar();
 
     if(!angular.equals(sessionStorage.getItem("usua_usuario"),null)){
         $('#divBarraUsuario').show();
@@ -11,7 +11,6 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
     else{
         $("#divContenidos").css("width","100%");
     }
-
     $scope.limpiar = function(){
        $scope.pedido={
            id_categoria_producto:null,
@@ -28,6 +27,7 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
         });
     }
 
+
     $scope.productosCategoria= function(){
         var cat_id = $scope.pedido.id_categoria_producto;
         if(cat_id!=null){
@@ -38,6 +38,7 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
             $scope.proxcate = [];
         }
     }
+
 
     $scope.AgregarProducto = function(){
         $http.get('api/productos/cargarporid/'+ $scope.pedido.id_producto).then(function(response){
@@ -62,6 +63,7 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
         });
     }
 
+
     $scope.EliminarItem = function(item){
         var temp =  $scope.pedidoFinal;
         $scope.pedidoFinal = [];
@@ -71,6 +73,7 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
             }
         });
     }
+
 
     $scope.QuitarProducto = function(){
         $http.get('api/productos/quitarporid/'+ $scope.pedido.id_producto).then(function(response){
@@ -108,9 +111,8 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
             var num = parseInt($scope.maximo) +1;
             var pedido = {
                 id_usuario : sessionStorage.getItem("usua_id"),
-                maximo : num,
-                pedido: $scope.pedidoFinal
-
+                maximo : num
+               // pedido: $scope.pedidoFinal
             }
             var json_pedido = JSON.stringify(pedido);
             $.ajax({
@@ -133,12 +135,13 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
       // var json_pedido = JSON.stringify($scope.pedidoFinal);
     }
 
-    $scope.GuardarProducto = function(){
-        var pedido ={
-            pedido:$scope.pedidoFinal
-        }
 
-        var json_pedido = JSON.stringify(pedido);
+    $scope.GuardarProducto = function(){
+        var pedido2 ={
+            pedido2:$scope.pedidoFinal,
+            maximo:$scope.maximo
+        }
+        var json_pedido = JSON.stringify(pedido2);
             $.ajax({
                 type: 'POST',
                 contentType: 'application/json',
@@ -147,7 +150,6 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
                 data: json_pedido,
                 async:false,
                 success: function(data, textStatus, jqXHR){
-
                     console.dir(data);
                 },
                 error: function(jqXHR, textStatus, errorThrown){
@@ -156,6 +158,11 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
             })
     }
 
+    $scope.DisminuirStock=function(){
+        $http.post('api/pedido/disminuirstock').then(function(response){
+
+        });
+    }
 
     $scope.limpiar();
 }
