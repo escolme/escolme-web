@@ -2,26 +2,66 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed62a6a8-8119-4ff3-99f6-4bef549366e2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/modelo/imprimirinscripcion.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vistas/entrevista/imprimirentrevista.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vistas/inscripciones/imprimirinscripcion.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/.htaccess" afterPath="$PROJECT_DIR$/api/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/index.php" afterPath="$PROJECT_DIR$/api/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/modelo/aspirantenew.php" afterPath="$PROJECT_DIR$/api/modelo/aspirantenew.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/modelo/caracterizacion.php" afterPath="$PROJECT_DIR$/api/modelo/caracterizacion.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/modelo/correo.php" afterPath="$PROJECT_DIR$/api/modelo/correo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/modelo/estudiossecundarios.php" afterPath="$PROJECT_DIR$/api/modelo/estudiossecundarios.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/modelo/formularioinscripcionnew.php" afterPath="$PROJECT_DIR$/api/modelo/formularioinscripcionnew.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/modelo/informacionsocioeconomica.php" afterPath="$PROJECT_DIR$/api/modelo/informacionsocioeconomica.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/modelo/inscritos.php" afterPath="$PROJECT_DIR$/api/modelo/inscritos.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/modelo/programaxformulario.php" afterPath="$PROJECT_DIR$/api/modelo/programaxformulario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/modelo/requisitos.php" afterPath="$PROJECT_DIR$/api/modelo/requisitos.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllerEntrevista.js" afterPath="$PROJECT_DIR$/js/controllerEntrevista.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllerInscripciones.js" afterPath="$PROJECT_DIR$/js/controllerInscripciones.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vistas/inscripciones/gestionarinscripcion.html" afterPath="$PROJECT_DIR$/vistas/inscripciones/gestionarinscripcion.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vistas/inscripciones/inscripcion.html" afterPath="$PROJECT_DIR$/vistas/inscripciones/inscripcion.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/examples/images/phpmailer.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/examples/images/phpmailer_mini.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/test/test.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/README" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/aboutus.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/changelog.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/class.phpmailer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/class.pop3.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/class.smtp.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/docs/Callback_function_notes.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/docs/DomainKeys_notes.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/docs/Note_for_SMTP_debugging.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/docs/extending.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/docs/faq.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/docs/pop3_article.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/docs/use_gmail.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/examples/contents.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/examples/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/examples/test_db_smtp_basic.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/examples/test_mail_advanced.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/examples/test_mail_basic.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/examples/test_pop_before_smtp_advanced.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/examples/test_pop_before_smtp_basic.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/examples/test_sendmail_advanced.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/examples/test_sendmail_basic.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/examples/test_smtp_advanced.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/examples/test_smtp_advanced_no_auth.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/examples/test_smtp_basic.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/examples/test_smtp_basic_no_auth.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/examples/test_smtp_gmail_advanced.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/examples/test_smtp_gmail_basic.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/language/phpmailer.lang-ar.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/language/phpmailer.lang-br.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/language/phpmailer.lang-ca.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/language/phpmailer.lang-ch.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/language/phpmailer.lang-cz.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/language/phpmailer.lang-de.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/language/phpmailer.lang-dk.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/language/phpmailer.lang-es.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/language/phpmailer.lang-et.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/language/phpmailer.lang-fi.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/language/phpmailer.lang-fo.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/language/phpmailer.lang-fr.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/language/phpmailer.lang-hu.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/language/phpmailer.lang-it.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/language/phpmailer.lang-ja.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/language/phpmailer.lang-nl.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/language/phpmailer.lang-no.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/language/phpmailer.lang-pl.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/language/phpmailer.lang-ro.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/language/phpmailer.lang-ru.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/language/phpmailer.lang-se.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/language/phpmailer.lang-tr.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/language/phpmailer.lang-zh.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/language/phpmailer.lang-zh_cn.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/test/contents.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/test/phpmailerTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/test/test_callback.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/phpmailer/test/testemail.php" />
     </list>
     <ignored path="escolme-web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,25 +84,7 @@
       <file leaf-file-name="correo.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/api/modelo/correo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="51" selection-start="1319" selection-end="1319" vertical-scroll-proportion="0.5543478">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="aspirantenew.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/modelo/aspirantenew.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="7.8461537">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_smtp_gmail_basic.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/phpmailer/examples/test_smtp_gmail_basic.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="4" selection-start="87" selection-end="1888" vertical-scroll-proportion="-34.0">
+            <state line="43" column="126" selection-start="1764" selection-end="1764" vertical-scroll-proportion="1.1350932">
               <folding />
             </state>
           </provider>
@@ -71,7 +93,7 @@
       <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="42" selection-start="3753" selection-end="3753" vertical-scroll-proportion="-18.307692">
+            <state line="79" column="42" selection-start="3753" selection-end="3753" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -98,7 +120,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -107,7 +129,7 @@
       <file leaf-file-name="gestionarinscripcion.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vistas/inscripciones/gestionarinscripcion.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="302" column="65" selection-start="14141" selection-end="14141" vertical-scroll-proportion="-13.153846">
+            <state line="302" column="65" selection-start="14141" selection-end="14141" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -116,7 +138,7 @@
       <file leaf-file-name="imprimirinscripcion.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vistas/inscripciones/imprimirinscripcion.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="131" column="62" selection-start="5092" selection-end="5092" vertical-scroll-proportion="-19.23077">
+            <state line="131" column="62" selection-start="5092" selection-end="5092" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -125,7 +147,25 @@
       <file leaf-file-name="inscripcion.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vistas/inscripciones/inscripcion.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_smtp_gmail_basic.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/phpmailer/examples/test_smtp_gmail_basic.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="55" column="4" selection-start="87" selection-end="1888" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="aspirantenew.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/modelo/aspirantenew.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -387,7 +427,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25035867" sideWeight="0.67132866" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25394547" sideWeight="0.67132866" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -457,63 +497,51 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/js/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="26" selection-start="26" selection-end="26" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="26" selection-start="26" selection-end="26" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="121" selection-start="158" selection-end="175" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="2" column="121" selection-start="158" selection-end="175" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/modelo/conexionBD.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/modelo/imprimirentrevista.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="59" selection-start="284" selection-end="284" vertical-scroll-proportion="-3.6153846">
-          <folding />
-        </state>
+        <state line="10" column="59" selection-start="284" selection-end="284" vertical-scroll-proportion="-3.6153846" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vistas/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/phpmailer/examples/test_smtp_gmail_basic.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="4" selection-start="87" selection-end="1888" vertical-scroll-proportion="-34.0">
+        <state line="55" column="4" selection-start="87" selection-end="1888" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vistas/inscripciones/gestionarinscripcion.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="302" column="65" selection-start="14141" selection-end="14141" vertical-scroll-proportion="-13.153846">
+        <state line="302" column="65" selection-start="14141" selection-end="14141" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vistas/inscripciones/imprimirinscripcion.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="131" column="62" selection-start="5092" selection-end="5092" vertical-scroll-proportion="-19.23077">
+        <state line="131" column="62" selection-start="5092" selection-end="5092" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -548,21 +576,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/modelo/aspirantenew.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="7.8461537">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="42" selection-start="3753" selection-end="3753" vertical-scroll-proportion="-18.307692">
+        <state line="79" column="42" selection-start="3753" selection-end="3753" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/modelo/correo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="51" selection-start="1319" selection-end="1319" vertical-scroll-proportion="0.5543478">
+        <state line="43" column="126" selection-start="1764" selection-end="1764" vertical-scroll-proportion="1.1350932">
           <folding />
         </state>
       </provider>
