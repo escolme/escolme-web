@@ -29,11 +29,11 @@ function ListarRequisitos($clasifi){
 function InsertarRequisitoAspirante(){
     $request = Slim::getInstance()->request();
     $clasificacion = json_decode($request->getBody());
-    $fecha=date("d-m-Y");
+    $fecha=date("d/m/Y");
     try{
         $conexion = new conexionBD();
         $conn = $conexion->conectar();
-        $sql = "INSERT INTO REQUISITOASPIRANTENEW (REAS_ID,REAS_OBSERVACIONES,FOIN_ID,REAS_CLASIFICACION,USUA_ID,REAS_FECHAREGISTRO) VALUES(".$clasificacion->FOIN_ID.",'".$clasificacion->REAS_OBSERVACIONES."',".$clasificacion->FOIN_ID.",".$clasificacion->REQU_CLASIFICACION.",".$clasificacion->USUA_ID.",'".$fecha."')";
+        $sql = "INSERT INTO REQUISITOASPIRANTENEW (REAS_ID,REAS_OBSERVACIONES,FOIN_ID,REAS_CLASIFICACION,USUA_ID,REAS_FECHAREGISTRO) VALUES(".$clasificacion->FOIN_ID.",'".$clasificacion->REAS_OBSERVACIONES."',".$clasificacion->FOIN_ID.",".$clasificacion->REQU_CLASIFICACION.",".$clasificacion->USUA_ID.",TO_DATE('".$fecha."','DD/MM/RRRR'))";
         //echo utf8_encode('{"insertInRe": ' . json_encode($sql) . '}');
         $query =OCIParse($conn, $sql);
         OCIExecute($query, OCI_DEFAULT);

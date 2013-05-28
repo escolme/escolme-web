@@ -1,6 +1,15 @@
+function ImprimirEntrevistaCtrl (comunService, sessionService,$scope,$http){
+    //sessionService.validar();
+
+
+}
+
+/*---------------------------------------------------*/
+/* Controlador de la pagina /#/entrevista/gestion */
+/*---------------------------------------------------*/
 
 function EntrevistaCtrl (comunService, sessionService,$scope,$http){
-    sessionService.validar();
+    //sessionService.validar();
 
     $scope.LimpiarEntrevista = function(){
         $scope.ListarInscritos();
@@ -38,7 +47,6 @@ function EntrevistaCtrl (comunService, sessionService,$scope,$http){
         };
     }
 
-
     $scope.BuscarLlamado = function(){
             $http.get('api/formulario/buscarllamado/' + $scope.entrevista.PROG_ID).then(function(response){
                 $scope.llamado = response.data.datos[0];
@@ -49,7 +57,6 @@ function EntrevistaCtrl (comunService, sessionService,$scope,$http){
                 }
             });
     }
-
 
     $scope.GuardarEntrevista = function(){
         $scope.entrevista.USUA_ID=sessionStorage.getItem("usua_id");
@@ -63,7 +70,6 @@ function EntrevistaCtrl (comunService, sessionService,$scope,$http){
             data: json_clasificacion,
             success: function(data, textStatus, jqXHR){
                 console.dir(data);
-                $scope.ListarInscritos;
             },
             error: function(jqXHR, textStatus, errorThrown){
                 alert('error: ' + textStatus);
@@ -72,6 +78,7 @@ function EntrevistaCtrl (comunService, sessionService,$scope,$http){
         $http.post('api/actualizar/formularioxentrevista/'+ $scope.entrevista.LLAM_ID +'/'+$scope.entrevista.FOIN_ID).then(function(response){
             console.dir(response);
         });
+        $scope.LimpiarEntrevista();
     }
 
     $scope.LimpiarEntrevista();

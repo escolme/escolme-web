@@ -4,11 +4,11 @@ function InsertarFormulario(){
     $request = Slim::getInstance()->request();
     $inscripcion = json_decode($request->getBody());
     //echo utf8_encode('{"datos2": ' . json_encode($inscripcion) . '}');
-    $fecha=date("d-m-Y");
+    $fecha=date("d/m/Y");
     try{
         $conexion = new conexionBD();
         $conn = $conexion->conectar();
-        $sql = "INSERT INTO ACADEMICO.FORMULARIOINSCRIPCION (ASPI_ID, FOIN_PROGRAMAADMITIDO, FOIN_MEDIOINSCRIPCION,FOIN_FECHAHORAVERIFICACION, FOIN_REGISTRADOPOR, FOIN_FECHACAMBIO, TIIN_ID,FOIN_ESTADOADMISION ,SEPE_ID)VALUES(".$inscripcion->ASPI_ID.",'0','ON LINE','".$fecha."','".$inscripcion->ASPI_NUMERODOCUMENTO."','".$fecha."',1,'PREINSCRITO',".$inscripcion->SEPE_ID.")";
+        $sql = "INSERT INTO ACADEMICO.FORMULARIOINSCRIPCION (ASPI_ID, FOIN_PROGRAMAADMITIDO, FOIN_MEDIOINSCRIPCION,FOIN_FECHAHORAVERIFICACION, FOIN_REGISTRADOPOR, FOIN_FECHACAMBIO, TIIN_ID,FOIN_ESTADOADMISION ,SEPE_ID)VALUES(".$inscripcion->ASPI_ID.",'0','ON LINE',TO_DATE('".$fecha."','DD/MM/RRRR'),'".$inscripcion->ASPI_NUMERODOCUMENTO."',TO_DATE('".$fecha."','DD/MM/RRRR'),1,'PREINSCRITO',".$inscripcion->SEPE_ID.")";
         //echo utf8_encode('{"datos2-": ' . json_encode($sql) . '}');
         $query =OCIParse($conn, $sql);
         OCIExecute($query, OCI_DEFAULT);

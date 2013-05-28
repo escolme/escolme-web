@@ -25,6 +25,7 @@ require 'modelo/preinscritos.php';
 require 'modelo/requisitos.php';
 require 'modelo/inscritos.php';
 require 'modelo/correo.php';
+require 'modelo/imprimirinscripcion.php';
 
 require 'modeloInventarios/productos.php';
 require 'modeloInventarios/categoria_productos.php';
@@ -58,6 +59,9 @@ $app->get('/preinscritos/listar', 'ListarPreinscritos');
 $app->get('/requisitos/listar/:CLASIFICACION', 'ListarRequisitos');
 $app->get('/inscritos/listar', 'ListarInscritos');
 $app->get('/formulario/buscarllamado/:PROG_ID', 'BuscarLlamado');
+$app->get('/inscripcion/imprimir/datos/:FOIN_ID', 'ListarDatos');
+$app->get('/inscripcion/imprimir/ubicacion/:FOIN_ID', 'ListarUbicacion');
+$app->get('/inscripcion/imprimir/programas/:FOIN_ID', 'ListarProgramas');
 
 $app->post('/insertar/aspirantenew','InsertarAspirante');
 $app->post('/insertar/formularioinscripcionnew','InsertarFormulario');
@@ -70,7 +74,7 @@ $app->post('/insertar/requisitoentregados','InsertarRequisitosEntregados');
 $app->post('/actualizar/formularioestado/:FOIN_ID','ActualizarEstadoFormulario');
 $app->post('/insertar/entrevistanew','InsertarEntrevista');
 $app->post('/actualizar/formularioxentrevista/:LLAM_ID/:FOIN_ID','ActualizarFormularioEntrevista');
-$app->post('/correo/enviar','EnviarCorreo');
+$app->post('/correo/enviar/:NOMBRE/:CORREO','EnviarCorreo');
 /*
 RUTAS DE INVENTARIOS
 */
@@ -101,10 +105,8 @@ $app->get('/productos/quitarporid/:id_producto', 'productosQuitarPorId');
 $app->get('/productos/cargarporid/:id_producto', 'productosCargarPorId');
 $app->get('/registro/proxcate2/listar/:id_categoria_producto', 'productosCategoria2');
 $app->get('/registro/categoria2/listar', 'categoriaListar2');
-$app->get('/pedido/maximo/', 'idmaximo');
-
+$app->get('/pedido/maximo/','idmaximo');
 
 $app->post('/registro/productos', 'insertarproductos');
 $app->post( '/pedido/guardar', 'insertarpedido');
-
 $app->run();

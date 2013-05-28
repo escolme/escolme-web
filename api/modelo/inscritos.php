@@ -41,7 +41,7 @@ function InsertarEntrevista(){
     try{
         $conexion = new conexionBD();
         $conn = $conexion->conectar();
-        $sql = "INSERT INTO ACADEMICO.ENTREVISTANEW (ENTRE_ID, FOIN_ID, ENTRE_FECHA, USUA_ID, ENTRE_PREGUNTA1, ENTRE_PREGUNTA2, ENTRE_PREGUNTA3, ENTRE_PREGUNTA4, ENTRE_PREGUNTA5, ENTRE_HOMOLOGACION, ENTRE_OBSERVACIONES) VALUES(".$entrevista->FOIN_ID.",".$entrevista->FOIN_ID.",'".$entrevista->FECHAENTREVISTA_."',".$entrevista->USUA_ID.",'".$entrevista->PREGUNTA1."','".$entrevista->PREGUNTA2."','".$entrevista->PREGUNTA3."','".$entrevista->PREGUNTA4."','".$entrevista->PREGUNTA5."',".$entrevista->HOMOLOGACION.",'".$entrevista->OBSERVACIONES."')";
+        $sql = "INSERT INTO ACADEMICO.ENTREVISTANEW (ENTRE_ID, FOIN_ID, ENTRE_FECHA, USUA_ID, ENTRE_PREGUNTA1, ENTRE_PREGUNTA2, ENTRE_PREGUNTA3, ENTRE_PREGUNTA4, ENTRE_PREGUNTA5, ENTRE_HOMOLOGACION, ENTRE_OBSERVACIONES) VALUES(".$entrevista->FOIN_ID.",".$entrevista->FOIN_ID.",TO_DATE('".$entrevista->FECHAENTREVISTA_."','DD/MM/RRRR'),".$entrevista->USUA_ID.",'".$entrevista->PREGUNTA1."','".$entrevista->PREGUNTA2."','".$entrevista->PREGUNTA3."','".$entrevista->PREGUNTA4."','".$entrevista->PREGUNTA5."',".$entrevista->HOMOLOGACION.",'".$entrevista->OBSERVACIONES."')";
         //echo utf8_encode('{"datos": ' . json_encode($sql) . '}');
         $query =OCIParse($conn, $sql);
         OCIExecute($query, OCI_DEFAULT);

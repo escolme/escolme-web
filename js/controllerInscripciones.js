@@ -15,6 +15,7 @@ function GestionarInsCtrl (comunService, sessionService,$scope,$http){
     $scope.LimpiarGes = function(){
         $scope.ListarPreinscritos();
     }
+
     $scope.ListarPreinscritos = function(){
         $http.get('api/preinscritos/listar').then(function(response){
             $scope.preinscritos= response.data.datos;
@@ -22,6 +23,27 @@ function GestionarInsCtrl (comunService, sessionService,$scope,$http){
         });
 
     }
+
+    $scope.AbrirImprimirFormulario = function(dato){
+        $('#ImprimirInscripcion').modal('show');
+        //$('#ImprimirInscripcion2').modal('show');
+        var FOIN_ID= dato.FOIN_ID;
+        console.dir(FOIN_ID);
+        $http.get('api/inscripcion/imprimir/datos/' + FOIN_ID).then(function(response){
+            $scope.datos1= response.data.datos[0];
+           // console.dir($scope.datos1);
+        });
+        $http.get('api/inscripcion/imprimir/ubicacion/' + FOIN_ID).then(function(response){
+            $scope.datos2= response.data.datos[0];
+            //console.dir($scope.datos2);
+        });
+        $http.get('api/inscripcion/imprimir/programas/' + FOIN_ID).then(function(response){
+            $scope.datos3= response.data.datos;
+            //console.dir(response.data.datos);
+        });
+
+    }
+
     $scope.AbrirGestionarPreinscripcion = function(dato){
         $('#ventanaChequeo').modal('show');
         $scope.clasificacion = {
@@ -52,8 +74,9 @@ function GestionarInsCtrl (comunService, sessionService,$scope,$http){
 
     $scope.GuardarRequisito = function(){
         $scope.clasificacion.USUA_ID=sessionStorage.getItem("usua_id");
+
         $http.post('api/actualizar/formularioestado/'+$scope.clasificacion.FOIN_ID).then(function(response){
-            console.dir(response);
+                console.dir(response);
         });
         var json_clasificacion = JSON.stringify($scope.clasificacion);
         $.ajax({
@@ -207,7 +230,7 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
                  async:false,
                  success: function(data, textStatus, jqXHR){
                  console.dir(data);
-                 //$scope.BuscarAspiId();
+                 $scope.BuscarAspiId();
                  },
                  error: function(jqXHR, textStatus, errorThrown){
                  alert('error: ' + textStatus);
@@ -279,10 +302,19 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
                 $scope.foinid = response.data.datos[0];
                 $scope.inscripcion.FOIN_ID=$scope.foinid.FOIN_ID;
                 $scope.GuardarPrograma();
+                $scope.EnviarCorreo();
+
             });
         }else{
             $scope.aspiid2 = [];
         }
+    }
+
+    $scope.EnviarCorreo = function(){
+        var nombre =$scope.inscripcion.ASPI_PRIMERNOMBRE + ' ' + $scope.inscripcion.ASPI_SEGUNDONOMBRE + ' ' +$scope.inscripcion.ASPI_PRIMERAPELLIDO + ' ' + $scope.inscripcion.ASPI_SEGUNDOAPELLIDO;
+        $http.post('api/correo/enviar/'+ nombre +'/'+$scope.entrevista.ASPI_EMAIL).then(function(response){
+            console.dir('Mensaje Enviado');
+        });
     }
 
     $scope.GuardarPrograma = function(){
