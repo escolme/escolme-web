@@ -1,5 +1,6 @@
 <?php header('Content-Type: text/html; charset=utf-8');
 require 'Slim/Slim.php';
+require 'phpmailer/class.phpmailer.php';
 require 'modelo/conexionBD.php';
 require 'modelo/metodologia.php';
 require 'modelo/programas.php';
@@ -74,7 +75,7 @@ $app->post('/insertar/requisitoentregados','InsertarRequisitosEntregados');
 $app->post('/actualizar/formularioestado/:FOIN_ID','ActualizarEstadoFormulario');
 $app->post('/insertar/entrevistanew','InsertarEntrevista');
 $app->post('/actualizar/formularioxentrevista/:LLAM_ID/:FOIN_ID','ActualizarFormularioEntrevista');
-$app->post('/correo/enviar/:NOMBRE/:CORREO','EnviarCorreo');
+$app->get('/correo/enviar/:NOMBRE/:CORREO','EnviarCorreo');
 /*
 RUTAS DE INVENTARIOS
 */
