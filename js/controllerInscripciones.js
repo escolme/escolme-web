@@ -7,8 +7,6 @@ function InfoProEstInsCtrl (comunService, sessionService,$scope,$http){
 
 }
 
-
-
 /*---------------------------------------------------*/
 /* Controlador de la pagina /#/gestionar/inscripcion */
 /*---------------------------------------------------*/
@@ -17,13 +15,35 @@ function GestionarInsCtrl (comunService, sessionService,$scope,$http){
     $scope.LimpiarGes = function(){
         $scope.ListarPreinscritos();
     }
+
     $scope.ListarPreinscritos = function(){
         $http.get('api/preinscritos/listar').then(function(response){
-            $scope.preincritos= response.data.datos;
+            $scope.preinscritos= response.data.datos;
             //console.dir(response.data.datos);
         });
 
     }
+
+    $scope.AbrirImprimirFormulario = function(dato){
+        $('#ImprimirInscripcion').modal('show');
+        //$('#ImprimirInscripcion2').modal('show');
+        var FOIN_ID= dato.FOIN_ID;
+        console.dir(FOIN_ID);
+        $http.get('api/inscripcion/imprimir/datos/' + FOIN_ID).then(function(response){
+            $scope.datos1= response.data.datos[0];
+           // console.dir($scope.datos1);
+        });
+        $http.get('api/inscripcion/imprimir/ubicacion/' + FOIN_ID).then(function(response){
+            $scope.datos2= response.data.datos[0];
+            //console.dir($scope.datos2);
+        });
+        $http.get('api/inscripcion/imprimir/programas/' + FOIN_ID).then(function(response){
+            $scope.datos3= response.data.datos;
+            //console.dir(response.data.datos);
+        });
+
+    }
+
     $scope.AbrirGestionarPreinscripcion = function(dato){
         $('#ventanaChequeo').modal('show');
         $scope.clasificacion = {
@@ -52,30 +72,11 @@ function GestionarInsCtrl (comunService, sessionService,$scope,$http){
         }
     }
 
- /*   $scope.GuardarRequisitos = function(clasificacion){
-        var json_clasificacion = JSON.stringify(clasificacion);
-        //console.dir(json_clasificacion);
-         $.ajax({
-             type: 'POST',
-             contentType: 'application/json',
-             url: 'api/insertar/requisitoentregados',
-             dataType: "json",
-             data: json_clasificacion,
-             async:false,
-             success: function(data, textStatus, jqXHR){
-                console.dir(data);
-                //$scope.GuardarRequisitosTodos();
-             },
-             error: function(jqXHR, textStatus, errorThrown){
-                alert('error: ' + textStatus);
-             }
-         });
-    }*/
-
     $scope.GuardarRequisito = function(){
         $scope.clasificacion.USUA_ID=sessionStorage.getItem("usua_id");
+
         $http.post('api/actualizar/formularioestado/'+$scope.clasificacion.FOIN_ID).then(function(response){
-            console.dir(response);
+                console.dir(response);
         });
         var json_clasificacion = JSON.stringify($scope.clasificacion);
         $.ajax({
@@ -95,9 +96,7 @@ function GestionarInsCtrl (comunService, sessionService,$scope,$http){
         })
     }
     $scope.GuardarRequisitoTodos = function(){
-
-        //////////////////////
-
+        $scope.LimpiarGes();
         angular.forEach($scope.requisitos, function(c) {
             if(c.REQU_ENTREGADO == true){
                 $scope.clasificacion.REQU_ID= c.REQU_ID;
@@ -151,12 +150,12 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
             PROG_ID:null,PROG_ID2:null,
             TIDG_ID:null,PAGE_ID:null, DEGE_ID:null, CIGE_ID:null,
             ESCG_ID:null,ESTR_ID:null,OMED_ID:null,PAGE_ID2:null, DEGE_ID2:null,
-            CIGE_ID2:null, INST_CODIGOSNP:null,JORN_ID:null, JORN_ID2:null,
+            CIGE_ID2:null, INST_CODIGOSNP:'',JORN_ID:null, JORN_ID2:null,
             ASPI_NUMERODOCUMENTO:null,ASPI_SEXO:null,ASPI_PRIMERNOMBRE:null,
             ASPI_SEGUNDONOMBRE:null,ASPI_PRIMERAPELLIDO:null, ASPI_SEGUNDOAPELLIDO:null,
             ASPI_FECHANACIMIENTO:null,ASPI_FECHANACIMIENTO_S:'',ASPI_TELEFONORESIDENCIA:null,ASPI_TELEFONOCELULAR:null,
             ASPI_EMAIL:null, ESSE_FECHATERMINACION:null,ESSE_FECHATERMINACION_S:'', ESSE_SNP:null,ESSE_FECHAPRESENTOPRUEBAS:null,
-            ESSE_FECHAPRESENTOPRUEBAS_S:'',ESSE_PUNTAJEOBTENIDO:null, NIED_ID:null,CIRC_ID:null,CIRC_ID2:null,SEPE_ID:null,
+            ESSE_FECHAPRESENTOPRUEBAS_S:'',ESSE_PUNTAJEOBTENIDO:0, NIED_ID:null,CIRC_ID:null,CIRC_ID2:null,SEPE_ID:null,
             SEPE_ID2:null,UNPR_ID:null,UNPR_ID2:null,COIN_ID:null,COIN_ID2:null,ASPI_ID:null,FOIN_ID:null, validacionguardado:null
         };
         $scope.filtros = { institucion:''};
@@ -201,37 +200,43 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
     }
 
     $scope.Guardar = function(){
+        if($scope.inscripcion.ASPI_FECHANACIMIENTO!=null){
+            $scope.inscripcion.ASPI_FECHANACIMIENTO_S = comunService.fechaFormato('dd/mm/yyyy', $scope.inscripcion.ASPI_FECHANACIMIENTO);
+        }
+        if($scope.inscripcion.ESSE_FECHATERMINACION!=null){
+            $scope.inscripcion.ESSE_FECHATERMINACION_S = comunService.fechaFormato('dd/mm/yyyy', $scope.inscripcion.ESSE_FECHATERMINACION);
+        }
+        if($scope.inscripcion.ESSE_FECHAPRESENTOPRUEBAS!=null){
+            $scope.inscripcion.ESSE_FECHAPRESENTOPRUEBAS_S = comunService.fechaFormato('dd/mm/yyyy', $scope.inscripcion.ESSE_FECHAPRESENTOPRUEBAS);
+        }
 
-        $scope.inscripcion.ASPI_FECHANACIMIENTO_S = comunService.fechaFormato('dd/mm/yyyy', $scope.inscripcion.ASPI_FECHANACIMIENTO);
-        $scope.inscripcion.ESSE_FECHATERMINACION_S = comunService.fechaFormato('dd/mm/yyyy', $scope.inscripcion.ESSE_FECHATERMINACION);
-        $scope.inscripcion.ESSE_FECHAPRESENTOPRUEBAS_S = comunService.fechaFormato('dd/mm/yyyy', $scope.inscripcion.ESSE_FECHAPRESENTOPRUEBAS);
         var json_inscripcion = JSON.stringify($scope.inscripcion);
-
+        console.dir($scope.inscripcion);
         switch ($scope.inscripcion.validacionguardado) {
-            case 1:
+             case 1:
                 alert("El usuario ya tiene una inscripcion activa para este periodo, no se guardara ninguna información");
-                $scope.Limpiar();
-                break;
-            case 2:
-                $scope.BuscarAspiId();
-                break;
-            case 3:
-                $.ajax({
-                    type: 'POST',
-                    contentType: 'application/json',
-                    url: 'api/insertar/aspirantenew',
-                    dataType: "json",
-                    data: json_inscripcion,
-                    async:false,
-                    success: function(data, textStatus, jqXHR){
-                        console.dir(data);
-                        $scope.BuscarAspiId();
-                    },
-                    error: function(jqXHR, textStatus, errorThrown){
-                        alert('error: ' + textStatus);
-                    }
-                })
-                break;
+                 $scope.Limpiar();
+                 break;
+             case 2:
+                 $scope.BuscarAspiId();
+                 break;
+             case 3:
+                 $.ajax({
+                 type: 'POST',
+                 contentType: 'application/json',
+                 url: 'api/insertar/aspirantenew',
+                 dataType: "json",
+                 data: json_inscripcion,
+                 async:false,
+                 success: function(data, textStatus, jqXHR){
+                 console.dir(data);
+                 $scope.BuscarAspiId();
+                 },
+                 error: function(jqXHR, textStatus, errorThrown){
+                 alert('error: ' + textStatus);
+             }
+             })
+             break;
         }
     }
 
@@ -297,10 +302,19 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
                 $scope.foinid = response.data.datos[0];
                 $scope.inscripcion.FOIN_ID=$scope.foinid.FOIN_ID;
                 $scope.GuardarPrograma();
+                $scope.EnviarCorreo();
+
             });
         }else{
             $scope.aspiid2 = [];
         }
+    }
+
+    $scope.EnviarCorreo = function(){
+        var nombre =$scope.inscripcion.ASPI_PRIMERNOMBRE + ' ' + $scope.inscripcion.ASPI_SEGUNDONOMBRE + ' ' +$scope.inscripcion.ASPI_PRIMERAPELLIDO + ' ' + $scope.inscripcion.ASPI_SEGUNDOAPELLIDO;
+        $http.post('api/correo/enviar/'+ nombre +'/'+$scope.entrevista.ASPI_EMAIL).then(function(response){
+            console.dir('Mensaje Enviado');
+        });
     }
 
     $scope.GuardarPrograma = function(){
@@ -397,6 +411,7 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
     }
 
     $scope.CamposAdicionales = function(){
+        //$scope.PasarMayuscula();
         var prog = $scope.inscripcion.PROG_ID;
         if(prog!=null){
             $http.get('api/programas/adicional/' + prog).then(function(response){
@@ -596,8 +611,24 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
     $scope.PasarMayuscula =function(){
         if($scope.inscripcion.ASPI_PRIMERNOMBRE != null){
             $scope.inscripcion.ASPI_PRIMERNOMBRE = $scope.inscripcion.ASPI_PRIMERNOMBRE.toUpperCase();
-            console.dir($scope.inscripcion.ASPI_PRIMERNOMBRE);
+            //console.dir($scope.inscripcion.ASPI_PRIMERNOMBRE);
         }
+        if($scope.inscripcion.ASPI_SEGUNDONOMBRE != null){
+            $scope.inscripcion.ASPI_SEGUNDONOMBRE = $scope.inscripcion.ASPI_SEGUNDONOMBRE.toUpperCase();
+            //console.dir($scope.inscripcion.ASPI_PRIMERNOMBRE);
+        }
+        if($scope.inscripcion.ASPI_PRIMERAPELLIDO != null){
+            $scope.inscripcion.ASPI_PRIMERAPELLIDO = $scope.inscripcion.ASPI_PRIMERAPELLIDO.toUpperCase();
+            //console.dir($scope.inscripcion.ASPI_PRIMERNOMBRE);
+        }
+        if($scope.inscripcion.ASPI_SEGUNDOAPELLIDO != null){
+            $scope.inscripcion.ASPI_SEGUNDOAPELLIDO = $scope.inscripcion.ASPI_SEGUNDOAPELLIDO.toUpperCase();
+            //console.dir($scope.inscripcion.ASPI_PRIMERNOMBRE);
+        }
+/*        if($scope.inscripcion.ASPI_EMAIL != null){
+            $scope.inscripcion.ASPI_EMAIL = $scope.inscripcion.ASPI_EMAIL.toUpperCase();
+            //console.dir($scope.inscripcion.ASPI_PRIMERNOMBRE);
+        }*/
 
     }
     $scope.Limpiar();

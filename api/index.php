@@ -1,5 +1,6 @@
 <?php header('Content-Type: text/html; charset=utf-8');
 require 'Slim/Slim.php';
+require 'phpmailer/class.phpmailer.php';
 require 'modelo/conexionBD.php';
 require 'modelo/metodologia.php';
 require 'modelo/programas.php';
@@ -23,6 +24,9 @@ require 'modelo/circusncripcion.php';
 require 'modelo/usuario.php';
 require 'modelo/preinscritos.php';
 require 'modelo/requisitos.php';
+require 'modelo/inscritos.php';
+require 'modelo/correo.php';
+require 'modelo/imprimirinscripcion.php';
 
 require 'modeloInventarios/productos.php';
 require 'modeloInventarios/categoria_productos.php';
@@ -54,6 +58,11 @@ $app->get('/actualizar/circunscripcion/:CIRC_ID/:ASPI_ID', 'ActualizarCircunscri
 $app->get('/usuario/buscar/:usua_usuario/:usua_contrasena', 'BuscarUsuario');
 $app->get('/preinscritos/listar', 'ListarPreinscritos');
 $app->get('/requisitos/listar/:CLASIFICACION', 'ListarRequisitos');
+$app->get('/inscritos/listar', 'ListarInscritos');
+$app->get('/formulario/buscarllamado/:PROG_ID', 'BuscarLlamado');
+$app->get('/inscripcion/imprimir/datos/:FOIN_ID', 'ListarDatos');
+$app->get('/inscripcion/imprimir/ubicacion/:FOIN_ID', 'ListarUbicacion');
+$app->get('/inscripcion/imprimir/programas/:FOIN_ID', 'ListarProgramas');
 
 $app->post('/insertar/aspirantenew','InsertarAspirante');
 $app->post('/insertar/formularioinscripcionnew','InsertarFormulario');
@@ -64,7 +73,9 @@ $app->post('/insertar/socioeconomica','InsertarInformacionSocioeconomica');
 $app->post('/insertar/requisitoaspirante','InsertarRequisitoAspirante');
 $app->post('/insertar/requisitoentregados','InsertarRequisitosEntregados');
 $app->post('/actualizar/formularioestado/:FOIN_ID','ActualizarEstadoFormulario');
-
+$app->post('/insertar/entrevistanew','InsertarEntrevista');
+$app->post('/actualizar/formularioxentrevista/:LLAM_ID/:FOIN_ID','ActualizarFormularioEntrevista');
+$app->get('/correo/enviar/:NOMBRE/:CORREO','EnviarCorreo');
 /*
 RUTAS DE INVENTARIOS
 */
@@ -84,17 +95,24 @@ $app->get('/productos/quitarporid/:id_producto', 'productosQuitarPorId');
 $app->get('/productos/cargarporid/:id_producto', 'productosCargarPorId');
 $app->get('/registro/proxcate2/listar/:id_categoria_producto', 'productosCategoria2');
 $app->get('/registro/categoria2/listar', 'categoriaListar2');
+<<<<<<< HEAD
 $app->get('/pedido/maximo/', 'idmaximo');
 $app->get('/pedido/cantidad/:id_producto', 'cantidadenstock');
 $app->get('/ordenpedido/pedidos/listar/', 'pedidosListar');
 $app->get('/ordenpedido/pedidofinal/listar/:id_pedido_usuario', 'ordenpedido');
 $app->get('/ordenpedido/usuarios/usuario/:id_usuario', 'buscarnombreUsuario');
 
+=======
+$app->get('/pedido/maximo/','idmaximo');
+>>>>>>> d70dd0cd3079d4a628e2b6ff0e883f6ccf24b329
 
 $app->post('/ordenpedido/descripcion', 'insertarobservaciones');
 $app->post('/registro/productos', 'insertarproductos');
 $app->post( '/pedido/guardar', 'insertarpedido');
+<<<<<<< HEAD
 $app->post( '/pedido/guardarproducto', 'insertarpedido2');
 $app->post('/pedido/disminuirstock/:cantidad/:id_producto', 'disminuirstock');
 
+=======
+>>>>>>> d70dd0cd3079d4a628e2b6ff0e883f6ccf24b329
 $app->run();

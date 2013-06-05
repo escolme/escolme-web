@@ -108,8 +108,8 @@
                 <div class="controls">
                     <select id="tSexo" name="tSexo" ng-model="inscripcion.ASPI_SEXO" required="required" class="input-large ng-pristine ng-invalid-required ng-invalid" >
                         <option value="" > -- Seleccione el sexo</option>
-                        <option value="1" >Masculino</option>
-                        <option value="2" >Femenino</option>
+                        <option value="M" >Masculino</option>
+                        <option value="F" >Femenino</option>
                     </select>
                     <span ng-show="form_inscripcion.tSexo.$error.required" class="help-inline" style="">*</span>
                 </div>
@@ -120,7 +120,7 @@
                     Primer Nombre
                 </label>
                 <div class="controls">
-                    <input type="text" id="tNombre1" name="tNombre1" required="required" maxlength="15" ng-model="inscripcion.ASPI_PRIMERNOMBRE" class="input-xlarge ng-pristine ng-invalid-required ng-invalid" ng-blur="PasarMayuscula()">
+                    <input type="text" id="tNombre1" name="tNombre1" required="required" maxlength="15" ng-model="inscripcion.ASPI_PRIMERNOMBRE" class="input-xlarge ng-pristine ng-invalid-required ng-invalid">
                     <span ng-show="form_inscripcion.tNombre1.$error.required" class="help-inline" style="">*</span>
                 </div>
             </div>
@@ -149,7 +149,7 @@
                     Segundo Apellido
                 </label>
                 <div class="controls">
-                    <input type="text" maxlength="15" ng-model="inscripcion.ASPI_SEGUNDOAPELLIDO" class="input-xlarge" >
+                    <input type="text" maxlength="15" ng-model="inscripcion.ASPI_SEGUNDOAPELLIDO" class="input-xlarge">
                 </div>
             </div>
 
@@ -286,7 +286,7 @@
                     Correo Electrónico
                 </label>
                 <div class="controls">
-                    <input id="tCorreo" name="tCorreo" type="text" maxlength="50" required="required" ng-model="inscripcion.ASPI_EMAIL" class="input-xlarge ng-pristine ng-invalid-required ng-invalid" >
+                    <input id="tCorreo" name="tCorreo" type="text" maxlength="50" required="required" ng-model="inscripcion.ASPI_EMAIL" class="input-xlarge ng-pristine ng-invalid-required ng-invalid" ng-blur="PasarMayuscula()">
                     <span ng-show="form_inscripcion.tCorreo.$error.required" class="help-inline" style="">*</span>
                 </div>
             </div>

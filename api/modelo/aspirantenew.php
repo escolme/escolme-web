@@ -52,20 +52,38 @@ function BuscarExisteInscripcion($ASPI_NUMERODOCUMENTO){
 }
 
 //Insertar en Tabla ASPIRANTE
-function InsertarAspirante(){
+/*function InsertarAspirante_(){
     $request = Slim::getInstance()->request();
     $inscripcion = json_decode($request->getBody());
-    $fecha=date("d-m-Y");
+    $fecha=date("d/m/Y");
     //echo utf8_encode('{"datos1": ' . json_encode($inscripcion) . '}');
     try{
         $conexion = new conexionBD();
         $conn = $conexion->conectar();
-        $sql = "INSERT INTO ACADEMICO.ASPIRANTE (ASPI_PRIMERAPELLIDO,ASPI_SEGUNDOAPELLIDO,ASPI_PRIMERNOMBRE,ASPI_SEGUNDONOMBRE,ASPI_TIPODOCUMENTO, ASPI_NUMERODOCUMENTO,ASPI_SEXO,ASPI_PAISRESIDENCIA,ASPI_DPTORESIDENCIA,ASPI_MPIORESIDENCIA,ASPI_TELEFONORESIDENCIA,ASPI_TELEFONOCELULAR,ASPI_EMAIL,ASPI_FECHANACIMIENTO,ASPI_PAISNACIMIENTO,ASPI_DPTONACIMIENTO,ASPI_MPIONACIMIENTO,ASPI_FECHACAMBIO,ESCG_ID,ASPI_REGISTRADOPOR,MEDI_IDCONOCEINSTITUCION,CIRC_ID,NIED_ID)
-        VALUES('".$inscripcion->ASPI_PRIMERAPELLIDO."','".$inscripcion->ASPI_SEGUNDOAPELLIDO."','".$inscripcion->ASPI_PRIMERNOMBRE."','".$inscripcion->ASPI_SEGUNDONOMBRE."',".$inscripcion->TIDG_ID.
-        ",'".$inscripcion->ASPI_NUMERODOCUMENTO."','".$inscripcion->ASPI_SEXO."','".$inscripcion->PAGE_ID2."','".$inscripcion->DEGE_ID2."','".$inscripcion->CIGE_ID2."','".$inscripcion->ASPI_TELEFONORESIDENCIA.
-        "','".$inscripcion->ASPI_TELEFONOCELULAR."','".$inscripcion->ASPI_EMAIL."','".$inscripcion->ASPI_FECHANACIMIENTO_S."','".$inscripcion->PAGE_ID."','".$inscripcion->DEGE_ID."','".$inscripcion->CIGE_ID.
-        "','".$fecha."',".$inscripcion->ESCG_ID.",'".$inscripcion->ASPI_NUMERODOCUMENTO."',".$inscripcion->OMED_ID.",".$inscripcion->CIRC_ID.",".$inscripcion->NIED_ID.")";
-        //echo utf8_encode('{"datos1-": ' . json_encode($sql) . '}');
+        $sql = "INSERT INTO ACADEMICO.REQUISITOASPIRANTENEW (REAS_ID, REAS_FECHAREGISTRO) VALUES (123456,TO_DATE('".$inscripcion->ASPI_FECHANACIMIENTO_S."','DD/MM/RRRR'))";
+        echo utf8_encode('{"datos": ' . json_encode($sql) . '}');
+        $query =OCIParse($conn, $sql);
+        OCIExecute($query, OCI_DEFAULT);
+        OCICommit($conn);
+        OCILogoff($conn);
+        //echo '{"mensaje: ":"ExitoAspirante"}';
+    }
+    catch(Exception $e){
+        OCILogoff($conn);
+        echo '{"error: ":' . $e->getMessage() . '}';
+    }
+}*/
+
+function InsertarAspirante(){
+    $request = Slim::getInstance()->request();
+    $inscripcion = json_decode($request->getBody());
+    $fecha=date("d/m/Y");
+    //echo utf8_encode('{"datos1": ' . json_encode($inscripcion) . '}');
+    try{
+        $conexion = new conexionBD();
+        $conn = $conexion->conectar();
+        $sql = "INSERT INTO ACADEMICO.ASPIRANTE (ASPI_PRIMERAPELLIDO,ASPI_SEGUNDOAPELLIDO,ASPI_PRIMERNOMBRE,ASPI_SEGUNDONOMBRE,ASPI_TIPODOCUMENTO, ASPI_NUMERODOCUMENTO,ASPI_SEXO,ASPI_PAISRESIDENCIA,ASPI_DPTORESIDENCIA,ASPI_MPIORESIDENCIA,ASPI_TELEFONORESIDENCIA,ASPI_TELEFONOCELULAR,ASPI_EMAIL,ASPI_FECHANACIMIENTO,ASPI_PAISNACIMIENTO,ASPI_DPTONACIMIENTO,ASPI_MPIONACIMIENTO,ASPI_FECHACAMBIO,ESCG_ID,ASPI_REGISTRADOPOR,MEDI_IDCONOCEINSTITUCION,CIRC_ID,NIED_ID) VALUES('".$inscripcion->ASPI_PRIMERAPELLIDO."','".$inscripcion->ASPI_SEGUNDOAPELLIDO."','".$inscripcion->ASPI_PRIMERNOMBRE."','".$inscripcion->ASPI_SEGUNDONOMBRE."',".$inscripcion->TIDG_ID.",'".$inscripcion->ASPI_NUMERODOCUMENTO."','".$inscripcion->ASPI_SEXO."','".$inscripcion->PAGE_ID2."','".$inscripcion->DEGE_ID2."','".$inscripcion->CIGE_ID2."','".$inscripcion->ASPI_TELEFONORESIDENCIA."','".$inscripcion->ASPI_TELEFONOCELULAR."','".$inscripcion->ASPI_EMAIL."',TO_DATE('".$inscripcion->ASPI_FECHANACIMIENTO_S."','DD/MM/RRRR'),'".$inscripcion->PAGE_ID."','".$inscripcion->DEGE_ID."','".$inscripcion->CIGE_ID."',TO_DATE('".$fecha."','DD/MM/RRRR'),".$inscripcion->ESCG_ID.",'".$inscripcion->ASPI_NUMERODOCUMENTO."',".$inscripcion->OMED_ID.",".$inscripcion->CIRC_ID.",".$inscripcion->NIED_ID.")";
+        //echo utf8_encode('{"datos": ' . json_encode($sql) . '}');
         $query =OCIParse($conn, $sql);
         OCIExecute($query, OCI_DEFAULT);
         OCICommit($conn);

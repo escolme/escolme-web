@@ -4,11 +4,11 @@
 function InsertarCaracterizacion(){
     $request = Slim::getInstance()->request();
     $inscripcion = json_decode($request->getBody());
-    $fecha=date("d-m-Y");
+    $fecha=date("d/m/Y");
     try{
         $conexion = new conexionBD();
         $conn = $conexion->conectar();
-        $sql = "INSERT INTO ACADEMICO.CARACTERIZACION (ASPI_ID, CARA_REGISTRADOPOR, CARA_FECHACAMBIO) VALUES(".$inscripcion->ASPI_ID.",'".$inscripcion->ASPI_NUMERODOCUMENTO."','".$fecha."')";
+        $sql = "INSERT INTO ACADEMICO.CARACTERIZACION (ASPI_ID, CARA_REGISTRADOPOR, CARA_FECHACAMBIO) VALUES(".$inscripcion->ASPI_ID.",'".$inscripcion->ASPI_NUMERODOCUMENTO."',TO_DATE('".$fecha."','DD/MM/RRRR'))";
         //echo utf8_encode('{"datos4": ' . json_encode($sql) . '}');
         $query =OCIParse($conn, $sql);
         OCIExecute($query, OCI_DEFAULT);
