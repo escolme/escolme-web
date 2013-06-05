@@ -1,6 +1,11 @@
 /*---------------------------------------------------*/
 /* Controlador de la pagina /#/inscripciones/informeprogramaestado */
 /*---------------------------------------------------*/
+function ImprimirInsCtrl (comunService, sessionService,$scope,$http){
+    //sessionService.validar();
+
+}
+
 
 function InfoProEstInsCtrl (comunService, sessionService,$scope,$http){
     sessionService.validar();
@@ -25,10 +30,10 @@ function GestionarInsCtrl (comunService, sessionService,$scope,$http){
     }
 
     $scope.AbrirImprimirFormulario = function(dato){
-        $('#ImprimirInscripcion').modal('show');
+        $('#imprimirInscripcion').modal('show');
         //$('#ImprimirInscripcion2').modal('show');
         var FOIN_ID= dato.FOIN_ID;
-        console.dir(FOIN_ID);
+        //console.dir(FOIN_ID);
         $http.get('api/inscripcion/imprimir/datos/' + FOIN_ID).then(function(response){
             $scope.datos1= response.data.datos[0];
            // console.dir($scope.datos1);
@@ -130,13 +135,18 @@ function GestionarInsCtrl (comunService, sessionService,$scope,$http){
             })
         });
     }
+
+
+    $scope.ImprimirInscripcion = function(){
+        $("#divVistaPreviaInscripcion").printElement();
+    }
+
     $scope.LimpiarGes();
 }
 /*---------------------------------------------------*/
 /* Controlador de la pagina /#/inscripciones/inscripcion */
 /*---------------------------------------------------*/
 function InscripcionCtrl(comunService, sessionService,$scope,$http){
-
 
 
     if(!angular.equals(sessionStorage.getItem("usua_usuario"),null)){
@@ -293,8 +303,6 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
         })
     }
 
-
-
     $scope.BuscarFoinid = function(){
         var aspiid = $scope.inscripcion.ASPI_ID;
         if(aspiid!=null){
@@ -302,7 +310,6 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
                 $scope.foinid = response.data.datos[0];
                 $scope.inscripcion.FOIN_ID=$scope.foinid.FOIN_ID;
                 $scope.GuardarPrograma();
-                $scope.EnviarCorreo();
 
             });
         }else{
@@ -311,10 +318,15 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
     }
 
     $scope.EnviarCorreo = function(){
-        var nombre =$scope.inscripcion.ASPI_PRIMERNOMBRE + ' ' + $scope.inscripcion.ASPI_SEGUNDONOMBRE + ' ' +$scope.inscripcion.ASPI_PRIMERAPELLIDO + ' ' + $scope.inscripcion.ASPI_SEGUNDOAPELLIDO;
-        $http.post('api/correo/enviar/'+ nombre +'/'+$scope.entrevista.ASPI_EMAIL).then(function(response){
-            console.dir('Mensaje Enviado');
-        });
+        //console.dir($scope.inscripcion.ASPI_EMAIL);
+        //console.dir('www.escolme.edu.co/sicaes/'+$scope.inscripcion.ASPI_EMAIL);
+        var email=$scope.inscripcion.ASPI_EMAIL;
+        var nombre=$scope.inscripcion.ASPI_PRIMERNOMBRE + ' ' + $scope.inscripcion.ASPI_SEGUNDONOMBRE + ' ' + $scope.inscripcion.ASPI_PRIMERAPELLIDO + ' ' + $scope.inscripcion.ASPI_SEGUNDOAPELLIDO;
+        //console.dir(email + ' '+ nombre);
+        $http.get('api/correo/enviar/'+email+'/'+nombre).then(function(response){
+            console.dir(response.data);
+        })
+        $scope.CamposAdicionales();
     }
 
     $scope.GuardarPrograma = function(){
@@ -412,6 +424,7 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
 
     $scope.CamposAdicionales = function(){
         //$scope.PasarMayuscula();
+        //$scope.EnviarCorreo();
         var prog = $scope.inscripcion.PROG_ID;
         if(prog!=null){
             $http.get('api/programas/adicional/' + prog).then(function(response){

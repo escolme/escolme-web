@@ -27,6 +27,7 @@ require 'modelo/requisitos.php';
 require 'modelo/inscritos.php';
 require 'modelo/correo.php';
 require 'modelo/imprimirinscripcion.php';
+require 'modelo/imprimirentrevista.php';
 
 require 'modeloInventarios/productos.php';
 require 'modeloInventarios/categoria_productos.php';
@@ -63,6 +64,10 @@ $app->get('/formulario/buscarllamado/:PROG_ID', 'BuscarLlamado');
 $app->get('/inscripcion/imprimir/datos/:FOIN_ID', 'ListarDatos');
 $app->get('/inscripcion/imprimir/ubicacion/:FOIN_ID', 'ListarUbicacion');
 $app->get('/inscripcion/imprimir/programas/:FOIN_ID', 'ListarProgramas');
+$app->get('/correo/enviar/:CORREO/:NOMBRE','EnviarCorreo');
+$app->get('/entrevista/imprimir/:FOIN_ID', 'ListarEntrevista');
+$app->get('/entrevistados/imprimir', 'ListarEntrevistados');
+$app->get('/requisitos/personas/listar', 'ListarAspiranteRequisitos');
 
 $app->post('/insertar/aspirantenew','InsertarAspirante');
 $app->post('/insertar/formularioinscripcionnew','InsertarFormulario');
@@ -75,7 +80,7 @@ $app->post('/insertar/requisitoentregados','InsertarRequisitosEntregados');
 $app->post('/actualizar/formularioestado/:FOIN_ID','ActualizarEstadoFormulario');
 $app->post('/insertar/entrevistanew','InsertarEntrevista');
 $app->post('/actualizar/formularioxentrevista/:LLAM_ID/:FOIN_ID','ActualizarFormularioEntrevista');
-$app->get('/correo/enviar/:NOMBRE/:CORREO','EnviarCorreo');
+
 /*
 RUTAS DE INVENTARIOS
 */

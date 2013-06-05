@@ -1,5 +1,5 @@
 <?php
-function enviarcorreo($Nombre, $Correo){
+function enviarcorreo($address,$Nombre){
 
     try{
 
@@ -13,7 +13,7 @@ function enviarcorreo($Nombre, $Correo){
 
         $mail             = new PHPMailer();
 
-        $body             = "Buenos dias Julian, No olvides el GETTTTTTTTTTTTTTTT";//file_get_contents('contenidoCorreos.html');
+        $body             = "<html><body style='width:650px;' ><img src='http://www.escolme.edu.co/sicaes/img/headerpgsica2.png' style='width:100%;'> </img> <br> <h1>Inscripcion Correcta</h1> <p> <?php echo ($Nombre); ?> Recuerda entregar la documentación en la oficina de Admisiones y Registro y continuar con el proceso.</p> </body></html>";
         $body             = eregi_replace("[\]",'',$body);
 
         $mail->IsSMTP(); // telling the class to use SMTP
@@ -27,10 +27,12 @@ function enviarcorreo($Nombre, $Correo){
         $mail->Port       = 465;                   // set the SMTP port for the GMAIL server
         $mail->Username   = "inscripciones@escolme.edu.co";  // GMAIL username
         $mail->Password   = "Esc$2013*";            // GMAIL password
+        //$mail->Username   = "jsancheza028@escolme.edu.co";  // GMAIL username
+        //$mail->Password   = "david1040734935";            // GMAIL password
 
-        $mail->SetFrom('inscripciones@escolme.edu.co', 'First Last');
+        $mail->SetFrom('inscripciones@escolme.edu.co', 'Institucion Universitaria Escolme');
 
-        $mail->AddReplyTo("analista@escolme.edu.co","First Last");
+        //$mail->AddReplyTo("analista@escolme.edu.co","First Last");
 
         $mail->Subject    = "Inscripcion Escolme";
 
@@ -38,8 +40,8 @@ function enviarcorreo($Nombre, $Correo){
 
         $mail->MsgHTML($body);
 
-        $address = "analista@escolme.edu.co";
-        $mail->AddAddress($address, "Julian");
+        //$address = $Correo;
+        $mail->AddAddress($address, "Aspirante");
 
         //$mail->AddAttachment("images/phpmailer.gif");      // attachment
         //$mail->AddAttachment("images/phpmailer_mini.gif"); // attachment
@@ -48,7 +50,8 @@ function enviarcorreo($Nombre, $Correo){
             echo '{"Error: ":' . $mail->ErrorInfo . '}';
             
         } else {
-            echo '{"Mensaje: ":"Correo Enviado con exito"}';
+            echo '{"Mensaje: ":"Correo Enviado con exito"' .$Nombre. '}';
+            //echo utf8_encode('{"Mensaje": ' . json_encode($address." ".$Nombre) . '}');
         }
 
     }
