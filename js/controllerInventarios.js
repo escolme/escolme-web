@@ -1,7 +1,7 @@
 
 function PedidosCtrl($scope,$http,sessionService,comunService){
 
-    //sessionService.validar();
+  //  sessionService.validar();
 
     if(!angular.equals(sessionStorage.getItem("usua_usuario"),null)){
         $('#divBarraUsuario').show();
@@ -11,7 +11,6 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
     else{
         $("#divContenidos").css("width","100%");
     }
-
     $scope.limpiar = function(){
        $scope.pedido={
            id_categoria_producto:null,
@@ -28,6 +27,7 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
         });
     }
 
+
     $scope.productosCategoria= function(){
         var cat_id = $scope.pedido.id_categoria_producto;
         if(cat_id!=null){
@@ -39,28 +39,38 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
         }
     }
 
+
     $scope.AgregarProducto = function(){
-        $http.get('api/productos/cargarporid/'+ $scope.pedido.id_producto).then(function(response){
-            producto = response.data.datos[0];
-            var existe = false;
-            angular.forEach($scope.pedidoFinal, function(c) {
-                if(c.id_producto == $scope.pedido.id_producto){
-                    existe = true;
-                    c.cantidad = c.cantidad + $scope.pedido.cantidad;
-                }
-            });
-
-            if(!existe){
-                var item = {
-                    id_producto : $scope.pedido.id_producto,
-                    nom_producto : producto.nom_producto,
-                    cantidad : $scope.pedido.cantidad
-                }
-
-                $scope.pedidoFinal.push(item);
-            }
+        $http.get('api/pedido/cantidad/'+ $scope.pedido.id_producto).then (function(response){
+            $scope.cantidad3=response.data.datoscantidad[0];
+            var cantinicial = $scope.cantidad3.cant_stock - $scope.pedido.cantidad;
+            console.dir(cantinicial)
+           if(cantinicial<1){
+               alert("Cantidad pedida no aceptada") ;
+           }
+           else{
+               $http.get('api/productos/cargarporid/'+ $scope.pedido.id_producto).then(function(response){
+                   producto = response.data.datos[0];
+                   var existe = false;
+                   angular.forEach($scope.pedidoFinal, function(c) {
+                       if(c.id_producto == $scope.pedido.id_producto){
+                           existe = true;
+                           c.cantidad = c.cantidad + $scope.pedido.cantidad;
+                       }
+                   });
+                   if(!existe){
+                       var item = {
+                           id_producto : $scope.pedido.id_producto,
+                           nom_producto : producto.nom_producto,
+                           cantidad : $scope.pedido.cantidad
+                       }
+                       $scope.pedidoFinal.push(item);
+                   }
+               });
+           }
         });
     }
+
 
     $scope.EliminarItem = function(item){
         var temp =  $scope.pedidoFinal;
@@ -71,6 +81,7 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
             }
         });
     }
+
 
     $scope.QuitarProducto = function(){
         $http.get('api/productos/quitarporid/'+ $scope.pedido.id_producto).then(function(response){
@@ -108,9 +119,8 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
             var num = parseInt($scope.maximo) +1;
             var pedido = {
                 id_usuario : sessionStorage.getItem("usua_id"),
-                maximo : num,
-                pedido: $scope.pedidoFinal
-
+                maximo : num
+               // pedido: $scope.pedidoFinal
             }
             var json_pedido = JSON.stringify(pedido);
             $.ajax({
@@ -122,19 +132,64 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
                 async:false,
                 success: function(data, textStatus, jqXHR){
                 console.dir(data);
+                $scope.GuardarProducto()  // llamado a la funcion guardar producto
+                $scope.DisminuirStock()   // llamado a la funcion disminuir stock
+                alert("Pedido exitoso") ;
                 },
                 error: function(jqXHR, textStatus, errorThrown){
                     alert('error: ' + textStatus);
                 }
             })
-            //console.dir(json_pedido);
         });
-      // var json_pedido = JSON.stringify($scope.pedidoFinal);
     }
 
 
+    $scope.CancelarPedido = function(){
+           $scope.pedidoFinal=null
+      }
+
+
+
+    $scope.GuardarProducto = function(){
+        var num = parseInt($scope.maximo) +1;
+        var pedido2 ={
+            pedido2:$scope.pedidoFinal,
+            maximo:num
+        }
+        var json_pedido = JSON.stringify(pedido2);
+            $.ajax({
+                type: 'POST',
+                contentType: 'application/json',
+                url: 'api/pedido/guardarproducto',
+                dataType: "json",
+                data: json_pedido,
+                async:false,
+                success: function(data, textStatus, jqXHR){
+                    console.dir(data);
+                },
+                error: function(jqXHR, textStatus, errorThrown){
+                    alert('error: ' + textStatus);
+                }
+            })
+    }
+
+    $scope.DisminuirStock = function(){
+        angular.forEach($scope.pedidoFinal,function(c){
+         $http.get('api/pedido/cantidad/'+ c.id_producto).then (function(response){
+             $scope.cantidad=response.data.datoscantidad[0];
+            var cant = $scope.cantidad.cant_stock - c.cantidad;
+             console.dir(cant)
+             console.dir($scope.cantidad)
+                $http.post('api/pedido/disminuirstock/' + cant+'/' + c.id_producto).then(function(response){ // funcion de update que es llamada en el api
+                });
+        });
+     });
+  }
     $scope.limpiar();
 }
+
+
+
 
 
     function InventariosCtrl($scope,$http){
@@ -159,14 +214,11 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
 
         $scope.ordenarInventario = function(){
             $scope.inventario= []
-
-
-
         }
-
-
-        $scope.limpiar2();
+       $scope.limpiar2();
     }
+
+
 
     function RegistroCtrl($scope,$http){
 
@@ -225,11 +277,15 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
             })
         }
 
+        $scope.Cancelar = function(){
+            $scope.insertarproductos=null
+        }
+
      $scope.limpiar3();
     }
 
 
-function ModificarCtrl($scope,$http){
+    function ModificarCtrl($scope,$http){
 
     if(!angular.equals(sessionStorage.getItem("usua_usuario"),null)){
         $('#divBarraUsuario').show();
@@ -240,3 +296,83 @@ function ModificarCtrl($scope,$http){
         $("#divContenidos").css("width","100%");
     }
 }
+
+    function OrdenPedidoCtrl($scope,$http){
+
+    if(!angular.equals(sessionStorage.getItem("usua_usuario"),null)){
+        $('#divBarraUsuario').show();
+        $('#linkUsuario').html('<i class="icon-user"></i> ' + sessionStorage.getItem("usua_nombre") + ' <span class="caret"></span>');
+        $("#divContenidos").css("width"," 74.35897435897436%");
+    }
+    else{
+        $("#divContenidos").css("width","100%");
+    }
+
+
+        $scope.limpiar2 = function(){
+            $scope.insertarobservaciones ={
+              descripcion:null,id_pedido_usuario:null,pedidoentregado:null
+            }
+            $scope.ordenpedido={
+                id_pedido_usuario:null
+            }
+            $scope.ListarPedidos = function(){
+                $http.get('api/ordenpedido/pedidos/listar').then(function(response){
+                    $scope.pedidos = response.data.datos;
+                  angular.forEach($scope.pedidos,function(c)  {
+                      $http.get('api/ordenpedido/usuarios/usuario/'+ c.id_usuario).then(function(response){
+                         $scope.nombre  = response.data.datos[0];
+                          c.usua_nombre=$scope.nombre.usua_nombre;
+                      });
+                    });
+                });
+            }
+        }
+
+        $scope.limpiar2();
+        $scope.ListarPedidos();
+
+
+        $scope.AbrirPedido = function(c){
+            $('#pedidoFinal').modal('show');
+            $scope.insertarobservaciones.id_pedido_usuario= c.id_pedido_usuario;
+            var ped_id = c.id_pedido_usuario;
+            if(ped_id!=null) {
+            $http.get('api/ordenpedido/pedidofinal/listar/'+ ped_id).then(function(response){
+                $scope.pedidomodal = response.data.datos;
+            });
+            }
+            else{
+              $scope.pedidomodal = [];
+                }
+    }
+
+        $scope.CerrarPedido = function(){
+            elem=document.getElementsByName('entregado');
+            for(i=0;i<elem.length;i++)
+                if (elem[i].checked) {
+                    valor = elem[i].value;
+                    $scope.insertarobservaciones.pedidoentregado= valor;
+                }
+            console.dir($scope.insertarobservaciones);
+           var json_insertarobservaciones = JSON.stringify($scope.insertarobservaciones);
+            $.ajax({
+                type: 'POST',
+                contentType: 'application/json',
+                url: 'api/ordenpedido/descripcion',
+                dataType: "json",
+                data: json_insertarobservaciones,
+                async:false,
+                success: function(data, textStatus, jqXHR){
+                    console.dir(data);
+                },
+                error: function(jqXHR, textStatus, errorThrown){
+                    alert('error: ' + textStatus);
+                }
+            })
+
+            $scope.ListarPedidos();
+
+        }
+
+    }
