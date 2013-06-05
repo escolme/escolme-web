@@ -1,13 +1,23 @@
 <h5>Bienvenido al sistema de Inventarios Escolme </h5>
 
-<ul class="nav nav-tabs">
-    <li class="active">
-        <a href="#/inventarios/admin">Inventario</a>
-    </li>
-    <li class="active">
-        <a href="#/inventarios/pedidos">Pedidos</a>
-    </li>
-</ul>
+        <ul class="nav nav-tabs">
+            <li class="active">
+                <a href="#/inventarios/admin">Inventario</a>
+            </li>
+            <li class="active">
+                <a href="#/inventarios/pedidos">Pedidos</a>
+            </li>
+            <li class="active">
+                <a href="#/inventarios/ordenpedido">Lista Pedidos</a>
+            </li>
+            <li class="active">
+                <a href="#/inventarios/registro">Insertar</a>
+            </li>
+            <li class="active">
+                <a href="#/inventarios/modificar">Modificar Stock</a>
+            </li>
+        </ul>
+
 
            <div class="container">
              <div class="row-fluid">
@@ -50,7 +60,7 @@
                         </tr>
                     </table>
                      <button position="right" type="submit" class="btn btn-primary" ng-click="GuardarPedido()"><i class=" icon-shopping-cart"></i>Generar pedido</button>
-                     <button  position="right" type="button" class="btn">Cancelar</button>
+                     <button  position="right" type="button" ng-click="CancelarPedido()" class="btn">Cancelar</button>
                  </div>
               </div>
            </div>
