@@ -121,19 +121,38 @@ $app->get('/registro/proxcate2/listar/:id_categoria_producto', 'productosCategor
 $app->get('/registro/categoria2/listar', 'categoriaListar2');
 $app->get('/pedido/maximo/', 'idmaximo');
 $app->get('/pedido/cantidad/:id_producto', 'cantidadenstock');
+$app->get('/modificar/cantidad/:id_producto', 'cantidadenstock2');
 $app->get('/ordenpedido/pedidos/listar/', 'pedidosListar');
 $app->get('/ordenpedido/pedidofinal/listar/:id_pedido_usuario', 'ordenpedido');
 $app->get('/ordenpedido/usuarios/usuario/:id_usuario', 'buscarnombreUsuario');
+<<<<<<< HEAD
 
 
 $app->get('/pedido/maximo/','idmaximo');
 
+=======
+$app->get('/pedido/maximo/','idmaximo');
+
+// para listar los productos
+$app->get('/imprimirpedido/usuarios/usuario/:id_usuario', 'buscarnombreUsuario');
+$app->get('/imprimirpedido/pedidos/listar/', 'pedidosListar2');
+$app->get('/imprimirpedido/pedidofinal/listar/:id_pedido_usuario', 'ordenpedido');
+$app->get('/modificar/productos/listar/', 'productosListar2');
+$app->get('/modificar/allproductos/listarporfiltro/:filtro', 'productosListarfiltro');
+
+>>>>>>> 9db1cca8277413e9845c6df65c609b84ef897e61
 
 $app->post('/ordenpedido/descripcion', 'insertarobservaciones');
+$app->post('/imprimirpedido/descripcion', 'insertarobservaciones2');
 $app->post('/registro/productos', 'insertarproductos');
 $app->post( '/pedido/guardar', 'insertarpedido');
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9db1cca8277413e9845c6df65c609b84ef897e61
 $app->post( '/pedido/guardarproducto', 'insertarpedido2');
 $app->post('/pedido/disminuirstock/:cantidad/:id_producto', 'disminuirstock');
+$app->post('/modificar/modificarstock/:cantidad/:id_producto', 'modificarstock');
+
 
 $app->run();
