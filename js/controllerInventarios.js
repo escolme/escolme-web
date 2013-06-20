@@ -114,34 +114,41 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
 
 
     $scope.GuardarPedido = function(){
-        $http.get('api/pedido/maximo').then(function(response){
-            $scope.maximo = response.data.datos;
-            var num = parseInt($scope.maximo) +1;
-            var pedido = {
-                id_usuario : sessionStorage.getItem("usua_id"),
-                maximo : num
-               // pedido: $scope.pedidoFinal
-            }
-            var json_pedido = JSON.stringify(pedido);
-            $.ajax({
-                type: 'POST',
-                contentType: 'application/json',
-                url: 'api/pedido/guardar',
-                dataType: "json",
-                data: json_pedido,
-                async:false,
-                success: function(data, textStatus, jqXHR){
-                console.dir(data);
-                $scope.GuardarProducto()  // llamado a la funcion guardar producto
-                $scope.DisminuirStock()   // llamado a la funcion disminuir stock
-                alert("Pedido exitoso") ;
-                },
-                error: function(jqXHR, textStatus, errorThrown){
-                    alert('error: ' + textStatus);
+        if($scope.pedidoFinal[0]!=null){
+            $http.get('api/pedido/maximo').then(function(response){
+                $scope.maximo = response.data.datos;
+                var num = parseInt($scope.maximo) +1;
+                var pedido = {
+                    id_usuario : sessionStorage.getItem("usua_id"),
+                    maximo : num
+                   // pedido: $scope.pedidoFinal
                 }
-            })
-        });
-    }
+                var json_pedido = JSON.stringify(pedido);
+                $.ajax({
+                    type: 'POST',
+                    contentType: 'application/json',
+                    url: 'api/pedido/guardar',
+                    dataType: "json",
+                    data: json_pedido,
+                    async:false,
+                    success: function(data, textStatus, jqXHR){
+                    console.dir(data);
+                    $scope.GuardarProducto()  // llamado a la funcion guardar producto
+                    $scope.DisminuirStock() // llamado a la funcion disminuir stock
+                    alert("Pedido exitoso") ;
+                    },
+                    error: function(jqXHR, textStatus, errorThrown){
+                        alert('error: ' + textStatus);
+                    }
+                })
+            });
+        }
+        else {
+            alert("Ingrese al menos un producto a la lista")
+        }
+       }
+
+
 
 
     $scope.CancelarPedido = function(){
@@ -187,6 +194,7 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
   }
     $scope.limpiar();
 }
+
 
 
 
@@ -269,6 +277,8 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
                 async:false,
                 success: function(data, textStatus, jqXHR){
                     console.dir(data);
+                    alert("Producto almacenado con exito") ;
+                    $scope.limpiar3();
 
                 },
                 error: function(jqXHR, textStatus, errorThrown){
@@ -295,7 +305,66 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
     else{
         $("#divContenidos").css("width","100%");
     }
+        $scope.limpiar3 = function(){
+            $scope.filtros = { producto:''};
+            $scope.ListarProductos2 = function(){
+                $http.get('api/modificar/productos/listar').then(function(response){
+                    $scope.productos2 = response.data.datos;
+                    //console.dir($scope.productos2);
+                });
+            }
+            $scope.ListarProductos2();
+        }
+
+        $scope.ordenarInventario2 = function(){
+            $scope.inventario2= []
+        }
+
+        $scope.ListarProductos3 = function($event){
+            if($scope.filtros.producto != ''){
+                $http.get('api/modificar/allproductos/listarporfiltro/' + $scope.filtros.producto).then(function(response){
+                    $scope.productos2= response.data.datos;
+                    console.dir($scope.productos2)
+                });
+
+                $event.preventDefault();
+            }
+            else
+            {
+            $scope.ListarProductos2();
+            }
+        }
+
+
+
+        $scope.ModificarStock = function(){
+           // console.dir($scope.modistock)
+            var cant = parseInt($scope.modistock.cant_stock) + parseInt($scope.modistock.cantsumar);
+            console.dir(cant)
+           $http.post('api/modificar/modificarstock/' + cant+'/' + $scope.modistock.id_producto).then(function(response){ // funcion de update que es llamada en el api
+                   });
+
+        }
+
+
+        $scope.abrirventanaimprimirpedido= function(c){
+            $('#imprimirpedido').modal('show');
+            $scope.modistock = {
+                id_producto:c.id_producto,
+                cant_stock : c.cant_stock,
+                cantsumar: null,
+                nom_producto:c.nom_producto
+            };
+        }
+        $scope.limpiar3();
 }
+
+
+
+
+
+
+
 
     function OrdenPedidoCtrl($scope,$http){
 
@@ -340,6 +409,7 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
             if(ped_id!=null) {
             $http.get('api/ordenpedido/pedidofinal/listar/'+ ped_id).then(function(response){
                 $scope.pedidomodal = response.data.datos;
+                console.dir($scope.pedidomodal)
             });
             }
             else{
@@ -370,9 +440,64 @@ function PedidosCtrl($scope,$http,sessionService,comunService){
                     alert('error: ' + textStatus);
                 }
             })
-
             $scope.ListarPedidos();
-
         }
-
     }
+
+
+
+ function ImprimirPedidoCtrl ($scope,$http){
+     if(!angular.equals(sessionStorage.getItem("usua_usuario"),null)){
+         $('#divBarraUsuario').show();
+         $('#linkUsuario').html('<i class="icon-user"></i> ' + sessionStorage.getItem("usua_nombre") + ' <span class="caret"></span>');
+         $("#divContenidos").css("width"," 74.35897435897436%");
+     }
+     else{
+         $("#divContenidos").css("width","100%");
+     }
+     $scope.limpiar2 = function(){
+         $scope.ListarPedidos = function(){
+             $http.get('api/imprimirpedido/pedidos/listar').then(function(response){
+                 $scope.pedidos = response.data.datos;
+                 angular.forEach($scope.pedidos,function(c)  {
+                     $http.get('api/imprimirpedido/usuarios/usuario/'+ c.id_usuario).then(function(response){
+                         $scope.nombre  = response.data.datos[0];
+                         c.usua_nombre=$scope.nombre.usua_nombre;
+                     });
+                 });
+             });
+         }
+     }
+     $scope.limpiar2();
+     $scope.ListarPedidos();
+
+
+     $scope.ImprimirPedidoFinal= function(c){
+         $('#pedidoImprimir').modal('show');
+         $scope.factura={
+             id_pedido:c.id_pedido_usuario,
+             fecha:c.fecha
+         }
+         $http.get('api/imprimirpedido/usuarios/usuario/'+ c.id_usuario).then(function(response){
+             $scope.nombre = response.data.datos[0];
+         });
+        // console.dir(c);
+         var ped_id2 = $scope.factura.id_pedido;
+         //console.dir(ped_id2);
+         if(ped_id2!=null) {
+             $http.get('api/imprimirpedido/pedidofinal/listar/'+ ped_id2).then(function(response){
+                 $scope.pedidomodal2 = response.data.datos;
+               //  console.dir($scope.pedidomodal2);
+             });
+         }
+         else{
+             $scope.pedidomodal2 = [];
+         }
+     }
+
+     $scope.Imprimir=function(){
+         $('#vistapreviaimprimir').print
+     }
+ }
+
+

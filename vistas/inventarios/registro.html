@@ -3,30 +3,10 @@
                 text-align: center;
             }
         </style>
-           <!-- <ul class="breadcrumb">
-                <li> <a href="#/inventarios/admin">Inventario</a> <span class="divider">/</span></li>
-                <li><a href="" class="active">Registro</a> <span class="divider">/</span></li>
-            </ul>
--->
-
-            <div class="navbar">
-                <div class="navbar-inner">
-                    <div class="container">
-                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </a>
-                        <a class="brand" href="#/inventarios/admin">Inventario Escolme</a>
-            <div class="nav-collapse collapse">
-
-                </div>
-               </div>
-               </div>
-              </div>
-
 
     <div class="container-fuid">
+
+        <h5>Bienvenido al sistema de inventarios Escolme</h5>
 
             <div class="span12">
 
@@ -46,10 +26,13 @@
                         <li class="active">
                             <a href="#/inventarios/modificar">Modificar Stock</a>
                         </li>
+                        <li class="active">
+                            <a href="#/inventarios/imprimirpedido">Imprimir Pedidos</a>
+                        </li>
+                        <li class="active">
+                            <a href="#/inventarios/imprimirpedido">Informes</a>
+                        </li>
                     </ul>
-                  <!--  <a class="btn" href="#/inventarios/registro">Insertar</a>
-                    <a class="btn" href="#/inventarios/modificar">Modificar</a>-->
-
             </div>
         </div>
 
@@ -89,7 +72,7 @@
                         <div class="control-group">
                             <label class="control-label" for="inputStock">Cantidad pedida</label>
                             <div class="controls">
-                                <input required="required" class="input-mini" type="text" placeholder="..." ng-model="insertarproductos.cantidad_pedida">
+                                <input  class="input-mini" type="text" placeholder="..." ng-model="insertarproductos.cantidad_pedida">
                             </div>
                         </div>
 

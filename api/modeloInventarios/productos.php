@@ -27,15 +27,65 @@
             }
     }
 
+function productosListar2(){
+    $resultados = array();
+    $conexion = new conexionBD();
+    try
+    {
+        $conectar = $conexion->conectarInventarios();
+        $result = mysqli_query($conectar,"SELECT id_producto,nom_producto,cant_stock,fecha_mod,categoria FROM tbl_productos JOIN  tbl_categoria_productos  ON  tbl_productos.id_categoria_producto= tbl_categoria_productos.id_categoria_producto");
+        while($row = mysqli_fetch_array($result))
+        {
+            $fila = array(
+                "id_producto" => $row['id_producto'],
+                "nom_producto" => $row['nom_producto'],
+                "categoria"=> $row ['categoria'],
+                "cant_stock" => $row['cant_stock'],
+                "fecha_mod" => $row['fecha_mod'],
+            );
+            array_push($resultados, $fila);
+        }
+        echo utf8_encode('{"datos": ' . json_encode($resultados) . '}');
+        mysqli_close($conectar);
+    }
+    catch(Exception $e){
+        echo utf8_encode('{"error: ":' . $e->getMessage() . '}');
+    }
+}
+
+function productosListarfiltro($filtro){
+    $resultados = array();
+    $conexion = new conexionBD();
+    try
+    {
+        $conectar = $conexion->conectarInventarios();
+        $result = mysqli_query($conectar,"SELECT id_producto,nom_producto,cant_stock,fecha_mod,categoria FROM tbl_productos JOIN  tbl_categoria_productos  ON  tbl_productos.id_categoria_producto= tbl_categoria_productos.id_categoria_producto WHERE nom_producto LIKE '%".strtoupper($filtro)."%'");
+        while($row = mysqli_fetch_array($result))
+        {
+            $fila = array(
+                "id_producto" => $row['id_producto'],
+                "nom_producto" => $row['nom_producto'],
+                "categoria"=> $row ['categoria'],
+                "cant_stock" => $row['cant_stock'],
+                "fecha_mod" => $row['fecha_mod'],
+            );
+            array_push($resultados, $fila);
+        }
+        echo utf8_encode('{"datos": ' . json_encode($resultados) . '}');
+        mysqli_close($conectar);
+    }
+    catch(Exception $e){
+        echo utf8_encode('{"error: ":' . $e->getMessage() . '}');
+    }
+}
+
     function productosCargarPorId($id_producto){
         $resultados = array();
-
         try
         {
             $conexion = new conexionBD();
             $conectar = $conexion->conectarInventarios();
             $result = mysqli_query($conectar,"SELECT id_producto,nom_producto FROM tbl_productos WHERE id_producto=$id_producto");
-
             while($row = mysqli_fetch_array($result))
             {
                 $fila = array(
@@ -241,6 +291,23 @@ function disminuirstock($cantidad,$id_producto){
     }
 }
 
+function modificarstock($cantidad,$id_producto){
+    try
+    {
+        $conexion = new conexionBD();
+        $conectar = $conexion->conectarInventarios();
+        $result = mysqli_query($conectar,"UPDATE tbl_productos SET cant_stock=".$cantidad."
+                 WHERE id_producto=".$id_producto);
+
+        echo utf8_encode('{"datos": ' . json_encode($result) . '}');
+        mysqli_close($conectar);
+    }
+    catch(Exception $e){
+        mysqli_close($conectar);
+        echo utf8_encode('{"error: ":' . $e->getMessage() . '}');
+    }
+}
+
 
 function cantidadenstock($id_producto){
     $resultados = array();
@@ -267,6 +334,31 @@ function cantidadenstock($id_producto){
     }
 }
 
+function cantidadenstock2($id_producto){
+    $resultados = array();
+    try
+    {
+        $conexion = new conexionBD();
+        $conectar = $conexion->conectarInventarios();
+        $result = mysqli_query($conectar,"SELECT id_producto,cant_stock FROM tbl_productos WHERE id_producto=$id_producto");
+        while($row = mysqli_fetch_array($result))
+        {
+            $fila = array(
+                "id_producto" => $row['id_producto'],
+                "cant_stock" => $row['cant_stock'],
+            );
+            array_push($resultados, $fila);
+        }
+
+        echo utf8_encode('{"datoscantidad": ' . json_encode($resultados) . '}');
+        mysqli_close($conectar);
+    }
+    catch(Exception $e){
+        mysqli_close($conectar);
+        echo utf8_encode('{"error: ":' . $e->getMessage() . '}');
+    }
+}
+
 
 function pedidosListar(){
     $resultados = array();
@@ -275,6 +367,31 @@ function pedidosListar(){
     {
         $conectar = $conexion->conectarInventarios();
         $result = mysqli_query($conectar,"SELECT id_pedido_usuario,id_usuario,fecha FROM tbl_pedidos_usuarios where tbl_pedidos_usuarios.entregado=0");
+        while($row = mysqli_fetch_array($result))
+        {
+            $fila = array(
+                "id_pedido_usuario" => $row['id_pedido_usuario'],
+                "id_usuario" => $row['id_usuario'],
+                "usua_nombre"=>'',
+                "fecha"=> $row ['fecha'],
+            );
+            array_push($resultados, $fila);
+        }
+        echo utf8_encode('{"datos": ' . json_encode($resultados) . '}');
+        mysqli_close($conectar);
+    }
+    catch(Exception $e){
+        echo utf8_encode('{"error: ":' . $e->getMessage() . '}');
+    }
+}
+
+function pedidosListar2(){
+    $resultados = array();
+    $conexion = new conexionBD();
+    try
+    {
+        $conectar = $conexion->conectarInventarios();
+        $result = mysqli_query($conectar,"SELECT id_pedido_usuario,id_usuario,fecha FROM tbl_pedidos_usuarios where tbl_pedidos_usuarios.entregado=1");
         while($row = mysqli_fetch_array($result))
         {
             $fila = array(
@@ -348,8 +465,7 @@ function buscarnombreUsuario($usua_id){
 
 
 
-function insertarobservaciones()
-{
+function insertarobservaciones(){
     $request = Slim::getInstance()->request();
     $insertarobservaciones = json_decode($request->getBody());
     try {
@@ -358,7 +474,6 @@ function insertarobservaciones()
         $sql = mysqli_query($conectar,"UPDATE tbl_pedidos_usuarios SET descripcion='".$insertarobservaciones->descripcion."', entregado=".$insertarobservaciones->pedidoentregado." WHERE id_pedido_usuario=".$insertarobservaciones->id_pedido_usuario);
         echo utf8_encode('{"datos": ' .json_encode($sql) . '}');
         $result = mysqli_query($conectar,$sql);
-       /* echo utf8_encode('{"datos": ' .json_encode($sql) . '}');*/
     }
 
     catch(Exception $e){
@@ -366,6 +481,24 @@ function insertarobservaciones()
         echo utf8_encode('{"error: ":' . $e->getMessage() . '}');
     }
 
+}
+
+
+function insertarobservaciones2(){
+    $request = Slim::getInstance()->request();
+    $insertarobservaciones2 = json_decode($request->getBody());
+    try {
+        $conexion = new conexionBD();
+        $conectar = $conexion->conectarInventarios();
+        $sql = mysqli_query($conectar,"UPDATE tbl_pedidos_usuarios SET descripcion='".$insertarobservaciones2->descripcion."' WHERE id_pedido_usuario=".$insertarobservaciones2->id_pedido_usuario);
+        echo utf8_encode('{"datos": ' .json_encode($sql) . '}');
+        $result = mysqli_query($conectar,$sql);
+    }
+
+    catch(Exception $e){
+        mysqli_close($conectar);
+        echo utf8_encode('{"error: ":' . $e->getMessage() . '}');
+    }
 }
 
 
