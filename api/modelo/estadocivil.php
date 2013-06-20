@@ -11,11 +11,14 @@ function estadocivilListar(){
         OCIExecute($query, OCI_DEFAULT);
         while (OCIFetch($query))
         {
-            $fila = array(
-                "ESCG_ID" => ociresult($query, "ESCG_ID"),
-                "ESCG_DESCRIPCION" => ociresult($query, "ESCG_DESCRIPCION")
-            );
-            array_push($resultados, $fila);
+            if (ociresult($query,"ESCG_ID") <> 0) {
+
+                $fila = array(
+                    "ESCG_ID" => ociresult($query, "ESCG_ID"),
+                    "ESCG_DESCRIPCION" => ociresult($query, "ESCG_DESCRIPCION")
+                );
+                array_push($resultados, $fila);
+            }
         }
 
         echo utf8_encode('{"datos": ' . json_encode($resultados) . '}');

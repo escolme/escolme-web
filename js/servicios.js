@@ -8,9 +8,19 @@ escolmeWeb.service('uiService',function(){
             $('#divMenuSuperior').hide();
     }
 
+    function configuracionGraficas(){
+        Highcharts.setOptions({
+            lang: {
+                printChart: 'Imprimir Grafica' ,downloadPDF:'Descargar PDF',downloadJPEG:'Descargar JPEG',
+                downloadPNG:'Descargar PNG',downloadSVG:'Descargar SVG',loading:'Cargando'
+            }
+        });
+    }
+
     // Exponer funciones del servicio
     return {
-        mostrarMenuSuperior: function(mostrar)   { return mostrarMenuSuperior(mostrar);  }
+        mostrarMenuSuperior: function(mostrar)   { return mostrarMenuSuperior(mostrar);  },
+        configuracionGraficas: function()   { return configuracionGraficas();  }
     };
 
 });

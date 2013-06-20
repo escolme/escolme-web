@@ -13,7 +13,7 @@ function enviarcorreo($address,$Nombre){
 
         $mail             = new PHPMailer();
 
-        $body             = "<html><body style='width:650px;' ><img src='http://www.escolme.edu.co/sicaes/img/headerpgsica2.png' style='width:100%;'> </img> <br> <h1>Inscripcion Correcta</h1> <p> <?php echo ($Nombre); ?> Recuerda entregar la documentación en la oficina de Admisiones y Registro y continuar con el proceso.</p> </body></html>";
+        $body             = "<html><body style='width:650px;' ><img src='http://www.escolme.edu.co/sicaes/img/headerpgsica2.png' style='width:100%;'> </img> <br> <h1>Inscripción Correcta</h1> <p> <?php echo ($Nombre); ?> Recuerda entregar la documentación en la oficina de Admisiones y Registro y continuar con el proceso.</p> </body></html>";
         $body             = eregi_replace("[\]",'',$body);
 
         $mail->IsSMTP(); // telling the class to use SMTP

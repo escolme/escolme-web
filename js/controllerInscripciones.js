@@ -6,12 +6,6 @@ function ImprimirInsCtrl (comunService, sessionService,$scope,$http){
 
 }
 
-
-function InfoProEstInsCtrl (comunService, sessionService,$scope,$http){
-    sessionService.validar();
-
-}
-
 /*---------------------------------------------------*/
 /* Controlador de la pagina /#/gestionar/inscripcion */
 /*---------------------------------------------------*/
@@ -166,7 +160,8 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
             ASPI_FECHANACIMIENTO:null,ASPI_FECHANACIMIENTO_S:'',ASPI_TELEFONORESIDENCIA:null,ASPI_TELEFONOCELULAR:null,
             ASPI_EMAIL:null, ESSE_FECHATERMINACION:null,ESSE_FECHATERMINACION_S:'', ESSE_SNP:null,ESSE_FECHAPRESENTOPRUEBAS:null,
             ESSE_FECHAPRESENTOPRUEBAS_S:'',ESSE_PUNTAJEOBTENIDO:0, NIED_ID:null,CIRC_ID:null,CIRC_ID2:null,SEPE_ID:null,
-            SEPE_ID2:null,UNPR_ID:null,UNPR_ID2:null,COIN_ID:null,COIN_ID2:null,ASPI_ID:null,FOIN_ID:null, validacionguardado:null
+            SEPE_ID2:null,UNPR_ID:null,UNPR_ID2:null,COIN_ID:null,COIN_ID2:null,ASPI_ID:4192,FOIN_ID:null, validacionguardado:null,
+            EXPR_INSTITUCION:null, EXPR_CARGO:null, EXPR_TELEFONOTRABAJO:null
         };
         $scope.filtros = { institucion:''};
         $scope.ListarModalidades();
@@ -188,7 +183,7 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
                 $scope.existe = response.data.datos[0];
                 if($scope.existe!= null){
                     $scope.inscripcion.validacionguardado=1;
-                    alert("El usuario ya tiene una inscripcion activa para este periodo, no se guardara ninguna información" + $scope.inscripcion.validacionguardado);
+                    alert("El usuario ya tiene una inscripcion activa para este periodo, no se guardara ninguna información");
                     $scope.inscripcion.ASPI_NUMERODOCUMENTO = null;
 
                 }
@@ -197,7 +192,7 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
                         $scope.existe2 = response.data.datos[0];
                         if($scope.existe2!= null){
                             $scope.inscripcion.validacionguardado=2;
-                            alert("El usuario se ha inscrito previamente más no para este periodo, se actualizarán los datos y se guardaran los programas escogidos. Por favor termine de diligenciar los datos" + $scope.inscripcion.validacionguardado);
+                            alert("El usuario se ha inscrito previamente más no para este periodo, se actualizarán los datos y se guardaran los programas escogidos. Por favor termine de diligenciar los datos");
 
                         }
                         else{
@@ -267,6 +262,7 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
                     $scope.GuardarCaracterizacion();
                     $scope.GuardarEstudiosSecundarios();
                     $scope.GuardarInfoSocio();
+                    $scope.GuardarExpeProfe();
                 }
             });
         }else{
@@ -401,6 +397,30 @@ function InscripcionCtrl(comunService, sessionService,$scope,$http){
                 alert('error: ' + textStatus);
             }
         })
+    }
+
+    $scope.GuardarExpeProfe = function(){
+        if($scope.inscripcion.EXPR_INSTITUCION != null)
+        {
+            if($scope.inscripcion.EXPR_INSTITUCION != '')
+            {
+                var json_inscripcion = JSON.stringify($scope.inscripcion);
+                $.ajax({
+                    type: 'POST',
+                    contentType: 'application/json',
+                    url: 'api/insertar/experienciaprofesional',
+                    dataType: "json",
+                    data: json_inscripcion,
+                    async:false,
+                    success: function(data, textStatus, jqXHR){
+                        console.dir(data);
+                    },
+                    error: function(jqXHR, textStatus, errorThrown){
+                        alert('error: ' + textStatus);
+                    }
+                })
+             }
+        }
     }
 
     $scope.ListarModalidades = function(){

@@ -15,8 +15,8 @@ function LoginCtrl(comunService, sessionService,$scope,$http,$location){
     $scope.maestro = {};
     $scope.Limpiar = function () {
         $scope.form_autenticar = angular.copy($scope.maestro);
-        $scope.form_autenticar.usuario = "p70566989";
-        $scope.form_autenticar.password = "p70566989";
+        //$scope.form_autenticar.usuario = "p70566989";
+        //$scope.form_autenticar.password = "p70566989";
     };
     $scope.Autenticar = function(form_autenticar){
         $scope.maestro = angular.copy(form_autenticar);

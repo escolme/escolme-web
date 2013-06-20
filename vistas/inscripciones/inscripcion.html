@@ -338,6 +338,35 @@
                 </div>
             </div>
 
+            <legend>Información Laboral</legend>
+
+            <div class="control-group">
+                <label class="control-label" >
+                    Empresa
+                </label>
+                <div class="controls">
+                    <input type="text" maxlength="45" ng-model="inscripcion.EXPR_INSTITUCION" class="input-xlarge">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" >
+                    Cargo
+                </label>
+                <div class="controls">
+                    <input type="text" maxlength="45" ng-model="inscripcion.EXPR_CARGO" class="input-xlarge">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" >
+                    Teléfono
+                </label>
+                <div class="controls">
+                    <input type="text" maxlength="15" ng-model="inscripcion.EXPR_TELEFONOTRABAJO" class="input-large">
+                </div>
+            </div>
+
             <div class="control-group">
                 <div class="controls">
                     <button type="submit" class="btn btn-primary" ng-disabled="form_inscripcion.$invalid || isUnchanged(inscripcion)">Aceptar</button>

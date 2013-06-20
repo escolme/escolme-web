@@ -28,6 +28,9 @@ require 'modelo/inscritos.php';
 require 'modelo/correo.php';
 require 'modelo/imprimirinscripcion.php';
 require 'modelo/imprimirentrevista.php';
+require 'modelo/reportes.php';
+require 'modelo/experienciaprofesional.php';
+require 'modelo/convenios.php';
 
 require 'modeloInventarios/productos.php';
 require 'modeloInventarios/categoria_productos.php';
@@ -68,6 +71,20 @@ $app->get('/correo/enviar/:CORREO/:NOMBRE','EnviarCorreo');
 $app->get('/entrevista/imprimir/:FOIN_ID', 'ListarEntrevista');
 $app->get('/entrevistados/imprimir', 'ListarEntrevistados');
 $app->get('/requisitos/personas/listar', 'ListarAspiranteRequisitos');
+$app->get('/programas/organizar/reportes', 'ProgramasOrganizar');
+$app->get('/preinscritos/contar/reportes', 'ContarPreinscritos');
+$app->get('/inscritos/contar/reportes', 'ContarInscritos');
+$app->get('/admitidos/contar/reportes', 'ContarAdmitidos');
+$app->get('/programaestado/reportes/:PROG_ID/:ESTADO', 'DetalleProgramaEstado');
+$app->get('/programaestadolistar/reportes/:PROG_ID/:ESTADO', 'DetalleProgramaEstadoListar');
+$app->get('/programasmatricula/listar/reportes', 'ProgramasMatriculaListar');
+$app->get('/nuevos/matricula/reportes', 'MatriculaNuevosPrograma');
+$app->get('/antiguos/matricula/reportes', 'MatriculaAntiguosPrograma');
+$app->get('/reingresos/matricula/reportes', 'MatriculaReingresosPrograma');
+$app->get('/detalle/matricula/reportes/:PROG_ID/:CATE_ID', 'MatriculaDetallePrograma');
+$app->get('/convenio/programa/listar', 'BuscarProgramaConvenio');
+$app->get('/convenio/periodo/listar', 'BuscarPeriodoConvenio');
+$app->get('/convenio/listar', 'ListarConvenios');
 
 $app->post('/insertar/aspirantenew','InsertarAspirante');
 $app->post('/insertar/formularioinscripcionnew','InsertarFormulario');
@@ -80,6 +97,8 @@ $app->post('/insertar/requisitoentregados','InsertarRequisitosEntregados');
 $app->post('/actualizar/formularioestado/:FOIN_ID','ActualizarEstadoFormulario');
 $app->post('/insertar/entrevistanew','InsertarEntrevista');
 $app->post('/actualizar/formularioxentrevista/:LLAM_ID/:FOIN_ID','ActualizarFormularioEntrevista');
+$app->post('/insertar/experienciaprofesional','InsertarExperienciaProfesional');
+$app->post('/insertar/convenio','InsertarConvenio');
 
 /*
 RUTAS DE INVENTARIOS
@@ -100,24 +119,21 @@ $app->get('/productos/quitarporid/:id_producto', 'productosQuitarPorId');
 $app->get('/productos/cargarporid/:id_producto', 'productosCargarPorId');
 $app->get('/registro/proxcate2/listar/:id_categoria_producto', 'productosCategoria2');
 $app->get('/registro/categoria2/listar', 'categoriaListar2');
-<<<<<<< HEAD
 $app->get('/pedido/maximo/', 'idmaximo');
 $app->get('/pedido/cantidad/:id_producto', 'cantidadenstock');
 $app->get('/ordenpedido/pedidos/listar/', 'pedidosListar');
 $app->get('/ordenpedido/pedidofinal/listar/:id_pedido_usuario', 'ordenpedido');
 $app->get('/ordenpedido/usuarios/usuario/:id_usuario', 'buscarnombreUsuario');
 
-=======
+
 $app->get('/pedido/maximo/','idmaximo');
->>>>>>> d70dd0cd3079d4a628e2b6ff0e883f6ccf24b329
+
 
 $app->post('/ordenpedido/descripcion', 'insertarobservaciones');
 $app->post('/registro/productos', 'insertarproductos');
 $app->post( '/pedido/guardar', 'insertarpedido');
-<<<<<<< HEAD
+
 $app->post( '/pedido/guardarproducto', 'insertarpedido2');
 $app->post('/pedido/disminuirstock/:cantidad/:id_producto', 'disminuirstock');
 
-=======
->>>>>>> d70dd0cd3079d4a628e2b6ff0e883f6ccf24b329
 $app->run();
