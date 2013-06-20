@@ -8,7 +8,7 @@ var escolmeWeb = angular.module('escolmeWeb',['ui']).config(['$routeProvider', f
         when('/inscripciones/inscripcion', { templateUrl: 'vistas/inscripciones/inscripcion.html', controller: InscripcionCtrl }).
         when('/inscripciones/gestion', { templateUrl: 'vistas/inscripciones/gestionarinscripcion.html', controller: GestionarInsCtrl}).
         when('/inscripciones/informeprogramaestado', { templateUrl: 'vistas/inscripciones/informeprogramaestado.html', controller: InfoProEstInsCtrl}).
-        //when('/inscripciones/imprimir', { templateUrl: 'vistas/inscripciones/imprimirinscripcion.html', controller: ImprimirInsCtrl}).
+        when('/inscripciones/imprimir', { templateUrl: 'vistas/inscripciones/imprimirinscripcion.html', controller: ImprimirInsCtrl}).
         when('/login', { templateUrl: 'vistas/login.html', controller: LoginCtrl }).
         when('/inventarios/admin', { templateUrl: 'vistas/inventarios/inventarios.html', controller: InventariosCtrl }).
         when('/inventarios/imprimirpedido', { templateUrl: 'vistas/inventarios/imprimirpedido.html', controller: ImprimirPedidoCtrl }).

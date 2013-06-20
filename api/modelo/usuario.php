@@ -5,7 +5,7 @@ function BuscarUsuario($usua_usuario, $usua_contraseña){
         $resultados = array();
         $conexion = new conexionBD();
         $conn = $conexion->conectarPosgresql();
-        $sql = "SELECT usuario.usua_id, usuario.usua_documento, usuario.pege_id, usuario.usua_nombre, usuario.usua_usuario, usuario.usua_contrasena, usuariorol.rol_id FROM (vortal.rol INNER JOIN vortal.usuariorol ON vortal.rol.rol_id = vortal.usuariorol.rol_id) INNER JOIN general.usuario ON vortal.usuariorol.usua_id = general.usuario.usua_id WHERE (((usuario.usua_usuario)='".$usua_usuario."') AND ((usuario.usua_contrasena)='".$usua_contraseña."') AND ((usuariorol.rol_id)=124));";
+        $sql = "SELECT usuario.usua_id, usuario.usua_documento, usuario.pege_id, usuario.usua_nombre, usuario.usua_usuario, usuario.usua_contrasena, usuariorol.rol_id FROM (vortal.rol INNER JOIN vortal.usuariorol ON vortal.rol.rol_id = vortal.usuariorol.rol_id) INNER JOIN general.usuario ON vortal.usuariorol.usua_id = general.usuario.usua_id WHERE (((usuario.usua_usuario)='".$usua_usuario."') AND ((usuario.usua_contrasena)='".$usua_contraseña."') AND ((usuariorol.rol_id)=124 OR (usuariorol.rol_id)=150 OR (usuariorol.rol_id)=134));";
         $result =pg_query ($conn, $sql);
         //echo utf8_encode('{"datos": ' . json_encode($sql) . '}');
         if (pg_num_rows($result)>0) {

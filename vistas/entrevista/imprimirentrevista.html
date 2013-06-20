@@ -1,161 +1,226 @@
-
-<table style="margin-left: auto; margin-right: auto; font-size: x-small;" border="0" cellpadding="1" cellspacing="1">
+<table class="table table-hover" style="font-size: 12px">
+    <thead>
+    <tr>
+        <th>Nombre Completo</th>
+        <th>Identificación</th>
+        <th>Programa 1</th>
+        <th>Jornada</th>
+        <th></th>
+    </tr>
+    </thead>
     <tbody>
-    <tr>
-        <td colspan="2" rowspan="2" style="width: 160px;"><b>IMAGEN </b></td>
-        <td colspan="2" rowspan="1" style="width: 160px;text-align: center;"><b>FORMATO INDIVIDUAL</b></td>
-    </tr>
-    <tr style="text-align: center">
-        <td><b>DE ENTREVISTA</b></td>
-    </tr>
-    <tr>
-        <td colspan="4" rowspan="1" style="width: 640px;"><b>A continuación encontrará algunas preguntas para anexar a la hoja de vida del estudiante nuevo</b></td>
-    </tr>
-    </tbody>
-</table>
-<br>
-
-<table style="margin-left: auto; margin-right: auto; font-size: x-small;" border="0" cellpadding="1" cellspacing="1">
-    <tbody>
-    <tr>
-        <td colspan="4" rowspan="1" style="width: 640px;"><b>IDENTIFICACIÓN DEL ESTUDIANTE</b></td>
+    <tr ng-repeat="c in entrevistados">
+        <td>{{c.NOMBRE}}</td>
+        <td>{{c.ASPI_NUMERODOCUMENTO}}</td>
+        <td>{{c.PROG_NOMBRE}}</td>
+        <td>{{c.JORN_DESCRIPCION}}</td>
+        <td><button ng-click="AbrirImprimirEntrevista(c)" class="btn btn-mini"><i class="icon-print"></i></button></td>
     </tr>
     </tbody>
 </table>
 
-<table style="margin-left: auto; margin-right: auto; font-size: x-small;" border="1" cellpadding="1" cellspacing="1">
-    <tbody>
-    <tr>
-        <td style="width: 130px;"><b>Nombres:</b></td>
-        <td style="width: 507px" colspan="3" rowspan="1">aqui va</td>
-    </tr>
-    <tr>
-        <td style="width: 130px"><b>Apellidos:</b></td>
-        <td colspan="3" rowspan="1">aqui va</td>
-    </tr>
-    <tr>
-        <td style="width: 130px"><b>Documento Identidad:</b></td>
-        <td colspan="3" rowspan="1">aqui va</td>
-    </tr>
+<div id="imprimirEntrevista" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:48%;left:45%;">
+
+<div class="modal-body">
+    <div id="divVistaPreviaEntrevista2">
+        <table style="margin-left: auto; margin-right: auto; font-size: x-small;" border="0" cellpadding="1" cellspacing="1">
+            <tbody>
+            <tr>
+                <td colspan="2" rowspan="4" style="width: 160px;">  <img style="max-width: 60%" src="img/logotipoIU.png"> </td>
+                <td style="height: 7px"></td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="1" style="width: 160px;text-align: center;"><b>FORMATO INDIVIDUAL</b>
+
+                </td>
+            </tr>
+            <tr style="text-align: center">
+                <td><b>DE ENTREVISTA</b></td>
+            </tr>
+
+            <tr>
+                <td>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="4" rowspan="1" style="width: 640px;"><b>A continuación encontrará algunas preguntas para anexar a la hoja de vida del estudiante nuevo</b></td>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+
+        <table style="margin-left: auto; margin-right: auto; font-size: x-small;" border="0" cellpadding="1" cellspacing="1">
+            <tbody>
+            <tr>
+                <td colspan="4" rowspan="1" style="width: 640px;"><b>IDENTIFICACIÓN DEL ESTUDIANTE</b></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <table style="margin-left: auto; margin-right: auto; font-size: x-small;" border="1" cellpadding="1" cellspacing="1">
+            <tbody>
+            <tr>
+                <td style="width: 130px;"><b>Nombres:</b></td>
+                <td style="width: 507px" colspan="3" rowspan="1">{{imprimirentrevista2.ASPI_PRIMERNOMBRE}} {{imprimirentrevista2.ASPI_SEGUNDONOMBRE}} </td>
+            </tr>
+            <tr>
+                <td style="width: 130px"><b>Apellidos:</b></td>
+                <td colspan="3" rowspan="1">{{imprimirentrevista2.ASPI_PRIMERAPELLIDO}} {{imprimirentrevista2.ASPI_SEGUNDOAPELLIDO}}</td>
+            </tr>
+            <tr>
+                <td style="width: 130px"><b>Documento Identidad:</b></td>
+                <td colspan="3" rowspan="1">{{imprimirentrevista2.ASPI_NUMERODOCUMENTO}}</td>
+            </tr>
 
 
-    </tbody>
-</table>
+            </tbody>
+        </table>
 
-<br>
+        <br>
 
-<table style="margin-left: auto; margin-right: auto; font-size: x-small;" border="0" cellpadding="1" cellspacing="1">
-    <tbody>
-    <tr>
-        <td colspan="4" rowspan="1" style="width: 640px;"><b>PROGRAMA Y PERIODO</b></td>
-    </tr>
-    </tbody>
-</table>
+        <table style="margin-left: auto; margin-right: auto; font-size: x-small;" border="0" cellpadding="1" cellspacing="1">
+            <tbody>
+            <tr>
+                <td colspan="4" rowspan="1" style="width: 640px;"><b>PROGRAMA Y PERIODO</b></td>
+            </tr>
+            </tbody>
+        </table>
 
-<table style="margin-left: auto; margin-right: auto; font-size: x-small;" border="1" cellpadding="1" cellspacing="1">
-    <tbody>
-    <tr>
-        <td style="width: 130px;"><b>Programa:</b></td>
-        <td style="width: 507px" colspan="3" rowspan="1">aqui va</td>
-    </tr>
-    <tr>
-        <td style="width: 130px"><b>Periodo:</b></td>
-        <td style="width: 180px;">aqui va</td>
-        <td style="text-align: right"><b>Fecha:</b></td>
-        <td >aqui va</td>
-    </tr>
+        <table style="margin-left: auto; margin-right: auto; font-size: x-small;" border="1" cellpadding="1" cellspacing="1">
+            <tbody>
+            <tr>
+                <td style="width: 130px;"><b>Programa:</b></td>
+                <td style="width: 507px" colspan="3" rowspan="1">{{imprimirentrevista2.PROG_NOMBRE}}</td>
+            </tr>
+            <tr>
+                <td style="width: 130px"><b>Periodo:</b></td>
+                <td style="width: 180px;">{{imprimirentrevista2.PEUN_ANO}}-{{imprimirentrevista2.PEUN_PERIODO}}</td>
+                <td style="text-align: right"><b>Fecha:</b></td>
+                <td >{{imprimirentrevista2.ENTRE_FECHA}}</td>
+            </tr>
 
 
-    </tbody>
-</table>
+            </tbody>
+        </table>
 
-<br>
+        <br>
 
-<table style="margin-left: auto; margin-right: auto; font-size: x-small;" border="0" cellpadding="1" cellspacing="1">
-    <tbody>
-    <tr>
-        <td colspan="4" rowspan="1" style="width: 640px;"><b>CUESTIONARIO</b></td>
-    </tr>
-    </tbody>
-</table>
+        <table style="margin-left: auto; margin-right: auto; font-size: x-small;" border="0" cellpadding="1" cellspacing="1">
+            <tbody>
+            <tr>
+                <td colspan="4" rowspan="1" style="width: 640px;"><b>CUESTIONARIO</b></td>
+            </tr>
+            </tbody>
+        </table>
 
-<table style="margin-left: auto; margin-right: auto; font-size: x-small;" border="1" cellpadding="1" cellspacing="1">
-    <tbody>
+        <table style="margin-left: auto; margin-right: auto; font-size: x-small;" border="1" cellpadding="1" cellspacing="1">
+            <tbody>
 
-    <tr>
-        <td style="width: 175px;"><b>1. ¿Por qué quiere estudiar en esta institución?</b></td>
-        <td colspan="3" rowspan="1">aqui va</td>
-    </tr>
+            <tr>
+                <td style="width: 175px;"><b>1. ¿Por qué quiere estudiar en esta institución?</b></td>
+                <td colspan="3" rowspan="1">{{imprimirentrevista2.ENTRE_PREGUNTA1}}</td>
+            </tr>
 
-    <tr>
-        <td style="width: 175px;"><b>2. ¿Como se enteró de Escolme?</b></td>
-        <td style="width: 462px;" colspan="3" rowspan="1">aqui va</td>
-    </tr>
+            <tr>
+                <td style="width: 175px;"><b>2. ¿Como se enteró de Escolme?</b></td>
+                <td style="width: 462px;" colspan="3" rowspan="1">{{imprimirentrevista2.ENTRE_PREGUNTA2}}</td>
+            </tr>
 
-    <tr>
-        <td style="width: 175px;"><b>3. ¿Por qué eligio estudiar este programa?</b></td>
-        <td colspan="3" rowspan="1">aqui va</td>
-    </tr>
+            <tr>
+                <td style="width: 175px;"><b>3. ¿Por qué eligio estudiar este programa?</b></td>
+                <td colspan="3" rowspan="1">{{imprimirentrevista2.ENTRE_PREGUNTA3}}</td>
+            </tr>
 
-    <tr>
-        <td style="width: 175px;"><b>4. ¿Cuáles son sus cualidades y valores?</b></td>
-        <td colspan="3" rowspan="1">aqui va</td>
-    </tr>
+            <tr>
+                <td style="width: 175px;"><b>4. ¿Cuáles son sus cualidades y valores?</b></td>
+                <td colspan="3" rowspan="1">{{imprimirentrevista2.ENTRE_PREGUNTA4}}</td>
+            </tr>
 
-    <tr>
-        <td style="width: 175px;"><b>4. ¿Qué espera usted de esta institución?</b></td>
-        <td colspan="3" rowspan="1">aqui va</td>
-    </tr>
+            <tr>
+                <td style="width: 175px;"><b>5. ¿Qué espera usted de esta institución?</b></td>
+                <td colspan="3" rowspan="1">{{imprimirentrevista2.ENTRE_PREGUNTA5}}</td>
+            </tr>
 
-    </tbody>
-</table>
+            </tbody>
+        </table>
 
-<br>
+        <br>
 
-<table style="margin-left: auto; margin-right: auto; font-size: x-small;" border="0" cellpadding="1" cellspacing="1">
-    <tbody>
-    <tr>
-        <td colspan="4" rowspan="1" border="0" style="width: 640px;"><b>OBSERVACIONES ENTREVISTADOR</b></td>
-    </tr>
+        <table style="margin-left: auto; margin-right: auto; font-size: x-small;" border="0" cellpadding="1" cellspacing="1">
+            <tbody>
+            <tr>
+                <td colspan="4" rowspan="1" border="0" style="width: 640px;"><b>HOMOLOGACION / RECONOCIMIENTO: </b>{{imprimirentrevista2.HOMOLO}}</td>
+            </tr>
 
-    </tbody>
-</table>
+            </tbody>
+        </table>
 
-<table style="margin-left: auto; margin-right: auto; font-size: x-small;" border="1" cellpadding="1" cellspacing="1">
-    <tbody>
-    <tr>
-        <td style="width: 640px;" colspan="4" rowspan="1">aqui va</td>
-    </tr>
+        <br>
 
-    </tbody>
-</table>
+        <table style="margin-left: auto; margin-right: auto; font-size: x-small;" border="0" cellpadding="1" cellspacing="1">
+            <tbody>
+            <tr>
+                <td colspan="4" rowspan="1" border="0" style="width: 640px;"><b>OBSERVACIONES ENTREVISTADOR</b></td>
+            </tr>
 
-<br>
-<br>
+            </tbody>
+        </table>
 
-<table style="margin-left: auto; margin-right: auto; font-size: x-small; text-align: center" border="0" cellpadding="1" cellspacing="1">
-    <tbody>
-    <tr>
-        <td style="width: 318px;">____________________________________________</td>
-        <td style="width: 318px;">____________________________________________</td>
-    </tr>
-    <tr>
-        <td>Firma del Entrevistador</td>
-        <td>Firma del Aspirante</td>
-    </tr>
-    </tbody>
-</table>
-<br>
-<br>
-<table style="margin-left: auto; margin-right: auto; font-size: x-small; text-align: center" border="1" cellpadding="1" cellspacing="1">
-    <tbody>
-<tr>
-    <td style="width: 126px">Versión: 2</td>
-    <td style="width: 126px">Vigente desde: <br> 10/10/2011</td>
-    <td style="width: 126px">Aprobó: <br> Directora de Calidad</td>
-    <td style="width: 126px">Código: <br> F - SGQ 202</td>
-    <td style="width: 126px">Página 1 de 1</td>
-</tr>
-    </tbody>
-</table>
+        <table style="margin-left: auto; margin-right: auto; font-size: x-small;" border="1" cellpadding="1" cellspacing="1">
+            <tbody>
+            <tr>
+                <td style="width: 640px;" colspan="4" rowspan="1">{{imprimirentrevista2.ENTRE_OBSERVACIONES}}</td>
+            </tr>
 
+            </tbody>
+        </table>
+
+        <br>
+
+        <table style="margin-left: auto; margin-right: auto; font-size: x-small;" border="0" cellpadding="1" cellspacing="1">
+            <tbody>
+            <tr>
+                <td colspan="4" rowspan="1" border="0" style="width: 640px;"><b>NOTA: En caso de no abrirse el grupo de la primera opcion, el aspirante acepta la segunda opcion.</b></td>
+            </tr>
+
+            </tbody>
+        </table>
+
+        <br>
+        <br>
+
+        <table style="margin-left: auto; margin-right: auto; font-size: x-small; text-align: center" border="0" cellpadding="1" cellspacing="1">
+            <tbody>
+            <tr>
+                <td style="width: 318px;">____________________________________________</td>
+                <td style="width: 318px;">____________________________________________</td>
+            </tr>
+            <tr>
+                <td>Firma del Entrevistador</td>
+                <td>Firma del Aspirante</td>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+        <br>
+        <table style="margin-left: auto; margin-right: auto; font-size: x-small; text-align: center" border="1" cellpadding="1" cellspacing="1">
+            <tbody>
+            <tr>
+                <td style="width: 126px">Versión: 2</td>
+                <td style="width: 126px">Vigente desde: <br> 10/10/2011</td>
+                <td style="width: 126px">Aprobó: <br> Directora de Calidad</td>
+                <td style="width: 126px">Código: <br> F - SGQ 202</td>
+                <td style="width: 126px">Página 1 de 1</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <!--<button class="btn" data-dismiss="modal" ng-click="BuscarLlamado()">Guardar y Procesar</button>-->
+    <button class="btn" data-dismiss="modal" aria-hidden="true" >Cerrar</button>
+    <button class="btn" ng-click="ImprimirEntrevista2()">Imprimir</button>
+</div>
+</div>
